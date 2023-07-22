@@ -6,5 +6,5 @@ using System.Threading.Tasks;
 
 namespace VeganFit.Core.Enums
 {
-    public enum Role { Admin, StandartUser }
+    public enum Meal { Breakfast, Lunch, Dinner }
 }
