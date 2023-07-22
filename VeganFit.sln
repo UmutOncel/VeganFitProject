@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.Core", "VeganFit.Core\VeganFit.Core.csproj", "{3BC122AA-4F65-41BB-B419-73EE03B82C09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.Entities", "VeganFit.Entities\VeganFit.Entities.csproj", "{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3BC122AA-4F65-41BB-B419-73EE03B82C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC122AA-4F65-41BB-B419-73EE03B82C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC122AA-4F65-41BB-B419-73EE03B82C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

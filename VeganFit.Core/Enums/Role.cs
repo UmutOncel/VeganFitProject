@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VeganFit.Core
+namespace VeganFit.Core.Enums
 {
-    internal class Umut
+    internal class Role
     {
     }
 }
