@@ -3,11 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.Core", "VeganFit.Core\VeganFit.Core.csproj", "{3BC122AA-4F65-41BB-B419-73EE03B82C09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeganFit.Core", "VeganFit.Core\VeganFit.Core.csproj", "{3BC122AA-4F65-41BB-B419-73EE03B82C09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.Entities", "VeganFit.Entities\VeganFit.Entities.csproj", "{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeganFit.Entities", "VeganFit.Entities\VeganFit.Entities.csproj", "{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.DAL", "VeganFit.DAL\VeganFit.DAL.csproj", "{9E297D3A-6CAC-4177-A41E-AD1EED20C35F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeganFit.Shared", "VeganFit.Shared\VeganFit.Shared.csproj", "{179A0286-1679-46C6-92A7-DEEEEAE7529E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeganFit.Bll", "VeganFit.Bll\VeganFit.Bll.csproj", "{00B15736-DA04-49BB-BF75-4990306E51AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.Models", "VeganFit.Models\VeganFit.Models.csproj", "{431E54EA-ED75-4C11-8D69-C4F12A098AEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +27,6 @@ Global
 		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9E297D3A-6CAC-4177-A41E-AD1EED20C35F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9E297D3A-6CAC-4177-A41E-AD1EED20C35F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9E297D3A-6CAC-4177-A41E-AD1EED20C35F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9E297D3A-6CAC-4177-A41E-AD1EED20C35F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
