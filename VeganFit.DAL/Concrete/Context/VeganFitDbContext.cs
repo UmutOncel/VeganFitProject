@@ -18,11 +18,19 @@ namespace VeganFit.DAL.Concrete.Context
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Weight> Weights { get; set; }
 
+        /// <summary>
+        /// Database bağlantı ayarlarının yapılmasını sağlayan metot.
+        /// </summary>
+        /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer();  //SQL BAĞLANTI YOLU!!!
         }
 
+        /// <summary>
+        /// Database'de oluşturulacak tabloların ayarlarının yapılmasını sağlayan metot.
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration())

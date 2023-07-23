@@ -8,7 +8,10 @@ using VeganFit.Core.Enums;
 
 namespace VeganFit.Entities
 {
-    public class User : BaseEntity  //baseentity'de create update vb işlemler var. biz kullanıcı update etmiyoruz. oradan kalıtım alması sorun olur mu?
+    /// <summary>
+    /// User class'ının property'leri tanımlandı. Ortak property'ler için BaseEntity class'ından kalıtım alındı.
+    /// </summary>
+    public class User : BaseEntity
     {
         public string Firstname { get; set; }
         public string Lastname { get; set; }
