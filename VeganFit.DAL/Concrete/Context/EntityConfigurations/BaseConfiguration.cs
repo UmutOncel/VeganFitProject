@@ -11,8 +11,13 @@ using VeganFit.Core.Enums;
 
 namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
 {
-    public abstract class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> where TEntity : BaseEntity
+    public abstract class BaseConfiguration<TEntity> : IEntityTypeConfiguration<TEntity> 
+                                                       where TEntity : BaseEntity
     {
+        /// <summary>
+        /// BaseEntity entity'sinin property'lerinin özelliklerinin belirtildiği metot. BaseEntity'nin property'leri diğer entity'ler için ortaktı. Herbirinin configuration'ında bu property'leri tekrar yazmamak için metodu virtual yaparak ezdik.
+        /// </summary>
+        /// <param name="builder"></param>
         public virtual void Configure(EntityTypeBuilder<TEntity> builder)
         {
             builder.HasKey(x => x.Id);

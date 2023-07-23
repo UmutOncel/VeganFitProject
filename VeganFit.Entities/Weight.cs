@@ -7,10 +7,13 @@ using VeganFit.Core.BaseEntities;
 
 namespace VeganFit.Entities
 {
+    /// <summary>
+    /// Weight class'ının property'leri tanımlandı. Ortak property'ler için BaseEntity class'ından kalıtım alındı.
+    /// </summary>
     public class Weight : BaseEntity
     {
         public int UserWeight { get; set; }
-        public DateTime DateOfRecord { get; set; }    //baseentity içindeki createddate bu propu karşılar mı?
+        public DateTime DateOfRecord { get; set; }
         public virtual User User { get; set; }
         public int UserId { get; set; }
     }

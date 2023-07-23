@@ -7,6 +7,9 @@ using VeganFit.Core.BaseEntities;
 
 namespace VeganFit.Entities
 {
+    /// <summary>
+    /// Feedback class'ının property'leri tanımlandı. Ortak property'ler için BaseEntity class'ından kalıtım alındı.
+    /// </summary>
     public class Feedback : BaseEntity
     {
         public string MessageText { get; set; }

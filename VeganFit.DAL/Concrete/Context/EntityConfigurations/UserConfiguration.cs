@@ -12,6 +12,10 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
 {
     public class UserConfiguration : BaseConfiguration<User>
     {
+        /// <summary>
+        /// User entity'sinin property'lerinin özelliklerinin belirlendiği metot.
+        /// </summary>
+        /// <param name="builder"></param>
         public override void Configure(EntityTypeBuilder<User> builder)
         {
             base.Configure(builder);

@@ -8,10 +8,13 @@ using VeganFit.Core.Enums;
 
 namespace VeganFit.Entities
 {
+    /// <summary>
+    /// Data class'ının property'leri tanımlandı. Ortak property'ler için BaseEntity class'ından kalıtım alındı.
+    /// </summary>
     public class Data : BaseEntity
     {
         public int Calori { get; set; }
-        public DateTime Datetime { get; set; }      //baseentity createdtime aynı olur mu?
+        public DateTime Datetime { get; set; }
         public Meal Meal { get; set; }
         public virtual User User { get; set; }
         public int UserId { get; set; }
