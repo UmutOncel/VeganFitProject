@@ -8,7 +8,7 @@ using VeganFit.Core.Enums;
 namespace VeganFit.Core.BaseEntities
 {
     /// <summary>
-    /// Kullanılan tüm entity'lerin ortak property'leri için class açıldı.
+    /// Kullanılan tüm entity'lerin ortak property'leri için class açıldı
     /// </summary>
     public abstract class BaseEntity
     {
