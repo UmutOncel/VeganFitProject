@@ -10,6 +10,9 @@ using VeganFit.Entities;
 
 namespace VeganFit.DAL.Concrete.Repositories
 {
+    /// <summary>
+    /// OptionalProductRepo'yu oluşturmak için Base klasörü içindeki BaseRepository class'ından ve IOptionalProductRepo'dan kalıtım verdik.
+    /// </summary>
     public class OptionalProductRepo : BaseRepository<OptionalProduct, VeganFitDbContext>, IOptionalProductRepo
     {
         public OptionalProductRepo(VeganFitDbContext context) : base(context)

@@ -10,6 +10,9 @@ using VeganFit.Entities;
 
 namespace VeganFit.DAL.Concrete.Repositories
 {
+    /// <summary>
+    /// FeedbackRepo'yu oluşturmak için Base klasörü içindeki BaseRepository class'ından ve IFeedbackRepo'dan kalıtım verdik.
+    /// </summary>
     public class FeedbackRepo : BaseRepository<Feedback, VeganFitDbContext>, IFeedbackRepo
     {
         public FeedbackRepo(VeganFitDbContext context) : base(context)

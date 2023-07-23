@@ -7,6 +7,9 @@ using VeganFit.Core.BaseEntities;
 
 namespace VeganFit.Entities
 {
+    /// <summary>
+    /// OptionalProduct class'ının property'leri tanımlandı. Ortak property'ler için BaseEntity class'ından kalıtım alındı.
+    /// </summary>
     public class OptionalProduct : BaseEntity
     {
         public string ProductName { get; set; }

@@ -6,5 +6,8 @@ using System.Threading.Tasks;
 
 namespace VeganFit.Core.Enums
 {
+    /// <summary>
+    /// Rolleri sınırlandırmak için enum oluşturuldu.
+    /// </summary>
     public enum Role { Admin, StandartUser }
 }
