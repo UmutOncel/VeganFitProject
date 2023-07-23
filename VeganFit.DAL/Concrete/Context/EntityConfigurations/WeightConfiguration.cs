@@ -8,6 +8,9 @@ using VeganFit.Entities;
 
 namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
 {
+    /// <summary>
+    /// Weight entity'sinin property'lerinin özelliklerinin belirlendiği metot.
+    /// </summary>
     public class WeightConfiguration : BaseConfiguration<Weight>
     {
         public override void Configure(EntityTypeBuilder<Weight> builder)

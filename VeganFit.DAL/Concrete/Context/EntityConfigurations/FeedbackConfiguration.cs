@@ -10,6 +10,10 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
 {
     public class FeedbackConfiguration : BaseConfiguration<Feedback>
     {
+        /// <summary>
+        /// Feedback entity'sinin property'lerinin özelliklerinin belirlendiği metot.
+        /// </summary>
+        /// <param name="builder"></param>
         public override void Configure(EntityTypeBuilder<Feedback> builder)
         {
             base.Configure(builder);

@@ -8,6 +8,9 @@ using VeganFit.Entities;
 
 namespace VeganFit.DAL.Abstract
 {
+    /// <summary>
+    /// Product entity'sinin metotlarını oluşturmak için Core katmanında generic olarak oluşturulan IBaseRepository interface'inden kalıtım alındı.
+    /// </summary>
     public interface IProductRepo : IBaseRepository<Product>
     {
     }
