@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VeganFit.DAL\VeganFit.DAL.csproj" />
     <ProjectReference Include="..\VeganFit.Entities\VeganFit.Entities.csproj" />
     <ProjectReference Include="..\VeganFit.Models\VeganFit.Models.csproj" />
     <ProjectReference Include="..\VeganFit.Shared\VeganFit.Shared.csproj" />

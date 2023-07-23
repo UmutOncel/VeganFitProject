@@ -5,6 +5,6 @@ namespace VeganFit.Bll.Abstract.IServices
 {
     public interface IDataService
     {
-        ResultService<DataDetailDto> GetDetails(int id);
+        ResultService<DataDetailDto> GetDetails();
     }
 }
