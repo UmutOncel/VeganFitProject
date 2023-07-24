@@ -18,7 +18,7 @@ namespace VeganFit.UI
         public UserFeedbackForm(/*IFeedbackService feedbackService*/)
         {
             InitializeComponent();
-           // _feedbackService = feedbackService;
+            //_feedbackService = feedbackService;
         }
                
         private void UserFeedbackForm_Load(object sender, EventArgs e)
@@ -62,6 +62,7 @@ namespace VeganFit.UI
         {
           FeedbackCreateVm feedbackCreateVm=new FeedbackCreateVm();
             feedbackCreateVm.Message = txtGorusOneri.Text;
+
 
            MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
         }

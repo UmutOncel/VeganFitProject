@@ -7,18 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Concrete.Services;
+using VeganFit.DAL.Concrete.Repositories;
+using VeganFit.Entities;
 
 namespace VeganFit.UI
 {
     public partial class UserAddMealForm : Form
     {
-        public UserAddMealForm()
+        private readonly OptionalProductRepo _optionalProductRepo;
+        private readonly ProductService _productService;
+        public UserAddMealForm(OptionalProductRepo optionalProductRepo, ProductService productService)
         {
             InitializeComponent();
+            _optionalProductRepo = optionalProductRepo;
+            _productService = productService;
+        }
+
+        public UserAddMealForm()
+        {
         }
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
+            ListeyiYenile();
+
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
         }
@@ -30,6 +43,7 @@ namespace VeganFit.UI
                 txtAramaKutusu.ForeColor = Color.Black;
             }
         }
+
 
         private void txtAramaCubugu_Leave(object sender, EventArgs e)
         {
@@ -56,22 +70,48 @@ namespace VeganFit.UI
 
         private void btnUrunuSilSabah_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(dgvSabah.SelectedCells[0].Value);
+            var product = _productService.Delete(id);
             MessageBox.Show("Başarıyla Silinmiştir");
         }
 
         private void btnUrunuSilOgle_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(dgvOgle.SelectedCells[0].Value);
+            var product = _productService.Delete(id);
             MessageBox.Show("Başarıyla Silinmiştir");
         }
 
         private void btnUrunuSilAksam_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(dgvAksam.SelectedCells[0].Value);
+            var product = _productService.Delete(id);
             MessageBox.Show("Başarıyla Silinmiştir");
         }
-
+        private void ListeyiYenile()
+        {
+            dgvUrunlerListesi.DataSource = _optionalProductRepo.GetAll(null);
+        }
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
+            ListeyiYenile();
+        }
 
+        private void btnListeyiYenile_MouseEnter(object sender, EventArgs e)
+        {
+            lblListeyiYenile.Visible = true;
+        }
+
+        private void btnListeyiYenile_MouseLeave(object sender, EventArgs e)
+        {
+            lblListeyiYenile.Visible = false;
+        }
+
+        private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //int id = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[0].Value);
+           
+            //
         }
     }
 }

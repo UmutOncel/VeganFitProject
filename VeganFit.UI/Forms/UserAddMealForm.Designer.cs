@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvSabah = new DataGridView();
             dgvOgle = new DataGridView();
             dgvAksam = new DataGridView();
@@ -47,6 +47,8 @@
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             txtAramaKutusu = new TextBoxs.TextBox.DesignTextBox();
+            btnListeyiYenile = new Buttons.DesignButton();
+            lblListeyiYenile = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvSabah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).BeginInit();
@@ -55,12 +57,12 @@
             // 
             // dgvSabah
             // 
-            dataGridViewCellStyle5.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle5.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvSabah.BackgroundColor = Color.DarkSeaGreen;
             dgvSabah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSabah.Location = new Point(12, 32);
@@ -71,12 +73,12 @@
             // 
             // dgvOgle
             // 
-            dataGridViewCellStyle6.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle6.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvOgle.BackgroundColor = Color.DarkSeaGreen;
             dgvOgle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOgle.Location = new Point(12, 270);
@@ -87,12 +89,12 @@
             // 
             // dgvAksam
             // 
-            dataGridViewCellStyle7.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle7.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
-            dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle3.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             dgvAksam.BackgroundColor = Color.DarkSeaGreen;
             dgvAksam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAksam.Location = new Point(12, 511);
@@ -187,12 +189,12 @@
             // 
             // dgvUrunlerListesi
             // 
-            dataGridViewCellStyle8.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle8.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvUrunlerListesi.BackgroundColor = Color.DarkSeaGreen;
             dgvUrunlerListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUrunlerListesi.Location = new Point(591, 84);
@@ -200,6 +202,7 @@
             dgvUrunlerListesi.RowTemplate.Height = 25;
             dgvUrunlerListesi.Size = new Size(488, 581);
             dgvUrunlerListesi.TabIndex = 8;
+            dgvUrunlerListesi.CellClick += dgvUrunlerListesi_CellClick;
             // 
             // lblUrunListesi
             // 
@@ -288,15 +291,51 @@
             txtAramaKutusu.Enter += txtAramaCubugu_Enter;
             txtAramaKutusu.Leave += txtAramaCubugu_Leave;
             // 
+            // btnListeyiYenile
+            // 
+            btnListeyiYenile.BackColor = Color.Transparent;
+            btnListeyiYenile.BackgroundColor = Color.Transparent;
+            btnListeyiYenile.BackgroundImageLayout = ImageLayout.None;
+            btnListeyiYenile.BorderColor = Color.DarkBlue;
+            btnListeyiYenile.BorderRadius = 10;
+            btnListeyiYenile.BorderSize = 2;
+            btnListeyiYenile.FlatAppearance.BorderSize = 0;
+            btnListeyiYenile.FlatStyle = FlatStyle.Flat;
+            btnListeyiYenile.ForeColor = Color.Black;
+            btnListeyiYenile.Image = Properties.Resources.Yenile_Butonu;
+            btnListeyiYenile.ImageAlign = ContentAlignment.BottomCenter;
+            btnListeyiYenile.Location = new Point(591, 671);
+            btnListeyiYenile.Name = "btnListeyiYenile";
+            btnListeyiYenile.Size = new Size(34, 34);
+            btnListeyiYenile.TabIndex = 9;
+            btnListeyiYenile.TextAlign = ContentAlignment.BottomLeft;
+            btnListeyiYenile.TextColor = Color.Black;
+            btnListeyiYenile.UseVisualStyleBackColor = false;
+            btnListeyiYenile.Click += btnUrunEkle_Click;
+            btnListeyiYenile.MouseEnter += btnListeyiYenile_MouseEnter;
+            btnListeyiYenile.MouseLeave += btnListeyiYenile_MouseLeave;
+            // 
+            // lblListeyiYenile
+            // 
+            lblListeyiYenile.AutoSize = true;
+            lblListeyiYenile.Location = new Point(631, 671);
+            lblListeyiYenile.Name = "lblListeyiYenile";
+            lblListeyiYenile.Size = new Size(97, 14);
+            lblListeyiYenile.TabIndex = 17;
+            lblListeyiYenile.Text = "Listeyi Yenile";
+            lblListeyiYenile.Visible = false;
+            // 
             // UserAddMealForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblListeyiYenile);
             Controls.Add(txtAramaKutusu);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
+            Controls.Add(btnListeyiYenile);
             Controls.Add(btnUrunEkle);
             Controls.Add(dgvUrunlerListesi);
             Controls.Add(lblAksam);
@@ -339,5 +378,7 @@
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
         private TextBoxs.TextBox.DesignTextBox txtAramaKutusu;
+        private Buttons.DesignButton btnListeyiYenile;
+        private Label lblListeyiYenile;
     }
 }

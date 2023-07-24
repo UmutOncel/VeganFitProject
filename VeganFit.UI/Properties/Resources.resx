@@ -121,17 +121,17 @@
   <data name="LoginScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\vecteezy_fresh-vegetable-and-her.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Icon24.scale-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon24.scale-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Çıkış Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon24.scale-125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\oie_transparent (9).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Bildirim_Gönder_Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Bildirim Gönder Butonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Bildirim Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon524.scale-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ürün Ekle Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon24.scale-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Kilo_Takip_Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Kilo Takip Butonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -139,10 +139,13 @@
   <data name="Verileri Gör Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon424.scale-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Ürün Ekle Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Icon24.scale-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Icon24.scale-100" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Icon24.scale-100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Bildirim_Gönder_Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Bildirim Gönder Butonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\oie_transparent (9).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Yenile_Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Yenile Butonu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Bll.Concrete.Services;
+using VeganFit.DAL.Concrete.Repositories;
+using VeganFit.Models.DTOs.DataDtos;
+using VeganFit.Models.VMs.DataVms;
+using VeganFit.Models.VMs.OptionalProductVms;
 
 namespace VeganFit.UI
 {
     public partial class UserSetProductForm : Form
     {
-        public UserSetProductForm()
+        
+        //private readonly IDataService _idataService;
+        //private readonly DataRepo _dataRepo;
+        public UserSetProductForm(IDataService idataService, DataRepo dataRepo)
         {
             InitializeComponent();
+            //_idataService = idataService;
+            //_dataRepo = dataRepo;
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -96,10 +107,30 @@ namespace VeganFit.UI
         {
             lblKapat.Visible = false;
         }
-
+        private void btnResimEkle_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string resimAdi = ofd.FileName;
+                pbxResim.Image = Image.FromFile(resimAdi);
+            }
+        }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
+            //DataDetailDto dto = new DataDetailDto()
+            //{
+            //    ProductName = txtUrunAdi.Text,
+            //    Calori = Convert.ToInt32(txtKalori.Text),
+            //    Serving = txtPorsiyon.Text,
+            //    Picture = pbxResim.Image.ToString()
+            //};
+            //var optProduct = _dataRepo.Create(dto);
+            //_dataRepo.GetAll(null);
+
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
+
+       
     }
 }

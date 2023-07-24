@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.DTOs.ProductDtos;
 using VeganFit.Models.VMs.OptionalProductVms;
 using VeganFit.Models.VMs.ProductVms;
@@ -16,12 +18,15 @@ namespace VeganFit.UI
 {
     public partial class UserAddNewProductForm : Form
     {
-        string _fileName, _sourceFileName, _targetFileName;
+      
         private readonly IOptionalProductService _optionalProductService;
-        public UserAddNewProductForm(IOptionalProductService optionalProductService)
+        private readonly OptionalProductRepo _optionalProductRepo;
+    
+        public UserAddNewProductForm(IOptionalProductService optionalProductService, OptionalProductRepo optionalProductRepo)
         {
             InitializeComponent();
             _optionalProductService = optionalProductService;
+            _optionalProductRepo = optionalProductRepo;
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -108,13 +113,12 @@ namespace VeganFit.UI
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                _fileName = openFileDialog.FileName;
-
-                _sourceFileName = openFileDialog.FileName;
-                _targetFileName = Path.Combine(Application.StartupPath, "ImagesFile");
-                File.Copy(_sourceFileName, _targetFileName, true);
-
-                pbxResim.Image = Image.FromFile(_targetFileName);
+                OpenFileDialog ofd = new OpenFileDialog();
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string resimAdi = ofd.FileName;
+                    pbxResim.Image = Image.FromFile(resimAdi);
+                }
             }
         }
 
@@ -128,12 +132,13 @@ namespace VeganFit.UI
                 Picture = pbxResim.Image.ToString()
             };
             var optProduct = _optionalProductService.Create(vm);
+            _optionalProductRepo.GetAll(null);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
            
         }
-        
 
+        
 
     }
 }

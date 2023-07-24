@@ -104,6 +104,7 @@
             btnResimEkle.Text = "Resim Ekle";
             btnResimEkle.TextColor = Color.Black;
             btnResimEkle.UseVisualStyleBackColor = false;
+            btnResimEkle.Click += btnResimEkle_Click;
             // 
             // btnOguneEkle
             // 
