@@ -8,7 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.DAL.Concrete.Context;
 using VeganFit.Models.VMs.WeightVms;
+using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
@@ -22,7 +24,18 @@ namespace VeganFit.UI
                
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
-            ListedFill();
+
+            VeganFitDbContext db = new VeganFitDbContext();
+
+
+
+            dgvGunlukKiloTakibi.DataSource = db.Weights.Where(x => x.User.Email == ActiveUser.ActiveUserName)
+                
+                .Select(x => new
+                {
+                    Tarih = x.DateOfRecord,
+                    Kilo = x.UserWeight
+                }).ToList();
 
             txtKilo.Text = "Kilonuzu Giriniz";
             txtKilo.ForeColor = Color.SlateGray;
@@ -67,11 +80,6 @@ namespace VeganFit.UI
 
             MessageBox.Show("Kayıt Başarılı");
         }
-        private void ListedFill()
-        {
-            WeightCreateVm weigthVm = new WeightCreateVm();
-            dgvGunlukKiloTakibi.DataSource = weigthVm.ToString().ToList();
-        }
-
+        
     }
 }
