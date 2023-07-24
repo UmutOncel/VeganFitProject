@@ -132,7 +132,7 @@ namespace VeganFit.UI
 
         private void ListeyiYenile() 
         {
-            dgvUrunler.DataSource = _productRepo.GetAll();
+            dgvUrunler.DataSource = _productRepo.GetAll(null);
         }
 
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
