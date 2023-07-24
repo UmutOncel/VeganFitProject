@@ -5,6 +5,8 @@ VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeganFit.Core", "VeganFit.Core\VeganFit.Core.csproj", "{3BC122AA-4F65-41BB-B419-73EE03B82C09}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.UI", "VeganFit.UI\VeganFit.UI.csproj", "{1FF43E70-64FB-484D-815D-1488DF409B04}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VeganFit.Entities", "VeganFit.Entities\VeganFit.Entities.csproj", "{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeganFit.DAL", "VeganFit.DAL\VeganFit.DAL.csproj", "{9E297D3A-6CAC-4177-A41E-AD1EED20C35F}"
@@ -25,6 +27,10 @@ Global
 		{3BC122AA-4F65-41BB-B419-73EE03B82C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BC122AA-4F65-41BB-B419-73EE03B82C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC122AA-4F65-41BB-B419-73EE03B82C09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF43E70-64FB-484D-815D-1488DF409B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF43E70-64FB-484D-815D-1488DF409B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF43E70-64FB-484D-815D-1488DF409B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF43E70-64FB-484D-815D-1488DF409B04}.Release|Any CPU.Build.0 = Release|Any CPU
 		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59ED3334-AD2C-46B5-A5F9-87CB7EC1BE14}.Release|Any CPU.ActiveCfg = Release|Any CPU
