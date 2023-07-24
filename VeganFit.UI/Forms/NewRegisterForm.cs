@@ -161,17 +161,17 @@ namespace VeganFit.UI
         {
             //var user = _userService.Create(txtEMail.Text, txtSifre.Text);
 
-            if(user != null)
-            {
-                MessageBox.Show("Kayıt Başarılı");
-                LoginForm loginForm = new LoginForm(_userService);
-                loginForm.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Test");
-            }
+            //if(user != null)
+            //{
+            //    MessageBox.Show("Kayıt Başarılı");
+            //    LoginForm loginForm = new LoginForm(_userService);
+            //    loginForm.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Test");
+            //}
 
             
 
