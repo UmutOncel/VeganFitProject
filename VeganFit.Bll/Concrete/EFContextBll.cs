@@ -1,6 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
+using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Mapper;
+using VeganFit.Bll.Concrete.Services;
+using VeganFit.DAL.Concrete;
 
 namespace VeganFit.Bll.Concrete
 {
@@ -8,10 +11,13 @@ namespace VeganFit.Bll.Concrete
     {
         public static IServiceCollection AddScopedBll(this IServiceCollection services)
         {
-            //services.AddScopedDal()
-            //    .AddScoped<IAdminService, AdminService>()
-            //    .AddScoped<IPlakService, PlakService>()
-            //    .AddScoped<IArtistServise, ArtistServices>();
+            services.AddScopeDal()
+            .AddScoped<IDataService, DataService>()
+            .AddScoped<IFeedbackService, FeedbackService>()
+            .AddScoped<IOptionalProductService, OptionalProductService>()
+            .AddScoped<IProductService, ProductService>()
+            .AddScoped<IUserService, UserService>()
+            .AddScoped<IWeightService, WeightService>();
 
 
             var mapp = new MapperConfiguration(mpp =>

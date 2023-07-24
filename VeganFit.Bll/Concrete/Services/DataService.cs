@@ -11,27 +11,27 @@ namespace VeganFit.Bll.Concrete.Services
     {
         private readonly IDataService _data;
         private readonly IDataRepo _dataRepo;
-        public ResultService<DataDetailDto> GetDetails()
+        public ResultService<List<DataDetailVm>> GetDetails()
         {
             ResultService<List<DataDetailVm>> result = new ResultService<List<DataDetailVm>>();
 
-            //var datas = _dataRepo.GetFilteredList(select: x => new DataDetailVm
-            //{
-            //    ProductName = x.Product.ProductName,
-            //    Calori = x.Calori
+            var datas = _dataRepo.GetFilteredList(select: x => new DataDetailVm
+            {
+                ProductName = x.Product.ProductName,
+                Calori = x.Calori
 
-            //});
+            },where:x=>x.State != State.Deleted,includes:x=>x.Product);
 
-            //if(datas != null )
-            //{
-            //    result.Data = datas.ToList();
-            //}
-            //else
-            //{
-            //    result.AddError(ErrorType.BadRequest, "Beklenmedik bir hata ile karşılaşıldı");
-            //}
+            if (datas != null)
+            {
+                result.Data = datas.ToList();
+            }
+            else
+            {
+                result.AddError(ErrorType.BadRequest, "Beklenmedik bir hata ile karşılaşıldı");
+            }
 
-            return
+            return result;
         }
     }
 }
