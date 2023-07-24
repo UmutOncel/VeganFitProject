@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Models.DTOs.ProductDtos;
+using VeganFit.Models.VMs.OptionalProductVms;
 using VeganFit.Models.VMs.ProductVms;
 
 namespace VeganFit.UI
@@ -15,9 +17,11 @@ namespace VeganFit.UI
     public partial class UserAddNewProductForm : Form
     {
         string _fileName, _sourceFileName, _targetFileName;
-        public UserAddNewProductForm()
+        private readonly IOptionalProductService _optionalProductService;
+        public UserAddNewProductForm(IOptionalProductService optionalProductService)
         {
             InitializeComponent();
+            _optionalProductService = optionalProductService;
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -116,16 +120,19 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            ProductBaseVm vm = new ProductBaseVm()
+            OptionalProductCreateVm vm = new OptionalProductCreateVm()
             {
                 ProductName = txtUrunAdi.Text,
                 Calori = Convert.ToInt32(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
                 Picture = pbxResim.Image.ToString()
             };
+            var optProduct = _optionalProductService.Create(vm);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
+           
         }
+        
 
 
     }
