@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             pbxResim = new PictureBox();
             dgvUrunler = new DataGridView();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
@@ -41,7 +41,6 @@
             btnUrunSil = new Buttons.DesignButton();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             SuspendLayout();
@@ -59,12 +58,12 @@
             // 
             // dgvUrunler
             // 
-            dataGridViewCellStyle2.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUrunler.Location = new Point(544, 54);
@@ -94,9 +93,6 @@
             txtAramaCubugu.TabIndex = 2;
             txtAramaCubugu.TabStop = false;
             txtAramaCubugu.UnderlinedStyle = false;
-            txtAramaCubugu._TextChanged += txtAramaCubugu__TextChanged;
-            txtAramaCubugu.Enter += txtAramaCubugu_Enter;
-            txtAramaCubugu.Leave += txtAramaCubugu_Leave;
             // 
             // txtUrunAdi
             // 
@@ -279,21 +275,12 @@
             btnKapat.MouseEnter += btnKapat_MouseEnter;
             btnKapat.MouseLeave += btnKapat_MouseLeave;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(228, 124);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 22);
-            textBox1.TabIndex = 9;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
             // AdminAddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1091, 718);
-            Controls.Add(textBox1);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(btnUrunSil);
@@ -330,6 +317,5 @@
         private Buttons.DesignButton btnUrunSil;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
-        private TextBox textBox1;
     }
 }

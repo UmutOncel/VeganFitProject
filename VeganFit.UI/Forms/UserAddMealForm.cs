@@ -110,8 +110,9 @@ namespace VeganFit.UI
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //int id = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[0].Value);
-           
-            //
+            //UserSetProductForm userSetProductForm = new UserSetProductForm(id);
+
+            /////////////////////
         }
     }
 }

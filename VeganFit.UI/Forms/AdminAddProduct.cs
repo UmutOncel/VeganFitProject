@@ -74,7 +74,7 @@ namespace VeganFit.UI
             if (txtKalori.Text == "Kaç Kalori")
             {
                 txtKalori.Text = "";
-                txtKalori.ForeColor = Color.SlateGray;
+                txtKalori.ForeColor = Color.Black;
             }
         }
 
@@ -83,7 +83,7 @@ namespace VeganFit.UI
             if (txtKalori.Text == "")
             {
                 txtKalori.Text = "Kaç Kalori";
-                txtKalori.ForeColor = Color.Black;
+                txtKalori.ForeColor = Color.SlateGray;
             }
         }
 
@@ -92,7 +92,7 @@ namespace VeganFit.UI
             if (txtPorsiyon.Text == "Porsiyon Giriniz")
             {
                 txtPorsiyon.Text = "";
-                txtPorsiyon.ForeColor = Color.SlateGray;
+                txtPorsiyon.ForeColor = Color.Black;
             }
         }
 
@@ -101,7 +101,7 @@ namespace VeganFit.UI
             if (txtPorsiyon.Text == "")
             {
                 txtPorsiyon.Text = "Porsiyon Giriniz";
-                txtPorsiyon.ForeColor = Color.Black;
+                txtPorsiyon.ForeColor = Color.SlateGray;
             }
         }
 
@@ -110,7 +110,7 @@ namespace VeganFit.UI
             if (txtAramaCubugu.Text == "Ürün Ara")
             {
                 txtAramaCubugu.Text = "";
-                txtAramaCubugu.ForeColor = Color.SlateGray;
+                txtAramaCubugu.ForeColor = Color.Black;
             }
         }
 
@@ -119,7 +119,7 @@ namespace VeganFit.UI
             if (txtAramaCubugu.Text == "")
             {
                 txtAramaCubugu.Text = "Ürün Ara";
-                txtAramaCubugu.ForeColor = Color.Black;
+                txtAramaCubugu.ForeColor = Color.SlateGray;
             }
         }
 
@@ -227,13 +227,13 @@ namespace VeganFit.UI
         }
 
 
-        private void txtAramaCubugu__TextChanged(object sender, EventArgs e)
-        {
-            VeganFitDbContext db = new VeganFitDbContext();
-            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text))
-                .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
-                .ToList();
-        }
+        //private void txtAramaCubugu_TextChanged(object sender, EventArgs e)
+        //{
+        //    VeganFitDbContext db = new VeganFitDbContext();
+        //    dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text))
+        //        .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
+        //        .ToList();
+        //}
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -242,5 +242,7 @@ namespace VeganFit.UI
                 .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
                 .ToList();
         }
+
+
     }
 }

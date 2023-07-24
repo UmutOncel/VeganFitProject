@@ -118,6 +118,7 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
+         
             //DataDetailDto dto = new DataDetailDto()
             //{
             //    ProductName = txtUrunAdi.Text,
