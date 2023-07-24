@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
             dgvSabah = new DataGridView();
             dgvOgle = new DataGridView();
             dgvAksam = new DataGridView();
@@ -41,7 +41,7 @@
             lblSabah = new Label();
             lblOgle = new Label();
             lblAksam = new Label();
-            dataGridView1 = new DataGridView();
+            dgvUrunlerListesi = new DataGridView();
             lblUrunListesi = new Label();
             btnUrunEkle = new Buttons.DesignButton();
             lblKapat = new Label();
@@ -50,17 +50,17 @@
             ((System.ComponentModel.ISupportInitialize)dgvSabah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUrunlerListesi).BeginInit();
             SuspendLayout();
             // 
             // dgvSabah
             // 
-            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle5.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
+            dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvSabah.BackgroundColor = Color.DarkSeaGreen;
             dgvSabah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSabah.Location = new Point(12, 32);
@@ -71,12 +71,12 @@
             // 
             // dgvOgle
             // 
-            dataGridViewCellStyle2.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle6.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             dgvOgle.BackgroundColor = Color.DarkSeaGreen;
             dgvOgle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOgle.Location = new Point(12, 270);
@@ -87,12 +87,12 @@
             // 
             // dgvAksam
             // 
-            dataGridViewCellStyle3.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle3.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle7.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
+            dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             dgvAksam.BackgroundColor = Color.DarkSeaGreen;
             dgvAksam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAksam.Location = new Point(12, 511);
@@ -185,21 +185,21 @@
             lblAksam.TabIndex = 7;
             lblAksam.Text = "AKŞAM";
             // 
-            // dataGridView1
+            // dgvUrunlerListesi
             // 
-            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.BackgroundColor = Color.DarkSeaGreen;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(591, 84);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(488, 581);
-            dataGridView1.TabIndex = 8;
+            dataGridViewCellStyle8.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle8.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
+            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dgvUrunlerListesi.BackgroundColor = Color.DarkSeaGreen;
+            dgvUrunlerListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUrunlerListesi.Location = new Point(591, 84);
+            dgvUrunlerListesi.Name = "dgvUrunlerListesi";
+            dgvUrunlerListesi.RowTemplate.Height = 25;
+            dgvUrunlerListesi.Size = new Size(488, 581);
+            dgvUrunlerListesi.TabIndex = 8;
             // 
             // lblUrunListesi
             // 
@@ -298,7 +298,7 @@
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(btnUrunEkle);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvUrunlerListesi);
             Controls.Add(lblAksam);
             Controls.Add(lblOgle);
             Controls.Add(lblUrunListesi);
@@ -317,7 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvSabah).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUrunlerListesi).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,7 +333,7 @@
         private Label lblSabah;
         private Label lblOgle;
         private Label lblAksam;
-        private DataGridView dataGridView1;
+        private DataGridView dgvUrunlerListesi;
         private Label lblUrunListesi;
         private Buttons.DesignButton btnUrunEkle;
         private Label lblKapat;
