@@ -9,28 +9,29 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Concrete.Context;
+using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.VMs.WeightVms;
 using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
     public partial class UserAddWeigthForm : Form
-    {        
-        public UserAddWeigthForm()
+    {
+        private readonly IWeightService _weightService;
+        private readonly WeightRepo _weightRepo;
+        public UserAddWeigthForm(IWeightService weightService, WeightRepo weightRepo)
         {
             InitializeComponent();
-           
+            _weightService = weightService;
+            _weightRepo = weightRepo;
         }
                
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
-
             VeganFitDbContext db = new VeganFitDbContext();
 
-
-
             dgvGunlukKiloTakibi.DataSource = db.Weights.Where(x => x.User.Email == ActiveUser.ActiveUserName)
-                
+
                 .Select(x => new
                 {
                     Tarih = x.DateOfRecord,
@@ -73,11 +74,6 @@ namespace VeganFit.UI
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            WeightCreateVm vm = new WeightCreateVm()
-            {
-                Weight=Convert.ToInt32(txtKilo.Text)                
-            };
-
             MessageBox.Show("Kayıt Başarılı");
         }
         
