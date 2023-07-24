@@ -8,7 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Context;
+using VeganFit.Entities;
 using VeganFit.Models.VMs.ProductVms;
 
 namespace VeganFit.UI
@@ -38,6 +41,8 @@ namespace VeganFit.UI
             txtKalori.ForeColor = Color.SlateGray;
             txtPorsiyon.ForeColor = Color.SlateGray;
             txtAramaCubugu.ForeColor = Color.SlateGray;
+
+            ListeyiYenile();
         }
 
 
@@ -116,8 +121,8 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            ProductCreateVm vm = new ProductCreateVm() 
-            { 
+            ProductCreateVm vm = new ProductCreateVm()
+            {
                 ProductName = txtUrunAdi.Text,
                 Calori = Convert.ToInt32(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
@@ -130,19 +135,43 @@ namespace VeganFit.UI
             ListeyiYenile();
         }
 
-        private void ListeyiYenile() 
+        private void ListeyiYenile()
         {
-            dgvUrunler.DataSource = _productRepo.GetAll(null);
+            dgvUrunler.DataSource = _productRepo.GetFilteredList(select: x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture }, where: x => x.State != State.Deleted);
         }
 
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);        //INDEX!!!!!!
+            Product product = _productRepo.GetFirstOrDefault(x => x.Id == id);
+            product.ProductName = txtUrunAdi.Text;
+            product.Calori = Convert.ToInt32(txtKalori.Text);
+            product.Serving = txtPorsiyon.Text;
+            product.Picture = pbxResim.Image.ToString();
+            _productRepo.Update(product);
+
+            //ProductUpdateVm vm = new ProductUpdateVm() 
+            //{
+            //    ProductName = txtUrunAdi.Text,
+            //    Calori = Convert.ToInt32(txtKalori.Text),
+            //    Serving = txtPorsiyon.Text,
+            //    Picture = pbxResim.Image.ToString()
+            //};
+            //var product = _service.Update(vm);
+
             MessageBox.Show("Ürün Başarıyla Güncellenmiştir");
+
+            ListeyiYenile();
         }
 
         private void btnUrunSil_Click(object sender, EventArgs e)
         {
+            int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);        //INDEX!!!!!!
+            var product = _service.Delete(id);
+
             MessageBox.Show("Ürün Başarıyla Silinmiştir");
+
+            ListeyiYenile();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -168,6 +197,29 @@ namespace VeganFit.UI
                 string resimAdi = ofd.FileName;
                 pbxResim.Image = Image.FromFile(resimAdi);
             }
+        }
+
+        private void dgvUrunler_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
+                txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
+                txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
+                pbxResim.Image = Image.FromFile(dgvUrunler.SelectedRows[0].Cells["Picture"].Value.ToString());
+            }
+            catch (Exception u)
+            {
+                MessageBox.Show(u.Message);
+            }
+        }
+
+        private void txtAramaCubugu__TextChanged(object sender, EventArgs e)
+        {
+            VeganFitDbContext db = new VeganFitDbContext();
+            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtUrunAdi.Text))
+                .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
+                .ToList();
         }
     }
 }
