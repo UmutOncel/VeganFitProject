@@ -7,16 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Models.VMs.FeedbackVms;
 
 namespace VeganFit.UI
 {
     public partial class UserFeedbackForm : Form
     {
-        public UserFeedbackForm()
+        //private readonly IFeedbackService _feedbackService;
+        public UserFeedbackForm(/*IFeedbackService feedbackService*/)
         {
             InitializeComponent();
-
+           // _feedbackService = feedbackService;
         }
+               
         private void UserFeedbackForm_Load(object sender, EventArgs e)
         {
             txtGorusOneri.Text = "Görüş ve Öneriniz";
@@ -56,7 +60,10 @@ namespace VeganFit.UI
 
         private void btnGonder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
+          FeedbackCreateVm feedbackCreateVm=new FeedbackCreateVm();
+            feedbackCreateVm.Message = txtGorusOneri.Text;
+
+           MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
         }
     }
 }

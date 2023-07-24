@@ -5,5 +5,7 @@
         public int Weight { get; set; }
 
         public DateTime RecordDate => DateTime.Now;
+
+       
     }
 }

@@ -146,7 +146,6 @@
             btnResimEkle.BorderColor = Color.DarkGreen;
             btnResimEkle.BorderRadius = 15;
             btnResimEkle.BorderSize = 2;
-            btnResimEkle.Enabled = false;
             btnResimEkle.FlatAppearance.BorderSize = 0;
             btnResimEkle.FlatStyle = FlatStyle.Flat;
             btnResimEkle.ForeColor = Color.Black;
@@ -157,6 +156,7 @@
             btnResimEkle.Text = "Resim Ekle";
             btnResimEkle.TextColor = Color.Black;
             btnResimEkle.UseVisualStyleBackColor = false;
+            btnResimEkle.Click += btnResimEkle_Click;
             // 
             // lblKapat
             // 

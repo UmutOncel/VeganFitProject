@@ -69,5 +69,9 @@ namespace VeganFit.UI
             MessageBox.Show("Başarıyla Silinmiştir");
         }
 
+        private void btnUrunEkle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

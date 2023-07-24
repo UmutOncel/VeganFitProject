@@ -144,6 +144,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "UserDataForm";
             Text = "UserDataForm";
+            Load += UserDataForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvGunlukKiloTakibi).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvGunSonuKalori).EndInit();
             ResumeLayout(false);
