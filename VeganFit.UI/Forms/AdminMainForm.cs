@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.DAL.Concrete.Context;
 
 namespace VeganFit.UI
 {
@@ -18,7 +19,11 @@ namespace VeganFit.UI
         {
             InitializeComponent();
         }
-
+        private void AdminMainForm_Load(object sender, EventArgs e)
+        {
+            VeganFitDbContext db = new VeganFitDbContext();
+            lblKayitliKullaniciSayisi.Text = db.Users.Select(x => x.Email).Distinct().Count().ToString();
+        }
         private void pnlUstMenu_MouseDown(object sender, MouseEventArgs e)
         {
             mov = true;

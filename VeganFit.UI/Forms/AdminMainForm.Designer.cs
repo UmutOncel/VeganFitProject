@@ -265,6 +265,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AdminMainForm";
             FormClosing += AdminMainForm_FormClosing;
+            Load += AdminMainForm_Load;
             pnlMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbxLogo).EndInit();
             pnlUstMenu.ResumeLayout(false);

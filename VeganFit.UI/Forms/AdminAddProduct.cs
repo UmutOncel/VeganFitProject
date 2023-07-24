@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +22,8 @@ namespace VeganFit.UI
     {
         private readonly IProductService _service;
         private readonly IProductRepo _productRepo;
+
+        OpenFileDialog ofd = new OpenFileDialog();
 
         public AdminAddProduct(IProductService productService, IProductRepo productRepo)
         {
@@ -126,7 +130,7 @@ namespace VeganFit.UI
                 ProductName = txtUrunAdi.Text,
                 Calori = Convert.ToInt32(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
-                Picture = pbxResim.Image.ToString()
+                Picture = imageToByteArray(pbxResim.Image)
             };
             var product = _service.Create(vm);
 
@@ -142,26 +146,32 @@ namespace VeganFit.UI
 
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
         {
+            var byteImaeg = Convert.ToByte(pbxResim.Image);
             int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);        //INDEX!!!!!!
             Product product = _productRepo.GetFirstOrDefault(x => x.Id == id);
             product.ProductName = txtUrunAdi.Text;
             product.Calori = Convert.ToInt32(txtKalori.Text);
             product.Serving = txtPorsiyon.Text;
-            product.Picture = pbxResim.Image.ToString();
+            product.Picture = imageToByteArray(pbxResim.Image);
             _productRepo.Update(product);
 
-            //ProductUpdateVm vm = new ProductUpdateVm() 
-            //{
-            //    ProductName = txtUrunAdi.Text,
-            //    Calori = Convert.ToInt32(txtKalori.Text),
-            //    Serving = txtPorsiyon.Text,
-            //    Picture = pbxResim.Image.ToString()
-            //};
-            //var product = _service.Update(vm);
 
             MessageBox.Show("Ürün Başarıyla Güncellenmiştir");
 
             ListeyiYenile();
+        }
+
+        public byte[] imageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
+        public Image byteArrayToImage(byte[] byteArrayIn)
+        {
+            MemoryStream ms = new MemoryStream(byteArrayIn);
+            Image returnImage = Image.FromStream(ms);
+            return returnImage;
         }
 
         private void btnUrunSil_Click(object sender, EventArgs e)
@@ -191,7 +201,7 @@ namespace VeganFit.UI
 
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
+
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string resimAdi = ofd.FileName;
@@ -201,12 +211,14 @@ namespace VeganFit.UI
 
         private void dgvUrunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
                 txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
                 txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
-                pbxResim.Image = Image.FromFile(dgvUrunler.SelectedRows[0].Cells["Picture"].Value.ToString());
+                byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
+                pbxResim.Image = byteArrayToImage(image);
             }
             catch (Exception u)
             {
@@ -214,10 +226,19 @@ namespace VeganFit.UI
             }
         }
 
+
         private void txtAramaCubugu__TextChanged(object sender, EventArgs e)
         {
             VeganFitDbContext db = new VeganFitDbContext();
-            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtUrunAdi.Text))
+            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text))
+                .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
+                .ToList();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            VeganFitDbContext db = new VeganFitDbContext();
+            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(textBox1.Text))
                 .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
                 .ToList();
         }

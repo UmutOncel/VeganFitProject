@@ -15,7 +15,7 @@ namespace VeganFit.Entities
         public string ProductName { get; set; }
         public int Calori { get; set; }
         public string? Serving { get; set; }
-        public string? Picture { get; set; }
+        public byte[] Picture { get; set; }
         public virtual ICollection<Data> Datas { get; set; }
         public Product()
         {

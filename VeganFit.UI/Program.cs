@@ -18,7 +18,7 @@ namespace VeganFit.UI
             var form = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
             var form1 = EFContextForm.EFContextForm.ConfigureServices<AdminAddProduct>();
 
-            Application.Run(form);
+            Application.Run(new AdminMainForm());
         }
     }
 }
