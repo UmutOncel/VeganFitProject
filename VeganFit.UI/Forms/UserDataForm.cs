@@ -21,29 +21,29 @@ namespace VeganFit.UI
 {
     public partial class UserDataForm : Form
     {
-        private readonly IWeightRepo _weightRepo;
-
         public UserDataForm(IWeightRepo weightRepo)
         {
             InitializeComponent();
-            _weightRepo = weightRepo;
         }
 
 
         private void UserDataForm_Load(object sender, EventArgs e)
         {
-            //dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserWeight, x.DateOfRecord }, where: x => x.State != State.Deleted);
-            
             VeganFitDbContext db = new VeganFitDbContext();
             
-
-            
             dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.User.Email == ActiveUser.ActiveUserName)
-                .GroupBy(x => new { x.UserId, x.Datetime })
+                .GroupBy(x => new { x.User.Email, x.Datetime })
                 .Select(x => new
                 {
                     Tarih = x.Key.Datetime,
                     ToplamKalori = x.Sum(x => x.Calori)
+                }).ToList();
+
+            dgvGunlukKiloTakibi.DataSource = db.Weights.Where(x => x.User.Email == ActiveUser.ActiveUserName)
+                .Select(x => new
+                {
+                    Tarih = x.DateOfRecord,
+                    Kilo = x.UserWeight
                 }).ToList();
         }
 
