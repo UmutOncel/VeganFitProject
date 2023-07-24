@@ -8,39 +8,44 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Core.Enums;
+using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Context;
+using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.DTOs.WeigthDtos;
+using VeganFit.Models.VMs.UserVms;
 using VeganFit.Models.VMs.WeightVms;
 
 namespace VeganFit.UI
 {
     public partial class UserDataForm : Form
     {
-        private readonly IDataService _service;
-        
-        public UserDataForm(IDataService dataService)
+        private readonly IWeightRepo _weightRepo;
+
+        public UserDataForm(IWeightRepo weightRepo)
         {
             InitializeComponent();
-            _service = dataService;
+            _weightRepo = weightRepo;
         }
 
         public UserDataForm()
         {
         }
 
-        private void ListedFill()
-        {
-            WeightCreateVm weigthVm = new WeightCreateVm();
-            dgvGunlukKiloTakibi.DataSource = weigthVm.ToString().ToList();
-
-            dgvGunSonuKalori.DataSource = _service.GetDetails().Data;
-           
-
-        }
         private void UserDataForm_Load(object sender, EventArgs e)
         {
-            ListedFill();
-        }
+            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserWeight, x.DateOfRecord }, where: x => x.State != State.Deleted);
 
+            VeganFitDbContext db = new VeganFitDbContext();
+            LoginVm vm = new LoginVm();
+            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.User.Email == vm.Email)
+                .GroupBy(x => new { x.UserId, x.Datetime })
+                .Select(x => new
+                {
+                    Tarih = x.Key.Datetime,
+                    ToplamKalori = x.Sum(x => x.Calori)
+                }).ToList();
+        }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
