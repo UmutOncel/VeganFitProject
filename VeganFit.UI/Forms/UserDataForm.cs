@@ -15,6 +15,7 @@ using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.DTOs.WeigthDtos;
 using VeganFit.Models.VMs.UserVms;
 using VeganFit.Models.VMs.WeightVms;
+using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
@@ -28,17 +29,16 @@ namespace VeganFit.UI
             _weightRepo = weightRepo;
         }
 
-        public UserDataForm()
-        {
-        }
 
         private void UserDataForm_Load(object sender, EventArgs e)
         {
-            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserWeight, x.DateOfRecord }, where: x => x.State != State.Deleted);
-
+            //dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserWeight, x.DateOfRecord }, where: x => x.State != State.Deleted);
+            
             VeganFitDbContext db = new VeganFitDbContext();
-            LoginVm vm = new LoginVm();
-            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.User.Email == vm.Email)
+            
+
+            
+            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.User.Email == ActiveUser.ActiveUserName)
                 .GroupBy(x => new { x.UserId, x.Datetime })
                 .Select(x => new
                 {

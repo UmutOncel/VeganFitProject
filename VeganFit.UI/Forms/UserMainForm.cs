@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.DAL.Abstract;
 
 namespace VeganFit.UI
 {
@@ -14,6 +15,8 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
+        private readonly IWeightRepo _weightRepo;
+
         public UserMainForm()
         {
             InitializeComponent();
@@ -87,7 +90,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserDataForm());
+            openChildFormInPanel(new UserDataForm(_weightRepo));
         }
 
         private void btnKiloTakip_Click(object sender, EventArgs e)

@@ -237,10 +237,10 @@ namespace VeganFit.UI
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            VeganFitDbContext db = new VeganFitDbContext();
-            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(textBox1.Text))
-                .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
-                .ToList();
+            //VeganFitDbContext db = new VeganFitDbContext();
+            //dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(textBox1.Text))
+            //    .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
+            //    .ToList();
         }
 
 
