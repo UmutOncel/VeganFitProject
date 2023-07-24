@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeganFit.DAL.Concrete.Context;
 
@@ -11,9 +12,10 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    partial class VeganFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230724134032_Four")]
+    partial class Four
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -208,7 +210,8 @@ namespace VeganFit.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<DateTime>("BirthDate")
+                    b.Property<DateTime?>("Birthdate")
+                        .IsRequired()
                         .HasColumnType("datetime2");
 
                     b.Property<string>("CreatedBy")
@@ -262,8 +265,8 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 24, 18, 38, 14, 212, DateTimeKind.Local).AddTicks(9847),
+                            Birthdate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedDate = new DateTime(2023, 7, 24, 16, 40, 31, 678, DateTimeKind.Local).AddTicks(4202),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",

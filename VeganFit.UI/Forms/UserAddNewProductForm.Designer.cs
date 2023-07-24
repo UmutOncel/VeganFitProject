@@ -46,7 +46,6 @@
             btnUrunEkle.BorderColor = Color.DarkGreen;
             btnUrunEkle.BorderRadius = 15;
             btnUrunEkle.BorderSize = 2;
-            btnUrunEkle.Enabled = false;
             btnUrunEkle.FlatAppearance.BorderSize = 0;
             btnUrunEkle.FlatStyle = FlatStyle.Flat;
             btnUrunEkle.ForeColor = Color.Black;

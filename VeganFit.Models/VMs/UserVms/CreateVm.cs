@@ -1,4 +1,6 @@
-﻿namespace VeganFit.Models.VMs.UserVms
+﻿using VeganFit.Core.Enums;
+
+namespace VeganFit.Models.VMs.UserVms
 {
     public class CreateVm
     {

@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Models.VMs.UserVms;
+using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
@@ -16,10 +18,11 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
-        private readonly IUserService _userService;
-        public NewRegisterForm()
+        private readonly  IUserService _userService;
+        public NewRegisterForm(IUserService userService)
         {
             InitializeComponent();
+            _userService = userService;
 
         }
 
@@ -159,23 +162,23 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
-            //var user = _userService.Create(txtEMail.Text, txtSifre.Text);
+            
+            CreateVm createVm = new CreateVm()
+            {
+                FirstName= txtAd.Text, LastName=txtSoyad.Text,Email=txtEMail.Text,BirthDate=dtpDogumTatihi.Value,Password=txtSifre.Text,PasswordConfirm = txtSifreyiTekrarGirin.Text
+            };
+            var exist =_userService.Create(createVm);
+           
+            if (exist != null)
+            {
+                MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
+                this.Close();
+                LoginForm loginForm = new LoginForm(_userService);
+                loginForm.ShowDialog();
 
-            //if(user != null)
-            //{
-            //    MessageBox.Show("Kayıt Başarılı");
-            //    LoginForm loginForm = new LoginForm(_userService);
-            //    loginForm.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Test");
-            //}
-
+            }
             
 
-            
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

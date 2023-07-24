@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
 
 namespace VeganFit.UI
 {
@@ -15,14 +16,17 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
-        public WarningForm()
+        private readonly IUserService _userService;
+        public WarningForm(IUserService userService)
         {
             InitializeComponent();
+            _userService = userService;
+
 
         }
         private void btnIlerle_Click(object sender, EventArgs e)
         {
-            NewRegisterForm newRegisterForm = new NewRegisterForm();
+            NewRegisterForm newRegisterForm = new NewRegisterForm(_userService);
             newRegisterForm.Show();
             this.Close();
         }

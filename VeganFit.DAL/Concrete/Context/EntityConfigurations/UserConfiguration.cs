@@ -39,7 +39,7 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
             builder.HasIndex(x => x.Email)
                 .IsUnique();
 
-            builder.Property(x => x.Birthdate)
+            builder.Property(x => x.BirthDate)
                 .IsRequired();
 
             builder.Property(x => x.Role)
@@ -51,7 +51,7 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                                        Lastname = "Öncel",
                                        Password = "UUuu1991**",
                                        Email = "admin@gmail.com",
-                                       Birthdate = DateTime.Parse("11/04/1991"),
+                                       BirthDate = DateTime.Parse("11/04/1991"),
                                        Role = Role.Admin,
                                        CreatedDate = DateTime.Now,
                                        State = State.Created });
