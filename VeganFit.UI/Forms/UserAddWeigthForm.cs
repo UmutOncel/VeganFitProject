@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.VMs.WeightVms;
@@ -17,26 +18,20 @@ namespace VeganFit.UI
 {
     public partial class UserAddWeigthForm : Form
     {
-        private readonly IWeightService _weightService;
-        private readonly WeightRepo _weightRepo;
-        public UserAddWeigthForm(IWeightService weightService, WeightRepo weightRepo)
+        private readonly IWeightService _service;
+        private readonly IWeightRepo _weightRepo;
+
+        public UserAddWeigthForm(IWeightService weightService, IWeightRepo weightRepo)
         {
             InitializeComponent();
-            _weightService = weightService;
+           
+            _service = weightService;
             _weightRepo = weightRepo;
         }
                
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
-            VeganFitDbContext db = new VeganFitDbContext();
-
-            dgvGunlukKiloTakibi.DataSource = db.Weights.Where(x => x.User.Email == ActiveUser.ActiveUserName)
-
-                .Select(x => new
-                {
-                    Tarih = x.DateOfRecord,
-                    Kilo = x.UserWeight
-                }).ToList();
+            ListeyiYenile();
 
             txtKilo.Text = "Kilonuzu Giriniz";
             txtKilo.ForeColor = Color.SlateGray;
@@ -74,8 +69,26 @@ namespace VeganFit.UI
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kayıt Başarılı");
+            bool varMi = _weightRepo.Any(x => x.DateOfRecord == dtpTarih.Value);
+            if (!varMi)
+            {
+                WeightCreateVm vm = new WeightCreateVm()
+                {
+                    Weight = Convert.ToInt32(txtKilo.Text)
+                };
+                var weight = _service.Create(vm);
+                MessageBox.Show("Kayıt Başarılı");
+                ListeyiYenile();
+            }
+            else
+            {
+                MessageBox.Show("Seçilen tarihte kaydınız bulunmaktadır!");
+            }
         }
-        
+
+        private void ListeyiYenile()
+        {
+            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.DateOfRecord, x.UserWeight }, where: x => x.User.Email == ActiveUser.ActiveUserName);
+        }
     }
 }
