@@ -36,6 +36,8 @@
             txtPorsiyon = new TextBoxs.TextBox.DesignTextBox();
             txtKalori = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
+            cbxOgunSec = new ComboBox();
+            lblOgun = new Label();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
             // 
@@ -195,12 +197,31 @@
             txtUrunAdi.Enter += txtUrunAdi_Enter;
             txtUrunAdi.Leave += txtUrunAdi_Leave;
             // 
+            // cbxOgunSec
+            // 
+            cbxOgunSec.FormattingEnabled = true;
+            cbxOgunSec.Location = new Point(12, 30);
+            cbxOgunSec.Name = "cbxOgunSec";
+            cbxOgunSec.Size = new Size(169, 22);
+            cbxOgunSec.TabIndex = 30;
+            // 
+            // lblOgun
+            // 
+            lblOgun.AutoSize = true;
+            lblOgun.Location = new Point(12, 5);
+            lblOgun.Name = "lblOgun";
+            lblOgun.Size = new Size(98, 14);
+            lblOgun.TabIndex = 31;
+            lblOgun.Text = "Öğün Seçiniz:";
+            // 
             // UserSetProductForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblOgun);
+            Controls.Add(cbxOgunSec);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(pbxResim);
@@ -229,5 +250,7 @@
         private TextBoxs.TextBox.DesignTextBox txtPorsiyon;
         private TextBoxs.TextBox.DesignTextBox txtKalori;
         private TextBoxs.TextBox.DesignTextBox txtUrunAdi;
+        private ComboBox cbxOgunSec;
+        private Label lblOgun;
     }
 }

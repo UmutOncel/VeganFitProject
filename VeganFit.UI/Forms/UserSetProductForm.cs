@@ -18,7 +18,7 @@ namespace VeganFit.UI
 {
     public partial class UserSetProductForm : Form
     {
-        
+
         //private readonly IDataService _idataService;
         //private readonly DataRepo _dataRepo;
         public UserSetProductForm(IDataService idataService, DataRepo dataRepo)
@@ -118,7 +118,7 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-         
+
             //DataDetailDto dto = new DataDetailDto()
             //{
             //    ProductName = txtUrunAdi.Text,
@@ -132,6 +132,6 @@ namespace VeganFit.UI
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
 
-       
+
     }
 }
