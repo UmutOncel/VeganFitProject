@@ -15,8 +15,10 @@ namespace VeganFit.UI
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            
-            Application.Run(UserAddMealForm());
+            var form = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
+            var form1 = EFContextForm.EFContextForm.ConfigureServices<AdminAddProduct>();
+
+            Application.Run(form);
         }
     }
 }

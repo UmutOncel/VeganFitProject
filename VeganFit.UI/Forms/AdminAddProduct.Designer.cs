@@ -71,6 +71,7 @@
             dgvUrunler.RowTemplate.Height = 25;
             dgvUrunler.Size = new Size(535, 576);
             dgvUrunler.TabIndex = 4;
+            dgvUrunler.CellClick += dgvUrunler_CellClick;
             // 
             // txtAramaCubugu
             // 
@@ -92,6 +93,7 @@
             txtAramaCubugu.TabIndex = 2;
             txtAramaCubugu.TabStop = false;
             txtAramaCubugu.UnderlinedStyle = false;
+            txtAramaCubugu._TextChanged += txtAramaCubugu__TextChanged;
             txtAramaCubugu.Enter += txtAramaCubugu_Enter;
             txtAramaCubugu.Leave += txtAramaCubugu_Leave;
             // 

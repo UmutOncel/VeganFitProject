@@ -121,6 +121,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "AdminFeedbackForm";
             Text = "AdminFeedbackForm";
+            Load += AdminFeedbackForm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvGorusOneri).EndInit();
             ResumeLayout(false);
             PerformLayout();

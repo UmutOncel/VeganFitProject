@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
+using VeganFit.Entities;
 using VeganFit.Models.DTOs.UserDtos;
 using VeganFit.Models.VMs.UserVms;
 using VeganFit.Shared;
@@ -18,24 +19,28 @@ namespace VeganFit.Bll.Concrete.Services
             _userRepo = userRepo;
         }
 
-        //public ResultService<CreateVm> Create(CreateVm createVm)
-        //{
-        //    ResultService<UserCreateDto> result = new ResultService<UserCreateDto>();
+        public ResultService<UserCreateDto> Create(CreateVm createVm)
+        {
+            ResultService<UserCreateDto> result = new ResultService<UserCreateDto>();
+
+            UserCreateDto userCreateDto = _mapper.Map<UserCreateDto>(createVm);
+
+            User newUser = _mapper.Map<User>(userCreateDto);
             
+            var addedUser = _userRepo.Create(newUser);
 
-        //    //if (user == null)
-        //    //{
-        //    //    var added = new CreateVm { Email = user.Email, FirstName = user.Firstname, LastName = user.Lastname, BirthDate = user.Birthdate, Password = user.Password };
-        //    //    result.Data = added;
-        //    //}
-        //    //else
-        //    //{
-        //    //    result.AddError(ErrorType.BadRequest, "Bu kullanıcı kayıtlı..");
-        //    //}
+            if (addedUser != null)
+            {
+                result.Data = userCreateDto;
+            }
+            else
+            {
+                result.AddError(ErrorType.BadRequest, "Bir şeyler yolunda gitmedi. Ekleme Başarısız.");
+            }
 
-
-        //    //return result;
-        //}
+            return result;
+            
+        }
 
         public ResultService<LoginVm> Login(string username, string password)
         {

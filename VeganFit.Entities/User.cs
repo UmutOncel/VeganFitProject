@@ -17,7 +17,7 @@ namespace VeganFit.Entities
         public string Lastname { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTime BirthDate { get; set; }
         public Role Role { get; set; }
         public virtual ICollection<Feedback> Feedbacks { get; set; }
         public virtual ICollection<Weight> Weights { get; set; }

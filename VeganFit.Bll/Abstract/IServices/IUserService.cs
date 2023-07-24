@@ -1,4 +1,5 @@
-﻿using VeganFit.Models.VMs.UserVms;
+﻿using VeganFit.Models.DTOs.UserDtos;
+using VeganFit.Models.VMs.UserVms;
 using VeganFit.Shared;
 
 namespace VeganFit.Bll.Abstract.IServices
@@ -7,6 +8,6 @@ namespace VeganFit.Bll.Abstract.IServices
     {
         ResultService<LoginVm> Login(string username, string password);
 
-        //ResultService<CreateVm> Create(CreateVm createVm);
+        ResultService<UserCreateDto> Create(CreateVm createVm);
     }
 }

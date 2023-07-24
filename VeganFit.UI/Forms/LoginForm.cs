@@ -124,7 +124,7 @@ namespace VeganFit.UI
 
         private void btnUyeOl_Click(object sender, EventArgs e)
         {
-            WarningForm warningForm = new WarningForm();
+            WarningForm warningForm = new WarningForm(_userService);
             warningForm.Show();
             this.Hide();
         }
