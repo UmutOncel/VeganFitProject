@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VeganFit.DAL.Migrations
 {
-    public partial class Fİrst : Migration
+    public partial class Twelve : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,15 +15,15 @@ namespace VeganFit.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Calori = table.Column<int>(type: "int", nullable: false),
-                    Serving = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Picture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Serving = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    Picture = table.Column<byte[]>(type: "Image", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    State = table.Column<int>(type: "int", nullable: false)
+                    State = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -39,7 +39,7 @@ namespace VeganFit.DAL.Migrations
                     ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Calori = table.Column<int>(type: "int", nullable: false),
                     Serving = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Picture = table.Column<byte[]>(type: "varbinary(max)", nullable: true),
+                    Picture = table.Column<byte[]>(type: "Image", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -61,7 +61,7 @@ namespace VeganFit.DAL.Migrations
                     Lastname = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
-                    Birthdate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -168,8 +168,8 @@ namespace VeganFit.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "Users",
-                columns: new[] { "Id", "Birthdate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 24, 10, 17, 25, 34, DateTimeKind.Local).AddTicks(7040), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
+                columns: new[] { "Id", "BirthDate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
+                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 24, 20, 54, 14, 958, DateTimeKind.Local).AddTicks(6825), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Datas_OptionalProductId",

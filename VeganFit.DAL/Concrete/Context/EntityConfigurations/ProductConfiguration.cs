@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                 .HasMaxLength(100)
                 .IsRequired(false);
 
-            builder.Property(x => x.Picture)
+            builder.Property(x => x.Picture).HasColumnType("Image")
                 .IsRequired(false);
         }
     }

@@ -7,7 +7,7 @@
 
         public DateTime RecordDate { get; set; }
 
-        public string Picture { get; set; }
+        public byte[] Picture { get; set; }
 
         public string Serving { get; set; }
 

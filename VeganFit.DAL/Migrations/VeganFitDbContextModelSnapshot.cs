@@ -133,17 +133,20 @@ namespace VeganFit.DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<byte[]>("Picture")
-                        .HasColumnType("varbinary(max)");
+                        .HasColumnType("Image");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Serving")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("State")
-                        .HasColumnType("int");
+                    b.Property<string>("State")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -173,8 +176,8 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Picture")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<byte[]>("Picture")
+                        .HasColumnType("Image");
 
                     b.Property<string>("ProductName")
                         .IsRequired()
@@ -263,7 +266,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 24, 18, 38, 14, 212, DateTimeKind.Local).AddTicks(9847),
+                            CreatedDate = new DateTime(2023, 7, 24, 20, 54, 14, 958, DateTimeKind.Local).AddTicks(6825),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
