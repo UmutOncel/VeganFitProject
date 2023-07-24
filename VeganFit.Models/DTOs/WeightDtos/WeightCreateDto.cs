@@ -9,5 +9,6 @@ namespace VeganFit.Models.DTOs.WeigthDtos
         public State State => State.Created;
 
         public string CreatedBy { get; set; }
+       
     }
 }

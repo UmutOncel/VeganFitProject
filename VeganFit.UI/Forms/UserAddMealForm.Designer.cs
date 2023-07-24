@@ -227,6 +227,7 @@
             btnUrunEkle.Text = "Yeni Ürün Ekle";
             btnUrunEkle.TextColor = Color.Black;
             btnUrunEkle.UseVisualStyleBackColor = false;
+            btnUrunEkle.Click += btnUrunEkle_Click;
             // 
             // lblKapat
             // 

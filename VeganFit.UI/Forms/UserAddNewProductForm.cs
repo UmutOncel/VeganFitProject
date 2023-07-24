@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Models.DTOs.ProductDtos;
+using VeganFit.Models.VMs.ProductVms;
 
 namespace VeganFit.UI
 {
     public partial class UserAddNewProductForm : Form
     {
+        string _fileName, _sourceFileName, _targetFileName;
         public UserAddNewProductForm()
         {
             InitializeComponent();
@@ -96,10 +99,34 @@ namespace VeganFit.UI
         {
             lblKapat.Visible = false;
         }
+        private void btnResimEkle_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                _fileName = openFileDialog.FileName;
+
+                _sourceFileName = openFileDialog.FileName;
+                _targetFileName = Path.Combine(Application.StartupPath, "ImagesFile");
+                File.Copy(_sourceFileName, _targetFileName, true);
+
+                pbxResim.Image = Image.FromFile(_targetFileName);
+            }
+        }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
+            ProductBaseVm vm = new ProductBaseVm()
+            {
+                ProductName = txtUrunAdi.Text,
+                Calori = Convert.ToInt32(txtKalori.Text),
+                Serving = txtPorsiyon.Text,
+                Picture = pbxResim.Image.ToString()
+            };
+
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
+       
+       
     }
 }
