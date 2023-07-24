@@ -27,9 +27,9 @@ namespace VeganFit.Bll.Concrete.Mapper
             CreateMap<OptionalProduct,OptionalProductCreateDto>().ReverseMap();
             CreateMap<OptionalProductCreateDto,OptionalProductCreateVm>().ReverseMap();
 
-            CreateMap<User,UserCreateDto>().ReverseMap();
-            CreateMap<UserCreateDto,AdminCreateDto>().ReverseMap();
-            CreateMap<UserCreateDto, CreateVm>().ReverseMap();
+            //CreateMap<User,UserCreateDto>().ReverseMap();
+            //CreateMap<UserCreateDto,AdminCreateDto>().ReverseMap();
+            //CreateMap<UserCreateDto, CreateVm>().ReverseMap();
 
             CreateMap<Feedback,FeedbackCreateDto>().ReverseMap();
             CreateMap<FeedbackCreateDto,FeedbackCreateVm>().ReverseMap();
@@ -38,6 +38,10 @@ namespace VeganFit.Bll.Concrete.Mapper
             CreateMap<WeightCreateDto,WeightCreateVm>().ReverseMap();  
             
             CreateMap<Data,DataDetailDto>().ReverseMap();
+
+            CreateMap<User,UserCreateDto>().ReverseMap();
+            CreateMap<User,LoginVm>().ReverseMap();
+            CreateMap<UserCreateDto, CreateVm>().ReverseMap();
            
 
             

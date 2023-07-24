@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
+using VeganFit.UI.LoginUser;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VeganFit.UI
@@ -17,9 +19,12 @@ namespace VeganFit.UI
         bool mov;
         int movX, movY;
 
-        public LoginForm()
+        private readonly IUserService _userService;
+
+        public LoginForm(IUserService userService)
         {
             InitializeComponent();
+            _userService = userService;
 
         }
         private void pnlLoginUI_MouseDown(object sender, MouseEventArgs e)
@@ -139,9 +144,37 @@ namespace VeganFit.UI
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            AdminMainForm adminMainForm = new AdminMainForm();
-            adminMainForm.Show();
-            this.Hide();
+            var login = _userService.Login(txtKullaniciAdi.Text,txtSifre.Text);
+
+            if (login.Data == null)
+            {
+                MessageBox.Show("Lütfen Bilgilerinizi Kontrol Edin");
+            }
+            
+            bool isAdmin = login.Data.Role == Core.Enums.Role.Admin;
+
+            ActiveUser.Role = login.Data.Role;
+            ActiveUser.ActiveUserName = login.Data.Email;
+
+            
+
+            if (isAdmin)
+            {
+                AdminMainForm adminMainForm = new AdminMainForm();
+                adminMainForm.Show();
+                this.Hide(); // Close olabilir mi ??
+            }
+            else
+            {
+                UserMainForm userMainForm = new UserMainForm();
+                userMainForm.Show();
+                this.Hide();
+            }
+            
+
+
+
+            
         }
     }
 }

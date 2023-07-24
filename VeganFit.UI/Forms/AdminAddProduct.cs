@@ -7,14 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
+using VeganFit.DAL.Abstract;
+using VeganFit.Models.VMs.ProductVms;
 
 namespace VeganFit.UI
 {
     public partial class AdminAddProduct : Form
     {
-        public AdminAddProduct()
+        private readonly IProductService _service;
+        private readonly IProductRepo _productRepo;
+
+        public AdminAddProduct(IProductService productService, IProductRepo productRepo)
         {
             InitializeComponent();
+
+            _service = productService;
+            _productRepo = productRepo;
         }
 
         private void AdminAddProduct_Load(object sender, EventArgs e)
@@ -107,7 +116,23 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
+            ProductCreateVm vm = new ProductCreateVm() 
+            { 
+                ProductName = txtUrunAdi.Text,
+                Calori = Convert.ToInt32(txtKalori.Text),
+                Serving = txtPorsiyon.Text,
+                Picture = pbxResim.Image.ToString()
+            };
+            var product = _service.Create(vm);
+
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
+
+            ListeyiYenile();
+        }
+
+        private void ListeyiYenile() 
+        {
+            dgvUrunler.DataSource = _productRepo.GetAll(null);
         }
 
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
@@ -137,7 +162,12 @@ namespace VeganFit.UI
 
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                string resimAdi = ofd.FileName;
+                pbxResim.Image = Image.FromFile(resimAdi);
+            }
         }
     }
 }

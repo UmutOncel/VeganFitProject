@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
 
 namespace VeganFit.UI
 {
@@ -15,6 +16,7 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
+        private readonly IUserService _userService;
         public NewRegisterForm()
         {
             InitializeComponent();
@@ -157,11 +159,23 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Kayıt Başarılı");
+            //var user = _userService.Create(txtEMail.Text, txtSifre.Text);
 
-            LoginForm loginForm = new LoginForm();
-            loginForm.ShowDialog();
-            this.Close();
+            //if(user != null)
+            //{
+            //    MessageBox.Show("Kayıt Başarılı");
+            //    LoginForm loginForm = new LoginForm(_userService);
+            //    loginForm.ShowDialog();
+            //    this.Close();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Test");
+            //}
+
+            
+
+            
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

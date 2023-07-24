@@ -32,7 +32,7 @@ namespace VeganFit.Bll.Concrete.Services
             }
             else
             {
-                result.AddError(ErrorType.BadRequest, "Ekleme işleminde hata");
+                result.AddError(ErrorType.BadRequest, "Ekleme işleminde hata..");
             }
             
             return result;
