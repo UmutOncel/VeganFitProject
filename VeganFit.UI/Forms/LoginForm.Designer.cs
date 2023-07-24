@@ -200,7 +200,7 @@
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
-            txtSifre.PasswordChar = false;
+            txtSifre.PasswordChar = true;
             txtSifre.PlaceholderColor = Color.DarkGray;
             txtSifre.PlaceholderText = "";
             txtSifre.Size = new Size(250, 29);

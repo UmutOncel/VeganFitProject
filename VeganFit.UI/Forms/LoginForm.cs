@@ -144,19 +144,19 @@ namespace VeganFit.UI
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            var login = _userService.Login(txtKullaniciAdi.Text,txtSifre.Text);
+            var login = _userService.Login(txtKullaniciAdi.Text, txtSifre.Text);
 
             if (login.Data == null)
             {
                 MessageBox.Show("Lütfen Bilgilerinizi Kontrol Edin");
             }
-            
+
             bool isAdmin = login.Data.Role == Core.Enums.Role.Admin;
 
             ActiveUser.Role = login.Data.Role;
             ActiveUser.ActiveUserName = login.Data.Email;
 
-            
+
 
             if (isAdmin)
             {
@@ -170,11 +170,13 @@ namespace VeganFit.UI
                 userMainForm.Show();
                 this.Hide();
             }
-            
 
 
 
-            
+
+
         }
+
+
     }
 }
