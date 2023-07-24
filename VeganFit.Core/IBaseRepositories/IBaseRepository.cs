@@ -54,7 +54,7 @@ namespace VeganFit.Core.IBaseRepositories
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        ICollection<TEntity>? GetAll(Expression<Func<TEntity, bool>> filter);
+        ICollection<TEntity>? GetAll(Expression<Func<TEntity, bool>> filter = null);
 
         /// <summary>
         /// Database'de parametredeki şartı sağlayan ilk veriyi döndüren, şartı sağlayan veri yoksa default değeri (null) döndüren metot. (TResult => DTO / VM)

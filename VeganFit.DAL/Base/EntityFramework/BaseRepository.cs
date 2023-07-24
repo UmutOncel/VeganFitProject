@@ -93,9 +93,9 @@ namespace VeganFit.DAL.Base.EntityFramework
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        public ICollection<TEntity>? GetAll(Expression<Func<TEntity, bool>> filter)
+        public ICollection<TEntity>? GetAll(Expression<Func<TEntity, bool>> filter = null)
         {
-            return _dbSet.Where(filter).ToList();
+            return filter != null ? _dbSet.Where(filter).ToList() : _dbSet.ToList();
         }
 
         /// <summary>
