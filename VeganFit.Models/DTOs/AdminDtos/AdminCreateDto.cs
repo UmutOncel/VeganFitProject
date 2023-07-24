@@ -12,5 +12,9 @@ namespace VeganFit.Models.DTOs.AdminDtos
         public Role Role => Role.Admin;
 
         public DateTime CreatedDate => DateTime.Now;
+
+
+
+        
     }
 }

@@ -1,3 +1,6 @@
+using VeganFit.Bll.Abstract.IServices;
+using VeganFit.UI.EFContextForm;
+
 namespace VeganFit.UI
 {
     internal static class Program
@@ -11,7 +14,9 @@ namespace VeganFit.UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new LoginForm());
+
+            var form = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
+            Application.Run(form);
         }
     }
 }
