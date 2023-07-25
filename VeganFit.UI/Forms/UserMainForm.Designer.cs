@@ -81,7 +81,7 @@
             btnCikisYap.ForeColor = Color.White;
             btnCikisYap.Image = Properties.Resources.Çıkış_Butonu;
             btnCikisYap.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCikisYap.Location = new Point(0, 715);
+            btnCikisYap.Location = new Point(1, 716);
             btnCikisYap.Name = "btnCikisYap";
             btnCikisYap.Size = new Size(150, 50);
             btnCikisYap.TabIndex = 2;
@@ -278,7 +278,7 @@
             lblSimgeDurumunaKucult.AutoSize = true;
             lblSimgeDurumunaKucult.BackColor = Color.Transparent;
             lblSimgeDurumunaKucult.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSimgeDurumunaKucult.ForeColor = Color.Black;
+            lblSimgeDurumunaKucult.ForeColor = Color.White;
             lblSimgeDurumunaKucult.Location = new Point(927, 31);
             lblSimgeDurumunaKucult.Name = "lblSimgeDurumunaKucult";
             lblSimgeDurumunaKucult.Size = new Size(162, 13);

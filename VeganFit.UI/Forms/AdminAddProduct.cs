@@ -130,7 +130,7 @@ namespace VeganFit.UI
                 Serving = txtPorsiyon.Text,
                 Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
             };
-             _service.Create(vm);
+            _service.Create(vm);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
 

@@ -83,7 +83,7 @@
             txtAramaCubugu.BorderSize = 1;
             txtAramaCubugu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaCubugu.ForeColor = Color.Black;
-            txtAramaCubugu.Location = new Point(544, 48);
+            txtAramaCubugu.Location = new Point(544, 44);
             txtAramaCubugu.Multiline = false;
             txtAramaCubugu.Name = "txtAramaCubugu";
             txtAramaCubugu.Padding = new Padding(7);
@@ -128,7 +128,7 @@
             txtKalori.BorderSize = 1;
             txtKalori.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKalori.ForeColor = Color.Black;
-            txtKalori.Location = new Point(54, 338);
+            txtKalori.Location = new Point(54, 336);
             txtKalori.Multiline = false;
             txtKalori.Name = "txtKalori";
             txtKalori.Padding = new Padding(7);
@@ -194,7 +194,7 @@
             btnUrunEkle.FlatAppearance.BorderSize = 0;
             btnUrunEkle.FlatStyle = FlatStyle.Flat;
             btnUrunEkle.ForeColor = Color.Black;
-            btnUrunEkle.Location = new Point(159, 666);
+            btnUrunEkle.Location = new Point(152, 666);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(110, 40);
             btnUrunEkle.TabIndex = 5;
@@ -213,7 +213,7 @@
             btnUrunGuncelle.FlatAppearance.BorderSize = 0;
             btnUrunGuncelle.FlatStyle = FlatStyle.Flat;
             btnUrunGuncelle.ForeColor = Color.Black;
-            btnUrunGuncelle.Location = new Point(293, 666);
+            btnUrunGuncelle.Location = new Point(286, 666);
             btnUrunGuncelle.Name = "btnUrunGuncelle";
             btnUrunGuncelle.Size = new Size(110, 40);
             btnUrunGuncelle.TabIndex = 5;
@@ -280,7 +280,7 @@
             // lblUrunAra
             // 
             lblUrunAra.AutoSize = true;
-            lblUrunAra.Location = new Point(544, 26);
+            lblUrunAra.Location = new Point(544, 22);
             lblUrunAra.Name = "lblUrunAra";
             lblUrunAra.Size = new Size(66, 14);
             lblUrunAra.TabIndex = 9;

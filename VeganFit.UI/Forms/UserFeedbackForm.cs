@@ -16,15 +16,15 @@ namespace VeganFit.UI
 {
     public partial class UserFeedbackForm : Form
     {
-        private readonly IFeedbackService _service ;
+        private readonly IFeedbackService _service;
 
         public UserFeedbackForm(IFeedbackService feedbackService)
         {
             InitializeComponent();
             this._service = feedbackService;
-            
+
         }
-               
+
         private void UserFeedbackForm_Load(object sender, EventArgs e)
         {
             txtGorusOneri.Text = "Görüş ve Öneriniz";
@@ -64,8 +64,8 @@ namespace VeganFit.UI
 
         private void btnGonder_Click(object sender, EventArgs e)
         {
-            FeedbackCreateVm vm = new FeedbackCreateVm() 
-            { 
+            FeedbackCreateVm vm = new FeedbackCreateVm()
+            {
                 Message = txtGorusOneri.Text
             };
             _service.Create(vm);

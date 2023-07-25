@@ -132,7 +132,7 @@ namespace VeganFit.UI
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
-            
+
         }
 
 

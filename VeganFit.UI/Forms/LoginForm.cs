@@ -19,13 +19,13 @@ namespace VeganFit.UI
 {
     public partial class LoginForm : Form
     {
-        bool mov,isAdmin;
+        bool mov, isAdmin;
         int movX, movY;
 
         private readonly IUserService _userService;
         private readonly IUserRepo _userRepo;
 
-        public LoginForm(IUserService userService,IUserRepo userRepo)
+        public LoginForm(IUserService userService, IUserRepo userRepo)
         {
             InitializeComponent();
             _userService = userService;
@@ -151,7 +151,7 @@ namespace VeganFit.UI
             string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
             var login = _userService.Login(txtKullaniciAdi.Text, sifre);
 
-            if (login.Data == null )
+            if (login.Data == null)
             {
                 MessageBox.Show("Lütfen Bilgilerinizi Kontrol Edin");
             }
@@ -176,10 +176,10 @@ namespace VeganFit.UI
                     this.Hide();
                 }
             }
-            
 
 
-            
+
+
         }
     }
 }

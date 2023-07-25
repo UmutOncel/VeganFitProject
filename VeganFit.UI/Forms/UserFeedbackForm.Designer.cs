@@ -80,14 +80,14 @@
             txtGorusOneri.BorderRadius = 10;
             txtGorusOneri.BorderSize = 1;
             txtGorusOneri.Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtGorusOneri.Location = new Point(145, 344);
+            txtGorusOneri.Location = new Point(6, 344);
             txtGorusOneri.Multiline = false;
             txtGorusOneri.Name = "txtGorusOneri";
             txtGorusOneri.Padding = new Padding(7);
             txtGorusOneri.PasswordChar = false;
             txtGorusOneri.PlaceholderColor = Color.DarkGray;
             txtGorusOneri.PlaceholderText = "";
-            txtGorusOneri.Size = new Size(800, 29);
+            txtGorusOneri.Size = new Size(1073, 29);
             txtGorusOneri.TabIndex = 24;
             txtGorusOneri.UnderlinedStyle = false;
             txtGorusOneri.Enter += txtGorusOneri_Enter;

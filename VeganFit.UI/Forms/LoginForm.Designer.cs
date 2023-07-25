@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pnlLoginUI = new Panel();
             btnSimgeDurumunaKucult = new Buttons.DesignButton();
             lblSimgeDurumunaKucult = new Label();
@@ -44,7 +45,7 @@
             // 
             // pnlLoginUI
             // 
-            pnlLoginUI.BackgroundImage = Properties.Resources.LoginScreen;
+            pnlLoginUI.BackgroundImage = (Image)resources.GetObject("pnlLoginUI.BackgroundImage");
             pnlLoginUI.BackgroundImageLayout = ImageLayout.Stretch;
             pnlLoginUI.Controls.Add(btnSimgeDurumunaKucult);
             pnlLoginUI.Controls.Add(lblSimgeDurumunaKucult);

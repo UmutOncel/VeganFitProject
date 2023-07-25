@@ -39,6 +39,11 @@
             dtpDogumTatihi = new DateTimePicker();
             label1 = new Label();
             pnlNewRegisterForm = new Panel();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            pnlNewRegisterForm.SuspendLayout();
             SuspendLayout();
             // 
             // btnKaydiTamamla
@@ -53,7 +58,7 @@
             btnKaydiTamamla.FlatStyle = FlatStyle.Popup;
             btnKaydiTamamla.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnKaydiTamamla.ForeColor = Color.DarkViolet;
-            btnKaydiTamamla.Location = new Point(90, 350);
+            btnKaydiTamamla.Location = new Point(90, 340);
             btnKaydiTamamla.Name = "btnKaydiTamamla";
             btnKaydiTamamla.Size = new Size(120, 30);
             btnKaydiTamamla.TabIndex = 0;
@@ -70,7 +75,7 @@
             txtAd.BorderRadius = 14;
             txtAd.BorderSize = 1;
             txtAd.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAd.Location = new Point(25, 99);
+            txtAd.Location = new Point(25, 89);
             txtAd.Multiline = false;
             txtAd.Name = "txtAd";
             txtAd.Padding = new Padding(7);
@@ -92,7 +97,7 @@
             txtSoyad.BorderRadius = 14;
             txtSoyad.BorderSize = 1;
             txtSoyad.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSoyad.Location = new Point(25, 139);
+            txtSoyad.Location = new Point(25, 129);
             txtSoyad.Multiline = false;
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Padding = new Padding(7);
@@ -114,7 +119,7 @@
             txtEMail.BorderRadius = 14;
             txtEMail.BorderSize = 1;
             txtEMail.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEMail.Location = new Point(25, 214);
+            txtEMail.Location = new Point(25, 204);
             txtEMail.Multiline = false;
             txtEMail.Name = "txtEMail";
             txtEMail.Padding = new Padding(7);
@@ -136,7 +141,7 @@
             txtSifre.BorderRadius = 14;
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSifre.Location = new Point(25, 254);
+            txtSifre.Location = new Point(25, 244);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
@@ -159,7 +164,7 @@
             txtSifreyiTekrarGirin.BorderRadius = 14;
             txtSifreyiTekrarGirin.BorderSize = 1;
             txtSifreyiTekrarGirin.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSifreyiTekrarGirin.Location = new Point(25, 294);
+            txtSifreyiTekrarGirin.Location = new Point(25, 284);
             txtSifreyiTekrarGirin.Multiline = false;
             txtSifreyiTekrarGirin.Name = "txtSifreyiTekrarGirin";
             txtSifreyiTekrarGirin.Padding = new Padding(7);
@@ -212,7 +217,7 @@
             // 
             // dtpDogumTatihi
             // 
-            dtpDogumTatihi.Location = new Point(25, 179);
+            dtpDogumTatihi.Location = new Point(25, 169);
             dtpDogumTatihi.MaxDate = new DateTime(1978, 12, 31, 0, 0, 0, 0);
             dtpDogumTatihi.MinDate = new DateTime(1959, 12, 31, 0, 0, 0, 0);
             dtpDogumTatihi.Name = "dtpDogumTatihi";
@@ -233,20 +238,64 @@
             // 
             // pnlNewRegisterForm
             // 
+            pnlNewRegisterForm.Controls.Add(label4);
+            pnlNewRegisterForm.Controls.Add(label3);
+            pnlNewRegisterForm.Controls.Add(label5);
+            pnlNewRegisterForm.Controls.Add(label2);
             pnlNewRegisterForm.Dock = DockStyle.Fill;
             pnlNewRegisterForm.Location = new Point(0, 0);
             pnlNewRegisterForm.Name = "pnlNewRegisterForm";
-            pnlNewRegisterForm.Size = new Size(300, 400);
+            pnlNewRegisterForm.Size = new Size(300, 450);
             pnlNewRegisterForm.TabIndex = 11;
             pnlNewRegisterForm.MouseDown += pnlNewRegisterForm_MouseDown;
             pnlNewRegisterForm.MouseMove += pnlNewRegisterForm_MouseMove;
             pnlNewRegisterForm.MouseUp += pnlNewRegisterForm_MouseUp;
             // 
+            // label2
+            // 
+            label2.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkViolet;
+            label2.Location = new Point(3, 402);
+            label2.Name = "label2";
+            label2.Size = new Size(195, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Şifreniz 8 karakterli olmalıdır.";
+            // 
+            // label3
+            // 
+            label3.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.DarkViolet;
+            label3.Location = new Point(3, 417);
+            label3.Name = "label3";
+            label3.Size = new Size(272, 15);
+            label3.TabIndex = 0;
+            label3.Text = "En az 2 büyük harf ve en az 3 küçük harf içermelidir.";
+            // 
+            // label4
+            // 
+            label4.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.DarkViolet;
+            label4.Location = new Point(3, 431);
+            label4.Name = "label4";
+            label4.Size = new Size(272, 15);
+            label4.TabIndex = 0;
+            label4.Text = "!,:,+.* karakterlerinden en az 2 tanesini içermelidir.";
+            // 
+            // label5
+            // 
+            label5.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.DarkViolet;
+            label5.Location = new Point(3, 387);
+            label5.Name = "label5";
+            label5.Size = new Size(195, 15);
+            label5.TabIndex = 0;
+            label5.Text = "UYARI:";
+            // 
             // NewRegisterForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 400);
+            ClientSize = new Size(300, 450);
             Controls.Add(label1);
             Controls.Add(dtpDogumTatihi);
             Controls.Add(lblKapat);
@@ -265,6 +314,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NewRegisterForm";
             Load += NewRegisterForm_Load;
+            pnlNewRegisterForm.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -281,5 +331,9 @@
         private DateTimePicker dtpDogumTatihi;
         private Label label1;
         private Panel pnlNewRegisterForm;
+        private Label label2;
+        private Label label4;
+        private Label label3;
+        private Label label5;
     }
 }

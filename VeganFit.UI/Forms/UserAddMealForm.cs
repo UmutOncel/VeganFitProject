@@ -154,7 +154,7 @@ namespace VeganFit.UI
 
         }
 
-   
+
         private void txtAramaKutusu__TextChanged(object sender, EventArgs e)
         {
             VeganFitDbContext db = new VeganFitDbContext();

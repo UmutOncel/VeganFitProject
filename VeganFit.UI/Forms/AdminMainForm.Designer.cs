@@ -66,25 +66,25 @@
             // 
             // lblKayitliKullaniciSayisi
             // 
-            lblKayitliKullaniciSayisi.BackColor = Color.DarkBlue;
+            lblKayitliKullaniciSayisi.BackColor = Color.DimGray;
             lblKayitliKullaniciSayisi.ForeColor = Color.White;
-            lblKayitliKullaniciSayisi.Location = new Point(0, 399);
+            lblKayitliKullaniciSayisi.Location = new Point(164, 365);
             lblKayitliKullaniciSayisi.Name = "lblKayitliKullaniciSayisi";
-            lblKayitliKullaniciSayisi.Size = new Size(25, 25);
+            lblKayitliKullaniciSayisi.Size = new Size(34, 33);
             lblKayitliKullaniciSayisi.TabIndex = 3;
-            lblKayitliKullaniciSayisi.Text = "x";
             lblKayitliKullaniciSayisi.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblBilgi
             // 
-            lblBilgi.BackColor = Color.DarkBlue;
+            lblBilgi.BackColor = Color.DimGray;
+            lblBilgi.Font = new Font("Verdana", 9F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             lblBilgi.ForeColor = Color.White;
             lblBilgi.ImageAlign = ContentAlignment.TopCenter;
-            lblBilgi.Location = new Point(0, 364);
+            lblBilgi.Location = new Point(0, 365);
             lblBilgi.Name = "lblBilgi";
-            lblBilgi.Size = new Size(155, 25);
+            lblBilgi.Size = new Size(164, 33);
             lblBilgi.TabIndex = 3;
-            lblBilgi.Text = "Kayıtlı Kullanıcı Sayısı";
+            lblBilgi.Text = "Kayıtlı Kullanıcı Sayısı :";
             lblBilgi.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // btnCikisYap
@@ -210,7 +210,7 @@
             lblSimgeDurumunaKucult.AutoSize = true;
             lblSimgeDurumunaKucult.BackColor = Color.Transparent;
             lblSimgeDurumunaKucult.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSimgeDurumunaKucult.ForeColor = Color.Black;
+            lblSimgeDurumunaKucult.ForeColor = Color.White;
             lblSimgeDurumunaKucult.Location = new Point(927, 31);
             lblSimgeDurumunaKucult.Name = "lblSimgeDurumunaKucult";
             lblSimgeDurumunaKucult.Size = new Size(162, 13);
