@@ -19,14 +19,12 @@ namespace VeganFit.UI
     public partial class UserAddNewProductForm : Form
     {
       
-        private readonly IOptionalProductService _optionalProductService;
-        private readonly OptionalProductRepo _optionalProductRepo;
+        private readonly IOptionalProductService _service;
     
-        public UserAddNewProductForm(IOptionalProductService optionalProductService, OptionalProductRepo optionalProductRepo)
+        public UserAddNewProductForm(IOptionalProductService optionalProductService)
         {
             InitializeComponent();
-            _optionalProductService = optionalProductService;
-            _optionalProductRepo = optionalProductRepo;
+            _service = optionalProductService;
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -129,16 +127,18 @@ namespace VeganFit.UI
                 ProductName = txtUrunAdi.Text,
                 Calori = Convert.ToInt32(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
-                Picture = pbxResim.Image.ToString()
+                Picture = imageToByteArray(pbxResim.Image)
             };
-            var optProduct = _optionalProductService.Create(vm);
-            _optionalProductRepo.GetAll(null);
+            var optProduct = _service.Create(vm);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
-           
         }
 
-        
-
+        public byte[] imageToByteArray(Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+            return ms.ToArray();
+        }
     }
 }

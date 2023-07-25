@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
 
 namespace VeganFit.UI
@@ -16,7 +17,8 @@ namespace VeganFit.UI
         bool mov;
         int movX, movY;
         private readonly IWeightRepo _weightRepo;
-        private readonly IProductRepo _productRepo;
+        private readonly IWeightService _weightService;
+        private readonly IFeedbackService _feedbackService;
 
         public UserMainForm()
         {
@@ -100,7 +102,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = true;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserAddWeigthForm());
+            openChildFormInPanel(new UserAddWeigthForm(_weightService, _weightRepo));
         }
 
         private void btnOgununeUrunEkle_Click(object sender, EventArgs e)
@@ -118,7 +120,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = true;
-            openChildFormInPanel(new UserFeedbackForm());
+            openChildFormInPanel(new UserFeedbackForm(_feedbackService));
         }
     }
 }
