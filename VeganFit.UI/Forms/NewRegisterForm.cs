@@ -59,7 +59,7 @@ namespace VeganFit.UI
             txtSoyad.Text = "Soyad";
             txtEMail.Text = "EMail";
             txtSifre.Text = "Şifre";
-            txtSifreyiTekrarGirin.Text = "Şifreyi Tekrar Girin";
+            txtSifreyiTekrarGirin.Text = "Şifre";
 
             txtAd.ForeColor = Color.DarkViolet;
             txtSoyad.ForeColor = Color.DarkViolet;

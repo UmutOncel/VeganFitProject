@@ -38,6 +38,7 @@
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
             cbxOgunSec = new ComboBox();
             lblOgun = new Label();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
             // 
@@ -147,6 +148,7 @@
             txtPorsiyon.TabIndex = 22;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
+            txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
             txtPorsiyon.Enter += txtPorsiyon_Enter;
             txtPorsiyon.Leave += txtPorsiyon_Leave;
             // 
@@ -216,12 +218,20 @@
             lblOgun.TabIndex = 31;
             lblOgun.Text = "Öğün Seçiniz:";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(270, 399);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(250, 22);
+            textBox1.TabIndex = 32;
+            // 
             // UserSetProductForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
+            Controls.Add(textBox1);
             Controls.Add(lblOgun);
             Controls.Add(cbxOgunSec);
             Controls.Add(lblKapat);
@@ -254,5 +264,6 @@
         private TextBoxs.TextBox.DesignTextBox txtUrunAdi;
         private ComboBox cbxOgunSec;
         private Label lblOgun;
+        private TextBox textBox1;
     }
 }

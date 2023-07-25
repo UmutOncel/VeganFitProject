@@ -25,7 +25,6 @@ namespace VeganFit.UI
     public partial class UserAddMealForm : Form
     {
         private readonly IProductRepo _ProductRepo;
-        private readonly IDataService _dataService;
         private readonly ProductService _productService;
         public static DataDetailDto _data;
         private readonly IDataRepo _dataRepo;
@@ -40,10 +39,8 @@ namespace VeganFit.UI
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-          
-            
+
             ListeyiYenile();
-            txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
             OgunListeleriniYenile();
 
@@ -55,7 +52,7 @@ namespace VeganFit.UI
             string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
 
             dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
-              && x.UserEmail == ActiveUser.ActiveUserName  && x.Datetime.ToString() == sqlFormattedDate );
+              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
 
             dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
@@ -68,20 +65,20 @@ namespace VeganFit.UI
 
         private void txtAramaCubugu_Enter(object sender, EventArgs e)
         {
-            if (txtAramaKutusu.Text == "Ürün Ara")
-            {
-                txtAramaKutusu.Text = "";
-                txtAramaKutusu.ForeColor = Color.Black;
-            }
+            //if (txtAramaKutusu.Text == "Ürün Ara")
+            //{
+            //    txtAramaKutusu.Text = "";
+            //    txtAramaKutusu.ForeColor = Color.Black;
+            //}
         }
 
         private void txtAramaCubugu_Leave(object sender, EventArgs e)
         {
-            if (txtAramaKutusu.Text == "")
-            {
-                txtAramaKutusu.Text = "Ürün Ara";
-                txtAramaKutusu.ForeColor = Color.SlateGray;
-            }
+            //if (txtAramaKutusu.Text == "")
+            //{
+            //    //txtAramaKutusu.Text = "Ürün Ara";
+            //    txtAramaKutusu.ForeColor = Color.SlateGray;
+            //}
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -121,7 +118,7 @@ namespace VeganFit.UI
         }
         private void ListeyiYenile()
         {
-            if(_ProductRepo != null)
+            if (_ProductRepo != null)
             {
                 dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select: x => new
                 {
@@ -131,13 +128,15 @@ namespace VeganFit.UI
                     x.Picture
                 }, where: x => x.State != State.Deleted);
             }
-            
+
 
         }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             ListeyiYenile();
+            var urunEkle = EFContextForm.EFContextForm.ConfigureServices<UserAddNewProductForm>();
+            urunEkle.ShowDialog();
         }
         private void btnListeyiYenile_Click(object sender, EventArgs e)
         {
@@ -163,7 +162,7 @@ namespace VeganFit.UI
             _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
 
 
-            var setProductForm=EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
+            var setProductForm = EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
             setProductForm.ShowDialog();
 
 
@@ -171,8 +170,18 @@ namespace VeganFit.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
             //OgunListeleriniYenile();
         }
+
+        private void txtAramaKutusu__TextChanged(object sender, EventArgs e)
+        {
+            VeganFitDbContext db = new VeganFitDbContext();
+            dgvUrunlerListesi.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaKutusu.Text) && x.State != State.Deleted)
+                .Select(x => new { x.ProductName, x.Calori, x.Serving, x.Picture })
+                .ToList();
+        }
+
+
     }
 }

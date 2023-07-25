@@ -7,7 +7,7 @@ namespace VeganFit.Models.DTOs.DataDtos
         public string ProductName { get; set; }
 
         public Meal Meal { get; set; }
-        public int Calori { get; set; }
+        public double Calori { get; set; }
 
         public string UserEmail { get; set; }
         public string? Serving { get; set; }

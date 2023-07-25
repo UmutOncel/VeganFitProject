@@ -31,8 +31,8 @@ namespace VeganFit.UI
         private readonly IDataService _dataService;
         private readonly DataDetailDto _detailDto;
         private readonly IDataRepo _dataRepo;
-        
-        
+        DataDetailDto dataDetail = UserAddMealForm._data;
+
 
 
         public UserSetProductForm(IDataService dataService)
@@ -40,8 +40,8 @@ namespace VeganFit.UI
             InitializeComponent();
             _dataService = dataService;
 
-            
-            
+
+
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -140,29 +140,32 @@ namespace VeganFit.UI
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Convert.ToInt32(txtKalori.Text),
+                Calori = Convert.ToDouble(txtKalori.Text)/Convert.ToDouble(txtPorsiyon.Text)*Convert.ToDouble(textBox1.Text),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
                 Datetime = DateTime.Now,
                 UserEmail = ActiveUser.ActiveUserName
             };
 
-            _dataService.Create(dto); 
+            _dataService.Create(dto);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
 
-            
+            this.Close();
+
+
         }
         private void ForBegin()
         {
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
-            DataDetailDto dataDetail = UserAddMealForm._data;
-            
+
+
             txtUrunAdi.Text = dataDetail.ProductName;
             txtKalori.Text = dataDetail.Calori.ToString();
             txtPorsiyon.Text = dataDetail.Serving;
             //pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
+            textBox1.Text = dataDetail.Serving;
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
@@ -171,6 +174,14 @@ namespace VeganFit.UI
             {
                 btnOguneEkle.Enabled = true;
             }
+        }
+
+        private void txtPorsiyon__TextChanged(object sender, EventArgs e)
+        {
+            //var serv = Convert.ToInt32(dataDetail.Serving);
+            //var ser1 = Convert.ToInt32(txtPorsiyon.Text);
+            //var ser2 = Convert.ToInt32(txtKalori.Text);
+            //txtKalori.Text = ((ser2 / serv) * ser1).ToString();
         }
     }
 }
