@@ -18,6 +18,7 @@ using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace VeganFit.UI
 {
@@ -50,16 +51,19 @@ namespace VeganFit.UI
 
         public void OgunListeleriniYenile()
         {
+            DateTime myDateTime = DateTime.Now;
+            string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
 
-            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Calori, x.Meal }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast);
-             /*x.User.Email == ActiveUser.ActiveUserName &&*/ 
-            
+            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
+              && x.UserEmail == ActiveUser.ActiveUserName  && x.Datetime.ToString() == sqlFormattedDate );
 
-            dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
-              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Today);
+            dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
+              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
 
-            dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
-              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Today);
+            dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
+              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
+
+
         }
 
         private void txtAramaCubugu_Enter(object sender, EventArgs e)

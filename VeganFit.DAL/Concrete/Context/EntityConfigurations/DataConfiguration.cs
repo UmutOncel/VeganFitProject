@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,8 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                 .IsRequired();
 
             builder.Property(x => x.Datetime)
-                .IsRequired();
+                   .HasColumnType("date")
+                   .IsRequired();
 
             builder.Property(x => x.Meal)
                 .IsRequired()
