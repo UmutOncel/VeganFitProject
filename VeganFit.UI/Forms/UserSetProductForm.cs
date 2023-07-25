@@ -139,10 +139,11 @@ namespace VeganFit.UI
         {
             DataDetailDto dto = new DataDetailDto()
             {
-                ProductName=txtUrunAdi.Text,
-                Calori= Convert.ToInt32(txtKalori.Text),
+                ProductName = txtUrunAdi.Text,
+                Calori = Convert.ToInt32(txtKalori.Text),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
-                Datetime = DateTime.Now
+                Datetime = DateTime.Now,
+                UserEmail = ActiveUser.ActiveUserName
             };
 
             _dataService.Create(dto); 
