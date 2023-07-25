@@ -24,8 +24,6 @@ namespace VeganFit.UI
         private readonly IProductService _service;
         private readonly IProductRepo _productRepo;
 
-        OpenFileDialog ofd = new OpenFileDialog();
-
         public AdminAddProduct(IProductService productService, IProductRepo productRepo)
         {
             InitializeComponent();
@@ -41,7 +39,6 @@ namespace VeganFit.UI
             txtPorsiyon.Text = "Porsiyon Giriniz";
             txtAramaCubugu.Text = "Ürün Ara";
 
-
             txtUrunAdi.ForeColor = Color.SlateGray;
             txtKalori.ForeColor = Color.SlateGray;
             txtPorsiyon.ForeColor = Color.SlateGray;
@@ -49,7 +46,6 @@ namespace VeganFit.UI
 
             ListeyiYenile();
         }
-
 
         private void txtUrunAdi_Enter(object sender, EventArgs e)
         {
@@ -148,7 +144,7 @@ namespace VeganFit.UI
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
         {
             var byteImaeg = Convert.ToByte(pbxResim.Image);
-            int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);        //INDEX!!!!!!
+            int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);
             Product product = _productRepo.GetFirstOrDefault(x => x.Id == id);
             product.ProductName = txtUrunAdi.Text;
             product.Calori = Convert.ToInt32(txtKalori.Text);
@@ -156,16 +152,14 @@ namespace VeganFit.UI
             product.Picture = ImageToByteArray.imageToByteArray(pbxResim.Image);
             _productRepo.Update(product);
 
-
             MessageBox.Show("Ürün Başarıyla Güncellenmiştir");
 
             ListeyiYenile();
         }
 
-
         private void btnUrunSil_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);        //INDEX!!!!!!
+            int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);
             var product = _service.Delete(id);
 
             MessageBox.Show("Ürün Başarıyla Silinmiştir");
@@ -190,7 +184,7 @@ namespace VeganFit.UI
 
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
-
+            OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
                 string resimAdi = ofd.FileName;
@@ -200,7 +194,6 @@ namespace VeganFit.UI
 
         private void dgvUrunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
                 txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
@@ -215,23 +208,12 @@ namespace VeganFit.UI
             }
         }
 
-
-        //private void txtAramaCubugu_TextChanged(object sender, EventArgs e)
-        //{
-        //    VeganFitDbContext db = new VeganFitDbContext();
-        //    dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text))
-        //        .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
-        //        .ToList();
-        //}
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtAramaCubugu__TextChanged(object sender, EventArgs e)
         {
-            //VeganFitDbContext db = new VeganFitDbContext();
-            //dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(textBox1.Text))
-            //    .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
-            //    .ToList();
+            VeganFitDbContext db = new VeganFitDbContext();
+            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text) && x.State != State.Deleted)
+                .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
+                .ToList();
         }
-
-
     }
 }

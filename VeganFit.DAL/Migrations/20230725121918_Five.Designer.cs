@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeganFit.DAL.Concrete.Context;
 
@@ -11,9 +12,10 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    partial class VeganFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230725121918_Five")]
+    partial class Five
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,10 +53,6 @@ namespace VeganFit.DAL.Migrations
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -98,7 +96,7 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Message")
+                    b.Property<string>("MessageText")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -112,11 +110,8 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -722,7 +717,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 15, 27, 2, 601, DateTimeKind.Local).AddTicks(3503),
+                            CreatedDate = new DateTime(2023, 7, 25, 15, 19, 17, 478, DateTimeKind.Local).AddTicks(137),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -734,7 +729,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 15, 27, 2, 601, DateTimeKind.Local).AddTicks(3540),
+                            CreatedDate = new DateTime(2023, 7, 25, 15, 19, 17, 478, DateTimeKind.Local).AddTicks(173),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",
@@ -809,7 +804,9 @@ namespace VeganFit.DAL.Migrations
                 {
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Feedbacks")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("User");
                 });

@@ -10,5 +10,6 @@ namespace VeganFit.Models.DTOs.DataDtos
         public int Calori { get; set; }
         public string? Serving { get; set; }
         public byte[] Picture { get; set; }
+        public DateTime Datetime { get; set; }
     }
 }

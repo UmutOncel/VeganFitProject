@@ -82,7 +82,7 @@
             txtAramaCubugu.BorderSize = 1;
             txtAramaCubugu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaCubugu.ForeColor = Color.Black;
-            txtAramaCubugu.Location = new Point(544, 19);
+            txtAramaCubugu.Location = new Point(544, 12);
             txtAramaCubugu.Multiline = false;
             txtAramaCubugu.Name = "txtAramaCubugu";
             txtAramaCubugu.Padding = new Padding(7);
@@ -93,6 +93,7 @@
             txtAramaCubugu.TabIndex = 2;
             txtAramaCubugu.TabStop = false;
             txtAramaCubugu.UnderlinedStyle = false;
+            txtAramaCubugu._TextChanged += txtAramaCubugu__TextChanged;
             // 
             // txtUrunAdi
             // 

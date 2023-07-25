@@ -303,8 +303,5 @@ namespace TextBoxs.TextBox
                 }
             }
         }
-
-
-
     }
 }

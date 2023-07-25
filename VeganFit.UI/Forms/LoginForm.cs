@@ -25,7 +25,6 @@ namespace VeganFit.UI
         {
             InitializeComponent();
             _userService = userService;
-
         }
         private void pnlLoginUI_MouseDown(object sender, MouseEventArgs e)
         {
@@ -156,8 +155,6 @@ namespace VeganFit.UI
             ActiveUser.Role = login.Data.Role;
             ActiveUser.ActiveUserName = login.Data.Email;
 
-
-
             if (isAdmin)
             {
                 AdminMainForm adminMainForm = new AdminMainForm();
@@ -170,13 +167,6 @@ namespace VeganFit.UI
                 userMainForm.Show();
                 this.Hide();
             }
-
-
-
-
-
         }
-
-
     }
 }
