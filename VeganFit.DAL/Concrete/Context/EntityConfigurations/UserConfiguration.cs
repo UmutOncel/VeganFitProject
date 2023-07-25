@@ -49,7 +49,7 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
             builder.HasData(new User { Id = 1,
                                        Firstname = "Umut",
                                        Lastname = "Öncel",
-                                       Password = "UUuu1991**",
+                                       Password = "EF359CE6F0005B1AE73F70F675AA50E8E18BEA9DED1C30957C2769BB99ADF4E9",
                                        Email = "admin@gmail.com",
                                        BirthDate = DateTime.Parse("11/04/1991"),
                                        Role = Role.Admin,

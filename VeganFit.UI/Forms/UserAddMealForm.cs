@@ -1,24 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VeganFit.Bll.Abstract.IServices;
+﻿using System.Data;
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
-using VeganFit.DAL.Concrete.Repositories;
-using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
-using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
-using VeganFit.UI.UserOperation;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace VeganFit.UI
 {

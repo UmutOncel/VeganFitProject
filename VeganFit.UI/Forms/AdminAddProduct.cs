@@ -14,6 +14,7 @@ using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.Entities;
+using VeganFit.Models.DTOs.ProductDtos;
 using VeganFit.Models.VMs.ProductVms;
 using VeganFit.UI.UserOperation;
 
@@ -129,7 +130,7 @@ namespace VeganFit.UI
                 Serving = txtPorsiyon.Text,
                 Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
             };
-            var product = _service.Create(vm);
+             _service.Create(vm);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
 
@@ -143,7 +144,15 @@ namespace VeganFit.UI
 
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
         {
-            var byteImaeg = Convert.ToByte(pbxResim.Image);
+            //ProductUpdateVm updateVm = new ProductUpdateVm()
+            //{      
+            //    ProductName = txtUrunAdi.Text,
+            //    Calori = Convert.ToInt32(txtKalori.Text),
+            //    Serving = txtPorsiyon.Text,
+            //    Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
+            //};
+            //_service.Update(updateVm);
+
             int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);
             Product product = _productRepo.GetFirstOrDefault(x => x.Id == id);
             product.ProductName = txtUrunAdi.Text;
