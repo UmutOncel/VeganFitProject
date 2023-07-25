@@ -23,14 +23,14 @@ namespace VeganFit.UI
     public partial class UserSetProductForm : Form
     {
 
-        //private readonly IDataService _idataService;
+        private readonly IDataService _dataService;
         //private readonly DataRepo _dataRepo;
 
 
-        public UserSetProductForm()
+        public UserSetProductForm(IDataService dataService)
         {
             InitializeComponent();
-            //_idataService = idataService;
+            _dataService = dataService;
             //_dataRepo = dataRepo;
         }
 
@@ -127,7 +127,15 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-
+            DataDetailDto dto = new DataDetailDto()
+            {
+                Calori = Convert.ToInt32(txtKalori.Text),
+                ProductName = txtUrunAdi.Text,
+                Serving = txtPorsiyon.Text,
+                Picture = ImageToByteArray.imageToByteArray(pbxResim.Image),
+                Meal = (Meal)cbxOgunSec.SelectedItem
+            };
+            _dataService.Create(dto);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
@@ -137,14 +145,19 @@ namespace VeganFit.UI
             cbxOgunSec.Items.AddRange(array);
 
             DataDetailDto dataDetail = UserAddMealForm._data;
+            
             txtUrunAdi.Text = dataDetail.ProductName;
             txtKalori.Text = dataDetail.Calori.ToString();
             txtPorsiyon.Text = dataDetail.Serving;
             pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
         }
 
-
-
-
+        private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxOgunSec.Items.Count > 0)
+            {
+                btnOguneEkle.Enabled = true;
+            }
+        }
     }
 }

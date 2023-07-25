@@ -21,6 +21,7 @@ namespace VeganFit.UI
     public partial class UserAddMealForm : Form
     {
         private readonly IProductRepo _ProductRepo;
+        private readonly IDataService _dataService;
         private readonly ProductService _productService;
         public static string name = string.Empty;
         public static DataDetailDto _data;
@@ -128,7 +129,7 @@ namespace VeganFit.UI
 
 
 
-            UserSetProductForm userSet = new UserSetProductForm();
+            UserSetProductForm userSet = new UserSetProductForm(_dataService);
             userSet.ShowDialog();
             
 

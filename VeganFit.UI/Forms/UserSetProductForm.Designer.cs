@@ -115,7 +115,6 @@
             btnOguneEkle.BorderColor = Color.DarkGreen;
             btnOguneEkle.BorderRadius = 15;
             btnOguneEkle.BorderSize = 2;
-            btnOguneEkle.Enabled = false;
             btnOguneEkle.FlatAppearance.BorderSize = 0;
             btnOguneEkle.FlatStyle = FlatStyle.Flat;
             btnOguneEkle.ForeColor = Color.Black;
@@ -206,6 +205,7 @@
             cbxOgunSec.Name = "cbxOgunSec";
             cbxOgunSec.Size = new Size(169, 22);
             cbxOgunSec.TabIndex = 30;
+            cbxOgunSec.SelectedIndexChanged += cbxOgunSec_SelectedIndexChanged;
             // 
             // lblOgun
             // 
