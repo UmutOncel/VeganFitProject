@@ -49,6 +49,7 @@
             txtAramaKutusu = new TextBoxs.TextBox.DesignTextBox();
             btnListeyiYenile = new Buttons.DesignButton();
             lblListeyiYenile = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSabah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).BeginInit();
@@ -325,12 +326,23 @@
             lblListeyiYenile.Text = "Listeyi Yenile";
             lblListeyiYenile.Visible = false;
             // 
+            // button1
+            // 
+            button1.Location = new Point(493, 249);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 18;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // UserAddMealForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
+            Controls.Add(button1);
             Controls.Add(lblListeyiYenile);
             Controls.Add(txtAramaKutusu);
             Controls.Add(lblKapat);
@@ -380,5 +392,6 @@
         private TextBoxs.TextBox.DesignTextBox txtAramaKutusu;
         private Buttons.DesignButton btnListeyiYenile;
         private Label lblListeyiYenile;
+        private Button button1;
     }
 }

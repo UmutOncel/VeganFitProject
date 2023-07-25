@@ -28,7 +28,7 @@ namespace VeganFit.DAL.Concrete
                     .AddScoped<IWeightRepo, WeightRepo>()
                     .AddScoped<IDataRepo, DataRepo>();
                     //AddScoped => Interface ile class'ları birbirine bağlar.
-            return services;
+            return  services;
         }
     }
 }

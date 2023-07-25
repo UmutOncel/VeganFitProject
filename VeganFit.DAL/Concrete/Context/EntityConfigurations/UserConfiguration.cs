@@ -55,6 +55,19 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                                        Role = Role.Admin,
                                        CreatedDate = DateTime.Now,
                                        State = State.Created });
+            builder.HasData(new User
+            {
+                Id = 2,
+                Firstname = "Pelin",
+                Lastname = "Uru",
+                Password = "1234",
+                Email = "pelin@gmail.com",
+                BirthDate = DateTime.Parse("11/06/1999"),
+                Role = Role.StandartUser,
+                CreatedDate = DateTime.Now,
+                State = State.Created
+            });
+
         }
     }
 }
