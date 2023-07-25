@@ -37,7 +37,7 @@ namespace VeganFit.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Calori = table.Column<int>(type: "int", nullable: false),
+                    Calori = table.Column<double>(type: "float", nullable: false),
                     Serving = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
                     Picture = table.Column<byte[]>(type: "Image", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -83,9 +83,10 @@ namespace VeganFit.DAL.Migrations
                     Calori = table.Column<int>(type: "int", nullable: false),
                     Datetime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Meal = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
-                    ProductId = table.Column<int>(type: "int", nullable: false),
-                    OptionalProductId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
+                    UserEmail = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    ProductId = table.Column<int>(type: "int", nullable: true),
+                    OptionalProductId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -99,20 +100,17 @@ namespace VeganFit.DAL.Migrations
                         name: "FK_Datas_OptionalProducts_OptionalProductId",
                         column: x => x.OptionalProductId,
                         principalTable: "OptionalProducts",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Datas_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Datas_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -167,9 +165,72 @@ namespace VeganFit.DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "Calori", "CreatedBy", "CreatedDate", "Picture", "ProductName", "Serving", "State", "UpdatedBy", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 1, 128.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kepekli Ekmek", "46", "Created", null, null },
+                    { 2, 116.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Elma", "223", "Created", null, null },
+                    { 3, 193.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ceviz", "30", "Created", null, null },
+                    { 4, 105.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Muz", "223", "Created", null, null },
+                    { 5, 1.5, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Maydonoz", "0.5", "Created", null, null },
+                    { 6, 16.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Siyah Zeytin", "15.2", "Created", null, null },
+                    { 7, 32.799999999999997, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yeşil Biber", "164", "Created", null, null },
+                    { 8, 16.800000000000001, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kayısı", "35", "Created", null, null },
+                    { 9, 75.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Mercimek Çorbası", "100", "Created", null, null },
+                    { 10, 174.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Badem", "30", "Created", null, null },
+                    { 11, 39.299999999999997, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Badem Sütü", "262", "Created", null, null },
+                    { 12, 8.5999999999999996, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Çilek", "27", "Created", null, null },
+                    { 13, 86.5, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Portakal", "184", "Created", null, null },
+                    { 14, 22.100000000000001, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Domates", "123", "Created", null, null },
+                    { 15, 96.400000000000006, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Müsli", "28.2", "Created", null, null },
+                    { 16, 234.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Nar", "282", "Created", null, null },
+                    { 17, 116.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kepekli Grissini", "100", "Created", null, null },
+                    { 18, 30.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Vegan Sade Peynir", "87.3", "Created", null, null },
+                    { 20, 116.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Bulgur Pilavı", "89.2", "Created", null, null },
+                    { 21, 119.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Zeytin Yağı", "13.5", "Created", null, null },
+                    { 22, 116.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Konserve Yeşil Bezelye", "163", "Created", null, null },
+                    { 23, 85.799999999999997, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Karpuz", "286", "Created", null, null },
+                    { 24, 15.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Mandalina", "23.8", "Created", null, null },
+                    { 25, 74.799999999999997, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ispanaklı Börek", "28.4", "Created", null, null },
+                    { 26, 4.2000000000000002, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Turşu", "35", "Created", null, null },
+                    { 27, 79.400000000000006, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Domates Çorbası", "248", "Created", null, null },
+                    { 28, 358.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Patates Salatası", "250", "Created", null, null },
+                    { 29, 166.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yulaf Ezmesi", "234", "Created", null, null },
+                    { 30, 79.900000000000006, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Karışık Sebze", "163", "Created", null, null },
+                    { 31, 41.899999999999999, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Kuru Üzüm", "14", "Created", null, null },
+                    { 32, 68.900000000000006, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Çok Tahıllı Ekmek", "26", "Created", null, null },
+                    { 33, 125.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Sebzeli Makarna", "100", "Created", null, null },
+                    { 34, 38.700000000000003, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Portakal Suyu", "86", "Created", null, null },
+                    { 35, 2.5, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yeşil Çay", "245", "Created", null, null },
+                    { 36, 16.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Zeytinyağlı Taze Fasulye", "20.3", "Created", null, null },
+                    { 37, 52.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ezogelin Çorbası", "100", "Created", null, null },
+                    { 38, 86.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Mücver", "74.8", "Created", null, null },
+                    { 39, 101.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Armut", "178", "Created", null, null },
+                    { 40, 106.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Burger", "100", "Created", null, null },
+                    { 41, 26.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ratatouille", "100", "Created", null, null },
+                    { 42, 129.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Ispanaklı Pizza", "100", "Created", null, null },
+                    { 43, 110.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Mantarlı Kinoa Risotto", "100", "Created", null, null }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Products",
+                columns: new[] { "Id", "Calori", "CreatedBy", "CreatedDate", "Picture", "ProductName", "Serving", "State", "UpdatedBy", "UpdatedDate" },
+                values: new object[,]
+                {
+                    { 44, 45.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Fırında Domatesli Kabak Dilimleri", "100", "Created", null, null },
+                    { 45, 164.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Muzlu Vegan Fransız Tostu", "100", "Created", null, null },
+                    { 46, 80.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Avokado Soslu Patetes", "100", "Created", null, null },
+                    { 47, 92.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Mantar ve Pırasalı Tofu", "100", "Created", null, null },
+                    { 48, 47.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Patates ve Roka Çorbası", "100", "Created", null, null },
+                    { 49, 140.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Şeftali Püreli Tatlı Kuskus", "100", "Created", null, null },
+                    { 50, 68.0, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Yaban Mersinli Kinoa Lapası", "100", "Created", null, null }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "BirthDate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 11, 42, 38, 411, DateTimeKind.Local).AddTicks(2275), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
+                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 12, 39, 11, 314, DateTimeKind.Local).AddTicks(9054), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Datas_OptionalProductId",
@@ -190,6 +251,12 @@ namespace VeganFit.DAL.Migrations
                 name: "IX_Feedbacks_UserId",
                 table: "Feedbacks",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductName",
+                table: "Products",
+                column: "ProductName",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_Users_Email",

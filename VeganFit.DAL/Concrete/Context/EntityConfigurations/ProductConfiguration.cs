@@ -115,7 +115,7 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
              new Product
              { Id = 38, ProductName = "Mücver", Calori = 86, Serving = "74.8", Picture = null },
              new Product
-             { Id = 39, ProductName = "Portakal Suyu", Calori = 38.7, Serving = "156", Picture = null },
+             { Id = 39, ProductName = "Armut", Calori = 101, Serving = "178", Picture = null },
              new Product
              { Id = 40, ProductName = "Burger", Calori = 106, Serving = "100", Picture = null },
              new Product

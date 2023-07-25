@@ -38,9 +38,8 @@ namespace VeganFit.UI
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-            VeganFitDbContext db = new VeganFitDbContext();
             ListeyiYenile();
-            dgvSabah.DataSource = db.Datas.Where(x => x.State == State.Created && x.Meal == Meal.Breakfast && x.Datetime == DateTime.Today).Select(x => x.Calori).ToList();
+
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
 
@@ -49,10 +48,10 @@ namespace VeganFit.UI
 
         public void OgunListeleriniYenile()
         {
-            
+            VeganFitDbContext db = new VeganFitDbContext();
            // dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new {  x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
               //&& /*x.User.Email == ActiveUser.ActiveUserName &&*/ x.Datetime == DateTime.Today);
-           // dgvSabah.DataSource = db.Datas.Where(x=>x.State == State.Created && x.Meal == Meal.Breakfast && x.Datetime == DateTime.Today).Select(x=>x.Calori).ToList();
+            dgvSabah.DataSource = db.Datas.Where(x=>x.State == State.Created && x.Meal == Meal.Breakfast && x.Datetime == DateTime.Today).Select(x=>x.Calori).ToList();
 
             dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
               && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Today);
