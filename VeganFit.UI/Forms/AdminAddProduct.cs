@@ -102,23 +102,23 @@ namespace VeganFit.UI
             }
         }
 
-        //private void txtAramaCubugu_Enter(object sender, EventArgs e)
-        //{
-        //    if (txtAramaCubugu.Text == "Ürün Ara")
-        //    {
-        //        txtAramaCubugu.Text = "";
-        //        txtAramaCubugu.ForeColor = Color.Black;
-        //    }
-        //}
+        private void txtAramaCubugu_Enter(object sender, EventArgs e)
+        {
+            if (txtAramaCubugu.Text == "Ürün Ara")
+            {
+                txtAramaCubugu.Text = "";
+                txtAramaCubugu.ForeColor = Color.Black;
+            }
+        }
 
-        //private void txtAramaCubugu_Leave(object sender, EventArgs e)
-        //{
-        //    if (txtAramaCubugu.Text == "")
-        //    {
-        //        txtAramaCubugu.Text = "Ürün Ara";
-        //        txtAramaCubugu.ForeColor = Color.SlateGray;
-        //    }
-        //}
+        private void txtAramaCubugu_Leave(object sender, EventArgs e)
+        {
+            if (txtAramaCubugu.Text == "")
+            {
+                txtAramaCubugu.Text = "Ürün Ara";
+                txtAramaCubugu.ForeColor = Color.SlateGray;
+            }
+        }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
@@ -208,15 +208,7 @@ namespace VeganFit.UI
             }
         }
 
-        //private void txtAramaCubugu_TextChanged(object sender, EventArgs e)
-        //{
-        //    VeganFitDbContext db = new VeganFitDbContext();
-        //    dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text))
-        //        .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
-        //        .ToList();
-        //}
-
-        private void txtUrunArama_TextChanged(object sender, EventArgs e)
+        private void txtAramaCubugu__TextChanged(object sender, EventArgs e)
         {
             VeganFitDbContext db = new VeganFitDbContext();
             dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text) && x.State != State.Deleted)

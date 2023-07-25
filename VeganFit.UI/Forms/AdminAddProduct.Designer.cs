@@ -41,7 +41,6 @@
             btnUrunSil = new Buttons.DesignButton();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
-            txtUrunArama = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             SuspendLayout();
@@ -83,7 +82,7 @@
             txtAramaCubugu.BorderSize = 1;
             txtAramaCubugu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaCubugu.ForeColor = Color.Black;
-            txtAramaCubugu.Location = new Point(213, 113);
+            txtAramaCubugu.Location = new Point(544, 12);
             txtAramaCubugu.Multiline = false;
             txtAramaCubugu.Name = "txtAramaCubugu";
             txtAramaCubugu.Padding = new Padding(7);
@@ -94,6 +93,7 @@
             txtAramaCubugu.TabIndex = 2;
             txtAramaCubugu.TabStop = false;
             txtAramaCubugu.UnderlinedStyle = false;
+            txtAramaCubugu._TextChanged += txtAramaCubugu__TextChanged;
             // 
             // txtUrunAdi
             // 
@@ -276,21 +276,12 @@
             btnKapat.MouseEnter += btnKapat_MouseEnter;
             btnKapat.MouseLeave += btnKapat_MouseLeave;
             // 
-            // txtUrunArama
-            // 
-            txtUrunArama.Location = new Point(544, 21);
-            txtUrunArama.Name = "txtUrunArama";
-            txtUrunArama.Size = new Size(269, 22);
-            txtUrunArama.TabIndex = 9;
-            txtUrunArama.TextChanged += txtUrunArama_TextChanged;
-            // 
             // AdminAddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1091, 718);
-            Controls.Add(txtUrunArama);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(btnUrunSil);
@@ -327,6 +318,5 @@
         private Buttons.DesignButton btnUrunSil;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
-        private TextBox txtUrunArama;
     }
 }
