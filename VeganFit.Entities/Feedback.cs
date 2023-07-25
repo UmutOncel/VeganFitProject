@@ -12,8 +12,10 @@ namespace VeganFit.Entities
     /// </summary>
     public class Feedback : BaseEntity
     {
-        public string MessageText { get; set; }
+        public string? Message { get; set; }
+
+        public string? UserName { get; set; }
         public virtual User User { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
     }
 }

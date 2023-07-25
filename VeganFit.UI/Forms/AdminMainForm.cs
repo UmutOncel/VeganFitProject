@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.DAL.Concrete.Context;
+using VeganFit.UI.EFContextForm;
 
 namespace VeganFit.UI
 {
@@ -103,7 +104,7 @@ namespace VeganFit.UI
         {
             pnlSecim1.Visible = false;
             pnlSecim2.Visible = true;
-            openChildFormInPanel(new AdminFeedbackForm());
+            openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<AdminFeedbackForm>());
         }
     }
 }

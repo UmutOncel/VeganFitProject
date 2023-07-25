@@ -15,6 +15,7 @@ using VeganFit.DAL.Concrete.Context;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
+using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 
@@ -27,30 +28,30 @@ namespace VeganFit.UI
         private readonly ProductService _productService;
         public static DataDetailDto _data;
         private readonly IDataRepo _dataRepo;
-        VeganFitDbContext db = new VeganFitDbContext();
+
         public UserAddMealForm(IProductRepo ProductRepo, IDataRepo dataRepo)
         {
             InitializeComponent();
-            this._ProductRepo = new ProductRepo(db);
+            this._ProductRepo = ProductRepo;
             _data = new DataDetailDto();
             _dataRepo = dataRepo;
         }
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-
+            
             ListeyiYenile();
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
+            OgunListeleriniYenile();
 
-            
         }
 
         public void OgunListeleriniYenile()
         {
 
-            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new {  x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
-            && /*x.User.Email == ActiveUser.ActiveUserName &&*/ x.Datetime == DateTime.Today);
+            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Calori, x.Meal }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast);
+             /*x.User.Email == ActiveUser.ActiveUserName &&*/ 
             
 
             dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
@@ -154,16 +155,12 @@ namespace VeganFit.UI
             _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
             _data.Calori = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
             _data.Serving = dgvUrunlerListesi.SelectedRows[0].Cells[2].Value.ToString();
-            //_data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
+            _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
 
 
+            var setProductForm=EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
+            setProductForm.ShowDialog();
 
-            UserSetProductForm userSet = new UserSetProductForm(_dataService);
-            userSet.ShowDialog();
-
-
-            //int id = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[0].Value);
-            //UserSetProductForm userSetProductForm = new UserSetProductForm(id);
 
         }
 
