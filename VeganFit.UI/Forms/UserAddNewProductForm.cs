@@ -1,35 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VeganFit.Bll.Abstract.IServices;
-using VeganFit.DAL.Abstract;
-using VeganFit.DAL.Concrete.Repositories;
-using VeganFit.Models.DTOs.ProductDtos;
+﻿using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Bll.Concrete.Services;
+using VeganFit.Core.Enums;
+using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.Models.VMs.OptionalProductVms;
-using VeganFit.Models.VMs.ProductVms;
+using VeganFit.UI.LoginUser;
+using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
 {
     public partial class UserAddNewProductForm : Form
     {
 
-        private readonly IOptionalProductService _service;
+        private readonly IDataService _dataService;
 
-        public UserAddNewProductForm(IOptionalProductService optionalProductService)
+        public UserAddNewProductForm(IDataService dataService)
         {
             InitializeComponent();
-            _service = optionalProductService;
+            _dataService = dataService;
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
         {
-
+            ForBegin();
             //txtUrunAdi.Text = "Ürün Adı";
             //txtKalori.Text = "Kaç Kalori";
             //txtPorsiyon.Text = "Porsiyon Giriniz";
@@ -122,23 +114,27 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            OptionalProductCreateVm vm = new OptionalProductCreateVm()
+            DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Convert.ToInt32(txtKalori.Text),
-                Serving = txtPorsiyon.Text,
-                Picture = imageToByteArray(pbxResim.Image)
+                Calori = Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtPorsiyon.Text),
+                Meal = (Meal)cbxOgunSec.SelectedItem,
+                Datetime = DateTime.Now,
+                UserEmail = ActiveUser.ActiveUserName
             };
-            var optProduct = _service.Create(vm);
+
+            _dataService.Create(dto);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
-
-        public byte[] imageToByteArray(Image imageIn)
+        private void ForBegin()
         {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return ms.ToArray();
+            Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
+            cbxOgunSec.Items.AddRange(array);
+
+            
         }
+
+
     }
 }

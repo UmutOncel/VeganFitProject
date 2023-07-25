@@ -1,27 +1,8 @@
-﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VeganFit.Bll.Abstract.IServices;
-using VeganFit.Bll.Concrete.Services;
+﻿using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
-using VeganFit.DAL.Concrete.Context;
-using VeganFit.DAL.Concrete.Repositories;
-using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
-using VeganFit.Models.VMs.DataVms;
-using VeganFit.Models.VMs.OptionalProductVms;
-using VeganFit.Models.VMs.ProductVms;
 using VeganFit.UI.LoginUser;
-using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
 {
