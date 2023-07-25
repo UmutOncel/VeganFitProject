@@ -20,13 +20,11 @@ namespace VeganFit.UI
     {
       
         private readonly IOptionalProductService _service;
-     
     
         public UserAddNewProductForm(IOptionalProductService optionalProductService)
         {
             InitializeComponent();
             _service = optionalProductService;
-            
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -132,17 +130,15 @@ namespace VeganFit.UI
                 Picture = imageToByteArray(pbxResim.Image)
             };
             var optProduct = _service.Create(vm);
-           
 
-            MessageBox.Show("Ürün Başarıyla Eklenmiştir");           
+            MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
+
         public byte[] imageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
             imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
             return ms.ToArray();
         }
-
-
     }
 }
