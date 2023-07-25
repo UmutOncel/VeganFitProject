@@ -7,6 +7,7 @@ using VeganFit.Models.DTOs.OptionalProductDtos;
 using VeganFit.Models.DTOs.ProductDtos;
 using VeganFit.Models.DTOs.UserDtos;
 using VeganFit.Models.DTOs.WeigthDtos;
+using VeganFit.Models.VMs.DataVms;
 using VeganFit.Models.VMs.FeedbackVms;
 using VeganFit.Models.VMs.OptionalProductVms;
 using VeganFit.Models.VMs.ProductVms;
@@ -38,6 +39,7 @@ namespace VeganFit.Bll.Concrete.Mapper
             CreateMap<WeightCreateDto,WeightCreateVm>().ReverseMap();  
             
             CreateMap<Data,DataDetailDto>().ReverseMap();
+            CreateMap<DataDetailDto,DataDetailVm>().ReverseMap();
 
             CreateMap<User,UserCreateDto>().ReverseMap();
             CreateMap<User,LoginVm>().ReverseMap();

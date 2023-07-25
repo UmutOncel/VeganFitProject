@@ -15,7 +15,7 @@ namespace VeganFit.Models.VMs.DataVms
 
         public Meal Meal { get; set; }
 
-        
+
 
         public string Serving { get; set; }
 

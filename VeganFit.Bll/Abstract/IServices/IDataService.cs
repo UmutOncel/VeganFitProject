@@ -8,6 +8,6 @@ namespace VeganFit.Bll.Abstract.IServices
     {
         ResultService<List<DataDetailVm>> GetDetails();
 
-        ResultService<DataDetailDto> Create(DataDetailDto detailDto);
+        ResultService<DataDetailDto> Create(DataDetailVm detailVm);
     }
 }

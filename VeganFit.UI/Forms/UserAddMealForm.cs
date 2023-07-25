@@ -11,6 +11,7 @@ using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Context;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
@@ -24,7 +25,6 @@ namespace VeganFit.UI
         private readonly IProductRepo _ProductRepo;
         private readonly IDataService _dataService;
         private readonly ProductService _productService;
-        public static string name = string.Empty;
         public static DataDetailDto _data;
         private readonly IDataRepo _dataRepo;
 
@@ -38,24 +38,27 @@ namespace VeganFit.UI
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
+            VeganFitDbContext db = new VeganFitDbContext();
             ListeyiYenile();
-
+            dgvSabah.DataSource = db.Datas.Where(x => x.State == State.Created && x.Meal == Meal.Breakfast && x.Datetime == DateTime.Today).Select(x => x.Calori).ToList();
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
 
-            OgunListeleriniYenile();
+            //OgunListeleriniYenile();
         }
 
-        public void OgunListeleriniYenile() 
+        public void OgunListeleriniYenile()
         {
-            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
-              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Now);
+            
+           // dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new {  x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
+              //&& /*x.User.Email == ActiveUser.ActiveUserName &&*/ x.Datetime == DateTime.Today);
+           // dgvSabah.DataSource = db.Datas.Where(x=>x.State == State.Created && x.Meal == Meal.Breakfast && x.Datetime == DateTime.Today).Select(x=>x.Calori).ToList();
 
             dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
-              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Now);
+              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Today);
 
             dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
-              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Now);
+              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Today);
         }
 
         private void txtAramaCubugu_Enter(object sender, EventArgs e)
@@ -113,18 +116,23 @@ namespace VeganFit.UI
         }
         private void ListeyiYenile()
         {
-            dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select:x=> new
+            dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select: x => new
             {
                 x.ProductName,
                 x.Calori,
                 x.Serving,
                 x.Picture
-            },where:x=>x.State!= State.Deleted);
+            }, where: x => x.State != State.Deleted);
+
         }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             ListeyiYenile();
+        }
+        private void btnListeyiYenile_Click(object sender, EventArgs e)
+        {
+            OgunListeleriniYenile();
         }
 
         private void btnListeyiYenile_MouseEnter(object sender, EventArgs e)
@@ -139,9 +147,9 @@ namespace VeganFit.UI
 
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
-            _data.Calori =Convert.ToInt32( dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
+            _data.Calori = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
             _data.Serving = dgvUrunlerListesi.SelectedRows[0].Cells[2].Value.ToString();
             _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
 
@@ -149,7 +157,7 @@ namespace VeganFit.UI
 
             UserSetProductForm userSet = new UserSetProductForm(_dataService);
             userSet.ShowDialog();
-            
+
 
             //int id = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[0].Value);
             //UserSetProductForm userSetProductForm = new UserSetProductForm(id);

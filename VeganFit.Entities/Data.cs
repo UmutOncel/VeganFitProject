@@ -17,10 +17,11 @@ namespace VeganFit.Entities
         public DateTime Datetime { get; set; }
         public Meal Meal { get; set; }
         public virtual User User { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
+        public string UserEmail { get; set; }
         public virtual Product Product { get; set; }
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
         public virtual OptionalProduct OptionalProduct { get; set; }
-        public int OptionalProductId { get; set; }
+        public int? OptionalProductId { get; set; }
     }
 }

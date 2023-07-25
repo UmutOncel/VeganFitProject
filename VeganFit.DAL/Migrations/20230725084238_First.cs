@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VeganFit.DAL.Migrations
 {
-    public partial class Twelve : Migration
+    public partial class First : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -169,7 +169,7 @@ namespace VeganFit.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "BirthDate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 24, 20, 54, 14, 958, DateTimeKind.Local).AddTicks(6825), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
+                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 11, 42, 38, 411, DateTimeKind.Local).AddTicks(2275), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Datas_OptionalProductId",

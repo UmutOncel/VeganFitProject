@@ -12,8 +12,8 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    [Migration("20230724175415_Twelve")]
-    partial class Twelve
+    [Migration("20230725084847_Second")]
+    partial class Second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,10 +48,10 @@ namespace VeganFit.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("OptionalProductId")
+                    b.Property<int?>("OptionalProductId")
                         .HasColumnType("int");
 
-                    b.Property<int>("ProductId")
+                    b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<string>("State")
@@ -64,7 +64,7 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -268,7 +268,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 24, 20, 54, 14, 958, DateTimeKind.Local).AddTicks(6825),
+                            CreatedDate = new DateTime(2023, 7, 25, 11, 48, 46, 575, DateTimeKind.Local).AddTicks(717),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -322,21 +322,15 @@ namespace VeganFit.DAL.Migrations
                 {
                     b.HasOne("VeganFit.Entities.OptionalProduct", "OptionalProduct")
                         .WithMany("Datas")
-                        .HasForeignKey("OptionalProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("OptionalProductId");
 
                     b.HasOne("VeganFit.Entities.Product", "Product")
                         .WithMany("Datas")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("ProductId");
 
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Datas")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("OptionalProduct");
 

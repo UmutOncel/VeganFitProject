@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeganFit.DAL.Concrete.Context;
 
@@ -11,9 +12,10 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    partial class VeganFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230725084238_First")]
+    partial class First
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,9 +49,11 @@ namespace VeganFit.DAL.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("OptionalProductId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("ProductId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("State")
@@ -62,11 +66,8 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("UserEmail")
-                        .HasMaxLength(250)
-                        .HasColumnType("nvarchar(250)");
-
                     b.Property<int?>("UserId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -270,7 +271,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 11, 54, 5, 273, DateTimeKind.Local).AddTicks(8528),
+                            CreatedDate = new DateTime(2023, 7, 25, 11, 42, 38, 411, DateTimeKind.Local).AddTicks(2275),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -324,15 +325,21 @@ namespace VeganFit.DAL.Migrations
                 {
                     b.HasOne("VeganFit.Entities.OptionalProduct", "OptionalProduct")
                         .WithMany("Datas")
-                        .HasForeignKey("OptionalProductId");
+                        .HasForeignKey("OptionalProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("VeganFit.Entities.Product", "Product")
                         .WithMany("Datas")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Datas")
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("OptionalProduct");
 

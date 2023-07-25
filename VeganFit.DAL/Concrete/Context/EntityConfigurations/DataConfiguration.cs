@@ -41,6 +41,14 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
             builder.HasOne<OptionalProduct>(x => x.OptionalProduct)
                 .WithMany(x => x.Datas)
                 .HasForeignKey(x => x.OptionalProductId);
+
+            builder.Property(x=>x.OptionalProductId).IsRequired(false);
+            builder.Property(x=>x.ProductId).IsRequired(false);
+            builder.Property(x=>x.UserId).IsRequired(false);
+
+            builder.Property(x=>x.UserEmail)
+                   .IsRequired(false)
+                   .HasMaxLength(250);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,11 +12,15 @@ using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
+using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Context;
 using VeganFit.DAL.Concrete.Repositories;
+using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.Models.VMs.DataVms;
 using VeganFit.Models.VMs.OptionalProductVms;
 using VeganFit.Models.VMs.ProductVms;
+using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
@@ -24,14 +29,19 @@ namespace VeganFit.UI
     {
 
         private readonly IDataService _dataService;
-        //private readonly DataRepo _dataRepo;
+        private readonly DataDetailDto _detailDto;
+        private readonly IDataRepo _dataRepo;
+        
+        
 
 
         public UserSetProductForm(IDataService dataService)
         {
             InitializeComponent();
             _dataService = dataService;
-            //_dataRepo = dataRepo;
+
+            
+            
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -127,17 +137,21 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-            DataDetailDto dto = new DataDetailDto()
+            VeganFitDbContext fitDbContext = new VeganFitDbContext();
+            DataRepo dataRepo = new DataRepo(fitDbContext);
+            Data data = new Data()
             {
                 Calori = Convert.ToInt32(txtKalori.Text),
-                ProductName = txtUrunAdi.Text,
-                Serving = txtPorsiyon.Text,
-                Picture = ImageToByteArray.imageToByteArray(pbxResim.Image),
-                Meal = (Meal)cbxOgunSec.SelectedItem
+                Meal = (Meal)cbxOgunSec.SelectedItem,
+                Datetime = DateTime.Now,
+                UserEmail = ActiveUser.ActiveUserName
+                                
             };
-            _dataService.Create(dto);
+            dataRepo.Create(data); 
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
+
+            
         }
         private void ForBegin()
         {

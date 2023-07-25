@@ -311,7 +311,7 @@
             btnListeyiYenile.TextAlign = ContentAlignment.BottomLeft;
             btnListeyiYenile.TextColor = Color.Black;
             btnListeyiYenile.UseVisualStyleBackColor = false;
-            btnListeyiYenile.Click += btnUrunEkle_Click;
+            btnListeyiYenile.Click += btnListeyiYenile_Click;
             btnListeyiYenile.MouseEnter += btnListeyiYenile_MouseEnter;
             btnListeyiYenile.MouseLeave += btnListeyiYenile_MouseLeave;
             // 

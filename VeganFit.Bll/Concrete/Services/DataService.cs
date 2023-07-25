@@ -15,15 +15,27 @@ namespace VeganFit.Bll.Concrete.Services
         private readonly IDataRepo _dataRepo;
         private readonly IMapper _mapper;
 
-        public ResultService<DataDetailDto> Create(DataDetailDto detailDto)
+        //public DataService()
+        //{
+
+        //}
+        public DataService(IMapper mapper,IDataRepo dataRepo)
+        {
+            _mapper = mapper;
+            _dataRepo = dataRepo;
+        }
+
+        public ResultService<DataDetailDto> Create(DataDetailVm dataDetailVm)
         {
             ResultService<DataDetailDto> result = new ResultService<DataDetailDto>();
 
-            Data newData = _mapper.Map<Data>(detailDto);
+            DataDetailDto dataDetail = _mapper.Map<DataDetailDto>(dataDetailVm);
+
+            Data newData = _mapper.Map<Data>(dataDetail);
             var addData = _dataRepo.Create(newData);
             if(addData != null)
             {
-                result.Data = detailDto;
+                result.Data = dataDetail;
             }
             else
             {
