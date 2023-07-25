@@ -14,6 +14,7 @@ using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
+using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
@@ -25,12 +26,14 @@ namespace VeganFit.UI
         private readonly ProductService _productService;
         public static string name = string.Empty;
         public static DataDetailDto _data;
-        public UserAddMealForm(IProductRepo ProductRepo)
+        private readonly IDataRepo _dataRepo;
+
+        public UserAddMealForm(IProductRepo ProductRepo, IDataRepo dataRepo)
         {
             InitializeComponent();
             _ProductRepo = ProductRepo;
             _data = new DataDetailDto();
-
+            _dataRepo = dataRepo;
         }
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
@@ -40,7 +43,21 @@ namespace VeganFit.UI
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
 
+            OgunListeleriniYenile();
         }
+
+        public void OgunListeleriniYenile() 
+        {
+            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
+              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Now);
+
+            dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
+              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Now);
+
+            dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
+              && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Now);
+        }
+
         private void txtAramaCubugu_Enter(object sender, EventArgs e)
         {
             if (txtAramaKutusu.Text == "Ürün Ara")
@@ -50,7 +67,6 @@ namespace VeganFit.UI
             }
         }
 
-
         private void txtAramaCubugu_Leave(object sender, EventArgs e)
         {
             if (txtAramaKutusu.Text == "")
@@ -59,6 +75,7 @@ namespace VeganFit.UI
                 txtAramaKutusu.ForeColor = Color.SlateGray;
             }
         }
+
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -104,6 +121,7 @@ namespace VeganFit.UI
                 x.Picture
             },where:x=>x.State!= State.Deleted);
         }
+
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
             ListeyiYenile();
