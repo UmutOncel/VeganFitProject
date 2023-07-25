@@ -16,6 +16,7 @@ namespace VeganFit.UI
         bool mov;
         int movX, movY;
         private readonly IWeightRepo _weightRepo;
+        private readonly IProductRepo _productRepo;
 
         public UserMainForm()
         {
@@ -108,7 +109,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = true;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserAddMealForm());
+            openChildFormInPanel(new UserAddMealForm(_productRepo));
         }
 
         private void btnGeriBildirimGönder_Click(object sender, EventArgs e)

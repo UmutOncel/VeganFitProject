@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VeganFit.Core.Enums;
 
 namespace VeganFit.Models.VMs.DataVms
 {
@@ -12,6 +13,11 @@ namespace VeganFit.Models.VMs.DataVms
 
         public int Calori { get; set; }
 
+        public Meal Meal { get; set; }
+
+        
+
+        public string Serving { get; set; }
 
     }
 }

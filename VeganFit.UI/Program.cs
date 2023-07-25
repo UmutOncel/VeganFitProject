@@ -18,8 +18,11 @@ namespace VeganFit.UI
             var form = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
             var form1 = EFContextForm.EFContextForm.ConfigureServices<AdminAddProduct>();
             var form2 = EFContextForm.EFContextForm.ConfigureServices<UserDataForm>();
+            var form3 = EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
+            var form4 = EFContextForm.EFContextForm.ConfigureServices<UserAddMealForm>();
+            
 
-            Application.Run(form);
+            Application.Run(form4 );
         }
     }
 }

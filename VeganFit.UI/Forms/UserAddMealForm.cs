@@ -7,25 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
+using VeganFit.Core.Enums;
+using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
+using VeganFit.Models.DTOs.DataDtos;
+using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
 {
     public partial class UserAddMealForm : Form
     {
-        private readonly OptionalProductRepo _optionalProductRepo;
+        private readonly IProductRepo _ProductRepo;
         private readonly ProductService _productService;
-        public UserAddMealForm(OptionalProductRepo optionalProductRepo, ProductService productService)
+        public static string name = string.Empty;
+        public static DataDetailDto _data;
+        public UserAddMealForm(IProductRepo ProductRepo)
         {
             InitializeComponent();
-            _optionalProductRepo = optionalProductRepo;
-            _productService = productService;
-        }
+            _ProductRepo = ProductRepo;
+            _data = new DataDetailDto();
 
-        public UserAddMealForm()
-        {
         }
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
@@ -34,6 +38,7 @@ namespace VeganFit.UI
 
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
+
         }
         private void txtAramaCubugu_Enter(object sender, EventArgs e)
         {
@@ -90,7 +95,13 @@ namespace VeganFit.UI
         }
         private void ListeyiYenile()
         {
-            dgvUrunlerListesi.DataSource = _optionalProductRepo.GetAll(null);
+            dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select:x=> new
+            {
+                x.ProductName,
+                x.Calori,
+                x.Serving,
+                x.Picture
+            },where:x=>x.State!= State.Deleted);
         }
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
@@ -109,10 +120,21 @@ namespace VeganFit.UI
 
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            
+            _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
+            _data.Calori =Convert.ToInt32( dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
+            _data.Serving = dgvUrunlerListesi.SelectedRows[0].Cells[2].Value.ToString();
+            _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
+
+
+
+            UserSetProductForm userSet = new UserSetProductForm();
+            userSet.ShowDialog();
+            
+
             //int id = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[0].Value);
             //UserSetProductForm userSetProductForm = new UserSetProductForm(id);
 
-            /////////////////////
         }
     }
 }
