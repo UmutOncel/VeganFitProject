@@ -22,7 +22,7 @@ namespace VeganFit.UI
             var form4 = EFContextForm.EFContextForm.ConfigureServices<UserAddMealForm>();
             
 
-            Application.Run(form4);
+            Application.Run(form1);
         }
     }
 }
