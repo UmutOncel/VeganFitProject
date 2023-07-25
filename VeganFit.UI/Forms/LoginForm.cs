@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.UI.LoginUser;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
@@ -20,11 +22,13 @@ namespace VeganFit.UI
         int movX, movY;
 
         private readonly IUserService _userService;
+        private readonly IUserRepo _userRepo;
 
-        public LoginForm(IUserService userService)
+        public LoginForm(IUserService userService,IUserRepo userRepo)
         {
             InitializeComponent();
             _userService = userService;
+            _userRepo = userRepo;
         }
         private void pnlLoginUI_MouseDown(object sender, MouseEventArgs e)
         {
@@ -152,8 +156,9 @@ namespace VeganFit.UI
 
             bool isAdmin = login.Data.Role == Core.Enums.Role.Admin;
 
-            ActiveUser.Role = login.Data.Role;
+            ActiveUser.Role = login.Data.Role;            
             ActiveUser.ActiveUserName = login.Data.Email;
+            ActiveUser.ActiveUserFirstName = _userRepo.GetFirstOrDefault(filter: x => x.Email == login.Data.Email).Firstname;
 
             if (isAdmin)
             {

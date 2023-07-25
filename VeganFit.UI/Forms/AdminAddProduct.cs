@@ -219,7 +219,7 @@ namespace VeganFit.UI
         private void txtUrunArama_TextChanged(object sender, EventArgs e)
         {
             VeganFitDbContext db = new VeganFitDbContext();
-            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtUrunArama.Text) && x.State != State.Deleted)
+            dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text) && x.State != State.Deleted)
                 .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
                 .ToList();
         }

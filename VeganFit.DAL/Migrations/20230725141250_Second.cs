@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VeganFit.DAL.Migrations
 {
-    public partial class Four : Migration
+    public partial class Second : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,14 +14,14 @@ namespace VeganFit.DAL.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 15, 18, 2, 135, DateTimeKind.Local).AddTicks(1874));
+                value: new DateTime(2023, 7, 25, 17, 12, 50, 127, DateTimeKind.Local).AddTicks(6767));
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 15, 18, 2, 135, DateTimeKind.Local).AddTicks(1922));
+                value: new DateTime(2023, 7, 25, 17, 12, 50, 127, DateTimeKind.Local).AddTicks(6824));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -31,14 +31,14 @@ namespace VeganFit.DAL.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 13, 33, 38, 989, DateTimeKind.Local).AddTicks(2600));
+                value: new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3830));
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 13, 33, 38, 989, DateTimeKind.Local).AddTicks(2655));
+                value: new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3871));
         }
     }
 }

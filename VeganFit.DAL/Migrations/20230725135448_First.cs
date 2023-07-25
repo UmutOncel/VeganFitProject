@@ -80,6 +80,7 @@ namespace VeganFit.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Calori = table.Column<int>(type: "int", nullable: false),
                     Datetime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Meal = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -119,8 +120,9 @@ namespace VeganFit.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    MessageText = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -134,8 +136,7 @@ namespace VeganFit.DAL.Migrations
                         name: "FK_Feedbacks_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -145,8 +146,9 @@ namespace VeganFit.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserWeight = table.Column<int>(type: "int", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateOfRecord = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -160,8 +162,7 @@ namespace VeganFit.DAL.Migrations
                         name: "FK_Weights_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -230,7 +231,11 @@ namespace VeganFit.DAL.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "BirthDate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
-                values: new object[] { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 12, 39, 11, 314, DateTimeKind.Local).AddTicks(9054), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null });
+                values: new object[,]
+                {
+                    { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3830), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null },
+                    { 2, new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3871), "pelin@gmail.com", "Pelin", "Uru", "1234", "StandartUser", "Created", null, null }
+                });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Datas_OptionalProductId",

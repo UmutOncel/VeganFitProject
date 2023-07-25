@@ -18,7 +18,7 @@ namespace VeganFit.UI
         private readonly IFeedbackService _service;
         private readonly IFeedbackRepo _feedbackRepo;
 
-        public AdminFeedbackForm(IFeedbackRepo feedbackRepo,IFeedbackService feedbackService)
+        public AdminFeedbackForm(IFeedbackRepo feedbackRepo, IFeedbackService feedbackService)
         {
             InitializeComponent();
             _feedbackRepo = feedbackRepo;

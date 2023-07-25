@@ -13,6 +13,7 @@ using TextBoxs.TextBox;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
 using VeganFit.Models.VMs.UserVms;
+using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 
@@ -190,7 +191,7 @@ namespace VeganFit.UI
                     {
                         MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
                         this.Close();
-                        LoginForm loginForm = new LoginForm(_userService);
+                        var loginForm = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
                         loginForm.ShowDialog();
                     }
                 }

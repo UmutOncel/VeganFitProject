@@ -16,35 +16,27 @@ using VeganFit.Models.DTOs.WeigthDtos;
 using VeganFit.Models.VMs.UserVms;
 using VeganFit.Models.VMs.WeightVms;
 using VeganFit.UI.LoginUser;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace VeganFit.UI
 {
     public partial class UserDataForm : Form
     {
-        public UserDataForm()
+        private readonly IWeightRepo _weightRepo;
+        public UserDataForm(IWeightRepo weightRepo)
         {
             InitializeComponent();
+            _weightRepo = weightRepo;   
         }
 
 
         private void UserDataForm_Load(object sender, EventArgs e)
         {
-            VeganFitDbContext db = new VeganFitDbContext();
             
-            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.User.Email == ActiveUser.ActiveUserName)
-                .GroupBy(x => new { x.User.Email, x.Datetime })
-                .Select(x => new
-                {
-                    Tarih = x.Key.Datetime,
-                    ToplamKalori = x.Sum(x => x.Calori)
-                }).ToList();
+            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate } , where: x => x.UserName == ActiveUser.ActiveUserFirstName);              
+                
 
-            dgvGunlukKiloTakibi.DataSource = db.Weights.Where(x => x.User.Email == ActiveUser.ActiveUserName)
-                .Select(x => new
-                {
-                    Tarih = x.DateOfRecord,
-                    Kilo = x.UserWeight
-                }).ToList();
+            
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

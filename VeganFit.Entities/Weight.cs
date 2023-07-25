@@ -13,8 +13,10 @@ namespace VeganFit.Entities
     public class Weight : BaseEntity
     {
         public int UserWeight { get; set; }
-        public DateTime DateOfRecord { get; set; }
+
+        public string UserName { get; set; }
+        public DateTime RecordDate { get; set; }
         public virtual User User { get; set; }
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
     }
 }

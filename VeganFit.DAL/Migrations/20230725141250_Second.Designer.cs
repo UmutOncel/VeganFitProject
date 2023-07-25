@@ -12,8 +12,8 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    [Migration("20230725121802_Four")]
-    partial class Four
+    [Migration("20230725141250_Second")]
+    partial class Second
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,6 +53,10 @@ namespace VeganFit.DAL.Migrations
 
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -96,8 +100,7 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("MessageText")
-                        .IsRequired()
+                    b.Property<string>("Message")
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
@@ -111,8 +114,11 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -718,7 +724,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 15, 18, 2, 135, DateTimeKind.Local).AddTicks(1874),
+                            CreatedDate = new DateTime(2023, 7, 25, 17, 12, 50, 127, DateTimeKind.Local).AddTicks(6767),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -730,7 +736,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 15, 18, 2, 135, DateTimeKind.Local).AddTicks(1922),
+                            CreatedDate = new DateTime(2023, 7, 25, 17, 12, 50, 127, DateTimeKind.Local).AddTicks(6824),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",
@@ -767,8 +773,12 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserWeight")
                         .HasColumnType("int");
@@ -805,9 +815,7 @@ namespace VeganFit.DAL.Migrations
                 {
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Feedbacks")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -816,9 +824,7 @@ namespace VeganFit.DAL.Migrations
                 {
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Weights")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
