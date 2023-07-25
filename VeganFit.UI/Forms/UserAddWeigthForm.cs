@@ -34,26 +34,26 @@ namespace VeganFit.UI
         {
             ListeyiYenile();
 
-            txtKilo.Text = "Kilonuzu Giriniz";
-            txtKilo.ForeColor = Color.SlateGray;
+            //txtKilo.Text = "Kilonuzu Giriniz";
+            //txtKilo.ForeColor = Color.SlateGray;
 
         }
         private void txtKilo_Enter(object sender, EventArgs e)
         {
-            if (txtKilo.Text == "Kilonuzu Giriniz")
-            {
-                txtKilo.Text = "";
-                txtKilo.ForeColor = Color.Black;
-            }
+            //if (txtKilo.Text == "Kilonuzu Giriniz")
+            //{
+            //    txtKilo.Text = "";
+            //    txtKilo.ForeColor = Color.Black;
+            //}
         }
 
         private void txtKilo_Leave(object sender, EventArgs e)
         {
-            if (txtKilo.Text == "")
-            {
-                txtKilo.Text = "Kilonuzu Giriniz";
-                txtKilo.ForeColor = Color.SlateGray;
-            }
+            //if (txtKilo.Text == "")
+            //{
+            //    txtKilo.Text = "Kilonuzu Giriniz";
+            //    txtKilo.ForeColor = Color.SlateGray;
+            //}
         }
         private void btnKapat_Click(object sender, EventArgs e)
         {

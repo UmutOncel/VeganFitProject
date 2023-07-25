@@ -37,8 +37,12 @@
             txtKalori = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
             cbxOgunSec = new ComboBox();
-            lblOgun = new Label();
-            textBox1 = new TextBox();
+            txtIstenilenPorsiyon = new TextBoxs.TextBox.DesignTextBox();
+            lblPorsiyonGir = new Label();
+            lblOgunSec = new Label();
+            lblPorsiyon = new Label();
+            lblKalori = new Label();
+            lblUrunAdi = new Label();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
             // 
@@ -82,9 +86,9 @@
             // 
             pbxResim.BorderStyle = BorderStyle.FixedSingle;
             pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(555, 254);
+            pbxResim.Location = new Point(555, 180);
             pbxResim.Name = "pbxResim";
-            pbxResim.Size = new Size(202, 129);
+            pbxResim.Size = new Size(248, 203);
             pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
             pbxResim.TabIndex = 27;
             pbxResim.TabStop = false;
@@ -100,7 +104,7 @@
             btnResimEkle.FlatAppearance.BorderSize = 0;
             btnResimEkle.FlatStyle = FlatStyle.Flat;
             btnResimEkle.ForeColor = Color.Black;
-            btnResimEkle.Location = new Point(647, 389);
+            btnResimEkle.Location = new Point(693, 395);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(110, 40);
             btnResimEkle.TabIndex = 25;
@@ -119,7 +123,7 @@
             btnOguneEkle.FlatAppearance.BorderSize = 0;
             btnOguneEkle.FlatStyle = FlatStyle.Flat;
             btnOguneEkle.ForeColor = Color.Black;
-            btnOguneEkle.Location = new Point(469, 456);
+            btnOguneEkle.Location = new Point(410, 395);
             btnOguneEkle.Name = "btnOguneEkle";
             btnOguneEkle.Size = new Size(110, 40);
             btnOguneEkle.TabIndex = 26;
@@ -137,7 +141,7 @@
             txtPorsiyon.BorderSize = 1;
             txtPorsiyon.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtPorsiyon.ForeColor = Color.Black;
-            txtPorsiyon.Location = new Point(270, 354);
+            txtPorsiyon.Location = new Point(270, 268);
             txtPorsiyon.Multiline = false;
             txtPorsiyon.Name = "txtPorsiyon";
             txtPorsiyon.Padding = new Padding(7);
@@ -162,7 +166,7 @@
             txtKalori.Enabled = false;
             txtKalori.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKalori.ForeColor = Color.Black;
-            txtKalori.Location = new Point(270, 304);
+            txtKalori.Location = new Point(270, 224);
             txtKalori.Multiline = false;
             txtKalori.Name = "txtKalori";
             txtKalori.Padding = new Padding(7);
@@ -186,7 +190,7 @@
             txtUrunAdi.Enabled = false;
             txtUrunAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtUrunAdi.ForeColor = Color.Black;
-            txtUrunAdi.Location = new Point(270, 254);
+            txtUrunAdi.Location = new Point(270, 180);
             txtUrunAdi.Multiline = false;
             txtUrunAdi.Name = "txtUrunAdi";
             txtUrunAdi.Padding = new Padding(7);
@@ -203,27 +207,85 @@
             // cbxOgunSec
             // 
             cbxOgunSec.FormattingEnabled = true;
-            cbxOgunSec.Location = new Point(12, 30);
+            cbxOgunSec.Location = new Point(270, 360);
             cbxOgunSec.Name = "cbxOgunSec";
-            cbxOgunSec.Size = new Size(169, 22);
+            cbxOgunSec.Size = new Size(250, 22);
             cbxOgunSec.TabIndex = 30;
             cbxOgunSec.SelectedIndexChanged += cbxOgunSec_SelectedIndexChanged;
             // 
-            // lblOgun
+            // txtIstenilenPorsiyon
             // 
-            lblOgun.AutoSize = true;
-            lblOgun.Location = new Point(12, 5);
-            lblOgun.Name = "lblOgun";
-            lblOgun.Size = new Size(98, 14);
-            lblOgun.TabIndex = 31;
-            lblOgun.Text = "Öğün Seçiniz:";
+            txtIstenilenPorsiyon.BackColor = Color.LightGray;
+            txtIstenilenPorsiyon.BorderColor = Color.SeaGreen;
+            txtIstenilenPorsiyon.BorderFocusColor = Color.Red;
+            txtIstenilenPorsiyon.BorderRadius = 14;
+            txtIstenilenPorsiyon.BorderSize = 1;
+            txtIstenilenPorsiyon.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtIstenilenPorsiyon.ForeColor = Color.Black;
+            txtIstenilenPorsiyon.Location = new Point(270, 312);
+            txtIstenilenPorsiyon.Multiline = false;
+            txtIstenilenPorsiyon.Name = "txtIstenilenPorsiyon";
+            txtIstenilenPorsiyon.Padding = new Padding(7);
+            txtIstenilenPorsiyon.PasswordChar = false;
+            txtIstenilenPorsiyon.PlaceholderColor = Color.Black;
+            txtIstenilenPorsiyon.PlaceholderText = "";
+            txtIstenilenPorsiyon.Size = new Size(250, 29);
+            txtIstenilenPorsiyon.TabIndex = 22;
+            txtIstenilenPorsiyon.TabStop = false;
+            txtIstenilenPorsiyon.UnderlinedStyle = false;
+            txtIstenilenPorsiyon._TextChanged += txtPorsiyon__TextChanged;
+            txtIstenilenPorsiyon.Enter += txtPorsiyon_Enter;
+            txtIstenilenPorsiyon.Leave += txtPorsiyon_Leave;
             // 
-            // textBox1
+            // lblPorsiyonGir
             // 
-            textBox1.Location = new Point(270, 399);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(250, 22);
-            textBox1.TabIndex = 32;
+            lblPorsiyonGir.AutoSize = true;
+            lblPorsiyonGir.ForeColor = Color.Black;
+            lblPorsiyonGir.Location = new Point(108, 327);
+            lblPorsiyonGir.Name = "lblPorsiyonGir";
+            lblPorsiyonGir.Size = new Size(156, 14);
+            lblPorsiyonGir.TabIndex = 32;
+            lblPorsiyonGir.Text = "İstenilen Porsiyon Gir:";
+            // 
+            // lblOgunSec
+            // 
+            lblOgunSec.AutoSize = true;
+            lblOgunSec.ForeColor = Color.Black;
+            lblOgunSec.Location = new Point(189, 368);
+            lblOgunSec.Name = "lblOgunSec";
+            lblOgunSec.Size = new Size(75, 14);
+            lblOgunSec.TabIndex = 32;
+            lblOgunSec.Text = "Öğün Seç:";
+            // 
+            // lblPorsiyon
+            // 
+            lblPorsiyon.AutoSize = true;
+            lblPorsiyon.ForeColor = Color.Black;
+            lblPorsiyon.Location = new Point(194, 283);
+            lblPorsiyon.Name = "lblPorsiyon";
+            lblPorsiyon.Size = new Size(70, 14);
+            lblPorsiyon.TabIndex = 32;
+            lblPorsiyon.Text = "Porsiyon:";
+            // 
+            // lblKalori
+            // 
+            lblKalori.AutoSize = true;
+            lblKalori.ForeColor = Color.Black;
+            lblKalori.Location = new Point(213, 239);
+            lblKalori.Name = "lblKalori";
+            lblKalori.Size = new Size(51, 14);
+            lblKalori.TabIndex = 32;
+            lblKalori.Text = "Kalori:";
+            // 
+            // lblUrunAdi
+            // 
+            lblUrunAdi.AutoSize = true;
+            lblUrunAdi.ForeColor = Color.Black;
+            lblUrunAdi.Location = new Point(195, 195);
+            lblUrunAdi.Name = "lblUrunAdi";
+            lblUrunAdi.Size = new Size(69, 14);
+            lblUrunAdi.TabIndex = 32;
+            lblUrunAdi.Text = "Ürün Adı:";
             // 
             // UserSetProductForm
             // 
@@ -231,14 +293,18 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
-            Controls.Add(textBox1);
-            Controls.Add(lblOgun);
+            Controls.Add(lblOgunSec);
+            Controls.Add(lblUrunAdi);
+            Controls.Add(lblKalori);
+            Controls.Add(lblPorsiyon);
+            Controls.Add(lblPorsiyonGir);
             Controls.Add(cbxOgunSec);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(pbxResim);
             Controls.Add(btnResimEkle);
             Controls.Add(btnOguneEkle);
+            Controls.Add(txtIstenilenPorsiyon);
             Controls.Add(txtPorsiyon);
             Controls.Add(txtKalori);
             Controls.Add(txtUrunAdi);
@@ -263,7 +329,11 @@
         private TextBoxs.TextBox.DesignTextBox txtKalori;
         private TextBoxs.TextBox.DesignTextBox txtUrunAdi;
         private ComboBox cbxOgunSec;
-        private Label lblOgun;
-        private TextBox textBox1;
+        private TextBoxs.TextBox.DesignTextBox txtIstenilenPorsiyon;
+        private Label lblPorsiyonGir;
+        private Label lblOgunSec;
+        private Label lblPorsiyon;
+        private Label lblKalori;
+        private Label lblUrunAdi;
     }
 }

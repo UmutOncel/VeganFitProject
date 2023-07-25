@@ -41,6 +41,7 @@
             btnUrunSil = new Buttons.DesignButton();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
+            lblUrunAra = new Label();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             SuspendLayout();
@@ -66,7 +67,7 @@
             dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUrunler.Location = new Point(544, 54);
+            dgvUrunler.Location = new Point(544, 82);
             dgvUrunler.Name = "dgvUrunler";
             dgvUrunler.RowTemplate.Height = 25;
             dgvUrunler.Size = new Size(535, 576);
@@ -82,7 +83,7 @@
             txtAramaCubugu.BorderSize = 1;
             txtAramaCubugu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaCubugu.ForeColor = Color.Black;
-            txtAramaCubugu.Location = new Point(544, 12);
+            txtAramaCubugu.Location = new Point(544, 48);
             txtAramaCubugu.Multiline = false;
             txtAramaCubugu.Name = "txtAramaCubugu";
             txtAramaCubugu.Padding = new Padding(7);
@@ -231,7 +232,7 @@
             btnUrunSil.FlatAppearance.BorderSize = 0;
             btnUrunSil.FlatStyle = FlatStyle.Flat;
             btnUrunSil.ForeColor = Color.Black;
-            btnUrunSil.Location = new Point(969, 636);
+            btnUrunSil.Location = new Point(969, 666);
             btnUrunSil.Name = "btnUrunSil";
             btnUrunSil.Size = new Size(110, 40);
             btnUrunSil.TabIndex = 5;
@@ -276,12 +277,22 @@
             btnKapat.MouseEnter += btnKapat_MouseEnter;
             btnKapat.MouseLeave += btnKapat_MouseLeave;
             // 
+            // lblUrunAra
+            // 
+            lblUrunAra.AutoSize = true;
+            lblUrunAra.Location = new Point(544, 26);
+            lblUrunAra.Name = "lblUrunAra";
+            lblUrunAra.Size = new Size(66, 14);
+            lblUrunAra.TabIndex = 9;
+            lblUrunAra.Text = "Ürün Ara";
+            // 
             // AdminAddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblUrunAra);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(btnUrunSil);
@@ -318,5 +329,6 @@
         private Buttons.DesignButton btnUrunSil;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
+        private Label lblUrunAra;
     }
 }

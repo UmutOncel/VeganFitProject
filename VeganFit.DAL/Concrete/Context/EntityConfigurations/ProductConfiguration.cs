@@ -2,12 +2,17 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
+using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VeganFit.Core.Enums;
 using VeganFit.Entities;
+using static System.Net.Mime.MediaTypeNames;
+using System.Reflection;
+using System.Resources;
 
 namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
 {
@@ -36,11 +41,9 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                    .IsRequired(false);
 
             builder.Property(x => x.Picture).HasColumnType("Image")
-                   .IsRequired(false);
-
-
+            .IsRequired(false);
             builder.HasData(
-             new Product
+            new Product
              { Id = 1, ProductName = "Kepekli Ekmek", Calori = 128, Serving = "46", Picture = null },
              new Product
              { Id = 2, ProductName = "Elma", Calori = 116, Serving = "223", Picture = null },
