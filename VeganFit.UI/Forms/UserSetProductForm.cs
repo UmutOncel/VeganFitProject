@@ -47,70 +47,70 @@ namespace VeganFit.UI
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
         {
 
-            txtUrunAdi.Text = "Ürün Adı";
-            txtKalori.Text = "Kaç Kalori";
-            txtPorsiyon.Text = "Porsiyon Giriniz";
+            //txtUrunAdi.Text = "Ürün Adı";
+            //txtKalori.Text = "Kaç Kalori";
+            //txtPorsiyon.Text = "Porsiyon Giriniz";
 
-            txtUrunAdi.ForeColor = Color.SlateGray;
-            txtKalori.ForeColor = Color.SlateGray;
-            txtPorsiyon.ForeColor = Color.SlateGray;
+            //txtUrunAdi.ForeColor = Color.SlateGray;
+            //txtKalori.ForeColor = Color.SlateGray;
+            //txtPorsiyon.ForeColor = Color.SlateGray;
 
             ForBegin();
 
         }
         private void txtUrunAdi_Enter(object sender, EventArgs e)
         {
-            if (txtUrunAdi.Text == "Ürün Adı")
-            {
-                txtUrunAdi.Text = "";
-                txtUrunAdi.ForeColor = Color.Black;
-            }
+            //if (txtUrunAdi.Text == "Ürün Adı")
+            //{
+            //    txtUrunAdi.Text = "";
+            //    txtUrunAdi.ForeColor = Color.Black;
+            //}
         }
 
         private void txtUrunAdi_Leave(object sender, EventArgs e)
         {
-            if (txtUrunAdi.Text == "")
-            {
-                txtUrunAdi.Text = "Ürün Adı";
-                txtUrunAdi.ForeColor = Color.SlateGray;
-            }
+            //if (txtUrunAdi.Text == "")
+            //{
+            //    txtUrunAdi.Text = "Ürün Adı";
+            //    txtUrunAdi.ForeColor = Color.SlateGray;
+            //}
         }
 
         private void txtKalori_Enter(object sender, EventArgs e)
         {
 
-            if (txtKalori.Text == "Kaç Kalori")
-            {
-                txtKalori.Text = "";
-                txtKalori.ForeColor = Color.Black;
-            }
+            //if (txtKalori.Text == "Kaç Kalori")
+            //{
+            //    txtKalori.Text = "";
+            //    txtKalori.ForeColor = Color.Black;
+            //}
         }
 
         private void txtKalori_Leave(object sender, EventArgs e)
         {
-            if (txtKalori.Text == "")
-            {
-                txtKalori.Text = "Kaç Kalori";
-                txtKalori.ForeColor = Color.SlateGray;
-            }
+            //if (txtKalori.Text == "")
+            //{
+            //    txtKalori.Text = "Kaç Kalori";
+            //    txtKalori.ForeColor = Color.SlateGray;
+            //}
         }
 
         private void txtPorsiyon_Enter(object sender, EventArgs e)
         {
-            if (txtPorsiyon.Text == "Porsiyon Giriniz")
-            {
-                txtPorsiyon.Text = "";
-                txtPorsiyon.ForeColor = Color.Black;
-            }
+            //if (txtPorsiyon.Text == "Porsiyon Giriniz")
+            //{
+            //    txtPorsiyon.Text = "";
+            //    txtPorsiyon.ForeColor = Color.Black;
+            //}
         }
 
         private void txtPorsiyon_Leave(object sender, EventArgs e)
         {
-            if (txtPorsiyon.Text == "")
-            {
-                txtPorsiyon.Text = "Porsiyon Giriniz";
-                txtPorsiyon.ForeColor = Color.SlateGray;
-            }
+            //if (txtPorsiyon.Text == "")
+            //{
+            //    txtPorsiyon.Text = "Porsiyon Giriniz";
+            //    txtPorsiyon.ForeColor = Color.SlateGray;
+            //}
         }
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -140,7 +140,7 @@ namespace VeganFit.UI
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Convert.ToDouble(txtKalori.Text)/Convert.ToDouble(txtPorsiyon.Text)*Convert.ToDouble(textBox1.Text),
+                Calori = Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtIstenilenPorsiyon.Text),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
                 Datetime = DateTime.Now,
                 UserEmail = ActiveUser.ActiveUserName
@@ -165,7 +165,7 @@ namespace VeganFit.UI
             txtKalori.Text = dataDetail.Calori.ToString();
             txtPorsiyon.Text = dataDetail.Serving;
             //pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
-            textBox1.Text = dataDetail.Serving;
+            txtIstenilenPorsiyon.Text = dataDetail.Serving;
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)

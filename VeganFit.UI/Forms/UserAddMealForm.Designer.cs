@@ -48,6 +48,7 @@
             txtAramaKutusu = new TextBoxs.TextBox.DesignTextBox();
             btnListeyiYenile = new Buttons.DesignButton();
             lblListeyiYenile = new Label();
+            lblUrunAra = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvSabah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).BeginInit();
@@ -267,7 +268,7 @@
             txtAramaKutusu.BorderSize = 1;
             txtAramaKutusu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaKutusu.ForeColor = Color.Black;
-            txtAramaKutusu.Location = new Point(591, 49);
+            txtAramaKutusu.Location = new Point(591, 45);
             txtAramaKutusu.Multiline = false;
             txtAramaKutusu.Name = "txtAramaKutusu";
             txtAramaKutusu.Padding = new Padding(7);
@@ -316,12 +317,22 @@
             lblListeyiYenile.Text = "Listeyi Yenile";
             lblListeyiYenile.Visible = false;
             // 
+            // lblUrunAra
+            // 
+            lblUrunAra.AutoSize = true;
+            lblUrunAra.Location = new Point(591, 22);
+            lblUrunAra.Name = "lblUrunAra";
+            lblUrunAra.Size = new Size(66, 14);
+            lblUrunAra.TabIndex = 18;
+            lblUrunAra.Text = "Ürün Ara";
+            // 
             // UserAddMealForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblUrunAra);
             Controls.Add(lblListeyiYenile);
             Controls.Add(txtAramaKutusu);
             Controls.Add(lblKapat);
@@ -369,5 +380,6 @@
         private TextBoxs.TextBox.DesignTextBox txtAramaKutusu;
         private Buttons.DesignButton btnListeyiYenile;
         private Label lblListeyiYenile;
+        private Label lblUrunAra;
     }
 }

@@ -41,7 +41,7 @@ namespace VeganFit.UI
         {
 
             ListeyiYenile();
-            txtAramaKutusu.ForeColor = Color.SlateGray;
+            //txtAramaKutusu.ForeColor = Color.SlateGray;
             OgunListeleriniYenile();
 
         }
@@ -168,12 +168,7 @@ namespace VeganFit.UI
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            //OgunListeleriniYenile();
-        }
-
+   
         private void txtAramaKutusu__TextChanged(object sender, EventArgs e)
         {
             VeganFitDbContext db = new VeganFitDbContext();
