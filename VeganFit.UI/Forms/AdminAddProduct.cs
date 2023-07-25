@@ -15,6 +15,7 @@ using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.Entities;
 using VeganFit.Models.VMs.ProductVms;
+using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
 {
@@ -130,7 +131,7 @@ namespace VeganFit.UI
                 ProductName = txtUrunAdi.Text,
                 Calori = Convert.ToInt32(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
-                Picture = imageToByteArray(pbxResim.Image)
+                Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
             };
             var product = _service.Create(vm);
 
@@ -152,7 +153,7 @@ namespace VeganFit.UI
             product.ProductName = txtUrunAdi.Text;
             product.Calori = Convert.ToInt32(txtKalori.Text);
             product.Serving = txtPorsiyon.Text;
-            product.Picture = imageToByteArray(pbxResim.Image);
+            product.Picture = ImageToByteArray.imageToByteArray(pbxResim.Image);
             _productRepo.Update(product);
 
 
@@ -161,19 +162,6 @@ namespace VeganFit.UI
             ListeyiYenile();
         }
 
-        public byte[] imageToByteArray(Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-            return ms.ToArray();
-        }
-
-        public Image byteArrayToImage(byte[] byteArrayIn)
-        {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
-            return returnImage;
-        }
 
         private void btnUrunSil_Click(object sender, EventArgs e)
         {
@@ -219,7 +207,7 @@ namespace VeganFit.UI
                 txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
                 txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
                 byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
-                pbxResim.Image = byteArrayToImage(image);
+                pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
             }
             catch (Exception u)
             {

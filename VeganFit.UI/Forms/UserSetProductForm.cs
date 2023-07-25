@@ -4,27 +4,33 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
+using VeganFit.Core.Enums;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.Models.VMs.DataVms;
 using VeganFit.Models.VMs.OptionalProductVms;
+using VeganFit.Models.VMs.ProductVms;
+using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
 {
     public partial class UserSetProductForm : Form
     {
 
-        //private readonly IDataService _idataService;
+        private readonly IDataService _dataService;
         //private readonly DataRepo _dataRepo;
-        public UserSetProductForm(IDataService idataService, DataRepo dataRepo)
+
+
+        public UserSetProductForm(IDataService dataService)
         {
             InitializeComponent();
-            //_idataService = idataService;
+            _dataService = dataService;
             //_dataRepo = dataRepo;
         }
 
@@ -38,6 +44,9 @@ namespace VeganFit.UI
             txtUrunAdi.ForeColor = Color.SlateGray;
             txtKalori.ForeColor = Color.SlateGray;
             txtPorsiyon.ForeColor = Color.SlateGray;
+
+            ForBegin();
+
         }
         private void txtUrunAdi_Enter(object sender, EventArgs e)
         {
@@ -118,20 +127,37 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-
-            //DataDetailDto dto = new DataDetailDto()
-            //{
-            //    ProductName = txtUrunAdi.Text,
-            //    Calori = Convert.ToInt32(txtKalori.Text),
-            //    Serving = txtPorsiyon.Text,
-            //    Picture = pbxResim.Image.ToString()
-            //};
-            //var optProduct = _dataRepo.Create(dto);
-            //_dataRepo.GetAll(null);
+            DataDetailDto dto = new DataDetailDto()
+            {
+                Calori = Convert.ToInt32(txtKalori.Text),
+                ProductName = txtUrunAdi.Text,
+                Serving = txtPorsiyon.Text,
+                Picture = ImageToByteArray.imageToByteArray(pbxResim.Image),
+                Meal = (Meal)cbxOgunSec.SelectedItem
+            };
+            _dataService.Create(dto);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
         }
+        private void ForBegin()
+        {
+            Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
+            cbxOgunSec.Items.AddRange(array);
 
+            DataDetailDto dataDetail = UserAddMealForm._data;
+            
+            txtUrunAdi.Text = dataDetail.ProductName;
+            txtKalori.Text = dataDetail.Calori.ToString();
+            txtPorsiyon.Text = dataDetail.Serving;
+            pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
+        }
 
+        private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxOgunSec.Items.Count > 0)
+            {
+                btnOguneEkle.Enabled = true;
+            }
+        }
     }
 }

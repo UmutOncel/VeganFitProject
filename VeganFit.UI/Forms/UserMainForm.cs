@@ -19,6 +19,7 @@ namespace VeganFit.UI
         private readonly IWeightRepo _weightRepo;
         private readonly IWeightService _weightService;
         private readonly IFeedbackService _feedbackService;
+        private readonly IProductRepo _productRepo;
 
         public UserMainForm()
         {
@@ -93,7 +94,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserDataForm(_weightRepo));
+            openChildFormInPanel(new UserDataForm());
         }
 
         private void btnKiloTakip_Click(object sender, EventArgs e)
@@ -102,7 +103,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = true;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserAddWeigthForm(_weightService, _weightRepo));
+            openChildFormInPanel(new UserAddWeigthForm(_weightService,_weightRepo));
         }
 
         private void btnOgununeUrunEkle_Click(object sender, EventArgs e)
@@ -111,7 +112,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = true;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserAddMealForm());
+            openChildFormInPanel(new UserAddMealForm(_productRepo));
         }
 
         private void btnGeriBildirimGönder_Click(object sender, EventArgs e)

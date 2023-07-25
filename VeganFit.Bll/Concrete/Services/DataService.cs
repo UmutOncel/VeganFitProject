@@ -1,6 +1,8 @@
-﻿using VeganFit.Bll.Abstract.IServices;
+﻿using AutoMapper;
+using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
+using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.Models.VMs.DataVms;
 using VeganFit.Shared;
@@ -11,6 +13,26 @@ namespace VeganFit.Bll.Concrete.Services
     {
         private readonly IDataService _data;
         private readonly IDataRepo _dataRepo;
+        private readonly IMapper _mapper;
+
+        public ResultService<DataDetailDto> Create(DataDetailDto detailDto)
+        {
+            ResultService<DataDetailDto> result = new ResultService<DataDetailDto>();
+
+            Data newData = _mapper.Map<Data>(detailDto);
+            var addData = _dataRepo.Create(newData);
+            if(addData != null)
+            {
+                result.Data = detailDto;
+            }
+            else
+            {
+                result.AddError(ErrorType.BadRequest, "Ekleme işlemi başarısız");
+            }
+
+            return result;
+        }
+
         public ResultService<List<DataDetailVm>> GetDetails()
         {
             ResultService<List<DataDetailVm>> result = new ResultService<List<DataDetailVm>>();

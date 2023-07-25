@@ -115,7 +115,6 @@
             btnOguneEkle.BorderColor = Color.DarkGreen;
             btnOguneEkle.BorderRadius = 15;
             btnOguneEkle.BorderSize = 2;
-            btnOguneEkle.Enabled = false;
             btnOguneEkle.FlatAppearance.BorderSize = 0;
             btnOguneEkle.FlatStyle = FlatStyle.Flat;
             btnOguneEkle.ForeColor = Color.Black;
@@ -158,6 +157,7 @@
             txtKalori.BorderFocusColor = Color.Red;
             txtKalori.BorderRadius = 14;
             txtKalori.BorderSize = 1;
+            txtKalori.Enabled = false;
             txtKalori.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKalori.ForeColor = Color.Black;
             txtKalori.Location = new Point(270, 304);
@@ -181,6 +181,7 @@
             txtUrunAdi.BorderFocusColor = Color.Red;
             txtUrunAdi.BorderRadius = 14;
             txtUrunAdi.BorderSize = 1;
+            txtUrunAdi.Enabled = false;
             txtUrunAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtUrunAdi.ForeColor = Color.Black;
             txtUrunAdi.Location = new Point(270, 254);
@@ -204,6 +205,7 @@
             cbxOgunSec.Name = "cbxOgunSec";
             cbxOgunSec.Size = new Size(169, 22);
             cbxOgunSec.TabIndex = 30;
+            cbxOgunSec.SelectedIndexChanged += cbxOgunSec_SelectedIndexChanged;
             // 
             // lblOgun
             // 

@@ -21,7 +21,7 @@ namespace VeganFit.UI
 {
     public partial class UserDataForm : Form
     {
-        public UserDataForm(IWeightRepo weightRepo)
+        public UserDataForm()
         {
             InitializeComponent();
         }
