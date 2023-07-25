@@ -48,6 +48,7 @@
             btnKaydiTamamla.BorderColor = Color.DarkViolet;
             btnKaydiTamamla.BorderRadius = 10;
             btnKaydiTamamla.BorderSize = 2;
+            btnKaydiTamamla.Enabled = false;
             btnKaydiTamamla.FlatAppearance.BorderSize = 0;
             btnKaydiTamamla.FlatStyle = FlatStyle.Popup;
             btnKaydiTamamla.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -139,13 +140,14 @@
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
-            txtSifre.PasswordChar = false;
+            txtSifre.PasswordChar = true;
             txtSifre.PlaceholderColor = Color.DarkGray;
             txtSifre.PlaceholderText = "";
             txtSifre.Size = new Size(250, 28);
             txtSifre.TabIndex = 1;
             txtSifre.TabStop = false;
             txtSifre.UnderlinedStyle = false;
+            txtSifre._TextChanged += txtSifre__TextChanged;
             txtSifre.Enter += txtSifre_Enter;
             txtSifre.Leave += txtSifre_Leave;
             // 
@@ -161,13 +163,14 @@
             txtSifreyiTekrarGirin.Multiline = false;
             txtSifreyiTekrarGirin.Name = "txtSifreyiTekrarGirin";
             txtSifreyiTekrarGirin.Padding = new Padding(7);
-            txtSifreyiTekrarGirin.PasswordChar = false;
+            txtSifreyiTekrarGirin.PasswordChar = true;
             txtSifreyiTekrarGirin.PlaceholderColor = Color.DarkGray;
             txtSifreyiTekrarGirin.PlaceholderText = "";
             txtSifreyiTekrarGirin.Size = new Size(250, 28);
             txtSifreyiTekrarGirin.TabIndex = 1;
             txtSifreyiTekrarGirin.TabStop = false;
             txtSifreyiTekrarGirin.UnderlinedStyle = false;
+            txtSifreyiTekrarGirin._TextChanged += txtSifreyiTekrarGirin__TextChanged;
             txtSifreyiTekrarGirin.Enter += txtSifreyiTekrarGirin_Enter;
             txtSifreyiTekrarGirin.Leave += txtSifreyiTekrarGirin_Leave;
             // 

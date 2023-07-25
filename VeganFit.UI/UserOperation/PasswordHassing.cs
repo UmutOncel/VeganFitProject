@@ -7,13 +7,14 @@ using System.Threading.Tasks;
 
 namespace VeganFit.UI.UserOperation
 {
-    //public static string ShaHash(string sifre)
-    //{
-    //    using (SHA256 hash = SHA256Managed.Create())
-    //    {
-    //        return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(sifre)).Select(l => l.ToString("X2")));
-    //    }
-
-        
-    //}
+    public static class PasswordHassing 
+    {
+        public static string Sha256Hash(string sifre)
+        {
+            using (SHA256 hash = SHA256Managed.Create())
+            {
+                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(sifre)).Select(l => l.ToString("X2")));
+            }
+        }
+    }
 }
