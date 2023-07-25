@@ -26,7 +26,8 @@ namespace VeganFit.Bll.Concrete
             });
 
             IMapper mapper = mapp.CreateMapper();
-            services.AddSingleton(mapper);
+            services.AddSingleton(mapper).BuildServiceProvider();
+
 
             return services;
         }

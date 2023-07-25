@@ -27,31 +27,31 @@ namespace VeganFit.UI
         private readonly ProductService _productService;
         public static DataDetailDto _data;
         private readonly IDataRepo _dataRepo;
-
+        VeganFitDbContext db = new VeganFitDbContext();
         public UserAddMealForm(IProductRepo ProductRepo, IDataRepo dataRepo)
         {
             InitializeComponent();
-            _ProductRepo = ProductRepo;
+            this._ProductRepo = new ProductRepo(db);
             _data = new DataDetailDto();
             _dataRepo = dataRepo;
         }
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-            ListeyiYenile();
 
+            ListeyiYenile();
             txtAramaKutusu.Text = "Ürün Ara";
             txtAramaKutusu.ForeColor = Color.SlateGray;
 
-            //OgunListeleriniYenile();
+            
         }
 
         public void OgunListeleriniYenile()
         {
-            VeganFitDbContext db = new VeganFitDbContext();
-           // dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new {  x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
-              //&& /*x.User.Email == ActiveUser.ActiveUserName &&*/ x.Datetime == DateTime.Today);
-            dgvSabah.DataSource = db.Datas.Where(x=>x.State == State.Created && x.Meal == Meal.Breakfast && x.Datetime == DateTime.Today).Select(x=>x.Calori).ToList();
+
+            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new {  x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
+            && /*x.User.Email == ActiveUser.ActiveUserName &&*/ x.Datetime == DateTime.Today);
+            
 
             dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.Product.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
               && x.User.Email == ActiveUser.ActiveUserName && x.Datetime == DateTime.Today);
@@ -115,13 +115,17 @@ namespace VeganFit.UI
         }
         private void ListeyiYenile()
         {
-            dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select: x => new
+            if(_ProductRepo != null)
             {
-                x.ProductName,
-                x.Calori,
-                x.Serving,
-                x.Picture
-            }, where: x => x.State != State.Deleted);
+                dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select: x => new
+                {
+                    x.ProductName,
+                    x.Calori,
+                    x.Serving,
+                    x.Picture
+                }, where: x => x.State != State.Deleted);
+            }
+            
 
         }
 
@@ -150,7 +154,7 @@ namespace VeganFit.UI
             _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
             _data.Calori = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
             _data.Serving = dgvUrunlerListesi.SelectedRows[0].Cells[2].Value.ToString();
-            _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
+            //_data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
 
 
 
@@ -161,6 +165,12 @@ namespace VeganFit.UI
             //int id = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[0].Value);
             //UserSetProductForm userSetProductForm = new UserSetProductForm(id);
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+            //OgunListeleriniYenile();
         }
     }
 }

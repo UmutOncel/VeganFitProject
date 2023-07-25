@@ -8,18 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Bll.Concrete.Services;
+using VeganFit.DAL.Concrete.Context;
 using VeganFit.Models.VMs.FeedbackVms;
 
 namespace VeganFit.UI
 {
     public partial class UserFeedbackForm : Form
     {
-        private readonly IFeedbackService _service;
+        private readonly IFeedbackService _service ;
 
         public UserFeedbackForm(IFeedbackService feedbackService)
         {
             InitializeComponent();
-            _service = feedbackService;
+            this._service = feedbackService;
+            
         }
                
         private void UserFeedbackForm_Load(object sender, EventArgs e)

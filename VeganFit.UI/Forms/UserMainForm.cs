@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
+using VeganFit.UI.EFContextForm;
 
 namespace VeganFit.UI
 {
@@ -16,11 +17,6 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
-        private readonly IWeightRepo _weightRepo;
-        private readonly IWeightService _weightService;
-        private readonly IFeedbackService _feedbackService;
-        private readonly IProductRepo _productRepo;
-        private readonly IDataRepo _dataRepo;
 
         public UserMainForm()
         {
@@ -95,7 +91,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserDataForm());
+            openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserDataForm>());
         }
 
         private void btnKiloTakip_Click(object sender, EventArgs e)
@@ -104,7 +100,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = true;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserAddWeigthForm(_weightService,_weightRepo));
+            openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserAddWeigthForm>());
         }
 
         private void btnOgununeUrunEkle_Click(object sender, EventArgs e)
@@ -113,7 +109,7 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = true;
             pnlSecim4.Visible = false;
-            openChildFormInPanel(new UserAddMealForm(_productRepo,_dataRepo));
+            openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserAddMealForm>());
         }
 
         private void btnGeriBildirimGönder_Click(object sender, EventArgs e)
@@ -122,7 +118,8 @@ namespace VeganFit.UI
             pnlSecim2.Visible = false;
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = true;
-            openChildFormInPanel(new UserFeedbackForm(_feedbackService));
+            openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserFeedbackForm>());
+            
         }
     }
 }
