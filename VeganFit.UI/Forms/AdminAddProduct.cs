@@ -126,7 +126,7 @@ namespace VeganFit.UI
             ProductCreateVm vm = new ProductCreateVm()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Convert.ToInt32(txtKalori.Text),
+                Calori = Convert.ToDouble(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
                 Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
             };
@@ -156,7 +156,7 @@ namespace VeganFit.UI
             int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);
             Product product = _productRepo.GetFirstOrDefault(x => x.Id == id);
             product.ProductName = txtUrunAdi.Text;
-            product.Calori = Convert.ToInt32(txtKalori.Text);
+            product.Calori = Convert.ToDouble(txtKalori.Text);
             product.Serving = txtPorsiyon.Text;
             product.Picture = ImageToByteArray.imageToByteArray(pbxResim.Image);
             _productRepo.Update(product);
