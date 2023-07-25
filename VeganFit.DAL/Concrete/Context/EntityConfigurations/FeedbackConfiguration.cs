@@ -18,13 +18,15 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
         {
             base.Configure(builder);
 
-            builder.Property(x => x.MessageText)
+            builder.Property(x => x.Message)
                 .HasMaxLength(500)
-                .IsRequired();
+                .IsRequired(false);
 
             builder.HasOne<User>(x => x.User)
                 .WithMany(x => x.Feedbacks)
                 .HasForeignKey(x => x.UserId);
+
+            builder.Property(x => x.UserId).IsRequired(false);
         }
     }
 }

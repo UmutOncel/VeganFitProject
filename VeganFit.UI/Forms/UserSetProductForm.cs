@@ -137,17 +137,15 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-            VeganFitDbContext fitDbContext = new VeganFitDbContext();
-            DataRepo dataRepo = new DataRepo(fitDbContext);
-            Data data = new Data()
+            DataDetailDto dto = new DataDetailDto()
             {
-                Calori = Convert.ToInt32(txtKalori.Text),
+                ProductName=txtUrunAdi.Text,
+                Calori= Convert.ToInt32(txtKalori.Text),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
-                Datetime = DateTime.Now,
-                UserEmail = ActiveUser.ActiveUserName
-                                
+                Datetime = DateTime.Now
             };
-            dataRepo.Create(data); 
+
+            _dataService.Create(dto); 
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
 
@@ -163,7 +161,7 @@ namespace VeganFit.UI
             txtUrunAdi.Text = dataDetail.ProductName;
             txtKalori.Text = dataDetail.Calori.ToString();
             txtPorsiyon.Text = dataDetail.Serving;
-            pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
+            //pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)

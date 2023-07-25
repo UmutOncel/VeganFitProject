@@ -25,11 +25,9 @@ namespace VeganFit.Bll.Concrete.Services
             _dataRepo = dataRepo;
         }
 
-        public ResultService<DataDetailDto> Create(DataDetailVm dataDetailVm)
+        public ResultService<DataDetailDto> Create(DataDetailDto dataDetail)
         {
             ResultService<DataDetailDto> result = new ResultService<DataDetailDto>();
-
-            DataDetailDto dataDetail = _mapper.Map<DataDetailDto>(dataDetailVm);
 
             Data newData = _mapper.Map<Data>(dataDetail);
             var addData = _dataRepo.Create(newData);

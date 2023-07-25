@@ -68,7 +68,7 @@ namespace VeganFit.UI
             { 
                 Message = txtGorusOneri.Text
             };
-            var feedback = _service.Create(vm);
+            _service.Create(vm);
 
             MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
         }

@@ -13,6 +13,7 @@ namespace VeganFit.Entities
     /// </summary>
     public class Data : BaseEntity
     {
+        public string ProductName { get; set; }
         public int Calori { get; set; }
         public DateTime Datetime { get; set; }
         public Meal Meal { get; set; }

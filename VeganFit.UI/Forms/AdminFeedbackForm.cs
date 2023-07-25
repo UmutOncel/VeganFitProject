@@ -18,9 +18,11 @@ namespace VeganFit.UI
         private readonly IFeedbackService _service;
         private readonly IFeedbackRepo _feedbackRepo;
 
-        public AdminFeedbackForm()
+        public AdminFeedbackForm(IFeedbackRepo feedbackRepo,IFeedbackService feedbackService)
         {
             InitializeComponent();
+            _feedbackRepo = feedbackRepo;
+            _service = feedbackService;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -55,7 +57,7 @@ namespace VeganFit.UI
 
         private void ListeyiYenile()
         {
-            dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new { x.Id, x.User.Email, x.MessageText }, where: x => x.State != State.Deleted);
+            dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new { x.Id, x.User.Email, x.Message }, where: x => x.State != State.Deleted);
         }
     }
 }
