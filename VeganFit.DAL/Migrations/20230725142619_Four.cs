@@ -5,50 +5,50 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace VeganFit.DAL.Migrations
 {
-    public partial class Nine : Migration
+    public partial class Four : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "MessageText",
-                table: "Feedbacks",
-                newName: "Message");
+                name: "DateOfRecord",
+                table: "Weights",
+                newName: "RecordDate");
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 15, 27, 2, 601, DateTimeKind.Local).AddTicks(3503));
+                value: new DateTime(2023, 7, 25, 17, 26, 18, 752, DateTimeKind.Local).AddTicks(1305));
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 15, 27, 2, 601, DateTimeKind.Local).AddTicks(3540));
+                value: new DateTime(2023, 7, 25, 17, 26, 18, 752, DateTimeKind.Local).AddTicks(1356));
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.RenameColumn(
-                name: "Message",
-                table: "Feedbacks",
-                newName: "MessageText");
+                name: "RecordDate",
+                table: "Weights",
+                newName: "DateOfRecord");
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 15, 23, 38, 585, DateTimeKind.Local).AddTicks(5088));
+                value: new DateTime(2023, 7, 25, 17, 12, 50, 127, DateTimeKind.Local).AddTicks(6767));
 
             migrationBuilder.UpdateData(
                 table: "Users",
                 keyColumn: "Id",
                 keyValue: 2,
                 column: "CreatedDate",
-                value: new DateTime(2023, 7, 25, 15, 23, 38, 585, DateTimeKind.Local).AddTicks(5130));
+                value: new DateTime(2023, 7, 25, 17, 12, 50, 127, DateTimeKind.Local).AddTicks(6824));
         }
     }
 }

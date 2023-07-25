@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.UI.EFContextForm;
 
 namespace VeganFit.UI
 {
@@ -26,9 +27,9 @@ namespace VeganFit.UI
         }
         private void btnIlerle_Click(object sender, EventArgs e)
         {
-            //NewRegisterForm newRegisterForm = new NewRegisterForm(_userService);
-            //newRegisterForm.Show();
-            //this.Close();
+            var formRegister = EFContextForm.EFContextForm.ConfigureServices<NewRegisterForm>();
+            formRegister.Show();
+            this.Close();
         }
 
         private void pnlWarningForm_MouseDown(object sender, MouseEventArgs e)

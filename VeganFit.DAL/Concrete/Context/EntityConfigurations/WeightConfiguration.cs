@@ -20,12 +20,14 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
             builder.Property(x => x.UserWeight)
                 .IsRequired();
 
-            builder.Property(x => x.DateOfRecord)
+            builder.Property(x => x.RecordDate)
                 .IsRequired();
 
             builder.HasOne<User>(x => x.User)
                 .WithMany(x => x.Weights)
                 .HasForeignKey(x => x.UserId);
+
+            builder.Property(x=>x.UserId).IsRequired(false);
         }
     }
 }

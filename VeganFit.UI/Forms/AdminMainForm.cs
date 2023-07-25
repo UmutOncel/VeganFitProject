@@ -97,7 +97,7 @@ namespace VeganFit.UI
         {
             pnlSecim1.Visible = true;
             pnlSecim2.Visible = false;
-            //openChildFormInPanel(new AdminAddProduct());
+            openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<AdminAddProduct>());
         }
 
         private void btnBildirimleriGor_Click(object sender, EventArgs e)

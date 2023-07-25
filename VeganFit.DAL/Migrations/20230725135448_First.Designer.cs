@@ -12,8 +12,8 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    [Migration("20230725122703_Nine")]
-    partial class Nine
+    [Migration("20230725135448_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -724,7 +724,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 15, 27, 2, 601, DateTimeKind.Local).AddTicks(3503),
+                            CreatedDate = new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3830),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -736,7 +736,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 25, 15, 27, 2, 601, DateTimeKind.Local).AddTicks(3540),
+                            CreatedDate = new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3871),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",
@@ -773,8 +773,12 @@ namespace VeganFit.DAL.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("UserWeight")
                         .HasColumnType("int");
@@ -820,9 +824,7 @@ namespace VeganFit.DAL.Migrations
                 {
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Weights")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });

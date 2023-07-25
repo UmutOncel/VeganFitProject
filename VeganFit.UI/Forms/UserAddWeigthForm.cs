@@ -20,22 +20,23 @@ namespace VeganFit.UI
     {
         private readonly IWeightService _service;
         private readonly IWeightRepo _weightRepo;
+        private readonly IUserService _userService;
 
         public UserAddWeigthForm(IWeightService weightService, IWeightRepo weightRepo)
         {
             InitializeComponent();
-           
+            
             _service = weightService;
             _weightRepo = weightRepo;
         }
-               
+
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
             ListeyiYenile();
 
             txtKilo.Text = "Kilonuzu Giriniz";
             txtKilo.ForeColor = Color.SlateGray;
-  
+
         }
         private void txtKilo_Enter(object sender, EventArgs e)
         {
@@ -69,14 +70,16 @@ namespace VeganFit.UI
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            bool varMi = _weightRepo.Any(x => x.DateOfRecord == dtpTarih.Value);
+            bool varMi = _weightRepo.Any(x => x.RecordDate == dtpTarih.Value);
             if (!varMi)
             {
                 WeightCreateVm vm = new WeightCreateVm()
                 {
-                    Weight = Convert.ToInt32(txtKilo.Text)
+                    UserWeight = Convert.ToInt32(txtKilo.Text),
+                    UserName = ActiveUser.ActiveUserFirstName
+
                 };
-                var weight = _service.Create(vm);
+                _service.Create(vm);
                 MessageBox.Show("Kayıt Başarılı");
                 ListeyiYenile();
             }
@@ -88,7 +91,15 @@ namespace VeganFit.UI
 
         private void ListeyiYenile()
         {
-            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.DateOfRecord, x.UserWeight }, where: x => x.User.Email == ActiveUser.ActiveUserName);
+            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.RecordDate, x.UserWeight, x.UserName }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
+        }
+
+        private void txtKilo__TextChanged(object sender, EventArgs e)
+        {
+            if (txtKilo.Text.Length > 0)
+            {
+                btnKaydet.Enabled = true;
+            }
         }
     }
 }
