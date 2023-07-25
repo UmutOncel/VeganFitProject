@@ -12,6 +12,6 @@
 
         public string Serving { get; set; }
 
-        public int Calori { get; set; }
+        public double Calori { get; set; }
     }
 }
