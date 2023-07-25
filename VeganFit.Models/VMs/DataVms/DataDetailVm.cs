@@ -11,7 +11,7 @@ namespace VeganFit.Models.VMs.DataVms
     {
         public string ProductName { get; set; }
 
-        public int Calori { get; set; }
+        public double Calori { get; set; }
 
         public Meal Meal { get; set; }
 

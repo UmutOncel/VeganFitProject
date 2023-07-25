@@ -12,13 +12,14 @@ using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.UI.LoginUser;
+using VeganFit.UI.UserOperation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace VeganFit.UI
 {
     public partial class LoginForm : Form
     {
-        bool mov;
+        bool mov,isAdmin;
         int movX, movY;
 
         private readonly IUserService _userService;
@@ -147,31 +148,38 @@ namespace VeganFit.UI
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            var login = _userService.Login(txtKullaniciAdi.Text, txtSifre.Text);
+            string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
+            var login = _userService.Login(txtKullaniciAdi.Text, sifre);
 
-            if (login.Data == null)
+            if (login.Data == null )
             {
                 MessageBox.Show("Lütfen Bilgilerinizi Kontrol Edin");
             }
-
-            bool isAdmin = login.Data.Role == Core.Enums.Role.Admin;
-
-            ActiveUser.Role = login.Data.Role;            
-            ActiveUser.ActiveUserName = login.Data.Email;
-            ActiveUser.ActiveUserFirstName = _userRepo.GetFirstOrDefault(filter: x => x.Email == login.Data.Email).Firstname;
-
-            if (isAdmin)
-            {
-                AdminMainForm adminMainForm = new AdminMainForm();
-                adminMainForm.Show();
-                this.Hide(); // Close olabilir mi ??
-            }
             else
             {
-                UserMainForm userMainForm = new UserMainForm();
-                userMainForm.Show();
-                this.Hide();
+                isAdmin = login.Data.Role == Core.Enums.Role.Admin;
+
+                ActiveUser.Role = login.Data.Role;
+                ActiveUser.ActiveUserName = login.Data.Email;
+                ActiveUser.ActiveUserFirstName = _userRepo.GetFirstOrDefault(filter: x => x.Email == login.Data.Email).Firstname;
+
+                if (isAdmin)
+                {
+                    AdminMainForm adminMainForm = new AdminMainForm();
+                    adminMainForm.Show();
+                    this.Hide(); // Close olabilir mi ??
+                }
+                else
+                {
+                    UserMainForm userMainForm = new UserMainForm();
+                    userMainForm.Show();
+                    this.Hide();
+                }
             }
+            
+
+
+            
         }
     }
 }

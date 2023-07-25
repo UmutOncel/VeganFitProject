@@ -32,11 +32,18 @@ namespace VeganFit.UI
 
         private void UserDataForm_Load(object sender, EventArgs e)
         {
-            
-            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate } , where: x => x.UserName == ActiveUser.ActiveUserFirstName);              
-                
+            VeganFitDbContext db = new VeganFitDbContext();
 
-            
+            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate } , where: x => x.UserName == ActiveUser.ActiveUserFirstName);            
+            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName)
+                .GroupBy(x => new { x.UserEmail, x.Datetime })
+                .Select(x => new
+                {
+                    Tarih = x.Key.Datetime,
+                    ToplamKalori = x.Sum(x => x.Calori)
+                }).ToList();
+
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

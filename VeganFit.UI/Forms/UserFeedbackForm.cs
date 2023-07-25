@@ -71,6 +71,7 @@ namespace VeganFit.UI
             _service.Create(vm);
 
             MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
+            this.Close();
         }
     }
 }

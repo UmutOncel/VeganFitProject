@@ -42,14 +42,12 @@
             lblOgle = new Label();
             lblAksam = new Label();
             dgvUrunlerListesi = new DataGridView();
-            lblUrunListesi = new Label();
             btnUrunEkle = new Buttons.DesignButton();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             txtAramaKutusu = new TextBoxs.TextBox.DesignTextBox();
             btnListeyiYenile = new Buttons.DesignButton();
             lblListeyiYenile = new Label();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvSabah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).BeginInit();
@@ -205,15 +203,6 @@
             dgvUrunlerListesi.TabIndex = 8;
             dgvUrunlerListesi.CellClick += dgvUrunlerListesi_CellClick;
             // 
-            // lblUrunListesi
-            // 
-            lblUrunListesi.AutoSize = true;
-            lblUrunListesi.Location = new Point(582, 15);
-            lblUrunListesi.Name = "lblUrunListesi";
-            lblUrunListesi.Size = new Size(243, 14);
-            lblUrunListesi.TabIndex = 7;
-            lblUrunListesi.Text = "???hangi öğün olduğu gözükecek???";
-            // 
             // btnUrunEkle
             // 
             btnUrunEkle.BackColor = Color.Transparent;
@@ -289,6 +278,7 @@
             txtAramaKutusu.TabIndex = 16;
             txtAramaKutusu.TabStop = false;
             txtAramaKutusu.UnderlinedStyle = false;
+            txtAramaKutusu._TextChanged += txtAramaKutusu__TextChanged;
             txtAramaKutusu.Enter += txtAramaCubugu_Enter;
             txtAramaKutusu.Leave += txtAramaCubugu_Leave;
             // 
@@ -326,23 +316,12 @@
             lblListeyiYenile.Text = "Listeyi Yenile";
             lblListeyiYenile.Visible = false;
             // 
-            // button1
-            // 
-            button1.Location = new Point(493, 249);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 18;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
             // UserAddMealForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
-            Controls.Add(button1);
             Controls.Add(lblListeyiYenile);
             Controls.Add(txtAramaKutusu);
             Controls.Add(lblKapat);
@@ -352,7 +331,6 @@
             Controls.Add(dgvUrunlerListesi);
             Controls.Add(lblAksam);
             Controls.Add(lblOgle);
-            Controls.Add(lblUrunListesi);
             Controls.Add(lblSabah);
             Controls.Add(btnUrunuSilAksam);
             Controls.Add(btnUrunuSilOgle);
@@ -385,13 +363,11 @@
         private Label lblOgle;
         private Label lblAksam;
         private DataGridView dgvUrunlerListesi;
-        private Label lblUrunListesi;
         private Buttons.DesignButton btnUrunEkle;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
         private TextBoxs.TextBox.DesignTextBox txtAramaKutusu;
         private Buttons.DesignButton btnListeyiYenile;
         private Label lblListeyiYenile;
-        private Button button1;
     }
 }
