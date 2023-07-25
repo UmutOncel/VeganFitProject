@@ -26,7 +26,7 @@ namespace VeganFit.UI
         public UserDataForm(IWeightRepo weightRepo)
         {
             InitializeComponent();
-            _weightRepo = weightRepo;   
+            _weightRepo = weightRepo;
         }
 
 
@@ -34,7 +34,7 @@ namespace VeganFit.UI
         {
             VeganFitDbContext db = new VeganFitDbContext();
 
-            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate } , where: x => x.UserName == ActiveUser.ActiveUserFirstName);            
+            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
             dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName)
                 .GroupBy(x => new { x.UserEmail, x.Datetime })
                 .Select(x => new
@@ -59,6 +59,6 @@ namespace VeganFit.UI
             lblKapat.Visible = false;
         }
 
-       
+
     }
 }

@@ -125,10 +125,13 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGunlukKiloTakibi.Location = new Point(527, 100);
             dgvGunlukKiloTakibi.Name = "dgvGunlukKiloTakibi";
+            dgvGunlukKiloTakibi.ReadOnly = true;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
             dgvGunlukKiloTakibi.Size = new Size(500, 500);
             dgvGunlukKiloTakibi.TabIndex = 17;

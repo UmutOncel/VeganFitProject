@@ -36,6 +36,7 @@
             label2 = new Label();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)dgvGunlukKiloTakibi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGunSonuKalori).BeginInit();
             SuspendLayout();
@@ -48,10 +49,13 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGunlukKiloTakibi.Location = new Point(22, 100);
             dgvGunlukKiloTakibi.Name = "dgvGunlukKiloTakibi";
+            dgvGunlukKiloTakibi.ReadOnly = true;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
             dgvGunlukKiloTakibi.Size = new Size(500, 500);
             dgvGunlukKiloTakibi.TabIndex = 0;
@@ -64,10 +68,13 @@
             dataGridViewCellStyle2.SelectionBackColor = Color.DarkSeaGreen;
             dataGridViewCellStyle2.SelectionForeColor = Color.Black;
             dgvGunSonuKalori.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvGunSonuKalori.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvGunSonuKalori.BackgroundColor = Color.DarkSeaGreen;
             dgvGunSonuKalori.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGunSonuKalori.Location = new Point(569, 100);
             dgvGunSonuKalori.Name = "dgvGunSonuKalori";
+            dgvGunSonuKalori.ReadOnly = true;
+            dgvGunSonuKalori.RowTemplate.DefaultCellStyle.BackColor = Color.SlateGray;
             dgvGunSonuKalori.RowTemplate.Height = 25;
             dgvGunSonuKalori.Size = new Size(500, 500);
             dgvGunSonuKalori.TabIndex = 0;
@@ -128,6 +135,13 @@
             btnKapat.MouseEnter += btnKapat_MouseEnter;
             btnKapat.MouseLeave += btnKapat_MouseLeave;
             // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.Connection = null;
+            sqlCommand1.Notification = null;
+            sqlCommand1.Transaction = null;
+            // 
             // UserDataForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
@@ -159,5 +173,6 @@
         private Label label2;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

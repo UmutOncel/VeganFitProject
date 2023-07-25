@@ -25,7 +25,7 @@ namespace VeganFit.UI
         public UserAddWeigthForm(IWeightService weightService, IWeightRepo weightRepo)
         {
             InitializeComponent();
-            
+
             _service = weightService;
             _weightRepo = weightRepo;
         }

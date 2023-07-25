@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             dgvSabah = new DataGridView();
             dgvOgle = new DataGridView();
             dgvAksam = new DataGridView();
@@ -57,48 +57,55 @@
             // 
             // dgvSabah
             // 
-            dataGridViewCellStyle5.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle5.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle5.SelectionForeColor = Color.Black;
-            dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvSabah.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvSabah.BackgroundColor = Color.DarkSeaGreen;
             dgvSabah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSabah.Location = new Point(12, 30);
             dgvSabah.Name = "dgvSabah";
+            dgvSabah.ReadOnly = true;
+            dgvSabah.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dgvSabah.RowTemplate.Height = 25;
             dgvSabah.Size = new Size(475, 154);
             dgvSabah.TabIndex = 1;
             // 
             // dgvOgle
             // 
-            dataGridViewCellStyle6.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle6.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
-            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvOgle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvOgle.BackgroundColor = Color.DarkSeaGreen;
             dgvOgle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOgle.Location = new Point(12, 269);
             dgvOgle.Name = "dgvOgle";
+            dgvOgle.ReadOnly = true;
             dgvOgle.RowTemplate.Height = 25;
             dgvOgle.Size = new Size(475, 154);
             dgvOgle.TabIndex = 1;
             // 
             // dgvAksam
             // 
-            dataGridViewCellStyle7.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle7.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle7.SelectionForeColor = Color.Black;
-            dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle3.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvAksam.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvAksam.BackgroundColor = Color.DarkSeaGreen;
             dgvAksam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAksam.Location = new Point(12, 508);
             dgvAksam.Name = "dgvAksam";
+            dgvAksam.ReadOnly = true;
             dgvAksam.RowTemplate.Height = 25;
             dgvAksam.Size = new Size(475, 154);
             dgvAksam.TabIndex = 1;
@@ -189,16 +196,18 @@
             // 
             // dgvUrunlerListesi
             // 
-            dataGridViewCellStyle8.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle8.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Black;
-            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dgvUrunlerListesi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvUrunlerListesi.BackgroundColor = Color.DarkSeaGreen;
             dgvUrunlerListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUrunlerListesi.Location = new Point(591, 84);
             dgvUrunlerListesi.Name = "dgvUrunlerListesi";
+            dgvUrunlerListesi.ReadOnly = true;
             dgvUrunlerListesi.RowTemplate.Height = 25;
             dgvUrunlerListesi.Size = new Size(488, 581);
             dgvUrunlerListesi.TabIndex = 8;

@@ -44,11 +44,13 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dgvGorusOneri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvGorusOneri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvGorusOneri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvGorusOneri.BackgroundColor = Color.LightSteelBlue;
             dgvGorusOneri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGorusOneri.Location = new Point(100, 84);
             dgvGorusOneri.Name = "dgvGorusOneri";
+            dgvGorusOneri.ReadOnly = true;
+            dgvGorusOneri.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
             dgvGorusOneri.RowTemplate.Height = 25;
             dgvGorusOneri.Size = new Size(894, 541);
             dgvGorusOneri.TabIndex = 0;
