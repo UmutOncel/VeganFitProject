@@ -12,7 +12,7 @@ namespace VeganFit.UI.UserOperation
         {
             MemoryStream ms = new MemoryStream();
 
-            if(imageIn != null)
+            if (imageIn != null)
                 imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
 
             return ms.ToArray();
@@ -20,8 +20,14 @@ namespace VeganFit.UI.UserOperation
 
         public static Image byteArrayToImage(byte[] byteArrayIn)
         {
-            MemoryStream ms = new MemoryStream(byteArrayIn);
-            Image returnImage = Image.FromStream(ms);
+            Image returnImage=null;
+            MemoryStream ms;
+            if (byteArrayIn != null)
+            {
+                ms = new MemoryStream(byteArrayIn);
+                returnImage = Image.FromStream(ms);
+            }
+            
             return returnImage;
         }
     }

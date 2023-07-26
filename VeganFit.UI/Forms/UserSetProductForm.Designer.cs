@@ -121,6 +121,7 @@
             btnOguneEkle.BorderColor = Color.DarkGreen;
             btnOguneEkle.BorderRadius = 15;
             btnOguneEkle.BorderSize = 2;
+            btnOguneEkle.Enabled = false;
             btnOguneEkle.FlatAppearance.BorderSize = 0;
             btnOguneEkle.FlatStyle = FlatStyle.Flat;
             btnOguneEkle.ForeColor = Color.Black;
@@ -140,6 +141,7 @@
             txtPorsiyon.BorderFocusColor = Color.Red;
             txtPorsiyon.BorderRadius = 14;
             txtPorsiyon.BorderSize = 1;
+            txtPorsiyon.Enabled = false;
             txtPorsiyon.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtPorsiyon.ForeColor = Color.Black;
             txtPorsiyon.Location = new Point(463, 358);
@@ -178,8 +180,7 @@
             txtKalori.TabIndex = 23;
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
-            txtKalori.Enter += txtKalori_Enter;
-            txtKalori.Leave += txtKalori_Leave;
+
             // 
             // txtUrunAdi
             // 
@@ -202,8 +203,8 @@
             txtUrunAdi.TabIndex = 24;
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
-            txtUrunAdi.Enter += txtUrunAdi_Enter;
-            txtUrunAdi.Leave += txtUrunAdi_Leave;
+
+
             // 
             // cbxOgunSec
             // 

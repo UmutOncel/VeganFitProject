@@ -12,6 +12,7 @@ namespace VeganFit.UI
     {
 
         private readonly IDataService _dataService;
+        bool product, calori,serving;
 
         public UserAddNewProductForm(IDataService dataService)
         {
@@ -22,13 +23,6 @@ namespace VeganFit.UI
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
         {
             ForBegin();
-            //txtUrunAdi.Text = "Ürün Adı";
-            //txtKalori.Text = "Kaç Kalori";
-            //txtPorsiyon.Text = "Porsiyon Giriniz";
-
-            //txtUrunAdi.ForeColor = Color.SlateGray;
-            //txtKalori.ForeColor = Color.SlateGray;
-            //txtPorsiyon.ForeColor = Color.SlateGray;
         }
         private void txtUrunAdi_Enter(object sender, EventArgs e)
         {
@@ -132,9 +126,21 @@ namespace VeganFit.UI
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
-
         }
 
+        private void txtUrunAdi__TextChanged(object sender, EventArgs e)
+        {
+            product = RegularExcep.RegularEx(@"^[a-zA-Z]*$", txtUrunAdi);
+        }
 
+        private void txtKalori__TextChanged(object sender, EventArgs e)
+        {
+            calori = RegularExcep.RegularEx(@"^(?=.*?[0 - 9])(?=.*?[,.*_-])", txtKalori);
+        }
+
+        private void txtPorsiyon__TextChanged(object sender, EventArgs e)
+        {
+            serving = RegularExcep.RegularEx(@"^(?=.*?[0 - 9])(?=.*?[,.*_-])([a-zA-Z]*)$", txtPorsiyon);
+        }
     }
 }
