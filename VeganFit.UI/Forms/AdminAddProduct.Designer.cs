@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            pbxResim = new PictureBox();
             dgvUrunler = new DataGridView();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
@@ -42,23 +41,10 @@
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             lblUrunAra = new Label();
-            lblUrunAdi = new Label();
-            lblKalori = new Label();
-            lblPorisyon = new Label();
-            ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
+            pbxResim = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
-            // 
-            // pbxResim
-            // 
-            pbxResim.BorderStyle = BorderStyle.FixedSingle;
-            pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(385, 283);
-            pbxResim.Name = "pbxResim";
-            pbxResim.Size = new Size(202, 129);
-            pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxResim.TabIndex = 3;
-            pbxResim.TabStop = false;
             // 
             // dgvUrunler
             // 
@@ -289,35 +275,17 @@
             lblUrunAra.TabIndex = 9;
             lblUrunAra.Text = "Ürün Ara";
             // 
-            // lblUrunAdi
+            // pbxResim
             // 
-            lblUrunAdi.AutoSize = true;
-            lblUrunAdi.ForeColor = Color.Black;
-            lblUrunAdi.Location = new Point(50, 287);
-            lblUrunAdi.Name = "lblUrunAdi";
-            lblUrunAdi.Size = new Size(69, 14);
-            lblUrunAdi.TabIndex = 36;
-            lblUrunAdi.Text = "Ürün Adı:";
-            // 
-            // lblKalori
-            // 
-            lblKalori.AutoSize = true;
-            lblKalori.ForeColor = Color.Black;
-            lblKalori.Location = new Point(68, 340);
-            lblKalori.Name = "lblKalori";
-            lblKalori.Size = new Size(51, 14);
-            lblKalori.TabIndex = 37;
-            lblKalori.Text = "Kalori:";
-            // 
-            // lblPorisyon
-            // 
-            lblPorisyon.AutoSize = true;
-            lblPorisyon.ForeColor = Color.Black;
-            lblPorisyon.Location = new Point(49, 392);
-            lblPorisyon.Name = "lblPorisyon";
-            lblPorisyon.Size = new Size(70, 14);
-            lblPorisyon.TabIndex = 38;
-            lblPorisyon.Text = "Porsiyon:";
+            pbxResim.BackColor = Color.Transparent;
+            pbxResim.BorderStyle = BorderStyle.FixedSingle;
+            pbxResim.Image = Properties.Resources.Logo;
+            pbxResim.Location = new Point(321, 286);
+            pbxResim.Name = "pbxResim";
+            pbxResim.Size = new Size(202, 129);
+            pbxResim.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxResim.TabIndex = 3;
+            pbxResim.TabStop = false;
             // 
             // AdminAddProduct
             // 
@@ -346,14 +314,13 @@
             Name = "AdminAddProduct";
             Text = "AdminAddProduct";
             Load += AdminAddProduct_Load;
-            ((System.ComponentModel.ISupportInitialize)pbxResim).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxResim).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox pbxResim;
         private DataGridView dgvUrunler;
         private TextBoxs.TextBox.DesignTextBox txtAramaCubugu;
         private TextBoxs.TextBox.DesignTextBox txtUrunAdi;
@@ -366,8 +333,6 @@
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
         private Label lblUrunAra;
-        private Label lblUrunAdi;
-        private Label lblKalori;
-        private Label lblPorisyon;
+        private PictureBox pbxResim;
     }
 }
