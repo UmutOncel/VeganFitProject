@@ -36,18 +36,13 @@
             label2 = new Label();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
-            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             ((System.ComponentModel.ISupportInitialize)dgvGunlukKiloTakibi).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGunSonuKalori).BeginInit();
             SuspendLayout();
             // 
             // dgvGunlukKiloTakibi
             // 
-            dataGridViewCellStyle1.BackColor = Color.Empty;
             dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Empty;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Empty;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Empty;
             dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
@@ -135,13 +130,6 @@
             btnKapat.MouseEnter += btnKapat_MouseEnter;
             btnKapat.MouseLeave += btnKapat_MouseLeave;
             // 
-            // sqlCommand1
-            // 
-            sqlCommand1.CommandTimeout = 30;
-            sqlCommand1.Connection = null;
-            sqlCommand1.Notification = null;
-            sqlCommand1.Transaction = null;
-            // 
             // UserDataForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
@@ -173,6 +161,5 @@
         private Label label2;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
-        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }
