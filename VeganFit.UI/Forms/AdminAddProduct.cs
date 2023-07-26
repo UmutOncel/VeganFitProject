@@ -106,7 +106,7 @@ namespace VeganFit.UI
             _service.Create(vm);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
-
+            ClearAll();
             ListeyiYenile();
         }
 
@@ -128,7 +128,7 @@ namespace VeganFit.UI
             _service.Update(updateVm);
 
             MessageBox.Show("Ürün Başarıyla Güncellenmiştir");
-
+            ClearAll();
             ListeyiYenile();
         }
 
@@ -176,7 +176,7 @@ namespace VeganFit.UI
                 txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
                 txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
                 byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
-                
+
                 if (image != null)
                 {
                     pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
@@ -201,6 +201,27 @@ namespace VeganFit.UI
             dgvUrunler.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaCubugu.Text) && x.State != State.Deleted)
                 .Select(x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture })
                 .ToList();
+        }
+
+        private void dgvUrunler_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            ClearAll();
+        }
+        /// <summary>
+        /// Textbox ve picturebox'taki verileri temizler.
+        /// </summary>
+        private void ClearAll()
+        {
+            txtKalori.Text = string.Empty;
+            txtPorsiyon.Text = string.Empty;
+            txtUrunAdi.Text = string.Empty;
+            pbxResim.Image = null;
+            pbxResim.BorderStyle = BorderStyle.Fixed3D;
         }
     }
 }

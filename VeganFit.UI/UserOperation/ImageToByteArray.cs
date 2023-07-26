@@ -11,7 +11,10 @@ namespace VeganFit.UI.UserOperation
         public static byte[] imageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+            if(imageIn != null)
+                imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
             return ms.ToArray();
         }
 

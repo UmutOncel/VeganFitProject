@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            dgvUrunler = new DataGridView();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
             txtKalori = new TextBoxs.TextBox.DesignTextBox();
@@ -45,26 +43,11 @@
             lblUrunAdi = new Label();
             lblKalori = new Label();
             lblPorisyon = new Label();
-            ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
+            dgvUrunler = new DataGridView();
+            btnTemizle = new Buttons.DesignButton();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             SuspendLayout();
-            // 
-            // dgvUrunler
-            // 
-            dataGridViewCellStyle2.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            dgvUrunler.BackgroundColor = Color.LightSteelBlue;
-            dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUrunler.Location = new Point(606, 82);
-            dgvUrunler.Name = "dgvUrunler";
-            dgvUrunler.RowTemplate.Height = 25;
-            dgvUrunler.Size = new Size(473, 576);
-            dgvUrunler.TabIndex = 4;
-            dgvUrunler.CellClick += dgvUrunler_CellClick;
             // 
             // txtAramaCubugu
             // 
@@ -283,7 +266,7 @@
             pbxResim.BackColor = Color.Transparent;
             pbxResim.BorderStyle = BorderStyle.FixedSingle;
             pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(381, 283);
+            pbxResim.Location = new Point(385, 283);
             pbxResim.Name = "pbxResim";
             pbxResim.Size = new Size(202, 129);
             pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
@@ -320,12 +303,45 @@
             lblPorisyon.TabIndex = 38;
             lblPorisyon.Text = "Porsiyon:";
             // 
+            // dgvUrunler
+            // 
+            dgvUrunler.BackgroundColor = Color.LightSteelBlue;
+            dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUrunler.Location = new Point(606, 110);
+            dgvUrunler.Name = "dgvUrunler";
+            dgvUrunler.RowTemplate.DefaultCellStyle.BackColor = Color.Transparent;
+            dgvUrunler.RowTemplate.Height = 25;
+            dgvUrunler.Size = new Size(473, 529);
+            dgvUrunler.TabIndex = 39;
+            dgvUrunler.CellClick += dgvUrunler_CellClick;
+            dgvUrunler.DataError += dgvUrunler_DataError;
+            // 
+            // btnTemizle
+            // 
+            btnTemizle.BackColor = Color.Transparent;
+            btnTemizle.BackgroundColor = Color.Transparent;
+            btnTemizle.BorderColor = Color.White;
+            btnTemizle.BorderRadius = 15;
+            btnTemizle.BorderSize = 2;
+            btnTemizle.FlatAppearance.BorderSize = 0;
+            btnTemizle.FlatStyle = FlatStyle.Flat;
+            btnTemizle.ForeColor = Color.Black;
+            btnTemizle.Location = new Point(477, 474);
+            btnTemizle.Name = "btnTemizle";
+            btnTemizle.Size = new Size(110, 40);
+            btnTemizle.TabIndex = 5;
+            btnTemizle.Text = "Temizle";
+            btnTemizle.TextColor = Color.Black;
+            btnTemizle.UseVisualStyleBackColor = false;
+            btnTemizle.Click += btnTemizle_Click;
+            // 
             // AdminAddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1091, 718);
+            Controls.Add(dgvUrunler);
             Controls.Add(lblUrunAdi);
             Controls.Add(lblKalori);
             Controls.Add(lblPorisyon);
@@ -335,8 +351,8 @@
             Controls.Add(btnUrunSil);
             Controls.Add(btnUrunGuncelle);
             Controls.Add(btnUrunEkle);
+            Controls.Add(btnTemizle);
             Controls.Add(btnResimEkle);
-            Controls.Add(dgvUrunler);
             Controls.Add(pbxResim);
             Controls.Add(txtPorsiyon);
             Controls.Add(txtKalori);
@@ -347,14 +363,13 @@
             Name = "AdminAddProduct";
             Text = "AdminAddProduct";
             Load += AdminAddProduct_Load;
-            ((System.ComponentModel.ISupportInitialize)dgvUrunler).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbxResim).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvUrunler).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private DataGridView dgvUrunler;
         private TextBoxs.TextBox.DesignTextBox txtAramaCubugu;
         private TextBoxs.TextBox.DesignTextBox txtUrunAdi;
         private TextBoxs.TextBox.DesignTextBox txtKalori;
@@ -370,5 +385,7 @@
         private Label lblUrunAdi;
         private Label lblKalori;
         private Label lblPorisyon;
+        private DataGridView dgvUrunler;
+        private Buttons.DesignButton btnTemizle;
     }
 }
