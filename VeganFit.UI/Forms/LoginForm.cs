@@ -96,7 +96,6 @@ namespace VeganFit.UI
             }
         }
 
-
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {
             lblKapat.Visible = true;
@@ -128,7 +127,6 @@ namespace VeganFit.UI
             {
                 Environment.Exit(0);
             }
-
         }
 
         private void btnUyeOl_Click(object sender, EventArgs e)
@@ -159,7 +157,7 @@ namespace VeganFit.UI
                 {
                     AdminMainForm adminMainForm = new AdminMainForm();
                     adminMainForm.Show();
-                    this.Hide(); 
+                    this.Hide();
                 }
                 else
                 {
@@ -169,8 +167,18 @@ namespace VeganFit.UI
                 }
 
             }
+        }
 
-
+        private void txtKullaniciAdi__TextChanged(object sender, EventArgs e)
+        {
+            if (txtKullaniciAdi.Text.Length > 0 && txtSifre.Text.Length > 0)
+            {
+                btnGiris.Enabled = true;
+            }
+            else
+            {
+                btnGiris.Enabled = false;
+            }
         }
     }
 }
