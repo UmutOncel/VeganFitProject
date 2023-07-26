@@ -210,6 +210,7 @@
             cbxOgunSec.Name = "cbxOgunSec";
             cbxOgunSec.Size = new Size(250, 22);
             cbxOgunSec.TabIndex = 22;
+            cbxOgunSec.SelectedIndexChanged += cbxOgunSec_SelectedIndexChanged;
             // 
             // lblUrunAdi
             // 
