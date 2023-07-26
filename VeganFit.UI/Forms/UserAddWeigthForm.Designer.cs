@@ -28,13 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             txtKilo = new TextBoxs.TextBox.DesignTextBox();
             btnKaydet = new Buttons.DesignButton();
             dgvGunlukKiloTakibi = new DataGridView();
             dtpTarih = new DateTimePicker();
+            lblTarihSec = new Label();
+            lblKiloGir = new Label();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvGunlukKiloTakibi).BeginInit();
             SuspendLayout();
             // 
@@ -83,7 +86,7 @@
             txtKilo.BorderSize = 1;
             txtKilo.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKilo.ForeColor = Color.Black;
-            txtKilo.Location = new Point(66, 338);
+            txtKilo.Location = new Point(149, 338);
             txtKilo.Multiline = false;
             txtKilo.Name = "txtKilo";
             txtKilo.Padding = new Padding(7);
@@ -109,7 +112,7 @@
             btnKaydet.FlatAppearance.BorderSize = 0;
             btnKaydet.FlatStyle = FlatStyle.Flat;
             btnKaydet.ForeColor = Color.Black;
-            btnKaydet.Location = new Point(206, 386);
+            btnKaydet.Location = new Point(289, 386);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(110, 40);
             btnKaydet.TabIndex = 16;
@@ -120,12 +123,12 @@
             // 
             // dgvGunlukKiloTakibi
             // 
-            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -144,10 +147,41 @@
             // 
             // dtpTarih
             // 
-            dtpTarih.Location = new Point(66, 293);
+            dtpTarih.Location = new Point(149, 293);
+            dtpTarih.MaxDate = new DateTime(2023, 7, 26, 0, 0, 0, 0);
+            dtpTarih.MinDate = new DateTime(2023, 7, 26, 0, 0, 0, 0);
             dtpTarih.Name = "dtpTarih";
             dtpTarih.Size = new Size(250, 22);
             dtpTarih.TabIndex = 18;
+            dtpTarih.Value = new DateTime(2023, 7, 26, 0, 0, 0, 0);
+            // 
+            // lblTarihSec
+            // 
+            lblTarihSec.AutoSize = true;
+            lblTarihSec.Location = new Point(50, 297);
+            lblTarihSec.Name = "lblTarihSec";
+            lblTarihSec.Size = new Size(86, 14);
+            lblTarihSec.TabIndex = 19;
+            lblTarihSec.Text = "Tarih Seçin:";
+            // 
+            // lblKiloGir
+            // 
+            lblKiloGir.AutoSize = true;
+            lblKiloGir.Location = new Point(32, 347);
+            lblKiloGir.Name = "lblKiloGir";
+            lblKiloGir.Size = new Size(104, 14);
+            lblKiloGir.TabIndex = 19;
+            lblKiloGir.Text = "Kilonuzu Girin:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(688, 60);
+            label3.Name = "label3";
+            label3.Size = new Size(173, 18);
+            label3.TabIndex = 19;
+            label3.Text = "Kilo Takip Çizelgesi";
             // 
             // UserAddWeigthForm
             // 
@@ -155,6 +189,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblKiloGir);
+            Controls.Add(label3);
+            Controls.Add(lblTarihSec);
             Controls.Add(dtpTarih);
             Controls.Add(dgvGunlukKiloTakibi);
             Controls.Add(btnKaydet);
@@ -179,5 +216,8 @@
         private Buttons.DesignButton btnKaydet;
         private DataGridView dgvGunlukKiloTakibi;
         private DateTimePicker dtpTarih;
+        private Label lblTarihSec;
+        private Label lblKiloGir;
+        private Label label3;
     }
 }
