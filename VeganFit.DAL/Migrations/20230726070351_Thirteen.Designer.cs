@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VeganFit.DAL.Concrete.Context;
 
@@ -11,9 +12,10 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    partial class VeganFitDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230726070351_Thirteen")]
+    partial class Thirteen
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -722,7 +724,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 26, 10, 10, 29, 793, DateTimeKind.Local).AddTicks(5048),
+                            CreatedDate = new DateTime(2023, 7, 26, 10, 3, 51, 84, DateTimeKind.Local).AddTicks(507),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -734,7 +736,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 26, 10, 10, 29, 793, DateTimeKind.Local).AddTicks(5097),
+                            CreatedDate = new DateTime(2023, 7, 26, 10, 3, 51, 84, DateTimeKind.Local).AddTicks(555),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",
