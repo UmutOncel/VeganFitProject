@@ -373,6 +373,16 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logonew {
+            get {
+                object obj = ResourceManager.GetObject("logonew", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mandalina {
             get {
                 object obj = ResourceManager.GetObject("mandalina", resourceCulture);
@@ -446,6 +456,16 @@ namespace VeganFit.UI.Properties {
         internal static System.Drawing.Bitmap nar {
             get {
                 object obj = ResourceManager.GetObject("nar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap new2 {
+            get {
+                object obj = ResourceManager.GetObject("new2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

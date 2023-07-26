@@ -121,7 +121,7 @@ namespace VeganFit.UI
             {
                 Id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value),
                 ProductName = txtUrunAdi.Text,
-                Calori = Convert.ToInt32(txtKalori.Text),
+                Calori = Convert.ToDouble(txtKalori.Text),
                 Serving = txtPorsiyon.Text,
                 Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
             };
@@ -176,19 +176,16 @@ namespace VeganFit.UI
                 txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
                 txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
                 byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
-
+                
                 if (image != null)
                 {
                     pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
+                    pbxResim.BorderStyle = BorderStyle.None;
                 }
                 else
                 {
                     pbxResim.Image = null;
-                    pbxResim.BackgroundImage = Resources.Logo;
-                    pbxResim.BorderStyle = BorderStyle.None;
-                    pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
-
-
+                    pbxResim.BorderStyle = BorderStyle.Fixed3D;
                 }
 
             }
