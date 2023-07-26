@@ -244,7 +244,6 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
-            FormClosing += LoginForm_FormClosing;
             Load += LoginForm_Load;
             pnlLoginUI.ResumeLayout(false);
             pnlLoginUI.PerformLayout();

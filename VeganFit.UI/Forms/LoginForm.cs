@@ -123,7 +123,12 @@ namespace VeganFit.UI
         }
         private void btnKapat_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dialogResult = MessageBox.Show("Çıkmak istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+
         }
 
         private void btnUyeOl_Click(object sender, EventArgs e)
@@ -131,19 +136,6 @@ namespace VeganFit.UI
             WarningForm warningForm = new WarningForm(_userService);
             warningForm.Show();
             this.Hide();
-        }
-
-        private void LoginForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("Çıkmak istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                Environment.Exit(0);
-            }
-            else if (dialogResult == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
         }
 
         private void btnGiris_Click(object sender, EventArgs e)
@@ -167,7 +159,7 @@ namespace VeganFit.UI
                 {
                     AdminMainForm adminMainForm = new AdminMainForm();
                     adminMainForm.Show();
-                    this.Hide(); // Close olabilir mi ??
+                    this.Hide(); 
                 }
                 else
                 {
@@ -175,9 +167,8 @@ namespace VeganFit.UI
                     userMainForm.Show();
                     this.Hide();
                 }
+
             }
-
-
 
 
         }

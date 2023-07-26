@@ -26,7 +26,7 @@ namespace VeganFit.UI
             var form8 = EFContextForm.EFContextForm.ConfigureServices<UserAddWeigthForm>();
             
 
-            Application.Run(form1);
+            Application.Run(form);
         }
     }
 }

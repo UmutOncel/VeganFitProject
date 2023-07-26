@@ -39,10 +39,10 @@
             dtpDogumTatihi = new DateTimePicker();
             label1 = new Label();
             pnlNewRegisterForm = new Panel();
-            label2 = new Label();
-            label3 = new Label();
             label4 = new Label();
+            label3 = new Label();
             label5 = new Label();
+            label2 = new Label();
             pnlNewRegisterForm.SuspendLayout();
             SuspendLayout();
             // 
@@ -251,15 +251,15 @@
             pnlNewRegisterForm.MouseMove += pnlNewRegisterForm_MouseMove;
             pnlNewRegisterForm.MouseUp += pnlNewRegisterForm_MouseUp;
             // 
-            // label2
+            // label4
             // 
-            label2.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.DarkViolet;
-            label2.Location = new Point(3, 402);
-            label2.Name = "label2";
-            label2.Size = new Size(195, 15);
-            label2.TabIndex = 0;
-            label2.Text = "Şifreniz 8 karakterli olmalıdır.";
+            label4.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.DarkViolet;
+            label4.Location = new Point(3, 431);
+            label4.Name = "label4";
+            label4.Size = new Size(272, 15);
+            label4.TabIndex = 0;
+            label4.Text = "!,:,+.* karakterlerinden en az 2 tanesini içermelidir.";
             // 
             // label3
             // 
@@ -271,16 +271,6 @@
             label3.TabIndex = 0;
             label3.Text = "En az 2 büyük harf ve en az 3 küçük harf içermelidir.";
             // 
-            // label4
-            // 
-            label4.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.DarkViolet;
-            label4.Location = new Point(3, 431);
-            label4.Name = "label4";
-            label4.Size = new Size(272, 15);
-            label4.TabIndex = 0;
-            label4.Text = "!,:,+.* karakterlerinden en az 2 tanesini içermelidir.";
-            // 
             // label5
             // 
             label5.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -290,6 +280,16 @@
             label5.Size = new Size(195, 15);
             label5.TabIndex = 0;
             label5.Text = "UYARI:";
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.DarkViolet;
+            label2.Location = new Point(3, 402);
+            label2.Name = "label2";
+            label2.Size = new Size(195, 15);
+            label2.TabIndex = 0;
+            label2.Text = "Şifreniz 8 karakterli olmalıdır.";
             // 
             // NewRegisterForm
             // 

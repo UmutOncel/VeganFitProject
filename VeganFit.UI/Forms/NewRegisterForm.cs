@@ -141,7 +141,7 @@ namespace VeganFit.UI
         private void txtSifreyiTekrarGirin_Enter(object sender, EventArgs e)
         {
 
-            if (txtSifreyiTekrarGirin.Text == "Şifreyi Tekrar Girin")
+            if (txtSifreyiTekrarGirin.Text == "Şifre")
             {
                 txtSifreyiTekrarGirin.Text = "";
                 txtSifreyiTekrarGirin.ForeColor = Color.DarkViolet;
@@ -152,7 +152,7 @@ namespace VeganFit.UI
         {
             if (txtSifreyiTekrarGirin.Text == "")
             {
-                txtSifreyiTekrarGirin.Text = "Şifreyi Tekrar Girin";
+                txtSifreyiTekrarGirin.Text = "Şifre";
                 txtSifreyiTekrarGirin.ForeColor = Color.DarkViolet;
             }
         }
