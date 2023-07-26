@@ -151,14 +151,14 @@
   <data name="Ürün Ekle Butonu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Icon24.scale-150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="LoginScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\LoginScreen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logonew" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logonew.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="new2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\new2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avakado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avakado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="avokado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\avokado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -174,6 +174,9 @@
   </data>
   <data name="bitki_çayı" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bitki çayı.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bulgur_pilavı" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buldur pilavı.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="burger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\burger.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,8 +214,14 @@
   <data name="kepekli_ekmek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kepekli ekmek.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="kepekli_grissini" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kepekli grissini.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="kuru_üzüm" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kuru üzüm.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LoginScreen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LoginScreen.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="mandalina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mandalina.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,8 +238,14 @@
   <data name="mercimek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mercimek.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="mercimek_çorbası" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mercimek çorbası.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="muz" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\muz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="müsli" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\müsli.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="nar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\nar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -253,6 +268,9 @@
   <data name="sebze_çorbası" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sebze çorbası.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="siyah_zeytin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\siyah zeytin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="taze_fasulye" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\taze fasulye.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -265,11 +283,17 @@
   <data name="yulaf" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\yulaf.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="zeytin_yağlı_taze_fasulye" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zeytin yağlı taze fasulye.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="çilek" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\çilek.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ıspanak" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ıspanak.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ıspanaklı_börek" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ıspanaklı börek.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ıspanaklı_pizza" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ıspanaklı pizza.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

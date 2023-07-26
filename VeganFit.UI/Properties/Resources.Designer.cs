@@ -63,6 +63,16 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap avakado {
+            get {
+                object obj = ResourceManager.GetObject("avakado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avokado {
             get {
                 object obj = ResourceManager.GetObject("avokado", resourceCulture);
@@ -126,6 +136,16 @@ namespace VeganFit.UI.Properties {
         internal static System.Drawing.Bitmap bitki_çayı {
             get {
                 object obj = ResourceManager.GetObject("bitki_çayı", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bulgur_pilavı {
+            get {
+                object obj = ResourceManager.GetObject("bulgur_pilavı", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -253,6 +273,16 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ıspanaklı_börek {
+            get {
+                object obj = ResourceManager.GetObject("ıspanaklı_börek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ıspanaklı_pizza {
             get {
                 object obj = ResourceManager.GetObject("ıspanaklı_pizza", resourceCulture);
@@ -296,6 +326,16 @@ namespace VeganFit.UI.Properties {
         internal static System.Drawing.Bitmap kepekli_ekmek {
             get {
                 object obj = ResourceManager.GetObject("kepekli_ekmek", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kepekli_grissini {
+            get {
+                object obj = ResourceManager.GetObject("kepekli_grissini", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -423,6 +463,26 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap mercimek_çorbası {
+            get {
+                object obj = ResourceManager.GetObject("mercimek_çorbası", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap müsli {
+            get {
+                object obj = ResourceManager.GetObject("müsli", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap muz {
             get {
                 object obj = ResourceManager.GetObject("muz", resourceCulture);
@@ -523,6 +583,16 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap siyah_zeytin {
+            get {
+                object obj = ResourceManager.GetObject("siyah_zeytin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap taze_fasulye {
             get {
                 object obj = ResourceManager.GetObject("taze_fasulye", resourceCulture);
@@ -586,6 +656,16 @@ namespace VeganFit.UI.Properties {
         internal static System.Drawing.Bitmap yulaf {
             get {
                 object obj = ResourceManager.GetObject("yulaf", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap zeytin_yağlı_taze_fasulye {
+            get {
+                object obj = ResourceManager.GetObject("zeytin_yağlı_taze_fasulye", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
