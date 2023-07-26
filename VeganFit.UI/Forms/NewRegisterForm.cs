@@ -165,7 +165,7 @@ namespace VeganFit.UI
 
             if (ad && soyad)
             {
-                if (altSinir >= dogumtarihi || dogumtarihi >= ustSinir)
+                if (altSinir <= dogumtarihi && dogumtarihi <= ustSinir)
                 {
                     var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
                     if (txtEMail.Text != string.Empty && !dbKullaniciAdi)

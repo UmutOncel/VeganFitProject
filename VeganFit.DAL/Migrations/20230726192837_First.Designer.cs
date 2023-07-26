@@ -12,8 +12,8 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    [Migration("20230726071030_Fourteen")]
-    partial class Fourteen
+    [Migration("20230726192837_First")]
+    partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,9 +48,6 @@ namespace VeganFit.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("OptionalProductId")
-                        .HasColumnType("int");
-
                     b.Property<int?>("ProductId")
                         .HasColumnType("int");
 
@@ -76,8 +73,6 @@ namespace VeganFit.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("OptionalProductId");
 
                     b.HasIndex("ProductId");
 
@@ -125,50 +120,6 @@ namespace VeganFit.DAL.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Feedbacks");
-                });
-
-            modelBuilder.Entity("VeganFit.Entities.OptionalProduct", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<double>("Calori")
-                        .HasColumnType("float");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<byte[]>("Picture")
-                        .HasColumnType("Image");
-
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("Serving")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
-
-                    b.Property<string>("State")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("UpdatedDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OptionalProducts");
                 });
 
             modelBuilder.Entity("VeganFit.Entities.Product", b =>
@@ -724,7 +675,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 26, 10, 10, 29, 793, DateTimeKind.Local).AddTicks(5048),
+                            CreatedDate = new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1087),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -736,7 +687,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 26, 10, 10, 29, 793, DateTimeKind.Local).AddTicks(5097),
+                            CreatedDate = new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1128),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",
@@ -761,7 +712,7 @@ namespace VeganFit.DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("RecordDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("State")
                         .IsRequired()
@@ -780,8 +731,8 @@ namespace VeganFit.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserWeight")
-                        .HasColumnType("int");
+                    b.Property<double>("UserWeight")
+                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -792,10 +743,6 @@ namespace VeganFit.DAL.Migrations
 
             modelBuilder.Entity("VeganFit.Entities.Data", b =>
                 {
-                    b.HasOne("VeganFit.Entities.OptionalProduct", "OptionalProduct")
-                        .WithMany("Datas")
-                        .HasForeignKey("OptionalProductId");
-
                     b.HasOne("VeganFit.Entities.Product", "Product")
                         .WithMany("Datas")
                         .HasForeignKey("ProductId");
@@ -803,8 +750,6 @@ namespace VeganFit.DAL.Migrations
                     b.HasOne("VeganFit.Entities.User", "User")
                         .WithMany("Datas")
                         .HasForeignKey("UserId");
-
-                    b.Navigation("OptionalProduct");
 
                     b.Navigation("Product");
 
@@ -827,11 +772,6 @@ namespace VeganFit.DAL.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("VeganFit.Entities.OptionalProduct", b =>
-                {
-                    b.Navigation("Datas");
                 });
 
             modelBuilder.Entity("VeganFit.Entities.Product", b =>

@@ -10,27 +10,6 @@ namespace VeganFit.DAL.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "OptionalProducts",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProductName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    Calori = table.Column<int>(type: "int", nullable: false),
-                    Serving = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    Picture = table.Column<byte[]>(type: "Image", nullable: true),
-                    CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    State = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_OptionalProducts", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Products",
                 columns: table => new
                 {
@@ -81,13 +60,12 @@ namespace VeganFit.DAL.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Calori = table.Column<int>(type: "int", nullable: false),
-                    Datetime = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Calori = table.Column<double>(type: "float", nullable: false),
+                    Datetime = table.Column<DateTime>(type: "date", nullable: false),
                     Meal = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     UserEmail = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
                     ProductId = table.Column<int>(type: "int", nullable: true),
-                    OptionalProductId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UpdatedDate = table.Column<DateTime>(type: "datetime2", nullable: true),
@@ -97,11 +75,6 @@ namespace VeganFit.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Datas", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Datas_OptionalProducts_OptionalProductId",
-                        column: x => x.OptionalProductId,
-                        principalTable: "OptionalProducts",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Datas_Products_ProductId",
                         column: x => x.ProductId,
@@ -145,9 +118,9 @@ namespace VeganFit.DAL.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    UserWeight = table.Column<int>(type: "int", nullable: false),
+                    UserWeight = table.Column<double>(type: "float", nullable: false),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DateOfRecord = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    RecordDate = table.Column<DateTime>(type: "date", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     CreatedDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -233,14 +206,9 @@ namespace VeganFit.DAL.Migrations
                 columns: new[] { "Id", "BirthDate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3830), "admin@gmail.com", "Umut", "Öncel", "UUuu1991**", "Admin", "Created", null, null },
-                    { 2, new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 25, 16, 54, 47, 993, DateTimeKind.Local).AddTicks(3871), "pelin@gmail.com", "Pelin", "Uru", "1234", "StandartUser", "Created", null, null }
+                    { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1087), "admin@gmail.com", "Umut", "Öncel", "EF359CE6F0005B1AE73F70F675AA50E8E18BEA9DED1C30957C2769BB99ADF4E9", "Admin", "Created", null, null },
+                    { 2, new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1128), "pelin@gmail.com", "Pelin", "Uru", "1234", "StandartUser", "Created", null, null }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Datas_OptionalProductId",
-                table: "Datas",
-                column: "OptionalProductId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Datas_ProductId",
@@ -285,9 +253,6 @@ namespace VeganFit.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Weights");
-
-            migrationBuilder.DropTable(
-                name: "OptionalProducts");
 
             migrationBuilder.DropTable(
                 name: "Products");
