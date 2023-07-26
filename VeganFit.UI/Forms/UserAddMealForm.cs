@@ -52,23 +52,7 @@ namespace VeganFit.UI
 
         }
 
-        private void txtAramaCubugu_Enter(object sender, EventArgs e)
-        {
-            //if (txtAramaKutusu.Text == "Ürün Ara")
-            //{
-            //    txtAramaKutusu.Text = "";
-            //    txtAramaKutusu.ForeColor = Color.Black;
-            //}
-        }
 
-        private void txtAramaCubugu_Leave(object sender, EventArgs e)
-        {
-            //if (txtAramaKutusu.Text == "")
-            //{
-            //    //txtAramaKutusu.Text = "Ürün Ara";
-            //    txtAramaKutusu.ForeColor = Color.SlateGray;
-            //}
-        }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {

@@ -64,7 +64,6 @@
             dgvSabah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSabah.Location = new Point(12, 30);
             dgvSabah.Name = "dgvSabah";
-            dgvSabah.ReadOnly = true;
             dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
             dgvSabah.RowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvSabah.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
@@ -298,8 +297,6 @@
             txtAramaKutusu.TabStop = false;
             txtAramaKutusu.UnderlinedStyle = false;
             txtAramaKutusu._TextChanged += txtAramaKutusu__TextChanged;
-            txtAramaKutusu.Enter += txtAramaCubugu_Enter;
-            txtAramaKutusu.Leave += txtAramaCubugu_Leave;
             // 
             // btnListeyiYenile
             // 
