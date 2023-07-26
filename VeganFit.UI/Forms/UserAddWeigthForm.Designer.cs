@@ -126,14 +126,19 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGunlukKiloTakibi.Location = new Point(527, 100);
             dgvGunlukKiloTakibi.Name = "dgvGunlukKiloTakibi";
             dgvGunlukKiloTakibi.ReadOnly = true;
-            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
+            dgvGunlukKiloTakibi.RowTemplate.ReadOnly = true;
+            dgvGunlukKiloTakibi.RowTemplate.Resizable = DataGridViewTriState.False;
             dgvGunlukKiloTakibi.Size = new Size(500, 500);
             dgvGunlukKiloTakibi.TabIndex = 17;
             // 

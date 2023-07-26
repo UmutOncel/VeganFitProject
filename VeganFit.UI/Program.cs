@@ -24,9 +24,10 @@ namespace VeganFit.UI
             var form6 = EFContextForm.EFContextForm.ConfigureServices<AdminFeedbackForm>();
             var form7 = EFContextForm.EFContextForm.ConfigureServices<NewRegisterForm>();
             var form8 = EFContextForm.EFContextForm.ConfigureServices<UserAddWeigthForm>();
+            var form9 = EFContextForm.EFContextForm.ConfigureServices<UserAddNewProductForm>();
             
 
-            Application.Run(form);
+            Application.Run(form3);
         }
     }
 }

@@ -12,6 +12,7 @@ namespace VeganFit.UI
     {
 
         private readonly IDataService _dataService;
+        bool product, calori, serving;
 
         public UserAddNewProductForm(IDataService dataService)
         {
@@ -22,13 +23,6 @@ namespace VeganFit.UI
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
         {
             ForBegin();
-            //txtUrunAdi.Text = "Ürün Adı";
-            //txtKalori.Text = "Kaç Kalori";
-            //txtPorsiyon.Text = "Porsiyon Giriniz";
-
-            //txtUrunAdi.ForeColor = Color.SlateGray;
-            //txtKalori.ForeColor = Color.SlateGray;
-            //txtPorsiyon.ForeColor = Color.SlateGray;
         }
         private void txtUrunAdi_Enter(object sender, EventArgs e)
         {
@@ -69,6 +63,7 @@ namespace VeganFit.UI
 
         private void txtPorsiyon_Enter(object sender, EventArgs e)
         {
+            txtPorsiyon.Text = string.Empty;
             //if (txtPorsiyon.Text == "Porsiyon Giriniz")
             //{
             //    txtPorsiyon.Text = "";
@@ -114,6 +109,7 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
+
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
@@ -126,15 +122,51 @@ namespace VeganFit.UI
             _dataService.Create(dto);
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
+
+
         }
         private void ForBegin()
         {
-            Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
+            Object[] array = new object[3] { Meal.Breakfast, Meal.Lunch, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
+            txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily,8, FontStyle.Italic);
+            txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100 )";
 
         }
 
+        private void txtUrunAdi__TextChanged(object sender, EventArgs e)
+        {
+            product = RegularExcep.RegularEx(@"^[a-zA-Z]*$", txtUrunAdi);
+        }
 
+        private void txtKalori__TextChanged(object sender, EventArgs e)
+        {
+            calori = RegularExcep.RegularEx(@"^[0-9]*$", txtKalori);
+        }
+
+        private void txtPorsiyon__TextChanged(object sender, EventArgs e)
+        {
+            serving = RegularExcep.RegularEx(@"^[0-9]*$", txtPorsiyon);
+        }
+
+        private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbxOgunSec.Items.Count > 0)
+            {
+                if (calori && product && serving)
+                {
+                    btnUrunEkle.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("Girdiğiniz değerleri kontrol ediniz", "Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtKalori.Text = string.Empty;
+                    txtPorsiyon.Text = string.Empty;
+                    txtUrunAdi.Text = string.Empty;
+                    cbxOgunSec.SelectedItem = null;
+                }
+            }
+        }
     }
 }
