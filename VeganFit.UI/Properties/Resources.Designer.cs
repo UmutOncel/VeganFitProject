@@ -193,16 +193,6 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap domates1 {
-            get {
-                object obj = ResourceManager.GetObject("domates1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap ekmek {
             get {
                 object obj = ResourceManager.GetObject("ekmek", resourceCulture);
@@ -443,16 +433,6 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap muz1 {
-            get {
-                object obj = ResourceManager.GetObject("muz1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap nar {
             get {
                 object obj = ResourceManager.GetObject("nar", resourceCulture);
@@ -603,59 +583,9 @@ namespace VeganFit.UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap yeşil_çay {
-            get {
-                object obj = ResourceManager.GetObject("yeşil_çay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap yeşil_zeytin {
-            get {
-                object obj = ResourceManager.GetObject("yeşil_zeytin", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap yulaf {
             get {
                 object obj = ResourceManager.GetObject("yulaf", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap yulaf_ezmesi {
-            get {
-                object obj = ResourceManager.GetObject("yulaf_ezmesi", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap zay {
-            get {
-                object obj = ResourceManager.GetObject("zay", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap zeytin_yağı {
-            get {
-                object obj = ResourceManager.GetObject("zeytin_yağı", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

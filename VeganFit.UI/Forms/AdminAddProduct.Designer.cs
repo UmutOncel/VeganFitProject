@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
             txtKalori = new TextBoxs.TextBox.DesignTextBox();
@@ -58,7 +59,7 @@
             txtAramaCubugu.BorderSize = 1;
             txtAramaCubugu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaCubugu.ForeColor = Color.Black;
-            txtAramaCubugu.Location = new Point(606, 47);
+            txtAramaCubugu.Location = new Point(553, 32);
             txtAramaCubugu.Multiline = false;
             txtAramaCubugu.Name = "txtAramaCubugu";
             txtAramaCubugu.Padding = new Padding(7);
@@ -80,7 +81,7 @@
             txtUrunAdi.BorderSize = 1;
             txtUrunAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtUrunAdi.ForeColor = Color.Black;
-            txtUrunAdi.Location = new Point(125, 283);
+            txtUrunAdi.Location = new Point(85, 283);
             txtUrunAdi.Multiline = false;
             txtUrunAdi.Name = "txtUrunAdi";
             txtUrunAdi.Padding = new Padding(7);
@@ -103,7 +104,7 @@
             txtKalori.BorderSize = 1;
             txtKalori.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKalori.ForeColor = Color.Black;
-            txtKalori.Location = new Point(125, 333);
+            txtKalori.Location = new Point(85, 333);
             txtKalori.Multiline = false;
             txtKalori.Name = "txtKalori";
             txtKalori.Padding = new Padding(7);
@@ -126,7 +127,7 @@
             txtPorsiyon.BorderSize = 1;
             txtPorsiyon.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtPorsiyon.ForeColor = Color.Black;
-            txtPorsiyon.Location = new Point(125, 383);
+            txtPorsiyon.Location = new Point(85, 383);
             txtPorsiyon.Multiline = false;
             txtPorsiyon.Name = "txtPorsiyon";
             txtPorsiyon.Padding = new Padding(7);
@@ -150,7 +151,7 @@
             btnResimEkle.FlatAppearance.BorderSize = 0;
             btnResimEkle.FlatStyle = FlatStyle.Flat;
             btnResimEkle.ForeColor = Color.Black;
-            btnResimEkle.Location = new Point(477, 418);
+            btnResimEkle.Location = new Point(437, 418);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(110, 40);
             btnResimEkle.TabIndex = 5;
@@ -255,7 +256,7 @@
             // lblUrunAra
             // 
             lblUrunAra.AutoSize = true;
-            lblUrunAra.Location = new Point(606, 25);
+            lblUrunAra.Location = new Point(553, 10);
             lblUrunAra.Name = "lblUrunAra";
             lblUrunAra.Size = new Size(66, 14);
             lblUrunAra.TabIndex = 9;
@@ -266,7 +267,7 @@
             pbxResim.BackColor = Color.Transparent;
             pbxResim.BorderStyle = BorderStyle.FixedSingle;
             pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(385, 283);
+            pbxResim.Location = new Point(345, 283);
             pbxResim.Name = "pbxResim";
             pbxResim.Size = new Size(202, 129);
             pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
@@ -277,7 +278,7 @@
             // 
             lblUrunAdi.AutoSize = true;
             lblUrunAdi.ForeColor = Color.Black;
-            lblUrunAdi.Location = new Point(50, 288);
+            lblUrunAdi.Location = new Point(10, 288);
             lblUrunAdi.Name = "lblUrunAdi";
             lblUrunAdi.Size = new Size(69, 14);
             lblUrunAdi.TabIndex = 36;
@@ -287,7 +288,7 @@
             // 
             lblKalori.AutoSize = true;
             lblKalori.ForeColor = Color.Black;
-            lblKalori.Location = new Point(68, 341);
+            lblKalori.Location = new Point(28, 341);
             lblKalori.Name = "lblKalori";
             lblKalori.Size = new Size(51, 14);
             lblKalori.TabIndex = 37;
@@ -297,7 +298,7 @@
             // 
             lblPorisyon.AutoSize = true;
             lblPorisyon.ForeColor = Color.Black;
-            lblPorisyon.Location = new Point(49, 389);
+            lblPorisyon.Location = new Point(9, 389);
             lblPorisyon.Name = "lblPorisyon";
             lblPorisyon.Size = new Size(70, 14);
             lblPorisyon.TabIndex = 38;
@@ -305,13 +306,26 @@
             // 
             // dgvUrunler
             // 
+            dgvUrunler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUrunler.Location = new Point(606, 110);
+            dgvUrunler.Location = new Point(553, 67);
             dgvUrunler.Name = "dgvUrunler";
-            dgvUrunler.RowTemplate.DefaultCellStyle.BackColor = Color.Transparent;
+            dgvUrunler.ReadOnly = true;
+            dgvUrunler.RowTemplate.DefaultCellStyle.BackColor = Color.LightSteelBlue;
+            dgvUrunler.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvUrunler.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
             dgvUrunler.RowTemplate.Height = 25;
-            dgvUrunler.Size = new Size(473, 529);
+            dgvUrunler.RowTemplate.ReadOnly = true;
+            dgvUrunler.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvUrunler.Size = new Size(526, 593);
             dgvUrunler.TabIndex = 39;
             dgvUrunler.CellClick += dgvUrunler_CellClick;
             dgvUrunler.DataError += dgvUrunler_DataError;
@@ -326,7 +340,7 @@
             btnTemizle.FlatAppearance.BorderSize = 0;
             btnTemizle.FlatStyle = FlatStyle.Flat;
             btnTemizle.ForeColor = Color.Black;
-            btnTemizle.Location = new Point(477, 474);
+            btnTemizle.Location = new Point(437, 474);
             btnTemizle.Name = "btnTemizle";
             btnTemizle.Size = new Size(110, 40);
             btnTemizle.TabIndex = 5;
