@@ -43,38 +43,38 @@
             // 
             // dgvGunlukKiloTakibi
             // 
-            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.BackColor = Color.Empty;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Empty;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Empty;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Empty;
             dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGunlukKiloTakibi.Location = new Point(22, 100);
             dgvGunlukKiloTakibi.Name = "dgvGunlukKiloTakibi";
             dgvGunlukKiloTakibi.ReadOnly = true;
-            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
             dgvGunlukKiloTakibi.Size = new Size(500, 500);
             dgvGunlukKiloTakibi.TabIndex = 0;
             // 
             // dgvGunSonuKalori
             // 
-            dataGridViewCellStyle2.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dgvGunSonuKalori.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            dgvGunSonuKalori.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvGunSonuKalori.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunSonuKalori.BackgroundColor = Color.DarkSeaGreen;
             dgvGunSonuKalori.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGunSonuKalori.Location = new Point(569, 100);
             dgvGunSonuKalori.Name = "dgvGunSonuKalori";
             dgvGunSonuKalori.ReadOnly = true;
-            dgvGunSonuKalori.RowTemplate.DefaultCellStyle.BackColor = Color.SlateGray;
+            dgvGunSonuKalori.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvGunSonuKalori.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvGunSonuKalori.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunSonuKalori.RowTemplate.Height = 25;
             dgvGunSonuKalori.Size = new Size(500, 500);
             dgvGunSonuKalori.TabIndex = 0;
