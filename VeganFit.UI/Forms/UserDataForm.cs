@@ -34,6 +34,7 @@ namespace VeganFit.UI
         {
             VeganFitDbContext db = new VeganFitDbContext();
 
+
             dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
             dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName)
                 .GroupBy(x => new { x.UserEmail, x.Datetime })
@@ -42,7 +43,6 @@ namespace VeganFit.UI
                     Tarih = x.Key.Datetime,
                     ToplamKalori = x.Sum(x => x.Calori)
                 }).ToList();
-
 
         }
 

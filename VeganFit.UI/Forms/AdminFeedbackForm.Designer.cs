@@ -33,6 +33,7 @@
             btnSil = new Buttons.DesignButton();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
+            lblGeriBildirimler = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvGorusOneri).BeginInit();
             SuspendLayout();
             // 
@@ -112,12 +113,23 @@
             btnKapat.MouseEnter += btnKapat_MouseEnter;
             btnKapat.MouseLeave += btnKapat_MouseLeave;
             // 
+            // lblGeriBildirimler
+            // 
+            lblGeriBildirimler.AutoSize = true;
+            lblGeriBildirimler.Font = new Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lblGeriBildirimler.Location = new Point(463, 50);
+            lblGeriBildirimler.Name = "lblGeriBildirimler";
+            lblGeriBildirimler.Size = new Size(135, 18);
+            lblGeriBildirimler.TabIndex = 38;
+            lblGeriBildirimler.Text = "Geri Bildirimler";
+            // 
             // AdminFeedbackForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblGeriBildirimler);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
             Controls.Add(btnSil);
@@ -138,5 +150,6 @@
         private Buttons.DesignButton btnSil;
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
+        private Label lblGeriBildirimler;
     }
 }
