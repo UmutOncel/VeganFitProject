@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dgvUrunler = new DataGridView();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
@@ -42,18 +42,21 @@
             btnKapat = new Buttons.DesignButton();
             lblUrunAra = new Label();
             pbxResim = new PictureBox();
+            lblUrunAdi = new Label();
+            lblKalori = new Label();
+            lblPorisyon = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
             // 
             // dgvUrunler
             // 
-            dataGridViewCellStyle1.BackColor = Color.SteelBlue;
-            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
-            dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.BackColor = Color.SteelBlue;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUrunler.Location = new Point(606, 82);
@@ -280,12 +283,42 @@
             pbxResim.BackColor = Color.Transparent;
             pbxResim.BorderStyle = BorderStyle.FixedSingle;
             pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(321, 286);
+            pbxResim.Location = new Point(381, 283);
             pbxResim.Name = "pbxResim";
             pbxResim.Size = new Size(202, 129);
             pbxResim.SizeMode = PictureBoxSizeMode.StretchImage;
             pbxResim.TabIndex = 3;
             pbxResim.TabStop = false;
+            // 
+            // lblUrunAdi
+            // 
+            lblUrunAdi.AutoSize = true;
+            lblUrunAdi.ForeColor = Color.Black;
+            lblUrunAdi.Location = new Point(50, 288);
+            lblUrunAdi.Name = "lblUrunAdi";
+            lblUrunAdi.Size = new Size(69, 14);
+            lblUrunAdi.TabIndex = 36;
+            lblUrunAdi.Text = "Ürün Adı:";
+            // 
+            // lblKalori
+            // 
+            lblKalori.AutoSize = true;
+            lblKalori.ForeColor = Color.Black;
+            lblKalori.Location = new Point(68, 341);
+            lblKalori.Name = "lblKalori";
+            lblKalori.Size = new Size(51, 14);
+            lblKalori.TabIndex = 37;
+            lblKalori.Text = "Kalori:";
+            // 
+            // lblPorisyon
+            // 
+            lblPorisyon.AutoSize = true;
+            lblPorisyon.ForeColor = Color.Black;
+            lblPorisyon.Location = new Point(49, 389);
+            lblPorisyon.Name = "lblPorisyon";
+            lblPorisyon.Size = new Size(70, 14);
+            lblPorisyon.TabIndex = 38;
+            lblPorisyon.Text = "Porsiyon:";
             // 
             // AdminAddProduct
             // 
@@ -334,5 +367,8 @@
         private Buttons.DesignButton btnKapat;
         private Label lblUrunAra;
         private PictureBox pbxResim;
+        private Label lblUrunAdi;
+        private Label lblKalori;
+        private Label lblPorisyon;
     }
 }
