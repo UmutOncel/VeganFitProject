@@ -2,6 +2,7 @@
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
+using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.Models.VMs.DataVms;
@@ -64,6 +65,18 @@ namespace VeganFit.Bll.Concrete.Services
             }
 
             return result;
+        }
+
+        public bool Delete(int id)
+        {
+            Data data = _dataRepo.GetFirstOrDefault(filter: x => x.Id == id);
+
+            if (data != null)
+            {
+                return _dataRepo.Delete(data);
+            }
+
+            return false;
         }
     }
 }

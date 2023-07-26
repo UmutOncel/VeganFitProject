@@ -2,7 +2,7 @@
 {
     public class WeightCreateVm
     {
-        public int UserWeight { get; set; }
+        public double UserWeight { get; set; }
 
         public string UserName { get; set; }
         public DateTime RecordDate => DateTime.Now;

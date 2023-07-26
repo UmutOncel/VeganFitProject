@@ -22,7 +22,6 @@ namespace VeganFit.UI
         {
             InitializeComponent();
             this._service = feedbackService;
-
         }
 
         private void UserFeedbackForm_Load(object sender, EventArgs e)
@@ -72,6 +71,18 @@ namespace VeganFit.UI
 
             MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
             this.Close();
+        }
+
+        private void txtGorusOneri__TextChanged(object sender, EventArgs e)
+        {
+            if (txtGorusOneri.Text.Length > 0)
+            {
+                btnGonder.Enabled = true;
+            }
+            else
+            {
+                btnGonder.Enabled = false;
+            }
         }
     }
 }

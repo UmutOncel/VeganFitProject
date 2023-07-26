@@ -85,5 +85,12 @@ namespace VeganFit.Core.IBaseRepositories
                                                        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?
                                                        orderBy = null,
                                                        params Expression<Func<TEntity, object>>[] includes);
+
+        /// <summary>
+        /// Parametre olarak girilen değerin Id'sini döndüren metot.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        int FindId(Expression<Func<TEntity, bool>> filter);
     }
 }

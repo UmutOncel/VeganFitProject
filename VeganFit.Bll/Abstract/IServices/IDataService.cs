@@ -9,5 +9,6 @@ namespace VeganFit.Bll.Abstract.IServices
         ResultService<List<DataDetailVm>> GetDetails();
 
         ResultService<DataDetailDto> Create(DataDetailDto dataDetail);
+        bool Delete(int id);
     }
 }

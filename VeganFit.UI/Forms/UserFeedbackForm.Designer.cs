@@ -90,6 +90,7 @@
             txtGorusOneri.Size = new Size(1073, 29);
             txtGorusOneri.TabIndex = 24;
             txtGorusOneri.UnderlinedStyle = false;
+            txtGorusOneri._TextChanged += txtGorusOneri__TextChanged;
             txtGorusOneri.Enter += txtGorusOneri_Enter;
             txtGorusOneri.Leave += txtGorusOneri_Leave;
             // 
@@ -110,6 +111,7 @@
             btnGonder.BorderColor = Color.DarkGreen;
             btnGonder.BorderRadius = 15;
             btnGonder.BorderSize = 2;
+            btnGonder.Enabled = false;
             btnGonder.FlatAppearance.BorderSize = 0;
             btnGonder.FlatStyle = FlatStyle.Flat;
             btnGonder.ForeColor = Color.Black;

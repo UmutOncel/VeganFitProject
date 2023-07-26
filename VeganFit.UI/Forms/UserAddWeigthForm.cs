@@ -70,22 +70,32 @@ namespace VeganFit.UI
 
         private void btnKaydet_Click(object sender, EventArgs e)
         {
-            bool varMi = _weightRepo.Any(x => x.RecordDate == dtpTarih.Value);
-            if (!varMi)
+            string strWeight = txtKilo.Text;
+            double weight;
+            bool doubleMi = double.TryParse(strWeight, out weight);
+            if (!doubleMi)
             {
-                WeightCreateVm vm = new WeightCreateVm()
-                {
-                    UserWeight = Convert.ToInt32(txtKilo.Text),
-                    UserName = ActiveUser.ActiveUserFirstName
-
-                };
-                _service.Create(vm);
-                MessageBox.Show("Kayıt Başarılı");
-                ListeyiYenile();
+                MessageBox.Show("Kilonuzu sadece tam sayı veya ondalıklı sayı olarak girebilirsiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                MessageBox.Show("Seçilen tarihte kaydınız bulunmaktadır!");
+                bool varMi = _weightRepo.Any(x => x.RecordDate == dtpTarih.Value);
+                if (!varMi)
+                {
+                    WeightCreateVm vm = new WeightCreateVm()
+                    {
+                        UserWeight = Convert.ToInt32(txtKilo.Text),
+                        UserName = ActiveUser.ActiveUserFirstName
+
+                    };
+                    _service.Create(vm);
+                    MessageBox.Show("Kayıt Başarılı");
+                    ListeyiYenile();
+                }
+                else
+                {
+                    MessageBox.Show("Seçilen tarihte kaydınız bulunmaktadır!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
         }
 
@@ -99,6 +109,10 @@ namespace VeganFit.UI
             if (txtKilo.Text.Length > 0)
             {
                 btnKaydet.Enabled = true;
+            }
+            else
+            {
+                btnKaydet.Enabled = false;
             }
         }
     }

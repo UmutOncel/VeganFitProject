@@ -4,7 +4,7 @@ namespace VeganFit.Models.DTOs.WeigthDtos
 {
     public class WeightCreateDto
     {
-        public int UserWeight { get; set; }
+        public double UserWeight { get; set; }
 
         public string UserName { get; set; }
 

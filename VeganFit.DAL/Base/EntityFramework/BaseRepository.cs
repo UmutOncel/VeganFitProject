@@ -189,5 +189,15 @@ namespace VeganFit.DAL.Base.EntityFramework
             _db.Entry(entity).State = EntityState.Modified;
             return _db.SaveChanges() > 0 ? entity : null;
         }
+
+        /// <summary>
+        /// Parametre olarak girilen değerin Id'sini döndüren metot.
+        /// </summary>
+        /// <param name="filter"></param>
+        /// <returns></returns>
+        public int FindId(Expression<Func<TEntity, bool>> filter) 
+        {
+            return _dbSet.FirstOrDefault(filter).Id;
+        }
     }
 }

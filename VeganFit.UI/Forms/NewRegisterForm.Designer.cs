@@ -261,7 +261,7 @@
             label4.Name = "label4";
             label4.Size = new Size(272, 15);
             label4.TabIndex = 0;
-            label4.Text = "!,:,+.* karakterlerinden en az 2 tanesini içermelidir.";
+            label4.Text = "!,:,+.* karakterlerinden en az 1 tanesini içermelidir.";
             // 
             // label3
             // 
@@ -269,13 +269,13 @@
             label3.ForeColor = Color.DarkViolet;
             label3.Location = new Point(3, 417);
             label3.Name = "label3";
-            label3.Size = new Size(272, 15);
+            label3.Size = new Size(285, 15);
             label3.TabIndex = 0;
-            label3.Text = "En az 2 büyük harf ve en az 3 küçük harf içermelidir.";
+            label3.Text = "En az 1 büyük harf, 1 küçük harf, 1 rakam içermelidir.";
             // 
             // label5
             // 
-            label5.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Font = new Font("Verdana", 6.75F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.DarkViolet;
             label5.Location = new Point(3, 387);
             label5.Name = "label5";
@@ -291,7 +291,7 @@
             label2.Name = "label2";
             label2.Size = new Size(195, 15);
             label2.TabIndex = 0;
-            label2.Text = "Şifreniz 8 karakterli olmalıdır.";
+            label2.Text = "Şifreniz en az 4 karakterli olmalıdır.";
             // 
             // NewRegisterForm
             // 

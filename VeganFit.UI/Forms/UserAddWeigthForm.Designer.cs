@@ -105,6 +105,7 @@
             btnKaydet.BorderColor = Color.DarkGreen;
             btnKaydet.BorderRadius = 15;
             btnKaydet.BorderSize = 2;
+            btnKaydet.Enabled = false;
             btnKaydet.FlatAppearance.BorderSize = 0;
             btnKaydet.FlatStyle = FlatStyle.Flat;
             btnKaydet.ForeColor = Color.Black;

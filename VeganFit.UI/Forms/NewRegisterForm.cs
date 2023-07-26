@@ -158,7 +158,7 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
-            if (ad && soyad )
+            if (ad && soyad)
             {
                 var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
                 if (txtEMail.Text != string.Empty && !dbKullaniciAdi)
@@ -193,7 +193,7 @@ namespace VeganFit.UI
                 }
                 else
                 {
-                    MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlı veya boş olabilir.","INFO",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlı veya boş olabilir.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
