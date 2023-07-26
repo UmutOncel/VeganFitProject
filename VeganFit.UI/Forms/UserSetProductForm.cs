@@ -95,12 +95,16 @@ namespace VeganFit.UI
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
+            if(dataDetail != null )
+            {
+                txtUrunAdi.Text = dataDetail.ProductName;
+                txtKalori.Text = dataDetail.Calori.ToString();
+                txtPorsiyon.Text = dataDetail.Serving;
+                pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
+                txtIstenilenPorsiyon.Text = dataDetail.Serving;
+            }
 
-            txtUrunAdi.Text = dataDetail.ProductName;
-            txtKalori.Text = dataDetail.Calori.ToString();
-            txtPorsiyon.Text = dataDetail.Serving;
-            pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
-            txtIstenilenPorsiyon.Text = dataDetail.Serving;
+
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
