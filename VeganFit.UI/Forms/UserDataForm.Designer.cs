@@ -43,11 +43,7 @@
             // 
             // dgvGunlukKiloTakibi
             // 
-            dataGridViewCellStyle1.BackColor = Color.Empty;
             dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Empty;
-            dataGridViewCellStyle1.SelectionBackColor = Color.Empty;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Empty;
             dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
