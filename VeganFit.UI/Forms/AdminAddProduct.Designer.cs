@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            pbxResim = new PictureBox();
             dgvUrunler = new DataGridView();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
@@ -42,20 +41,10 @@
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             lblUrunAra = new Label();
-            ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
+            pbxResim = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
-            // 
-            // pbxResim
-            // 
-            pbxResim.BorderStyle = BorderStyle.FixedSingle;
-            pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(321, 286);
-            pbxResim.Name = "pbxResim";
-            pbxResim.Size = new Size(202, 129);
-            pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
-            pbxResim.TabIndex = 3;
-            pbxResim.TabStop = false;
             // 
             // dgvUrunler
             // 
@@ -286,6 +275,18 @@
             lblUrunAra.TabIndex = 9;
             lblUrunAra.Text = "Ürün Ara";
             // 
+            // pbxResim
+            // 
+            pbxResim.BackColor = Color.Transparent;
+            pbxResim.BorderStyle = BorderStyle.FixedSingle;
+            pbxResim.Image = Properties.Resources.Logo;
+            pbxResim.Location = new Point(321, 286);
+            pbxResim.Name = "pbxResim";
+            pbxResim.Size = new Size(202, 129);
+            pbxResim.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxResim.TabIndex = 3;
+            pbxResim.TabStop = false;
+            // 
             // AdminAddProduct
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
@@ -310,14 +311,13 @@
             Name = "AdminAddProduct";
             Text = "AdminAddProduct";
             Load += AdminAddProduct_Load;
-            ((System.ComponentModel.ISupportInitialize)pbxResim).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbxResim).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private PictureBox pbxResim;
         private DataGridView dgvUrunler;
         private TextBoxs.TextBox.DesignTextBox txtAramaCubugu;
         private TextBoxs.TextBox.DesignTextBox txtUrunAdi;
@@ -330,5 +330,6 @@
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
         private Label lblUrunAra;
+        private PictureBox pbxResim;
     }
 }

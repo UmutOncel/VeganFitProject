@@ -5,6 +5,7 @@ using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.Entities;
 using VeganFit.Models.VMs.ProductVms;
+using VeganFit.UI.Properties;
 using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
@@ -24,10 +25,7 @@ namespace VeganFit.UI
 
         private void AdminAddProduct_Load(object sender, EventArgs e)
         {
-            txtUrunAdi.Text = "Ürün Adı";
-            txtKalori.Text = "Kaç Kalori";
-            txtPorsiyon.Text = "Porsiyon Giriniz";
-            txtAramaCubugu.Text = "Ürün Ara";
+
 
             txtUrunAdi.ForeColor = Color.SlateGray;
             txtKalori.ForeColor = Color.SlateGray;
@@ -92,23 +90,9 @@ namespace VeganFit.UI
             }
         }
 
-        private void txtAramaCubugu_Enter(object sender, EventArgs e)
-        {
-            if (txtAramaCubugu.Text == "Ürün Ara")
-            {
-                txtAramaCubugu.Text = "";
-                txtAramaCubugu.ForeColor = Color.Black;
-            }
-        }
 
-        private void txtAramaCubugu_Leave(object sender, EventArgs e)
-        {
-            if (txtAramaCubugu.Text == "")
-            {
-                txtAramaCubugu.Text = "Ürün Ara";
-                txtAramaCubugu.ForeColor = Color.SlateGray;
-            }
-        }
+
+
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
@@ -142,14 +126,6 @@ namespace VeganFit.UI
                 Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
             };
             _service.Update(updateVm);
-
-            //int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);
-            //Product product = _productRepo.GetFirstOrDefault(x => x.Id == id);
-            //product.ProductName = txtUrunAdi.Text;
-            //product.Calori = Convert.ToDouble(txtKalori.Text);
-            //product.Serving = txtPorsiyon.Text;
-            //product.Picture = ImageToByteArray.imageToByteArray(pbxResim.Image);
-            //_productRepo.Update(product);
 
             MessageBox.Show("Ürün Başarıyla Güncellenmiştir");
 
@@ -195,11 +171,26 @@ namespace VeganFit.UI
         {
             try
             {
+
                 txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
                 txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
                 txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
                 byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
-                pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
+
+                if (image != null)
+                {
+                    pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
+                }
+                else
+                {
+                    pbxResim.Image = null;
+                    pbxResim.BackgroundImage = Resources.Logo;
+                    pbxResim.BorderStyle = BorderStyle.None;
+                    pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
+
+
+                }
+
             }
             catch (Exception u)
             {
