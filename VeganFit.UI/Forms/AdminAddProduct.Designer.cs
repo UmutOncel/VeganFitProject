@@ -286,7 +286,7 @@
             pbxResim.Location = new Point(381, 283);
             pbxResim.Name = "pbxResim";
             pbxResim.Size = new Size(202, 129);
-            pbxResim.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
             pbxResim.TabIndex = 3;
             pbxResim.TabStop = false;
             // 
