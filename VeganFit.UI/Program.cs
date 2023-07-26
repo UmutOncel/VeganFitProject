@@ -27,7 +27,7 @@ namespace VeganFit.UI
             var form9 = EFContextForm.EFContextForm.ConfigureServices<UserAddNewProductForm>();
             
 
-            Application.Run(form8);
+            Application.Run(form);
         }
     }
 }
