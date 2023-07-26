@@ -42,6 +42,9 @@
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             lblUrunAra = new Label();
+            lblUrunAdi = new Label();
+            lblKalori = new Label();
+            lblPorisyon = new Label();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvUrunler).BeginInit();
             SuspendLayout();
@@ -50,7 +53,7 @@
             // 
             pbxResim.BorderStyle = BorderStyle.FixedSingle;
             pbxResim.Image = Properties.Resources.Logo;
-            pbxResim.Location = new Point(321, 286);
+            pbxResim.Location = new Point(385, 283);
             pbxResim.Name = "pbxResim";
             pbxResim.Size = new Size(202, 129);
             pbxResim.SizeMode = PictureBoxSizeMode.Zoom;
@@ -67,10 +70,10 @@
             dgvUrunler.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUrunler.Location = new Point(544, 82);
+            dgvUrunler.Location = new Point(606, 82);
             dgvUrunler.Name = "dgvUrunler";
             dgvUrunler.RowTemplate.Height = 25;
-            dgvUrunler.Size = new Size(535, 576);
+            dgvUrunler.Size = new Size(473, 576);
             dgvUrunler.TabIndex = 4;
             dgvUrunler.CellClick += dgvUrunler_CellClick;
             // 
@@ -83,7 +86,7 @@
             txtAramaCubugu.BorderSize = 1;
             txtAramaCubugu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaCubugu.ForeColor = Color.Black;
-            txtAramaCubugu.Location = new Point(544, 44);
+            txtAramaCubugu.Location = new Point(606, 47);
             txtAramaCubugu.Multiline = false;
             txtAramaCubugu.Name = "txtAramaCubugu";
             txtAramaCubugu.Padding = new Padding(7);
@@ -105,7 +108,7 @@
             txtUrunAdi.BorderSize = 1;
             txtUrunAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtUrunAdi.ForeColor = Color.Black;
-            txtUrunAdi.Location = new Point(54, 286);
+            txtUrunAdi.Location = new Point(125, 283);
             txtUrunAdi.Multiline = false;
             txtUrunAdi.Name = "txtUrunAdi";
             txtUrunAdi.Padding = new Padding(7);
@@ -128,7 +131,7 @@
             txtKalori.BorderSize = 1;
             txtKalori.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKalori.ForeColor = Color.Black;
-            txtKalori.Location = new Point(54, 336);
+            txtKalori.Location = new Point(125, 333);
             txtKalori.Multiline = false;
             txtKalori.Name = "txtKalori";
             txtKalori.Padding = new Padding(7);
@@ -151,7 +154,7 @@
             txtPorsiyon.BorderSize = 1;
             txtPorsiyon.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtPorsiyon.ForeColor = Color.Black;
-            txtPorsiyon.Location = new Point(54, 386);
+            txtPorsiyon.Location = new Point(125, 383);
             txtPorsiyon.Multiline = false;
             txtPorsiyon.Name = "txtPorsiyon";
             txtPorsiyon.Padding = new Padding(7);
@@ -175,7 +178,7 @@
             btnResimEkle.FlatAppearance.BorderSize = 0;
             btnResimEkle.FlatStyle = FlatStyle.Flat;
             btnResimEkle.ForeColor = Color.Black;
-            btnResimEkle.Location = new Point(413, 421);
+            btnResimEkle.Location = new Point(477, 418);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(110, 40);
             btnResimEkle.TabIndex = 5;
@@ -280,11 +283,41 @@
             // lblUrunAra
             // 
             lblUrunAra.AutoSize = true;
-            lblUrunAra.Location = new Point(544, 22);
+            lblUrunAra.Location = new Point(606, 25);
             lblUrunAra.Name = "lblUrunAra";
             lblUrunAra.Size = new Size(66, 14);
             lblUrunAra.TabIndex = 9;
             lblUrunAra.Text = "Ürün Ara";
+            // 
+            // lblUrunAdi
+            // 
+            lblUrunAdi.AutoSize = true;
+            lblUrunAdi.ForeColor = Color.Black;
+            lblUrunAdi.Location = new Point(50, 287);
+            lblUrunAdi.Name = "lblUrunAdi";
+            lblUrunAdi.Size = new Size(69, 14);
+            lblUrunAdi.TabIndex = 36;
+            lblUrunAdi.Text = "Ürün Adı:";
+            // 
+            // lblKalori
+            // 
+            lblKalori.AutoSize = true;
+            lblKalori.ForeColor = Color.Black;
+            lblKalori.Location = new Point(68, 340);
+            lblKalori.Name = "lblKalori";
+            lblKalori.Size = new Size(51, 14);
+            lblKalori.TabIndex = 37;
+            lblKalori.Text = "Kalori:";
+            // 
+            // lblPorisyon
+            // 
+            lblPorisyon.AutoSize = true;
+            lblPorisyon.ForeColor = Color.Black;
+            lblPorisyon.Location = new Point(49, 392);
+            lblPorisyon.Name = "lblPorisyon";
+            lblPorisyon.Size = new Size(70, 14);
+            lblPorisyon.TabIndex = 38;
+            lblPorisyon.Text = "Porsiyon:";
             // 
             // AdminAddProduct
             // 
@@ -292,6 +325,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightSteelBlue;
             ClientSize = new Size(1091, 718);
+            Controls.Add(lblUrunAdi);
+            Controls.Add(lblKalori);
+            Controls.Add(lblPorisyon);
             Controls.Add(lblUrunAra);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
@@ -330,5 +366,8 @@
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
         private Label lblUrunAra;
+        private Label lblUrunAdi;
+        private Label lblKalori;
+        private Label lblPorisyon;
     }
 }
