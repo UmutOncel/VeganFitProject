@@ -40,11 +40,6 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                 .WithMany(x => x.Datas)
                 .HasForeignKey(x => x.ProductId);
 
-            builder.HasOne<OptionalProduct>(x => x.OptionalProduct)
-                .WithMany(x => x.Datas)
-                .HasForeignKey(x => x.OptionalProductId);
-
-            builder.Property(x=>x.OptionalProductId).IsRequired(false);
             builder.Property(x=>x.ProductId).IsRequired(false);
             builder.Property(x=>x.UserId).IsRequired(false);
 

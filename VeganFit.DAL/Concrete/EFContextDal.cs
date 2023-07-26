@@ -23,7 +23,6 @@ namespace VeganFit.DAL.Concrete
             services.AddDbContext<VeganFitDbContext>()
                     .AddScoped<IUserRepo, UserRepo>()
                     .AddScoped<IProductRepo, ProductRepo>()
-                    .AddScoped<IOptionalProductRepo, OptionalProductRepo>()
                     .AddScoped<IFeedbackRepo, FeedbackRepo>()
                     .AddScoped<IWeightRepo, WeightRepo>()
                     .AddScoped<IDataRepo, DataRepo>();

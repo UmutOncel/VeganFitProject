@@ -14,7 +14,6 @@ namespace VeganFit.Bll.Concrete
             services.AddScopeDal()
             .AddScoped<IDataService, DataService>()
             .AddScoped<IFeedbackService, FeedbackService>()
-            .AddScoped<IOptionalProductService, OptionalProductService>()
             .AddScoped<IProductService, ProductService>()
             .AddScoped<IUserService, UserService>()
             .AddScoped<IWeightService, WeightService>();

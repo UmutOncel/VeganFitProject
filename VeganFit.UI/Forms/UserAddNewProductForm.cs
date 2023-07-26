@@ -2,7 +2,6 @@
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
 using VeganFit.Models.DTOs.DataDtos;
-using VeganFit.Models.VMs.OptionalProductVms;
 using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 

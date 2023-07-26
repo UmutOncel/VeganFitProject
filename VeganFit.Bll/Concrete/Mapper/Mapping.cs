@@ -3,13 +3,11 @@ using VeganFit.Entities;
 using VeganFit.Models.DTOs.AdminDtos;
 using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.Models.DTOs.FeedbackDtos;
-using VeganFit.Models.DTOs.OptionalProductDtos;
 using VeganFit.Models.DTOs.ProductDtos;
 using VeganFit.Models.DTOs.UserDtos;
 using VeganFit.Models.DTOs.WeigthDtos;
 using VeganFit.Models.VMs.DataVms;
 using VeganFit.Models.VMs.FeedbackVms;
-using VeganFit.Models.VMs.OptionalProductVms;
 using VeganFit.Models.VMs.ProductVms;
 using VeganFit.Models.VMs.UserVms;
 using VeganFit.Models.VMs.WeightVms;
@@ -24,9 +22,6 @@ namespace VeganFit.Bll.Concrete.Mapper
             CreateMap<Product,ProductUpdateDto>().ReverseMap();
             CreateMap<ProductCreateDto,ProductCreateVm>().ReverseMap();
             CreateMap<ProductUpdateDto,ProductUpdateVm>().ReverseMap();
-
-            CreateMap<OptionalProduct,OptionalProductCreateDto>().ReverseMap();
-            CreateMap<OptionalProductCreateDto,OptionalProductCreateVm>().ReverseMap();
 
             //CreateMap<User,UserCreateDto>().ReverseMap();
             //CreateMap<UserCreateDto,AdminCreateDto>().ReverseMap();
@@ -44,9 +39,6 @@ namespace VeganFit.Bll.Concrete.Mapper
             CreateMap<User,UserCreateDto>().ReverseMap();
             CreateMap<User,LoginVm>().ReverseMap();
             CreateMap<UserCreateDto, CreateVm>().ReverseMap();
-           
-
-            
         }
     }
 }

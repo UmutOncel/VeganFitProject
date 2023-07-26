@@ -13,7 +13,6 @@ namespace VeganFit.DAL.Concrete.Context
     {
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<OptionalProduct> OptionalProducts { get; set; }
         public virtual DbSet<Data> Datas { get; set; }
         public virtual DbSet<Feedback> Feedbacks { get; set; }
         public virtual DbSet<Weight> Weights { get; set; }
@@ -36,7 +35,6 @@ namespace VeganFit.DAL.Concrete.Context
         {
             modelBuilder.ApplyConfiguration(new UserConfiguration())
                         .ApplyConfiguration(new ProductConfiguration())
-                        .ApplyConfiguration(new OptionalProductConfiguration())
                         .ApplyConfiguration(new DataConfiguration())
                         .ApplyConfiguration(new FeedbackConfiguration())
                         .ApplyConfiguration(new WeightConfiguration());

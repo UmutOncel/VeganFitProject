@@ -22,7 +22,5 @@ namespace VeganFit.Entities
         public string UserEmail { get; set; }
         public virtual Product Product { get; set; }
         public int? ProductId { get; set; }
-        public virtual OptionalProduct OptionalProduct { get; set; }
-        public int? OptionalProductId { get; set; }
     }
 }
