@@ -12,14 +12,9 @@ namespace VeganFit.Bll.Concrete.Services
 {
     public class DataService : IDataService
     {
-        private readonly IDataService _data;
         private readonly IDataRepo _dataRepo;
         private readonly IMapper _mapper;
 
-        //public DataService()
-        //{
-
-        //}
         public DataService(IMapper mapper,IDataRepo dataRepo)
         {
             _mapper = mapper;
