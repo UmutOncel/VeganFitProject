@@ -57,56 +57,62 @@
             // 
             // dgvSabah
             // 
-            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dgvSabah.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvSabah.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvSabah.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvSabah.BackgroundColor = Color.DarkSeaGreen;
             dgvSabah.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvSabah.Location = new Point(12, 30);
             dgvSabah.Name = "dgvSabah";
             dgvSabah.ReadOnly = true;
-            dgvSabah.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            dgvSabah.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvSabah.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvSabah.RowTemplate.DefaultCellStyle.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvSabah.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvSabah.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvSabah.RowTemplate.Height = 25;
+            dgvSabah.RowTemplate.ReadOnly = true;
+            dgvSabah.RowTemplate.Resizable = DataGridViewTriState.False;
             dgvSabah.Size = new Size(475, 154);
             dgvSabah.TabIndex = 1;
             // 
             // dgvOgle
             // 
-            dataGridViewCellStyle2.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
-            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
-            dgvOgle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle3.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dgvOgle.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dgvOgle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOgle.BackgroundColor = Color.DarkSeaGreen;
             dgvOgle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvOgle.Location = new Point(12, 269);
             dgvOgle.Name = "dgvOgle";
             dgvOgle.ReadOnly = true;
+            dgvOgle.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvOgle.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvOgle.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvOgle.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvOgle.RowTemplate.Height = 25;
+            dgvOgle.RowTemplate.ReadOnly = true;
+            dgvOgle.RowTemplate.Resizable = DataGridViewTriState.False;
             dgvOgle.Size = new Size(475, 154);
             dgvOgle.TabIndex = 1;
             // 
             // dgvAksam
             // 
-            dataGridViewCellStyle3.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle3.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
             dgvAksam.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvAksam.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvAksam.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvAksam.BackgroundColor = Color.DarkSeaGreen;
             dgvAksam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvAksam.Location = new Point(12, 508);
             dgvAksam.Name = "dgvAksam";
             dgvAksam.ReadOnly = true;
+            dgvAksam.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvAksam.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvAksam.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvAksam.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvAksam.RowTemplate.Height = 25;
+            dgvAksam.RowTemplate.ReadOnly = true;
+            dgvAksam.RowTemplate.Resizable = DataGridViewTriState.False;
             dgvAksam.Size = new Size(475, 154);
             dgvAksam.TabIndex = 1;
             // 
@@ -196,20 +202,23 @@
             // 
             // dgvUrunlerListesi
             // 
-            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle4.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             dgvUrunlerListesi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvUrunlerListesi.BackgroundColor = Color.DarkSeaGreen;
             dgvUrunlerListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUrunlerListesi.Location = new Point(591, 84);
+            dgvUrunlerListesi.Location = new Point(591, 69);
             dgvUrunlerListesi.Name = "dgvUrunlerListesi";
             dgvUrunlerListesi.ReadOnly = true;
+            dgvUrunlerListesi.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dgvUrunlerListesi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
+            dgvUrunlerListesi.RowTemplate.DefaultCellStyle.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dgvUrunlerListesi.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvUrunlerListesi.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvUrunlerListesi.RowTemplate.Height = 25;
-            dgvUrunlerListesi.Size = new Size(488, 581);
+            dgvUrunlerListesi.RowTemplate.ReadOnly = true;
+            dgvUrunlerListesi.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvUrunlerListesi.Size = new Size(488, 593);
             dgvUrunlerListesi.TabIndex = 8;
             dgvUrunlerListesi.CellClick += dgvUrunlerListesi_CellClick;
             // 
@@ -223,7 +232,7 @@
             btnUrunEkle.FlatAppearance.BorderSize = 0;
             btnUrunEkle.FlatStyle = FlatStyle.Flat;
             btnUrunEkle.ForeColor = Color.Black;
-            btnUrunEkle.Location = new Point(791, 675);
+            btnUrunEkle.Location = new Point(776, 668);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(120, 30);
             btnUrunEkle.TabIndex = 9;
@@ -277,7 +286,7 @@
             txtAramaKutusu.BorderSize = 1;
             txtAramaKutusu.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtAramaKutusu.ForeColor = Color.Black;
-            txtAramaKutusu.Location = new Point(591, 45);
+            txtAramaKutusu.Location = new Point(591, 30);
             txtAramaKutusu.Multiline = false;
             txtAramaKutusu.Name = "txtAramaKutusu";
             txtAramaKutusu.Padding = new Padding(7);
@@ -305,7 +314,7 @@
             btnListeyiYenile.ForeColor = Color.Black;
             btnListeyiYenile.Image = Properties.Resources.Yenile_Butonu;
             btnListeyiYenile.ImageAlign = ContentAlignment.BottomCenter;
-            btnListeyiYenile.Location = new Point(591, 671);
+            btnListeyiYenile.Location = new Point(591, 668);
             btnListeyiYenile.Name = "btnListeyiYenile";
             btnListeyiYenile.Size = new Size(34, 34);
             btnListeyiYenile.TabIndex = 9;
@@ -319,7 +328,7 @@
             // lblListeyiYenile
             // 
             lblListeyiYenile.AutoSize = true;
-            lblListeyiYenile.Location = new Point(631, 671);
+            lblListeyiYenile.Location = new Point(631, 664);
             lblListeyiYenile.Name = "lblListeyiYenile";
             lblListeyiYenile.Size = new Size(97, 14);
             lblListeyiYenile.TabIndex = 17;
@@ -329,7 +338,7 @@
             // lblUrunAra
             // 
             lblUrunAra.AutoSize = true;
-            lblUrunAra.Location = new Point(591, 28);
+            lblUrunAra.Location = new Point(591, 13);
             lblUrunAra.Name = "lblUrunAra";
             lblUrunAra.Size = new Size(66, 14);
             lblUrunAra.TabIndex = 18;

@@ -47,12 +47,14 @@
             dgvGorusOneri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvGorusOneri.BackgroundColor = Color.LightSteelBlue;
             dgvGorusOneri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGorusOneri.Location = new Point(100, 84);
+            dgvGorusOneri.Location = new Point(167, 86);
             dgvGorusOneri.Name = "dgvGorusOneri";
             dgvGorusOneri.ReadOnly = true;
-            dgvGorusOneri.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSlateGray;
+            dgvGorusOneri.RowTemplate.DefaultCellStyle.BackColor = Color.LightSteelBlue;
+            dgvGorusOneri.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
+            dgvGorusOneri.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
             dgvGorusOneri.RowTemplate.Height = 25;
-            dgvGorusOneri.Size = new Size(894, 541);
+            dgvGorusOneri.Size = new Size(734, 541);
             dgvGorusOneri.TabIndex = 0;
             // 
             // btnSil
@@ -65,7 +67,7 @@
             btnSil.FlatAppearance.BorderSize = 0;
             btnSil.FlatStyle = FlatStyle.Flat;
             btnSil.ForeColor = Color.Black;
-            btnSil.Location = new Point(884, 631);
+            btnSil.Location = new Point(791, 633);
             btnSil.Name = "btnSil";
             btnSil.Size = new Size(110, 40);
             btnSil.TabIndex = 1;
