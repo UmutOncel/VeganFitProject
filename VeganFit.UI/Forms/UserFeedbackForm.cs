@@ -26,16 +26,12 @@ namespace VeganFit.UI
 
         private void UserFeedbackForm_Load(object sender, EventArgs e)
         {
-            txtGorusOneri.Text = "Görüş ve Öneriniz";
+
             txtGorusOneri.ForeColor = Color.SteelBlue;
         }
         private void txtGorusOneri_Enter(object sender, EventArgs e)
         {
-            if (txtGorusOneri.Text == "Görüş ve Öneriniz")
-            {
-                txtGorusOneri.Text = "";
-                txtGorusOneri.ForeColor = Color.Black;
-            }
+           
         }
 
         private void txtGorusOneri_Leave(object sender, EventArgs e)

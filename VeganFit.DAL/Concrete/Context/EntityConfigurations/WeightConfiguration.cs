@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,8 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                 .IsRequired();
 
             builder.Property(x => x.RecordDate)
-                .IsRequired();
+                   .HasColumnType("date")
+                   .IsRequired();
 
             builder.HasOne<User>(x => x.User)
                 .WithMany(x => x.Weights)

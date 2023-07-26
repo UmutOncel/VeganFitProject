@@ -84,7 +84,7 @@ namespace VeganFit.UI
                 {
                     WeightCreateVm vm = new WeightCreateVm()
                     {
-                        UserWeight = Convert.ToInt32(txtKilo.Text),
+                        UserWeight = Convert.ToDouble(txtKilo.Text),
                         UserName = ActiveUser.ActiveUserFirstName
 
                     };
