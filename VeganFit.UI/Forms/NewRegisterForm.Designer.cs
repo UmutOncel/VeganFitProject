@@ -220,8 +220,6 @@
             // dtpDogumTatihi
             // 
             dtpDogumTatihi.Location = new Point(25, 169);
-            dtpDogumTatihi.MaxDate = new DateTime(1978, 12, 31, 0, 0, 0, 0);
-            dtpDogumTatihi.MinDate = new DateTime(1959, 12, 31, 0, 0, 0, 0);
             dtpDogumTatihi.Name = "dtpDogumTatihi";
             dtpDogumTatihi.Size = new Size(250, 22);
             dtpDogumTatihi.TabIndex = 9;

@@ -158,48 +158,60 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
+            int dogumtarihi = dtpDogumTatihi.Value.Year;
+            int altSinir = Convert.ToInt32(DateTime.Now.Year) - 64;
+            int ustSinir = Convert.ToInt32(DateTime.Now.Year) - 45;
+
+
             if (ad && soyad)
             {
-                var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
-                if (txtEMail.Text != string.Empty && !dbKullaniciAdi)
+                if (altSinir >= dogumtarihi || dogumtarihi >= ustSinir)
                 {
-                    if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
+                    var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
+                    if (txtEMail.Text != string.Empty && !dbKullaniciAdi)
                     {
-                        string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
-                        CreateVm createVm = new CreateVm()
+                        if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
                         {
-                            FirstName = txtAd.Text,
-                            LastName = txtSoyad.Text,
-                            Email = txtEMail.Text,
-                            BirthDate = dtpDogumTatihi.Value,
-                            Password = sifre,
-                            PasswordConfirm = txtSifreyiTekrarGirin.Text
-                        };
+                            string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
+                            CreateVm createVm = new CreateVm()
+                            {
+                                FirstName = txtAd.Text,
+                                LastName = txtSoyad.Text,
+                                Email = txtEMail.Text,
+                                BirthDate = dtpDogumTatihi.Value,
+                                Password = sifre,
+                                PasswordConfirm = txtSifreyiTekrarGirin.Text
+                            };
 
-                        var exist = _userService.Create(createVm);
+                            var exist = _userService.Create(createVm);
 
-                        if (exist != null)
+                            if (exist != null)
+                            {
+                                MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
+                                this.Close();
+                                var loginForm = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
+                                loginForm.ShowDialog();
+                            }
+                        }
+                        else
                         {
-                            MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
-                            this.Close();
-                            var loginForm = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
-                            loginForm.ShowDialog();
+                            MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlı veya boş olabilir.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlı veya boş olabilir.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Yaşınız uygulamamızın hedef kitlesi dışındadır.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
             }
             else
-                MessageBox.Show("Lütfen Ad Soyad kısmına harf dışında karakter girmeyiniz..", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            {
+                MessageBox.Show("Lütfen Ad Soyad kısmına harf dışında karakter girmeyiniz.", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnKapat_Click(object sender, EventArgs e)

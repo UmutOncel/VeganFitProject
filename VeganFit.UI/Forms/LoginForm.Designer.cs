@@ -176,6 +176,7 @@
             btnGiris.BorderColor = Color.FromArgb(70, 205, 207);
             btnGiris.BorderRadius = 15;
             btnGiris.BorderSize = 2;
+            btnGiris.Enabled = false;
             btnGiris.FlatAppearance.BorderSize = 0;
             btnGiris.FlatStyle = FlatStyle.Popup;
             btnGiris.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
@@ -230,6 +231,7 @@
             txtKullaniciAdi.TabIndex = 1;
             txtKullaniciAdi.TabStop = false;
             txtKullaniciAdi.UnderlinedStyle = false;
+            txtKullaniciAdi._TextChanged += txtKullaniciAdi__TextChanged;
             txtKullaniciAdi.Enter += txtKullaniciAdi_Enter;
             txtKullaniciAdi.Leave += txtKullaniciAdi_Leave;
             // 
