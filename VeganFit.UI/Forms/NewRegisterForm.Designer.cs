@@ -86,6 +86,7 @@
             txtAd.TabIndex = 1;
             txtAd.TabStop = false;
             txtAd.UnderlinedStyle = false;
+            txtAd._TextChanged += txtAd__TextChanged;
             txtAd.Enter += txtAd_Enter;
             txtAd.Leave += txtAd_Leave;
             // 
@@ -108,6 +109,7 @@
             txtSoyad.TabIndex = 1;
             txtSoyad.TabStop = false;
             txtSoyad.UnderlinedStyle = false;
+            txtSoyad._TextChanged += txtSoyad__TextChanged;
             txtSoyad.Enter += txtSoyad_Enter;
             txtSoyad.Leave += txtSoyad_Leave;
             // 

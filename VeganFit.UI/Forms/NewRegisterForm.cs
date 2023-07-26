@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Text.RegularExpressions;
 using TextBoxs.TextBox;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
 using VeganFit.Models.VMs.UserVms;
-using VeganFit.UI.EFContextForm;
-using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 
 namespace VeganFit.UI
 {
     public partial class NewRegisterForm : Form
     {
-        bool mov;
+        bool mov, ad, soyad;
         int movX, movY;
         private readonly IUserService _userService;
         private readonly IUserRepo _userRepo;
@@ -66,6 +54,7 @@ namespace VeganFit.UI
             txtEMail.ForeColor = Color.DarkViolet;
             txtSifre.ForeColor = Color.DarkViolet;
             txtSifreyiTekrarGirin.ForeColor = Color.DarkViolet;
+            btnKaydiTamamla.Enabled = false;
         }
 
         private void txtAd_Enter(object sender, EventArgs e)
@@ -113,11 +102,11 @@ namespace VeganFit.UI
 
         private void txtEMail_Leave(object sender, EventArgs e)
         {
-            if (txtEMail.Text == "")
-            {
-                txtEMail.Text = "EMail";
-                txtEMail.ForeColor = Color.DarkViolet;
-            }
+            //if (txtEMail.Text == "")
+            //{
+            //    txtEMail.Text = "EMail";
+            //    txtEMail.ForeColor = Color.DarkViolet;
+            //}
         }
 
         private void txtSifre_Enter(object sender, EventArgs e)
@@ -169,41 +158,48 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
-            var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
-            if (!dbKullaniciAdi)
+            if (ad && soyad )
             {
-                if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
+                var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
+                if (txtEMail.Text != string.Empty && !dbKullaniciAdi)
                 {
-                    string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
-                    CreateVm createVm = new CreateVm()
+                    if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
                     {
-                        FirstName = txtAd.Text,
-                        LastName = txtSoyad.Text,
-                        Email = txtEMail.Text,
-                        BirthDate = dtpDogumTatihi.Value,
-                        Password = sifre,
-                        PasswordConfirm = txtSifreyiTekrarGirin.Text
-                    };
+                        string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
+                        CreateVm createVm = new CreateVm()
+                        {
+                            FirstName = txtAd.Text,
+                            LastName = txtSoyad.Text,
+                            Email = txtEMail.Text,
+                            BirthDate = dtpDogumTatihi.Value,
+                            Password = sifre,
+                            PasswordConfirm = txtSifreyiTekrarGirin.Text
+                        };
 
-                    var exist = _userService.Create(createVm);
+                        var exist = _userService.Create(createVm);
 
-                    if (exist != null)
+                        if (exist != null)
+                        {
+                            MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
+                            this.Close();
+                            var loginForm = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
+                            loginForm.ShowDialog();
+                        }
+                    }
+                    else
                     {
-                        MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
-                        this.Close();
-                        var loginForm = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
-                        loginForm.ShowDialog();
+                        MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir!", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir!");
+                    MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlı veya boş olabilir.","INFO",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
+
             }
             else
-            {
-                MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlıdır. Farklı bir mail adresi giriniz!");
-            }
+                MessageBox.Show("Lütfen Ad Soyad kısmına harf dışında karakter girmeyiniz..", "INFO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -213,23 +209,41 @@ namespace VeganFit.UI
 
         private void txtSifre__TextChanged(object sender, EventArgs e)
         {
-            RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{8,}$", txtSifre);
+            RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
         }
 
-        public void RegularEx(string rgx, DesignTextBox txtb)
+        public bool RegularEx(string rgx, DesignTextBox txtb)
         {
+            bool control = false;
             Regex regex = new Regex(rgx);
             Match match = regex.Match(txtb.Text);
+            if (match.Success)
+            {
+                btnKaydiTamamla.Enabled = true;
+                control = true;
+            }
+            else
+            {
+                btnKaydiTamamla.Enabled = false;
+                control = false;
+            }
+            return control;
+
         }
 
         private void txtSifreyiTekrarGirin__TextChanged(object sender, EventArgs e)
         {
-            RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{8,}$", txtSifreyiTekrarGirin);
+            RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
+        }
 
-            if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
-            {
-                btnKaydiTamamla.Enabled = true;
-            }
+        private void txtAd__TextChanged(object sender, EventArgs e)
+        {
+            ad = RegularEx(@"^[a-zA-Z]*$", txtAd);
+        }
+
+        private void txtSoyad__TextChanged(object sender, EventArgs e)
+        {
+            soyad = RegularEx(@"^[a-zA-Z]*$", txtSoyad);
         }
     }
 }
