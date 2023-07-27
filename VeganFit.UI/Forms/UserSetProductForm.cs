@@ -15,21 +15,17 @@ namespace VeganFit.UI
         private readonly IDataRepo _dataRepo;
         DataDetailDto dataDetail = UserAddMealForm._data;
 
-
-
         public UserSetProductForm(IDataService dataService)
         {
             InitializeComponent();
-            _dataService = dataService;
 
+            _dataService = dataService;
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
         {
             ForBegin();
-
         }
-
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -50,13 +46,37 @@ namespace VeganFit.UI
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                string resimAdi = ofd.FileName;
-                pbxResim.Image = Image.FromFile(resimAdi);
+                string pictureName = ofd.FileName;
+                pbxResim.Image = Image.FromFile(pictureName);
             }
         }
+
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
+            string strServing = txtIstenilenPorsiyon.Text;
+            double serving;
+            bool isDouble = double.TryParse(strServing, out serving);
+            if (!isDouble)
+            {
+                MessageBox.Show("Porsiyonu sadece tam sayı veya ondalıklı sayı olarak girebilirsiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (Convert.ToInt32(txtIstenilenPorsiyon.Text) > 0)
+                {
+                    AddProduct();
+                }
+                else
+                {
+                    MessageBox.Show("Porsiyon sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
 
+            this.Close();
+        }
+
+        private void AddProduct() 
+        {
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
@@ -68,18 +88,16 @@ namespace VeganFit.UI
 
             _dataService.Create(dto);
 
-            MessageBox.Show("Ürün Başarıyla Eklenmiştir");
-
-            this.Close();
-
+            MessageBox.Show("Ürün başarıyla eklenmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         /// <summary>
         /// Öğünden seçtiği yiyeceğin bilgilerini textbox ve picture box a yükleyen ve comboboxtan ürün seçmeyi yaptıran metottur.
         /// </summary>
         private void ForBegin()
         {
-            Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
-            cbxOgunSec.Items.AddRange(array);
+            Object[] mealArray = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
+            cbxOgunSec.Items.AddRange(mealArray);
 
             if (dataDetail != null)
             {
@@ -89,7 +107,6 @@ namespace VeganFit.UI
                 pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
                 txtIstenilenPorsiyon.Text = dataDetail.Serving;
             }
-
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
@@ -99,6 +116,5 @@ namespace VeganFit.UI
                 btnOguneEkle.Enabled = true;
             }
         }
-
     }
 }

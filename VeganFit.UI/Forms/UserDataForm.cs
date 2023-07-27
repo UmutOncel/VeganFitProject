@@ -13,18 +13,17 @@ namespace VeganFit.UI
         public UserDataForm(IWeightRepo weightRepo)
         {
             InitializeComponent();
+
             _weightRepo = weightRepo;
         }
-
 
         private void UserDataForm_Load(object sender, EventArgs e)
         {
             dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
+
             dgvGunlukKiloTakibi.Columns[0].HeaderText = "İsim";
             dgvGunlukKiloTakibi.Columns[1].HeaderText = "Kilo";
             dgvGunlukKiloTakibi.Columns[2].HeaderText = "Kayıt Tarihi";
-
-
 
             dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName)
                 .GroupBy(x => new { x.UserEmail, x.Datetime })
@@ -33,6 +32,7 @@ namespace VeganFit.UI
                     Tarih = x.Key.Datetime,
                     ToplamKalori = x.Sum(x => x.Calori)
                 }).ToList();
+
             ChartDatas();
         }
 
@@ -40,14 +40,17 @@ namespace VeganFit.UI
         {
             this.Close();
         }
+
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {
             lblKapat.Visible = true;
         }
+
         private void btnKapat_MouseLeave(object sender, EventArgs e)
         {
             lblKapat.Visible = false;
         }
+
         private void ChartDatas()
         {
             for (int i = 0; i < dgvGunSonuKalori.Rows.Count; i++)
@@ -59,7 +62,5 @@ namespace VeganFit.UI
                 chartWeight.Series["Kilo"].Points.AddXY(dgvGunlukKiloTakibi.Rows[i].Cells[2].Value.ToString(), Convert.ToInt32(dgvGunlukKiloTakibi.Rows[i].Cells[1].Value.ToString()));
             }
         }
-
-
     }
 }

@@ -25,9 +25,8 @@ namespace VeganFit.UI
        
         private void AdminAddProduct_Load(object sender, EventArgs e)
         {
-            ListeyiYenile();
+            RefreshList();
         }
-
   
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
@@ -40,9 +39,9 @@ namespace VeganFit.UI
             };
             _service.Create(vm);
 
-            MessageBox.Show("Ürün Başarıyla Eklenmiştir");
+            MessageBox.Show("Ürün başarıyla eklenmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearAll();
-            ListeyiYenile();
+            RefreshList();
         }
 
         /// <summary>
@@ -50,7 +49,7 @@ namespace VeganFit.UI
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ListeyiYenile()
+        private void RefreshList()
         {
             dgvUrunler.DataSource = _productRepo.GetFilteredList(select: x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture }, where: x => x.State != State.Deleted);
             DatagridViewChangeColumnName();
@@ -68,9 +67,9 @@ namespace VeganFit.UI
             };
             _service.Update(updateVm);
 
-            MessageBox.Show("Ürün Başarıyla Güncellenmiştir");
+            MessageBox.Show("Ürün başarıyla güncellenmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearAll();
-            ListeyiYenile();
+            RefreshList();
         }
         
         private void btnUrunSil_Click(object sender, EventArgs e)
@@ -78,9 +77,9 @@ namespace VeganFit.UI
             int id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value);
             var product = _service.Delete(id);
 
-            MessageBox.Show("Ürün Başarıyla Silinmiştir");
+            MessageBox.Show("Ürün başarıyla silinmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ListeyiYenile();
+            RefreshList();
         }
    
         private void btnKapat_Click(object sender, EventArgs e)
@@ -103,8 +102,8 @@ namespace VeganFit.UI
             OpenFileDialog ofd = new OpenFileDialog();
             if (ofd.ShowDialog() == DialogResult.OK)
             {
-                string resimAdi = ofd.FileName;
-                pbxResim.Image = Image.FromFile(resimAdi);
+                string pictureName = ofd.FileName;
+                pbxResim.Image = Image.FromFile(pictureName);
             }
         }
       
@@ -112,7 +111,6 @@ namespace VeganFit.UI
         {
             try
             {
-
                 txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
                 txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
                 txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
@@ -132,7 +130,7 @@ namespace VeganFit.UI
             }
             catch (Exception)
             {
-                MessageBox.Show("Lütfen ilk sütundan seçim yapınız..","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Stop);
+                MessageBox.Show("Lütfen sadece ilk sütundan seçim yapınız.", "UYARI" ,MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
       
@@ -153,6 +151,7 @@ namespace VeganFit.UI
         {
             ClearAll();
         }
+
         /// <summary>
         /// Textbox ve picturebox'taki verileri temizlyen metottur.
         /// </summary>
@@ -164,6 +163,7 @@ namespace VeganFit.UI
             pbxResim.Image = null;
             pbxResim.BorderStyle = BorderStyle.Fixed3D;
         }
+
         private void DatagridViewChangeColumnName()
         {
             dgvUrunler.Columns[1].HeaderText = "Ürün İsmi";

@@ -10,7 +10,7 @@ namespace VeganFit.UI
 {
     public partial class NewRegisterForm : Form
     {
-        bool mov, isFirstname, isLastname, pw, pw1;
+        bool mov, isFirstname, isLastname, password1, password2;
         int movX, movY;
         private readonly IUserService _userService;
         private readonly IUserRepo _userRepo;
@@ -56,6 +56,7 @@ namespace VeganFit.UI
         {
             ControlUserFirstnameAndLastname();
         }
+
         /// <summary>
         /// Yeni kullanıcı yaratan metottur.
         /// </summary>
@@ -76,21 +77,21 @@ namespace VeganFit.UI
 
             if (exist != null)
             {
-                MessageBox.Show("Başarıyla Kayıt Oluşturuldu.");
+                MessageBox.Show("Başarıyla kayıt oluşturuldu.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 var loginForm = EFContextForm.EFContextForm.ConfigureServices<LoginForm>();
                 loginForm.ShowDialog();
             }
         }
+
         /// <summary>
         /// Kullanıcının şifre kontrolünü sağlayan metottur.
         /// </summary>
         private void ControlUserPassword()
         {
-
             if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
             {
-                if (pw)
+                if (password1)
                 {
                     CreateNewUser();
                 }
@@ -98,24 +99,20 @@ namespace VeganFit.UI
                 {
                     MessageBox.Show("Girmiş olduğunuz şifre belirlenen kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                
             }
             else
             {
                 MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-
-
-
         }
+
         /// <summary>
         ///  Kullanıcının Email kontrolünü sağlayan metottur.
         /// </summary>
         private void ControlUserEmail()
         {
-            var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
-            if (!dbKullaniciAdi)
+            var dbUserName = _userRepo.Any(x => x.Email == txtEMail.Text);
+            if (!dbUserName)
             {
                 ControlUserPassword();
             }
@@ -124,16 +121,17 @@ namespace VeganFit.UI
                 MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlıdır. Kayıtlı mail adresi ile tekrar kayıt olamazsınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
         /// <summary>
         ///  Kullanıcının yaş kontrolünü sağlayan metottur.
         /// </summary>
         private void ControlUserAge()
         {
-            int dogumtarihi = dtpDogumTatihi.Value.Year;
-            int altSinir = Convert.ToInt32(DateTime.Now.Year) - 64;
-            int ustSinir = Convert.ToInt32(DateTime.Now.Year) - 45;
+            int birthdate = dtpDogumTatihi.Value.Year;
+            int minLimit = Convert.ToInt32(DateTime.Now.Year) - 64;
+            int maxLimit = Convert.ToInt32(DateTime.Now.Year) - 45;
 
-            if (altSinir <= dogumtarihi && dogumtarihi <= ustSinir)
+            if (minLimit <= birthdate && birthdate <= maxLimit)
             {
                 ControlUserEmail();
             }
@@ -174,14 +172,14 @@ namespace VeganFit.UI
 
         private void txtSifre__TextChanged(object sender, EventArgs e)
         {
-            pw = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
+            password1 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
 
             SetButtonState();
         }
 
         private void txtSifreyiTekrarGirin__TextChanged(object sender, EventArgs e)
         {
-            pw1 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
+            password2 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
 
             SetButtonState();
         }
@@ -190,6 +188,7 @@ namespace VeganFit.UI
         {
             SetButtonState();
         }
+
         /// <summary>
         /// Kayıt butonun aktiflik şartını içeren metottur.
         /// </summary>
@@ -209,6 +208,7 @@ namespace VeganFit.UI
                 btnKaydiTamamla.Enabled = false;
             }
         }
+
         /// <summary>
         /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
         /// </summary>
@@ -216,6 +216,7 @@ namespace VeganFit.UI
         {
             EnableButton(txtAd, txtSoyad, txtEMail, txtSifre, txtSifreyiTekrarGirin);
         }
+
         /// <summary>
         /// Kayıt esnasında şartları eşleştirip kontrolünü sağlayan metottur.
         /// </summary>
@@ -236,13 +237,11 @@ namespace VeganFit.UI
                 control = false;
             }
             return control;
-
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
     }
 }

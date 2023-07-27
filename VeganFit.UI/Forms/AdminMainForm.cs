@@ -16,6 +16,7 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
+
         public AdminMainForm()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace VeganFit.UI
             VeganFitDbContext db = new VeganFitDbContext();
             lblKayitliKullaniciSayisi.Text = db.Users.Select(x => x.Email).Distinct().Count().ToString();
         }
+
         private void pnlUstMenu_MouseDown(object sender, MouseEventArgs e)
         {
             mov = true;
@@ -78,10 +80,12 @@ namespace VeganFit.UI
                 e.Cancel = true;
             }
         }
+        
+        private Form activeForm = null;
+
         /// <summary>
         /// Main form içinde child formları iç içe açmak için kullanılan metottur.
         /// </summary>
-        private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)

@@ -75,7 +75,7 @@
             lblKullaniciAdi.AutoSize = true;
             lblKullaniciAdi.FlatStyle = FlatStyle.Flat;
             lblKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            lblKullaniciAdi.Location = new Point(385, 269);
+            lblKullaniciAdi.Location = new Point(385, 255);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
             lblKullaniciAdi.Size = new Size(88, 14);
             lblKullaniciAdi.TabIndex = 7;
@@ -85,7 +85,7 @@
             // 
             lblSifre.AutoSize = true;
             lblSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            lblSifre.Location = new Point(405, 328);
+            lblSifre.Location = new Point(405, 314);
             lblSifre.Name = "lblSifre";
             lblSifre.Size = new Size(39, 14);
             lblSifre.TabIndex = 7;
@@ -164,7 +164,7 @@
             // 
             pbxLogo.BackColor = Color.Transparent;
             pbxLogo.Image = Properties.Resources.Logo;
-            pbxLogo.Location = new Point(300, 130);
+            pbxLogo.Location = new Point(300, 116);
             pbxLogo.Name = "pbxLogo";
             pbxLogo.Size = new Size(250, 150);
             pbxLogo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -206,7 +206,7 @@
             btnGiris.FlatStyle = FlatStyle.Popup;
             btnGiris.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnGiris.ForeColor = Color.FromArgb(70, 205, 207);
-            btnGiris.Location = new Point(374, 395);
+            btnGiris.Location = new Point(374, 381);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(110, 40);
             btnGiris.TabIndex = 3;
@@ -224,7 +224,7 @@
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            txtSifre.Location = new Point(300, 345);
+            txtSifre.Location = new Point(300, 331);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
@@ -246,7 +246,7 @@
             txtKullaniciAdi.BorderSize = 1;
             txtKullaniciAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            txtKullaniciAdi.Location = new Point(300, 286);
+            txtKullaniciAdi.Location = new Point(300, 272);
             txtKullaniciAdi.Multiline = false;
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Padding = new Padding(7);

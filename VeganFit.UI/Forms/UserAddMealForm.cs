@@ -20,6 +20,7 @@ namespace VeganFit.UI
         public UserAddMealForm(IProductRepo ProductRepo, IDataRepo dataRepo, IDataService dataService)
         {
             InitializeComponent();
+
             this._ProductRepo = ProductRepo;
             _data = new DataDetailDto();
             _dataRepo = dataRepo;
@@ -28,15 +29,14 @@ namespace VeganFit.UI
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-            ListeyiYenile();
-            OgunListeleriniYenile();
+            RefreshList();
+            RefreshMealLists();
         }
-
 
         /// <summary>
         /// Öğün Listelerini yenilemeye yarayan metottur.
         /// </summary>
-        public void OgunListeleriniYenile()
+        public void RefreshMealLists()
         {
             DateTime myDateTime = DateTime.Now;
             string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
@@ -52,8 +52,6 @@ namespace VeganFit.UI
 
             DataGridViewColumnNames();
         }
-
-
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -75,7 +73,7 @@ namespace VeganFit.UI
             var chooseProduct = dgvSabah.SelectedCells[0].Value;
             int id = _dataRepo.FindId(x => x.ProductName == chooseProduct);
             var product = _dataService.Delete(id);
-            MessageBox.Show("Başarıyla Silinmiştir");
+            MessageBox.Show("Ürün sabah öğününden başarıyla silinmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnUrunuSilOgle_Click(object sender, EventArgs e)
@@ -83,7 +81,7 @@ namespace VeganFit.UI
             var chooseProduct = dgvOgle.SelectedCells[0].Value;
             int id = _dataRepo.FindId(x => x.ProductName == chooseProduct);
             var product = _dataService.Delete(id);
-            MessageBox.Show("Başarıyla Silinmiştir");
+            MessageBox.Show("Ürün öğle öğününden başarıyla silinmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnUrunuSilAksam_Click(object sender, EventArgs e)
@@ -91,14 +89,13 @@ namespace VeganFit.UI
             var chooseProduct = dgvAksam.SelectedCells[0].Value;
             int id = _dataRepo.FindId(x => x.ProductName == chooseProduct);
             var product = _dataService.Delete(id);
-            MessageBox.Show("Başarıyla Silinmiştir");
+            MessageBox.Show("Ürün akşam öğnünden başarıyla silinmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
 
         /// <summary>
         /// Listeyi yenilemeye yarayan metottur.
         /// </summary>
-        private void ListeyiYenile()
+        private void RefreshList()
         {
             if (_ProductRepo != null)
             {
@@ -114,14 +111,14 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            ListeyiYenile();
+            RefreshList();
             var urunEkle = EFContextForm.EFContextForm.ConfigureServices<UserAddNewProductForm>();
             urunEkle.ShowDialog();
         }
 
         private void btnListeyiYenile_Click(object sender, EventArgs e)
         {
-            OgunListeleriniYenile();
+            RefreshMealLists();
         }
 
         private void btnListeyiYenile_MouseEnter(object sender, EventArgs e)
@@ -148,9 +145,8 @@ namespace VeganFit.UI
             }
             catch (Exception)
             {
-                MessageBox.Show("Lütfen ilk sütundan seçim yapınız..", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Lütfen sadece ilk sütundan seçim yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-
         }
 
         private void txtAramaKutusu__TextChanged(object sender, EventArgs e)
@@ -159,9 +155,8 @@ namespace VeganFit.UI
             dgvUrunlerListesi.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaKutusu.Text) && x.State != State.Deleted)
                 .Select(x => new { x.ProductName, x.Calori, x.Serving, x.Picture })
                 .ToList();
-
-
         }
+
         private void DataGridViewColumnNames()
         {
             dgvSabah.Columns[0].HeaderText = "Ürün İsmi";

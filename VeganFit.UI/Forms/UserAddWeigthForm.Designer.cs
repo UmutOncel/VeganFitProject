@@ -98,7 +98,6 @@
             txtKilo.TabStop = false;
             txtKilo.UnderlinedStyle = false;
             txtKilo._TextChanged += txtKilo__TextChanged;
-      
             // 
             // btnKaydet
             // 
@@ -147,7 +146,7 @@
             // lblTarihSec
             // 
             lblTarihSec.AutoSize = true;
-            lblTarihSec.Location = new Point(50, 297);
+            lblTarihSec.Location = new Point(86, 297);
             lblTarihSec.Name = "lblTarihSec";
             lblTarihSec.Size = new Size(50, 14);
             lblTarihSec.TabIndex = 19;

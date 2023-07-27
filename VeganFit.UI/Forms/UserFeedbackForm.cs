@@ -21,12 +21,12 @@ namespace VeganFit.UI
         public UserFeedbackForm(IFeedbackService feedbackService)
         {
             InitializeComponent();
+
             this._service = feedbackService;
         }
 
         private void UserFeedbackForm_Load(object sender, EventArgs e)
         {
-
             txtGorusOneri.ForeColor = Color.SteelBlue;
         }
 
@@ -38,6 +38,7 @@ namespace VeganFit.UI
                 txtGorusOneri.ForeColor = Color.SteelBlue;
             }
         }
+
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,7 +62,7 @@ namespace VeganFit.UI
             };
             _service.Create(vm);
 
-            MessageBox.Show("Geri Bildiriminiz İçin Teşekkürler");
+            MessageBox.Show("Geri bildiriminiz için teşekkür ederiz", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 

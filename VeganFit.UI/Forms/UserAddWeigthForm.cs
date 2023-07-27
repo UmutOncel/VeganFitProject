@@ -32,26 +32,20 @@ namespace VeganFit.UI
 
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
-
             lblDateToday.Text = DateTime.Today.ToShortDateString();
-            ListeyiYenile();
-
-
-
-        }
-        private void txtKilo_Enter(object sender, EventArgs e)
-        {
-
+            RefreshList();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {
             lblKapat.Visible = true;
         }
+
         private void btnKapat_MouseLeave(object sender, EventArgs e)
         {
             lblKapat.Visible = false;
@@ -61,38 +55,51 @@ namespace VeganFit.UI
         {
             string strWeight = txtKilo.Text;
             double weight;
-            bool doubleMi = double.TryParse(strWeight, out weight);
-            if (!doubleMi)
+            bool isDouble = double.TryParse(strWeight, out weight);
+            if (!isDouble)
             {
                 MessageBox.Show("Kilonuzu sadece tam sayı veya ondalıklı sayı olarak girebilirsiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                bool varMi = _weightRepo.Any(x => x.RecordDate == Convert.ToDateTime(lblDateToday.Text));
-                if (!varMi)
+                if (Convert.ToInt32(txtKilo.Text) > 0)
                 {
-                    WeightCreateVm vm = new WeightCreateVm()
-                    {
-                        UserWeight = Convert.ToDouble(txtKilo.Text),
-                        UserName = ActiveUser.ActiveUserFirstName
-
-                    };
-                    _service.Create(vm);
-                    MessageBox.Show("Kayıt Başarılı");
-                    ListeyiYenile();
+                    AddWeight();
                 }
                 else
                 {
-                    MessageBox.Show("Seçilen tarihte kaydınız bulunmaktadır!", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Kilo değeriniz sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
         }
+
+        private void AddWeight() 
+        {
+            bool isExist = _weightRepo.Any(x => x.RecordDate == Convert.ToDateTime(lblDateToday.Text));
+            if (!isExist)
+            {
+                WeightCreateVm vm = new WeightCreateVm()
+                {
+                    UserWeight = Convert.ToDouble(txtKilo.Text),
+                    UserName = ActiveUser.ActiveUserFirstName
+                };
+                _service.Create(vm);
+                MessageBox.Show("Kilonuz başarıyla kaydedilmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                RefreshList();
+            }
+            else
+            {
+                MessageBox.Show("Seçilen tarihte kaydınız bulunmaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
         /// <summary>
         /// Listeyi yenilemeye yarayan metottur.
         /// </summary>
-        private void ListeyiYenile()
+        private void RefreshList()
         {
             dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.RecordDate, x.UserWeight, x.UserName }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
+
             dgvGunlukKiloTakibi.Columns[0].HeaderText = "Kayıt Tarihi";
             dgvGunlukKiloTakibi.Columns[1].HeaderText = "Kilonuz";
             dgvGunlukKiloTakibi.Columns[2].HeaderText = "İsim";

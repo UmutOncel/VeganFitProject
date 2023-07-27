@@ -28,6 +28,7 @@ namespace VeganFit.UI
             movX = e.X;
             movY = e.Y;
         }
+
         private void pnlUstMenu_MouseUp(object sender, MouseEventArgs e)
         {
             mov = false;
@@ -40,6 +41,7 @@ namespace VeganFit.UI
                 this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
             }
         }
+
         private void btnSimgeDurumunaKucult_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -54,6 +56,7 @@ namespace VeganFit.UI
         {
             lblSimgeDurumunaKucult.Visible = false;
         }
+
         private void btnCikisYap_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -61,7 +64,7 @@ namespace VeganFit.UI
 
         private void UserMainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("Çıkmak istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo);
+            DialogResult dialogResult = MessageBox.Show("Çıkmak istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.Yes)
             {
                 Environment.Exit(0);
@@ -72,10 +75,11 @@ namespace VeganFit.UI
             }
         }
 
+        private Form activeForm = null;
+
         /// <summary>
         /// Main form içinde child formları iç içe açmak için kullanılan metottur.
         /// </summary>
-        private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {
             if (activeForm != null)
@@ -89,6 +93,7 @@ namespace VeganFit.UI
             childForm.BringToFront();
             childForm.Show();
         }
+
         private void btnVerileriGor_Click(object sender, EventArgs e)
         {
             pnlSecim1.Visible = true;
@@ -123,7 +128,6 @@ namespace VeganFit.UI
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = true;
             openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserFeedbackForm>());
-
         }
     }
 }

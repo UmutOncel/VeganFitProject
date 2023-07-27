@@ -9,7 +9,6 @@ namespace VeganFit.UI
 {
     public partial class UserAddNewProductForm : Form
     {
-
         private readonly IDataService _dataService;
         bool product, calori, serving;
 
@@ -23,7 +22,6 @@ namespace VeganFit.UI
         {
             ForBegin();
         }
-     
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -39,6 +37,7 @@ namespace VeganFit.UI
         {
             lblKapat.Visible = false;
         }
+
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
@@ -47,15 +46,33 @@ namespace VeganFit.UI
                 OpenFileDialog ofd = new OpenFileDialog();
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    string resimAdi = ofd.FileName;
-                    pbxResim.Image = Image.FromFile(resimAdi);
+                    string pictureName = ofd.FileName;
+                    pbxResim.Image = Image.FromFile(pictureName);
                 }
             }
         }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
+            if (Convert.ToInt32(txtKalori.Text) > 0)
+            {
+                if (Convert.ToInt32(txtPorsiyon.Text) > 0)
+                {
+                    AddProduct();
+                }
+                else
+                {
+                    MessageBox.Show("Porsiyon değeri sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Kalori değeri sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
 
+        private void AddProduct() 
+        {
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
@@ -67,8 +84,7 @@ namespace VeganFit.UI
 
             _dataService.Create(dto);
 
-            MessageBox.Show("Ürün Başarıyla Eklenmiştir");
-
+            MessageBox.Show("Ürün başarıyla eklenmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -80,8 +96,7 @@ namespace VeganFit.UI
             cbxOgunSec.Items.AddRange(array);
 
             txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily, 8, FontStyle.Italic);
-            txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100 )";
-
+            txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100)";
         }
 
         private void txtUrunAdi__TextChanged(object sender, EventArgs e)
@@ -109,7 +124,7 @@ namespace VeganFit.UI
                 }
                 else
                 {
-                    MessageBox.Show("Girdiğiniz değerleri kontrol ediniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Girdiğiniz değerleri kontrol ediniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtKalori.Text = string.Empty;
                     txtPorsiyon.Text = string.Empty;
                     txtUrunAdi.Text = string.Empty;

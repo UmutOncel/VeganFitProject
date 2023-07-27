@@ -18,13 +18,14 @@ namespace VeganFit.UI
         bool mov;
         int movX, movY;
         private readonly IUserService _userService;
+
         public WarningForm(IUserService userService)
         {
             InitializeComponent();
+
             _userService = userService;
-
-
         }
+
         private void btnIlerle_Click(object sender, EventArgs e)
         {
             var formRegister = EFContextForm.EFContextForm.ConfigureServices<NewRegisterForm>();
@@ -66,7 +67,5 @@ namespace VeganFit.UI
         {
             Environment.Exit(0);
         }
-
-
     }
 }

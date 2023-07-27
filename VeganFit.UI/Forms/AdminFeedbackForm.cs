@@ -21,18 +21,19 @@ namespace VeganFit.UI
         public AdminFeedbackForm(IFeedbackRepo feedbackRepo, IFeedbackService feedbackService)
         {
             InitializeComponent();
+
             _feedbackRepo = feedbackRepo;
             _service = feedbackService;
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvGorusOneri.SelectedCells[0].Value);        //INDEX!!!!!!
+            int id = Convert.ToInt32(dgvGorusOneri.SelectedCells[0].Value);
             var product = _service.Delete(id);
 
-            MessageBox.Show("Ürün Başarıyla Silinmiştir");
+            MessageBox.Show("Ürün başarıyla silinmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            ListeyiYenile();
+            RefreshList();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -52,21 +53,21 @@ namespace VeganFit.UI
 
         private void AdminFeedbackForm_Load(object sender, EventArgs e)
         {
-            ListeyiYenile();
+            RefreshList();
         }
+
         /// <summary>
         /// İşlemler sonucunda listeyi otomatik yenileyip verilerin ekrana gelmesini sağlayan metottur.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void ListeyiYenile()
+        private void RefreshList()
         {
             dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new { x.Id, x.User.Email, x.Message }, where: x => x.State != State.Deleted);
+
             dgvGorusOneri.Columns[0].HeaderText = "Id";
             dgvGorusOneri.Columns[1].HeaderText = "Email";
             dgvGorusOneri.Columns[2].HeaderText = "Geri Bildirim Mesajı";
         }
-
-
     }
 }

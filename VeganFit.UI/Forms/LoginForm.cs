@@ -28,9 +28,11 @@ namespace VeganFit.UI
         public LoginForm(IUserService userService, IUserRepo userRepo)
         {
             InitializeComponent();
+
             _userService = userService;
             _userRepo = userRepo;
         }
+
         private void pnlLoginUI_MouseDown(object sender, MouseEventArgs e)
         {
             mov = true;
@@ -50,7 +52,6 @@ namespace VeganFit.UI
                 this.SetDesktopLocation(MousePosition.X - movX, MousePosition.Y - movY);
             }
         }
-
 
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {
@@ -76,6 +77,7 @@ namespace VeganFit.UI
         {
             lblSimgeDurumunaKucult.Visible = false;
         }
+
         private void btnKapat_Click(object sender, EventArgs e)
         {
             DialogResult dialogResult = MessageBox.Show("Çıkmak istediğinize emin misiniz?", "UYARI", MessageBoxButtons.YesNo);
@@ -94,12 +96,12 @@ namespace VeganFit.UI
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            string sifre = PasswordHassing.Sha256Hash(txtSifre.Text);
-            var login = _userService.Login(txtKullaniciAdi.Text, sifre);
+            string password = PasswordHassing.Sha256Hash(txtSifre.Text);
+            var login = _userService.Login(txtKullaniciAdi.Text, password);
 
             if (login.Data == null)
             {
-                MessageBox.Show("Lütfen Bilgilerinizi Kontrol Edin");
+                MessageBox.Show("Lütfen bilgilerinizi kontrol edin", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -121,7 +123,6 @@ namespace VeganFit.UI
                     userMainForm.Show();
                     this.Hide();
                 }
-
             }
         }
 
