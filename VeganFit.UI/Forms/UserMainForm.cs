@@ -71,6 +71,10 @@ namespace VeganFit.UI
                 e.Cancel = true;
             }
         }
+
+        /// <summary>
+        /// Main form içinde child formları iç içe açmak için kullanılan metottur.
+        /// </summary>
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {

@@ -98,8 +98,7 @@
             txtKilo.TabStop = false;
             txtKilo.UnderlinedStyle = false;
             txtKilo._TextChanged += txtKilo__TextChanged;
-            txtKilo.Enter += txtKilo_Enter;
-            txtKilo.Leave += txtKilo_Leave;
+      
             // 
             // btnKaydet
             // 

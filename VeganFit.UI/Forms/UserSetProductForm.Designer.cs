@@ -155,9 +155,8 @@
             txtPorsiyon.TabIndex = 3;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
-            txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-            txtPorsiyon.Enter += txtPorsiyon_Enter;
-            txtPorsiyon.Leave += txtPorsiyon_Leave;
+
+          
             // 
             // txtKalori
             // 
@@ -233,9 +232,8 @@
             txtIstenilenPorsiyon.TabIndex = 4;
             txtIstenilenPorsiyon.TabStop = false;
             txtIstenilenPorsiyon.UnderlinedStyle = false;
-            txtIstenilenPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-            txtIstenilenPorsiyon.Enter += txtPorsiyon_Enter;
-            txtIstenilenPorsiyon.Leave += txtPorsiyon_Leave;
+           
+           
             // 
             // lblPorsiyonGir
             // 

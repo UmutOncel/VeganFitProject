@@ -52,13 +52,6 @@ namespace VeganFit.UI
             }
         }
 
-        //private void btnGeriDön_Click(object sender, EventArgs e)
-        //{
-        //    LoginForm loginForm = new LoginForm();
-        //    loginForm.ShowDialog();
-        //    this.Close();
-        //}
-
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {
             lblKapat.Visible = true;

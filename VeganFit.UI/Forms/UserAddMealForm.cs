@@ -28,13 +28,14 @@ namespace VeganFit.UI
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-
-            ListeyiYenile();
-            //txtAramaKutusu.ForeColor = Color.SlateGray;
+            ListeyiYenile();        
             OgunListeleriniYenile();
-
         }
 
+
+        /// <summary>
+        /// Öğün Listelerini yenilemeye yarayan metottur.
+        /// </summary>
         public void OgunListeleriniYenile()
         {
             DateTime myDateTime = DateTime.Now;
@@ -48,9 +49,7 @@ namespace VeganFit.UI
 
             dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
-
-
-        }
+                    }
 
 
 
@@ -93,6 +92,10 @@ namespace VeganFit.UI
             MessageBox.Show("Başarıyla Silinmiştir");
         }
 
+
+        /// <summary>
+        /// Listeyi yenilemeye yarayan metottur.
+        /// </summary>
         private void ListeyiYenile()
         {
             if (_ProductRepo != null)

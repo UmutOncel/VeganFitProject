@@ -23,61 +23,8 @@ namespace VeganFit.UI
         {
             ForBegin();
         }
-        private void txtUrunAdi_Enter(object sender, EventArgs e)
-        {
-            //if (txtUrunAdi.Text == "Ürün Adı")
-            //{
-            //    txtUrunAdi.Text = "";
-            //    txtUrunAdi.ForeColor = Color.Black;
-            //}
-        }
+     
 
-        private void txtUrunAdi_Leave(object sender, EventArgs e)
-        {
-            //if (txtUrunAdi.Text == "")
-            //{
-            //    txtUrunAdi.Text = "Ürün Adı";
-            //    txtUrunAdi.ForeColor = Color.SlateGray;
-            //}
-        }
-
-        private void txtKalori_Enter(object sender, EventArgs e)
-        {
-
-            //if (txtKalori.Text == "Kaç Kalori")
-            //{
-            //    txtKalori.Text = "";
-            //    txtKalori.ForeColor = Color.Black;
-            //}
-        }
-
-        private void txtKalori_Leave(object sender, EventArgs e)
-        {
-            //if (txtKalori.Text == "")
-            //{
-            //    txtKalori.Text = "Kaç Kalori";
-            //    txtKalori.ForeColor = Color.SlateGray;
-            //}
-        }
-
-        private void txtPorsiyon_Enter(object sender, EventArgs e)
-        {
-            txtPorsiyon.Text = string.Empty;
-            //if (txtPorsiyon.Text == "Porsiyon Giriniz")
-            //{
-            //    txtPorsiyon.Text = "";
-            //    txtPorsiyon.ForeColor = Color.Black;
-            //}
-        }
-
-        private void txtPorsiyon_Leave(object sender, EventArgs e)
-        {
-            //if (txtPorsiyon.Text == "")
-            //{
-            //    txtPorsiyon.Text = "Porsiyon Giriniz";
-            //    txtPorsiyon.ForeColor = Color.SlateGray;
-            //}
-        }
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -122,8 +69,11 @@ namespace VeganFit.UI
 
             MessageBox.Show("Ürün Başarıyla Eklenmiştir");
 
-
         }
+
+        /// <summary>
+        /// Öğünü seçtirip listeye ekleyen ve porsiyon textbox'ında bilgi veren metottur.
+        /// </summary>
         private void ForBegin()
         {
             Object[] array = new object[3] { Meal.Breakfast, Meal.Lunch, Meal.Dinner };
@@ -159,7 +109,7 @@ namespace VeganFit.UI
                 }
                 else
                 {
-                    MessageBox.Show("Girdiğiniz değerleri kontrol ediniz", "Info", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Girdiğiniz değerleri kontrol ediniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtKalori.Text = string.Empty;
                     txtPorsiyon.Text = string.Empty;
                     txtUrunAdi.Text = string.Empty;

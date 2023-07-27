@@ -86,8 +86,7 @@
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
             txtUrunAdi._TextChanged += txtUrunAdi__TextChanged;
-            txtUrunAdi.Enter += txtUrunAdi_Enter;
-            txtUrunAdi.Leave += txtUrunAdi_Leave;
+          
             // 
             // txtKalori
             // 
@@ -110,8 +109,7 @@
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
             txtKalori._TextChanged += txtKalori__TextChanged;
-            txtKalori.Enter += txtKalori_Enter;
-            txtKalori.Leave += txtKalori_Leave;
+           
             // 
             // pbxResim
             // 
@@ -145,8 +143,7 @@
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
             txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-            txtPorsiyon.Enter += txtPorsiyon_Enter;
-            txtPorsiyon.Leave += txtPorsiyon_Leave;
+      
             // 
             // btnResimEkle
             // 

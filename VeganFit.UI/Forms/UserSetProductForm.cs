@@ -31,23 +31,6 @@ namespace VeganFit.UI
         }
 
 
-        private void txtPorsiyon_Enter(object sender, EventArgs e)
-        {
-            //if (txtPorsiyon.Text == "Porsiyon Giriniz")
-            //{
-            //    txtPorsiyon.Text = "";
-            //    txtPorsiyon.ForeColor = Color.Black;
-            //}
-        }
-
-        private void txtPorsiyon_Leave(object sender, EventArgs e)
-        {
-            //if (txtPorsiyon.Text == "")
-            //{
-            //    txtPorsiyon.Text = "Porsiyon Giriniz";
-            //    txtPorsiyon.ForeColor = Color.SlateGray;
-            //}
-        }
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -89,8 +72,10 @@ namespace VeganFit.UI
 
             this.Close();
 
-
         }
+        /// <summary>
+        /// Öğünden seçtiği yiyeceğin bilgilerini textbox ve picture box a yükleyen ve comboboxtan ürün seçmeyi yaptıran metottur.
+        /// </summary>
         private void ForBegin()
         {
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
@@ -105,7 +90,6 @@ namespace VeganFit.UI
                 txtIstenilenPorsiyon.Text = dataDetail.Serving;
             }
 
-
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,12 +100,5 @@ namespace VeganFit.UI
             }
         }
 
-        private void txtPorsiyon__TextChanged(object sender, EventArgs e)
-        {
-            //var serv = Convert.ToInt32(dataDetail.Serving);
-            //var ser1 = Convert.ToInt32(txtPorsiyon.Text);
-            //var ser2 = Convert.ToInt32(txtKalori.Text);
-            //txtKalori.Text = ((ser2 / serv) * ser1).ToString();
-        }
     }
 }

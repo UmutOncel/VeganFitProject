@@ -92,8 +92,7 @@
             txtUrunAdi.TabIndex = 1;
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
-            txtUrunAdi.Enter += txtUrunAdi_Enter;
-            txtUrunAdi.Leave += txtUrunAdi_Leave;
+            
             // 
             // txtKalori
             // 
@@ -115,8 +114,7 @@
             txtKalori.TabIndex = 2;
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
-            txtKalori.Enter += txtKalori_Enter;
-            txtKalori.Leave += txtKalori_Leave;
+    
             // 
             // txtPorsiyon
             // 
@@ -138,8 +136,7 @@
             txtPorsiyon.TabIndex = 3;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
-            txtPorsiyon.Enter += txtPorsiyon_Enter;
-            txtPorsiyon.Leave += txtPorsiyon_Leave;
+         
             // 
             // btnResimEkle
             // 

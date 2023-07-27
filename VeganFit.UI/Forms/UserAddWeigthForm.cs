@@ -35,28 +35,8 @@ namespace VeganFit.UI
             dtpTarih.MinDate = DateTime.Today;
             dtpTarih.MaxDate = DateTime.Today;
             ListeyiYenile();
-
-            //txtKilo.Text = "Kilonuzu Giriniz";
-            //txtKilo.ForeColor = Color.SlateGray;
-
-        }
-        private void txtKilo_Enter(object sender, EventArgs e)
-        {
-            //if (txtKilo.Text == "Kilonuzu Giriniz")
-            //{
-            //    txtKilo.Text = "";
-            //    txtKilo.ForeColor = Color.Black;
-            //}
         }
 
-        private void txtKilo_Leave(object sender, EventArgs e)
-        {
-            //if (txtKilo.Text == "")
-            //{
-            //    txtKilo.Text = "Kilonuzu Giriniz";
-            //    txtKilo.ForeColor = Color.SlateGray;
-            //}
-        }
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -77,7 +57,7 @@ namespace VeganFit.UI
             bool doubleMi = double.TryParse(strWeight, out weight);
             if (!doubleMi)
             {
-                MessageBox.Show("Kilonuzu sadece tam sayı veya ondalıklı sayı olarak girebilirsiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Kilonuzu sadece tam sayı veya ondalıklı sayı olarak girebilirsiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -100,7 +80,9 @@ namespace VeganFit.UI
                 }
             }
         }
-
+        /// <summary>
+        /// Listeyi yenilemeye yarayan metottur.
+        /// </summary>
         private void ListeyiYenile()
         {
             dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.RecordDate, x.UserWeight, x.UserName }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
