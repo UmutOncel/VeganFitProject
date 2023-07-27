@@ -59,7 +59,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Yeni kullanıcı yaratan metottur.
         /// </summary>
-        private void CreateNewUser() 
+        private void CreateNewUser()
         {
             string password = PasswordHassing.Sha256Hash(txtSifre.Text);
             CreateVm createVm = new CreateVm()
@@ -85,7 +85,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Kullanıcının şifre kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserPassword() 
+        private void ControlUserPassword()
         {
             if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
             {
@@ -99,7 +99,7 @@ namespace VeganFit.UI
         /// <summary>
         ///  Kullanıcının Email kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserEmail() 
+        private void ControlUserEmail()
         {
             var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
             if (!dbKullaniciAdi)
@@ -114,7 +114,7 @@ namespace VeganFit.UI
         /// <summary>
         ///  Kullanıcının yaş kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserAge() 
+        private void ControlUserAge()
         {
             int dogumtarihi = dtpDogumTatihi.Value.Year;
             int altSinir = Convert.ToInt32(DateTime.Now.Year) - 64;
@@ -133,7 +133,7 @@ namespace VeganFit.UI
         /// <summary>
         ///  Kullanıcının ad-soyad kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserFirstnameAndLastname() 
+        private void ControlUserFirstnameAndLastname()
         {
             if (isFirstname && isLastname)
             {
@@ -185,7 +185,7 @@ namespace VeganFit.UI
         /// <param name="txtbox3"></param>
         /// <param name="txtbox4"></param>
         /// <param name="txtbox5"></param>
-        private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5) 
+        private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5)
         {
             if (txtbox1.Text.Length > 0 && txtbox2.Text.Length > 0 && txtbox3.Text.Length > 0 && txtbox4.Text.Length > 0 && txtbox5.Text.Length > 0)
             {
@@ -199,7 +199,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
         /// </summary>
-        private void SetButtonState() 
+        private void SetButtonState()
         {
             EnableButton(txtAd, txtSoyad, txtEMail, txtSifre, txtSifreyiTekrarGirin);
         }

@@ -24,7 +24,7 @@ namespace VeganFit.UI
             _feedbackRepo = feedbackRepo;
             _service = feedbackService;
         }
-        
+
         private void btnSil_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(dgvGorusOneri.SelectedCells[0].Value);        //INDEX!!!!!!
@@ -34,22 +34,22 @@ namespace VeganFit.UI
 
             ListeyiYenile();
         }
-     
+
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-      
+
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {
             lblKapat.Visible = true;
         }
-       
+
         private void btnKapat_MouseLeave(object sender, EventArgs e)
         {
             lblKapat.Visible = false;
         }
-      
+
         private void AdminFeedbackForm_Load(object sender, EventArgs e)
         {
             ListeyiYenile();
@@ -66,7 +66,7 @@ namespace VeganFit.UI
             dgvGorusOneri.Columns[1].HeaderText = "Email";
             dgvGorusOneri.Columns[2].HeaderText = "Geri Bildirim Mesajı";
         }
-        
+
 
     }
 }

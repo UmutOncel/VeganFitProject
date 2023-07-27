@@ -81,6 +81,7 @@
             txtAd.BorderRadius = 14;
             txtAd.BorderSize = 1;
             txtAd.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            txtAd.ForeColor = Color.DarkViolet;
             txtAd.Location = new Point(25, 79);
             txtAd.Multiline = false;
             txtAd.Name = "txtAd";
@@ -102,6 +103,7 @@
             txtSoyad.BorderRadius = 14;
             txtSoyad.BorderSize = 1;
             txtSoyad.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSoyad.ForeColor = Color.DarkViolet;
             txtSoyad.Location = new Point(25, 131);
             txtSoyad.Multiline = false;
             txtSoyad.Name = "txtSoyad";
@@ -123,6 +125,7 @@
             txtEMail.BorderRadius = 14;
             txtEMail.BorderSize = 1;
             txtEMail.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            txtEMail.ForeColor = Color.DarkViolet;
             txtEMail.Location = new Point(25, 230);
             txtEMail.Multiline = false;
             txtEMail.Name = "txtEMail";
@@ -144,6 +147,7 @@
             txtSifre.BorderRadius = 14;
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSifre.ForeColor = Color.DarkViolet;
             txtSifre.Location = new Point(25, 282);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
@@ -165,6 +169,7 @@
             txtSifreyiTekrarGirin.BorderRadius = 14;
             txtSifreyiTekrarGirin.BorderSize = 1;
             txtSifreyiTekrarGirin.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSifreyiTekrarGirin.ForeColor = Color.DarkViolet;
             txtSifreyiTekrarGirin.Location = new Point(25, 332);
             txtSifreyiTekrarGirin.Multiline = false;
             txtSifreyiTekrarGirin.Name = "txtSifreyiTekrarGirin";

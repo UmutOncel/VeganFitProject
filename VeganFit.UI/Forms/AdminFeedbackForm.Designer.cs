@@ -45,7 +45,7 @@
             dataGridViewCellStyle1.SelectionBackColor = Color.SteelBlue;
             dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dgvGorusOneri.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvGorusOneri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvGorusOneri.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGorusOneri.BackgroundColor = Color.LightSteelBlue;
             dgvGorusOneri.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvGorusOneri.Location = new Point(167, 86);
