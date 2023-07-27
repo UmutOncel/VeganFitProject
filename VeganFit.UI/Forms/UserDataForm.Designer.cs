@@ -57,14 +57,14 @@
             dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGunlukKiloTakibi.Location = new Point(22, 100);
+            dgvGunlukKiloTakibi.Location = new Point(22, 59);
             dgvGunlukKiloTakibi.Name = "dgvGunlukKiloTakibi";
             dgvGunlukKiloTakibi.ReadOnly = true;
             dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
-            dgvGunlukKiloTakibi.Size = new Size(500, 500);
+            dgvGunlukKiloTakibi.Size = new Size(500, 300);
             dgvGunlukKiloTakibi.TabIndex = 0;
             // 
             // dgvGunSonuKalori
@@ -74,21 +74,21 @@
             dgvGunSonuKalori.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunSonuKalori.BackgroundColor = Color.DarkSeaGreen;
             dgvGunSonuKalori.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvGunSonuKalori.Location = new Point(569, 100);
+            dgvGunSonuKalori.Location = new Point(569, 59);
             dgvGunSonuKalori.Name = "dgvGunSonuKalori";
             dgvGunSonuKalori.ReadOnly = true;
             dgvGunSonuKalori.RowTemplate.DefaultCellStyle.BackColor = Color.DarkSeaGreen;
             dgvGunSonuKalori.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvGunSonuKalori.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunSonuKalori.RowTemplate.Height = 25;
-            dgvGunSonuKalori.Size = new Size(500, 500);
+            dgvGunSonuKalori.Size = new Size(500, 300);
             dgvGunSonuKalori.TabIndex = 0;
             // 
             // label1
             // 
             label1.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(167, 69);
+            label1.Location = new Point(167, 28);
             label1.Name = "label1";
             label1.Size = new Size(224, 20);
             label1.TabIndex = 1;
@@ -98,7 +98,7 @@
             // 
             label2.Font = new Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = SystemColors.ActiveCaptionText;
-            label2.Location = new Point(740, 69);
+            label2.Location = new Point(740, 28);
             label2.Name = "label2";
             label2.Size = new Size(224, 20);
             label2.TabIndex = 1;
@@ -143,38 +143,59 @@
             // chartCalori
             // 
             chartCalori.BackColor = Color.DarkSeaGreen;
+            chartCalori.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Percent20;
+            chartCalori.BorderlineColor = Color.Black;
+            chartCalori.BorderSkin.PageColor = Color.Transparent;
+            chartCalori.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Raised;
             chartArea1.Name = "ChartArea1";
             chartCalori.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
             chartCalori.Legends.Add(legend1);
-            chartCalori.Location = new Point(569, 372);
+            chartCalori.Location = new Point(569, 381);
             chartCalori.Name = "chartCalori";
             chartCalori.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.VerticalCenter;
+            series1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Percent05;
+            series1.BorderColor = Color.DarkBlue;
             series1.ChartArea = "ChartArea1";
+            series1.Color = Color.Teal;
+            series1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            series1.LabelAngle = 48;
             series1.Legend = "Legend1";
             series1.Name = "Kalori";
             series1.YValuesPerPoint = 4;
             chartCalori.Series.Add(series1);
-            chartCalori.Size = new Size(500, 228);
+            chartCalori.Size = new Size(500, 300);
             chartCalori.TabIndex = 13;
             chartCalori.Text = "chart1";
             // 
             // chartWeight
             // 
             chartWeight.BackColor = Color.DarkSeaGreen;
+            chartWeight.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Percent20;
+            chartWeight.BorderlineColor = Color.Black;
+            chartWeight.BorderSkin.PageColor = Color.Transparent;
+            chartWeight.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Sunken;
             chartArea2.Name = "ChartArea1";
             chartWeight.ChartAreas.Add(chartArea2);
             legend2.Name = "Legend1";
             chartWeight.Legends.Add(legend2);
-            chartWeight.Location = new Point(22, 372);
+            chartWeight.Location = new Point(22, 381);
             chartWeight.Name = "chartWeight";
             chartWeight.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
+            series2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.VerticalCenter;
+            series2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.Percent05;
+            series2.BorderColor = Color.DarkBlue;
             series2.ChartArea = "ChartArea1";
+            series2.Color = Color.DarkCyan;
+            series2.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            series2.LabelAngle = 48;
+            series2.LabelBackColor = Color.White;
             series2.Legend = "Legend1";
             series2.Name = "Kilo";
             series2.YValuesPerPoint = 4;
             chartWeight.Series.Add(series2);
-            chartWeight.Size = new Size(500, 228);
+            chartWeight.Size = new Size(500, 300);
             chartWeight.TabIndex = 13;
             chartWeight.Text = "chart1";
             // 

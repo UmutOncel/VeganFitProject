@@ -223,6 +223,7 @@
             txtSifre.BorderRadius = 14;
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtSifre.ForeColor = Color.FromArgb(70, 205, 207);
             txtSifre.Location = new Point(300, 355);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
@@ -244,6 +245,7 @@
             txtKullaniciAdi.BorderRadius = 14;
             txtKullaniciAdi.BorderSize = 1;
             txtKullaniciAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            txtKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
             txtKullaniciAdi.Location = new Point(300, 302);
             txtKullaniciAdi.Multiline = false;
             txtKullaniciAdi.Name = "txtKullaniciAdi";
