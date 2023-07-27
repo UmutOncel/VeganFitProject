@@ -59,7 +59,7 @@
             btnUrunEkle.Location = new Point(603, 479);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(110, 40);
-            btnUrunEkle.TabIndex = 18;
+            btnUrunEkle.TabIndex = 6;
             btnUrunEkle.Text = "Ürünü Ekle";
             btnUrunEkle.TextColor = Color.Black;
             btnUrunEkle.UseVisualStyleBackColor = false;
@@ -82,7 +82,7 @@
             txtUrunAdi.PlaceholderColor = Color.Black;
             txtUrunAdi.PlaceholderText = "";
             txtUrunAdi.Size = new Size(250, 29);
-            txtUrunAdi.TabIndex = 17;
+            txtUrunAdi.TabIndex = 1;
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
             txtUrunAdi._TextChanged += txtUrunAdi__TextChanged;
@@ -106,7 +106,7 @@
             txtKalori.PlaceholderColor = Color.Black;
             txtKalori.PlaceholderText = "";
             txtKalori.Size = new Size(250, 29);
-            txtKalori.TabIndex = 17;
+            txtKalori.TabIndex = 2;
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
             txtKalori._TextChanged += txtKalori__TextChanged;
@@ -141,7 +141,7 @@
             txtPorsiyon.PlaceholderColor = Color.Black;
             txtPorsiyon.PlaceholderText = "";
             txtPorsiyon.Size = new Size(250, 29);
-            txtPorsiyon.TabIndex = 17;
+            txtPorsiyon.TabIndex = 3;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
             txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
@@ -161,7 +161,7 @@
             btnResimEkle.Location = new Point(885, 479);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(110, 40);
-            btnResimEkle.TabIndex = 18;
+            btnResimEkle.TabIndex = 5;
             btnResimEkle.Text = "Resim Ekle";
             btnResimEkle.TextColor = Color.Black;
             btnResimEkle.UseVisualStyleBackColor = false;
@@ -194,7 +194,7 @@
             btnKapat.Location = new Point(1340, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 20;
+            btnKapat.TabIndex = 7;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -209,7 +209,7 @@
             cbxOgunSec.Location = new Point(463, 435);
             cbxOgunSec.Name = "cbxOgunSec";
             cbxOgunSec.Size = new Size(250, 22);
-            cbxOgunSec.TabIndex = 22;
+            cbxOgunSec.TabIndex = 4;
             cbxOgunSec.SelectedIndexChanged += cbxOgunSec_SelectedIndexChanged;
             // 
             // lblUrunAdi

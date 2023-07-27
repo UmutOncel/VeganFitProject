@@ -104,7 +104,7 @@
             btnKapat.Location = new Point(1065, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 9;
+            btnKapat.TabIndex = 2;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;

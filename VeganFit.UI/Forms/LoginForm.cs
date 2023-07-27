@@ -51,50 +51,6 @@ namespace VeganFit.UI
             }
         }
 
-        private void LoginForm_Load(object sender, EventArgs e)
-        {
-            txtKullaniciAdi.Text = "Kullanıcı Maili";
-            txtSifre.Text = "Şifre";
-            txtKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            txtSifre.ForeColor = Color.FromArgb(70, 205, 207);
-
-        }
-
-        private void txtKullaniciAdi_Enter(object sender, EventArgs e)
-        {
-            if (txtKullaniciAdi.Text == "Kullanıcı Maili")
-            {
-                txtKullaniciAdi.Text = "";
-                txtKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            }
-        }
-
-        private void txtKullaniciAdi_Leave(object sender, EventArgs e)
-        {
-            if (txtKullaniciAdi.Text == "")
-            {
-                txtKullaniciAdi.Text = "Kullanıcı Maili";
-                txtKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            }
-        }
-
-        private void txtSifre_Enter(object sender, EventArgs e)
-        {
-            if (txtSifre.Text == "Şifre")
-            {
-                txtSifre.Text = "";
-                txtSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            }
-        }
-
-        private void txtSifre_Leave(object sender, EventArgs e)
-        {
-            if (txtSifre.Text == "")
-            {
-                txtSifre.Text = "Şifre";
-                txtSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            }
-        }
 
         private void btnKapat_MouseEnter(object sender, EventArgs e)
         {

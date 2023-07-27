@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             txtKilo = new TextBoxs.TextBox.DesignTextBox();
@@ -68,7 +68,7 @@
             btnKapat.Location = new Point(1065, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 13;
+            btnKapat.TabIndex = 4;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -94,7 +94,7 @@
             txtKilo.PlaceholderColor = Color.Black;
             txtKilo.PlaceholderText = "";
             txtKilo.Size = new Size(250, 29);
-            txtKilo.TabIndex = 15;
+            txtKilo.TabIndex = 2;
             txtKilo.TabStop = false;
             txtKilo.UnderlinedStyle = false;
             txtKilo._TextChanged += txtKilo__TextChanged;
@@ -115,7 +115,7 @@
             btnKaydet.Location = new Point(289, 386);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(110, 40);
-            btnKaydet.TabIndex = 16;
+            btnKaydet.TabIndex = 3;
             btnKaydet.Text = "Kaydet";
             btnKaydet.TextColor = Color.Black;
             btnKaydet.UseVisualStyleBackColor = false;
@@ -123,12 +123,12 @@
             // 
             // dgvGunlukKiloTakibi
             // 
-            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -152,7 +152,7 @@
             dtpTarih.MinDate = new DateTime(2023, 7, 26, 0, 0, 0, 0);
             dtpTarih.Name = "dtpTarih";
             dtpTarih.Size = new Size(250, 22);
-            dtpTarih.TabIndex = 18;
+            dtpTarih.TabIndex = 1;
             dtpTarih.Value = new DateTime(2023, 7, 26, 0, 0, 0, 0);
             // 
             // lblTarihSec

@@ -49,7 +49,7 @@
             btnIlerle.FlatStyle = FlatStyle.Popup;
             btnIlerle.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnIlerle.ForeColor = Color.DarkViolet;
-            btnIlerle.Location = new Point(110, 410);
+            btnIlerle.Location = new Point(110, 460);
             btnIlerle.Name = "btnIlerle";
             btnIlerle.Size = new Size(80, 30);
             btnIlerle.TabIndex = 1;
@@ -69,7 +69,7 @@
             pnlWarningForm.Dock = DockStyle.Fill;
             pnlWarningForm.Location = new Point(0, 0);
             pnlWarningForm.Name = "pnlWarningForm";
-            pnlWarningForm.Size = new Size(300, 450);
+            pnlWarningForm.Size = new Size(300, 500);
             pnlWarningForm.TabIndex = 3;
             pnlWarningForm.MouseDown += pnlWarningForm_MouseDown;
             pnlWarningForm.MouseMove += pnlWarningForm_MouseMove;
@@ -102,7 +102,7 @@
             btnKapat.Location = new Point(274, 1);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 9;
+            btnKapat.TabIndex = 2;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -114,7 +114,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.Icon24_scale_100;
-            pictureBox1.Location = new Point(142, 153);
+            pictureBox1.Location = new Point(142, 194);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(24, 24);
             pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
@@ -126,7 +126,7 @@
             lblUyari.BackColor = SystemColors.Control;
             lblUyari.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblUyari.ForeColor = Color.DarkViolet;
-            lblUyari.Location = new Point(-7, 184);
+            lblUyari.Location = new Point(-7, 225);
             lblUyari.Name = "lblUyari";
             lblUyari.Size = new Size(320, 97);
             lblUyari.TabIndex = 2;
@@ -136,7 +136,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 450);
+            ClientSize = new Size(300, 500);
             Controls.Add(pnlWarningForm);
             FormBorderStyle = FormBorderStyle.None;
             Name = "WarningForm";

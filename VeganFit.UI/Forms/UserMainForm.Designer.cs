@@ -84,7 +84,7 @@
             btnCikisYap.Location = new Point(1, 716);
             btnCikisYap.Name = "btnCikisYap";
             btnCikisYap.Size = new Size(150, 50);
-            btnCikisYap.TabIndex = 2;
+            btnCikisYap.TabIndex = 6;
             btnCikisYap.Text = "                  Çıkış Yap";
             btnCikisYap.TextColor = Color.White;
             btnCikisYap.UseVisualStyleBackColor = false;
@@ -143,7 +143,7 @@
             btnGeriBildirimGönder.Location = new Point(12, 405);
             btnGeriBildirimGönder.Name = "btnGeriBildirimGönder";
             btnGeriBildirimGönder.Size = new Size(260, 50);
-            btnGeriBildirimGönder.TabIndex = 1;
+            btnGeriBildirimGönder.TabIndex = 4;
             btnGeriBildirimGönder.Text = "           Geri Bildirim Gönder";
             btnGeriBildirimGönder.TextColor = Color.White;
             btnGeriBildirimGönder.UseVisualStyleBackColor = false;
@@ -166,7 +166,7 @@
             btnOgununeUrunEkle.Location = new Point(12, 345);
             btnOgununeUrunEkle.Name = "btnOgununeUrunEkle";
             btnOgununeUrunEkle.Size = new Size(260, 50);
-            btnOgununeUrunEkle.TabIndex = 1;
+            btnOgununeUrunEkle.TabIndex = 3;
             btnOgununeUrunEkle.Text = "             Öğününe Ürün Ekle";
             btnOgununeUrunEkle.TextColor = Color.White;
             btnOgununeUrunEkle.UseVisualStyleBackColor = false;
@@ -189,7 +189,7 @@
             btnKiloTakip.Location = new Point(12, 285);
             btnKiloTakip.Name = "btnKiloTakip";
             btnKiloTakip.Size = new Size(260, 50);
-            btnKiloTakip.TabIndex = 1;
+            btnKiloTakip.TabIndex = 2;
             btnKiloTakip.Text = "                            Kilo Takip";
             btnKiloTakip.TextColor = Color.White;
             btnKiloTakip.UseVisualStyleBackColor = false;
@@ -264,7 +264,7 @@
             btnSimgeDurumunaKucult.Location = new Point(1064, 1);
             btnSimgeDurumunaKucult.Name = "btnSimgeDurumunaKucult";
             btnSimgeDurumunaKucult.Size = new Size(25, 25);
-            btnSimgeDurumunaKucult.TabIndex = 9;
+            btnSimgeDurumunaKucult.TabIndex = 5;
             btnSimgeDurumunaKucult.Text = "_";
             btnSimgeDurumunaKucult.TextAlign = ContentAlignment.TopRight;
             btnSimgeDurumunaKucult.TextColor = Color.White;

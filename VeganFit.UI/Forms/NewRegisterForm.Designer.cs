@@ -41,8 +41,14 @@
             pnlNewRegisterForm = new Panel();
             label4 = new Label();
             label3 = new Label();
-            label5 = new Label();
+            lblUyari = new Label();
             label2 = new Label();
+            lblAd = new Label();
+            lblSoyad = new Label();
+            lblDogumTarihi = new Label();
+            lblEmail = new Label();
+            lblSifre = new Label();
+            lblSifreTekrari = new Label();
             pnlNewRegisterForm.SuspendLayout();
             SuspendLayout();
             // 
@@ -58,10 +64,10 @@
             btnKaydiTamamla.FlatStyle = FlatStyle.Popup;
             btnKaydiTamamla.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnKaydiTamamla.ForeColor = Color.DarkViolet;
-            btnKaydiTamamla.Location = new Point(90, 340);
+            btnKaydiTamamla.Location = new Point(90, 385);
             btnKaydiTamamla.Name = "btnKaydiTamamla";
             btnKaydiTamamla.Size = new Size(120, 30);
-            btnKaydiTamamla.TabIndex = 0;
+            btnKaydiTamamla.TabIndex = 7;
             btnKaydiTamamla.Text = "Kaydı Tamamla";
             btnKaydiTamamla.TextColor = Color.DarkViolet;
             btnKaydiTamamla.UseVisualStyleBackColor = false;
@@ -75,7 +81,7 @@
             txtAd.BorderRadius = 14;
             txtAd.BorderSize = 1;
             txtAd.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtAd.Location = new Point(25, 89);
+            txtAd.Location = new Point(25, 79);
             txtAd.Multiline = false;
             txtAd.Name = "txtAd";
             txtAd.Padding = new Padding(7);
@@ -87,8 +93,6 @@
             txtAd.TabStop = false;
             txtAd.UnderlinedStyle = false;
             txtAd._TextChanged += txtAd__TextChanged;
-            txtAd.Enter += txtAd_Enter;
-            txtAd.Leave += txtAd_Leave;
             // 
             // txtSoyad
             // 
@@ -98,7 +102,7 @@
             txtSoyad.BorderRadius = 14;
             txtSoyad.BorderSize = 1;
             txtSoyad.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSoyad.Location = new Point(25, 129);
+            txtSoyad.Location = new Point(25, 131);
             txtSoyad.Multiline = false;
             txtSoyad.Name = "txtSoyad";
             txtSoyad.Padding = new Padding(7);
@@ -106,12 +110,10 @@
             txtSoyad.PlaceholderColor = Color.DarkGray;
             txtSoyad.PlaceholderText = "";
             txtSoyad.Size = new Size(250, 28);
-            txtSoyad.TabIndex = 1;
+            txtSoyad.TabIndex = 2;
             txtSoyad.TabStop = false;
             txtSoyad.UnderlinedStyle = false;
             txtSoyad._TextChanged += txtSoyad__TextChanged;
-            txtSoyad.Enter += txtSoyad_Enter;
-            txtSoyad.Leave += txtSoyad_Leave;
             // 
             // txtEMail
             // 
@@ -121,7 +123,7 @@
             txtEMail.BorderRadius = 14;
             txtEMail.BorderSize = 1;
             txtEMail.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtEMail.Location = new Point(25, 204);
+            txtEMail.Location = new Point(25, 230);
             txtEMail.Multiline = false;
             txtEMail.Name = "txtEMail";
             txtEMail.Padding = new Padding(7);
@@ -129,11 +131,9 @@
             txtEMail.PlaceholderColor = Color.DarkGray;
             txtEMail.PlaceholderText = "";
             txtEMail.Size = new Size(250, 28);
-            txtEMail.TabIndex = 1;
+            txtEMail.TabIndex = 4;
             txtEMail.TabStop = false;
             txtEMail.UnderlinedStyle = false;
-            txtEMail.Enter += txtEMail_Enter;
-            txtEMail.Leave += txtEMail_Leave;
             // 
             // txtSifre
             // 
@@ -143,7 +143,7 @@
             txtSifre.BorderRadius = 14;
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSifre.Location = new Point(25, 244);
+            txtSifre.Location = new Point(25, 282);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
@@ -151,12 +151,10 @@
             txtSifre.PlaceholderColor = Color.DarkGray;
             txtSifre.PlaceholderText = "";
             txtSifre.Size = new Size(250, 28);
-            txtSifre.TabIndex = 1;
+            txtSifre.TabIndex = 5;
             txtSifre.TabStop = false;
             txtSifre.UnderlinedStyle = false;
             txtSifre._TextChanged += txtSifre__TextChanged;
-            txtSifre.Enter += txtSifre_Enter;
-            txtSifre.Leave += txtSifre_Leave;
             // 
             // txtSifreyiTekrarGirin
             // 
@@ -166,7 +164,7 @@
             txtSifreyiTekrarGirin.BorderRadius = 14;
             txtSifreyiTekrarGirin.BorderSize = 1;
             txtSifreyiTekrarGirin.Font = new Font("Verdana", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSifreyiTekrarGirin.Location = new Point(25, 284);
+            txtSifreyiTekrarGirin.Location = new Point(25, 332);
             txtSifreyiTekrarGirin.Multiline = false;
             txtSifreyiTekrarGirin.Name = "txtSifreyiTekrarGirin";
             txtSifreyiTekrarGirin.Padding = new Padding(7);
@@ -174,12 +172,10 @@
             txtSifreyiTekrarGirin.PlaceholderColor = Color.DarkGray;
             txtSifreyiTekrarGirin.PlaceholderText = "";
             txtSifreyiTekrarGirin.Size = new Size(250, 28);
-            txtSifreyiTekrarGirin.TabIndex = 1;
+            txtSifreyiTekrarGirin.TabIndex = 6;
             txtSifreyiTekrarGirin.TabStop = false;
             txtSifreyiTekrarGirin.UnderlinedStyle = false;
             txtSifreyiTekrarGirin._TextChanged += txtSifreyiTekrarGirin__TextChanged;
-            txtSifreyiTekrarGirin.Enter += txtSifreyiTekrarGirin_Enter;
-            txtSifreyiTekrarGirin.Leave += txtSifreyiTekrarGirin_Leave;
             // 
             // lblKapat
             // 
@@ -208,7 +204,7 @@
             btnKapat.Location = new Point(274, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 7;
+            btnKapat.TabIndex = 8;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -219,10 +215,10 @@
             // 
             // dtpDogumTatihi
             // 
-            dtpDogumTatihi.Location = new Point(25, 169);
+            dtpDogumTatihi.Location = new Point(25, 183);
             dtpDogumTatihi.Name = "dtpDogumTatihi";
             dtpDogumTatihi.Size = new Size(250, 22);
-            dtpDogumTatihi.TabIndex = 9;
+            dtpDogumTatihi.TabIndex = 3;
             dtpDogumTatihi.Value = new DateTime(1978, 1, 1, 0, 0, 0, 0);
             // 
             // label1
@@ -238,14 +234,20 @@
             // 
             // pnlNewRegisterForm
             // 
+            pnlNewRegisterForm.Controls.Add(lblSifreTekrari);
+            pnlNewRegisterForm.Controls.Add(lblSifre);
+            pnlNewRegisterForm.Controls.Add(lblEmail);
+            pnlNewRegisterForm.Controls.Add(lblDogumTarihi);
+            pnlNewRegisterForm.Controls.Add(lblSoyad);
+            pnlNewRegisterForm.Controls.Add(lblAd);
             pnlNewRegisterForm.Controls.Add(label4);
             pnlNewRegisterForm.Controls.Add(label3);
-            pnlNewRegisterForm.Controls.Add(label5);
+            pnlNewRegisterForm.Controls.Add(lblUyari);
             pnlNewRegisterForm.Controls.Add(label2);
             pnlNewRegisterForm.Dock = DockStyle.Fill;
             pnlNewRegisterForm.Location = new Point(0, 0);
             pnlNewRegisterForm.Name = "pnlNewRegisterForm";
-            pnlNewRegisterForm.Size = new Size(300, 450);
+            pnlNewRegisterForm.Size = new Size(300, 500);
             pnlNewRegisterForm.TabIndex = 11;
             pnlNewRegisterForm.MouseDown += pnlNewRegisterForm_MouseDown;
             pnlNewRegisterForm.MouseMove += pnlNewRegisterForm_MouseMove;
@@ -255,7 +257,7 @@
             // 
             label4.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.DarkViolet;
-            label4.Location = new Point(3, 431);
+            label4.Location = new Point(3, 484);
             label4.Name = "label4";
             label4.Size = new Size(272, 15);
             label4.TabIndex = 0;
@@ -265,37 +267,103 @@
             // 
             label3.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.DarkViolet;
-            label3.Location = new Point(3, 417);
+            label3.Location = new Point(3, 470);
             label3.Name = "label3";
             label3.Size = new Size(285, 15);
             label3.TabIndex = 0;
             label3.Text = "En az 1 büyük harf, 1 küçük harf, 1 rakam içermelidir.";
             // 
-            // label5
+            // lblUyari
             // 
-            label5.Font = new Font("Verdana", 6.75F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.ForeColor = Color.DarkViolet;
-            label5.Location = new Point(3, 387);
-            label5.Name = "label5";
-            label5.Size = new Size(195, 15);
-            label5.TabIndex = 0;
-            label5.Text = "UYARI:";
+            lblUyari.Font = new Font("Verdana", 6.75F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUyari.ForeColor = Color.DarkViolet;
+            lblUyari.Location = new Point(3, 440);
+            lblUyari.Name = "lblUyari";
+            lblUyari.Size = new Size(195, 15);
+            lblUyari.TabIndex = 0;
+            lblUyari.Text = "UYARI:";
             // 
             // label2
             // 
             label2.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.DarkViolet;
-            label2.Location = new Point(3, 402);
+            label2.Location = new Point(3, 455);
             label2.Name = "label2";
             label2.Size = new Size(195, 15);
             label2.TabIndex = 0;
             label2.Text = "Şifreniz en az 4 karakterli olmalıdır.";
             // 
+            // lblAd
+            // 
+            lblAd.AutoSize = true;
+            lblAd.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAd.ForeColor = Color.DarkViolet;
+            lblAd.Location = new Point(25, 62);
+            lblAd.Name = "lblAd";
+            lblAd.Size = new Size(29, 14);
+            lblAd.TabIndex = 10;
+            lblAd.Text = "Ad:";
+            // 
+            // lblSoyad
+            // 
+            lblSoyad.AutoSize = true;
+            lblSoyad.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSoyad.ForeColor = Color.DarkViolet;
+            lblSoyad.Location = new Point(25, 114);
+            lblSoyad.Name = "lblSoyad";
+            lblSoyad.Size = new Size(53, 14);
+            lblSoyad.TabIndex = 10;
+            lblSoyad.Text = "Soyad:";
+            // 
+            // lblDogumTarihi
+            // 
+            lblDogumTarihi.AutoSize = true;
+            lblDogumTarihi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDogumTarihi.ForeColor = Color.DarkViolet;
+            lblDogumTarihi.Location = new Point(25, 166);
+            lblDogumTarihi.Name = "lblDogumTarihi";
+            lblDogumTarihi.Size = new Size(100, 14);
+            lblDogumTarihi.TabIndex = 10;
+            lblDogumTarihi.Text = "Doğum Tarihi:";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEmail.ForeColor = Color.DarkViolet;
+            lblEmail.Location = new Point(25, 213);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(48, 14);
+            lblEmail.TabIndex = 10;
+            lblEmail.Text = "Email:";
+            // 
+            // lblSifre
+            // 
+            lblSifre.AutoSize = true;
+            lblSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSifre.ForeColor = Color.DarkViolet;
+            lblSifre.Location = new Point(25, 265);
+            lblSifre.Name = "lblSifre";
+            lblSifre.Size = new Size(44, 14);
+            lblSifre.TabIndex = 10;
+            lblSifre.Text = "Şifre:";
+            // 
+            // lblSifreTekrari
+            // 
+            lblSifreTekrari.AutoSize = true;
+            lblSifreTekrari.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSifreTekrari.ForeColor = Color.DarkViolet;
+            lblSifreTekrari.Location = new Point(25, 317);
+            lblSifreTekrari.Name = "lblSifreTekrari";
+            lblSifreTekrari.Size = new Size(96, 14);
+            lblSifreTekrari.TabIndex = 10;
+            lblSifreTekrari.Text = "Şifre Tekrarı:";
+            // 
             // NewRegisterForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(300, 450);
+            ClientSize = new Size(300, 500);
             Controls.Add(label1);
             Controls.Add(dtpDogumTatihi);
             Controls.Add(lblKapat);
@@ -313,8 +381,8 @@
             Name = "NewRegisterForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NewRegisterForm";
-            Load += NewRegisterForm_Load;
             pnlNewRegisterForm.ResumeLayout(false);
+            pnlNewRegisterForm.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -334,6 +402,12 @@
         private Label label2;
         private Label label4;
         private Label label3;
-        private Label label5;
+        private Label lblUyari;
+        private Label lblSifreTekrari;
+        private Label lblSifre;
+        private Label lblEmail;
+        private Label lblDogumTarihi;
+        private Label lblSoyad;
+        private Label lblAd;
     }
 }

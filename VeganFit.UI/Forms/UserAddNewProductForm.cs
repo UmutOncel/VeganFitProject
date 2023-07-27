@@ -129,7 +129,7 @@ namespace VeganFit.UI
             Object[] array = new object[3] { Meal.Breakfast, Meal.Lunch, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
-            txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily,8, FontStyle.Italic);
+            txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily, 8, FontStyle.Italic);
             txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100 )";
 
         }

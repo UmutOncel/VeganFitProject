@@ -103,7 +103,7 @@
             btnCikisYap.Location = new Point(0, 715);
             btnCikisYap.Name = "btnCikisYap";
             btnCikisYap.Size = new Size(150, 50);
-            btnCikisYap.TabIndex = 2;
+            btnCikisYap.TabIndex = 4;
             btnCikisYap.Text = "                  Çıkış Yap";
             btnCikisYap.TextColor = Color.White;
             btnCikisYap.UseVisualStyleBackColor = false;
@@ -144,7 +144,7 @@
             btnBildirimleriGor.Location = new Point(12, 285);
             btnBildirimleriGor.Name = "btnBildirimleriGor";
             btnBildirimleriGor.Size = new Size(260, 50);
-            btnBildirimleriGor.TabIndex = 1;
+            btnBildirimleriGor.TabIndex = 2;
             btnBildirimleriGor.Text = "                Bildirimleri Gör";
             btnBildirimleriGor.TextColor = Color.White;
             btnBildirimleriGor.UseVisualStyleBackColor = false;
@@ -196,7 +196,7 @@
             btnSimgeDurumunaKucult.Location = new Point(1064, 1);
             btnSimgeDurumunaKucult.Name = "btnSimgeDurumunaKucult";
             btnSimgeDurumunaKucult.Size = new Size(25, 25);
-            btnSimgeDurumunaKucult.TabIndex = 9;
+            btnSimgeDurumunaKucult.TabIndex = 3;
             btnSimgeDurumunaKucult.Text = "_";
             btnSimgeDurumunaKucult.TextAlign = ContentAlignment.TopRight;
             btnSimgeDurumunaKucult.TextColor = Color.White;

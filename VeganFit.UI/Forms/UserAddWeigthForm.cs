@@ -32,8 +32,8 @@ namespace VeganFit.UI
 
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
-            dtpTarih.MinDate=DateTime.Today;
-            dtpTarih.MaxDate=DateTime.Today;
+            dtpTarih.MinDate = DateTime.Today;
+            dtpTarih.MaxDate = DateTime.Today;
             ListeyiYenile();
 
             //txtKilo.Text = "Kilonuzu Giriniz";

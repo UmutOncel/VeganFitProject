@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
             txtKalori = new TextBoxs.TextBox.DesignTextBox();
@@ -67,7 +67,7 @@
             txtAramaCubugu.PlaceholderColor = Color.Black;
             txtAramaCubugu.PlaceholderText = "";
             txtAramaCubugu.Size = new Size(250, 29);
-            txtAramaCubugu.TabIndex = 2;
+            txtAramaCubugu.TabIndex = 5;
             txtAramaCubugu.TabStop = false;
             txtAramaCubugu.UnderlinedStyle = false;
             txtAramaCubugu._TextChanged += txtAramaCubugu__TextChanged;
@@ -89,7 +89,7 @@
             txtUrunAdi.PlaceholderColor = Color.Black;
             txtUrunAdi.PlaceholderText = "";
             txtUrunAdi.Size = new Size(250, 29);
-            txtUrunAdi.TabIndex = 2;
+            txtUrunAdi.TabIndex = 1;
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
             txtUrunAdi.Enter += txtUrunAdi_Enter;
@@ -135,7 +135,7 @@
             txtPorsiyon.PlaceholderColor = Color.Black;
             txtPorsiyon.PlaceholderText = "";
             txtPorsiyon.Size = new Size(250, 29);
-            txtPorsiyon.TabIndex = 2;
+            txtPorsiyon.TabIndex = 3;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
             txtPorsiyon.Enter += txtPorsiyon_Enter;
@@ -154,7 +154,7 @@
             btnResimEkle.Location = new Point(437, 418);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(110, 40);
-            btnResimEkle.TabIndex = 5;
+            btnResimEkle.TabIndex = 4;
             btnResimEkle.Text = "Resim Ekle";
             btnResimEkle.TextColor = Color.Black;
             btnResimEkle.UseVisualStyleBackColor = false;
@@ -173,7 +173,7 @@
             btnUrunEkle.Location = new Point(152, 666);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(110, 40);
-            btnUrunEkle.TabIndex = 5;
+            btnUrunEkle.TabIndex = 7;
             btnUrunEkle.Text = "Ürün Ekle";
             btnUrunEkle.TextColor = Color.Black;
             btnUrunEkle.UseVisualStyleBackColor = false;
@@ -192,7 +192,7 @@
             btnUrunGuncelle.Location = new Point(286, 666);
             btnUrunGuncelle.Name = "btnUrunGuncelle";
             btnUrunGuncelle.Size = new Size(110, 40);
-            btnUrunGuncelle.TabIndex = 5;
+            btnUrunGuncelle.TabIndex = 8;
             btnUrunGuncelle.Text = "Ürün Güncelle";
             btnUrunGuncelle.TextColor = Color.Black;
             btnUrunGuncelle.UseVisualStyleBackColor = false;
@@ -211,7 +211,7 @@
             btnUrunSil.Location = new Point(969, 666);
             btnUrunSil.Name = "btnUrunSil";
             btnUrunSil.Size = new Size(110, 40);
-            btnUrunSil.TabIndex = 5;
+            btnUrunSil.TabIndex = 9;
             btnUrunSil.Text = "Ürünü Sil";
             btnUrunSil.TextColor = Color.Black;
             btnUrunSil.UseVisualStyleBackColor = false;
@@ -244,7 +244,7 @@
             btnKapat.Location = new Point(1065, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 7;
+            btnKapat.TabIndex = 10;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -308,13 +308,13 @@
             // 
             dgvUrunler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dgvUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUrunler.Location = new Point(553, 67);
             dgvUrunler.Name = "dgvUrunler";
@@ -343,7 +343,7 @@
             btnTemizle.Location = new Point(437, 474);
             btnTemizle.Name = "btnTemizle";
             btnTemizle.Size = new Size(110, 40);
-            btnTemizle.TabIndex = 5;
+            btnTemizle.TabIndex = 6;
             btnTemizle.Text = "Temizle";
             btnTemizle.TextColor = Color.Black;
             btnTemizle.UseVisualStyleBackColor = false;

@@ -73,11 +73,11 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-            
+
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Math.Round(Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtIstenilenPorsiyon.Text),2),
+                Calori = Math.Round(Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtIstenilenPorsiyon.Text), 2),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
                 Datetime = DateTime.Now,
                 UserEmail = ActiveUser.ActiveUserName
@@ -96,7 +96,7 @@ namespace VeganFit.UI
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
-            if(dataDetail != null )
+            if (dataDetail != null)
             {
                 txtUrunAdi.Text = dataDetail.ProductName;
                 txtKalori.Text = dataDetail.Calori.ToString();
