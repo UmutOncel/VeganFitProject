@@ -56,7 +56,9 @@ namespace VeganFit.UI
         {
             ControlUserFirstnameAndLastname();
         }
-
+        /// <summary>
+        /// Yeni kullanıcı yaratan metottur.
+        /// </summary>
         private void CreateNewUser() 
         {
             string password = PasswordHassing.Sha256Hash(txtSifre.Text);
@@ -80,7 +82,9 @@ namespace VeganFit.UI
                 loginForm.ShowDialog();
             }
         }
-
+        /// <summary>
+        /// Kullanıcının şifre kontrolünü sağlayan metottur.
+        /// </summary>
         private void ControlUserPassword() 
         {
             if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
@@ -92,7 +96,9 @@ namespace VeganFit.UI
                 MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        /// <summary>
+        ///  Kullanıcının Email kontrolünü sağlayan metottur.
+        /// </summary>
         private void ControlUserEmail() 
         {
             var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
@@ -105,7 +111,9 @@ namespace VeganFit.UI
                 MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlıdır. Kayıtlı mail adresi ile tekrar kayıt olamazsınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
+        /// <summary>
+        ///  Kullanıcının yaş kontrolünü sağlayan metottur.
+        /// </summary>
         private void ControlUserAge() 
         {
             int dogumtarihi = dtpDogumTatihi.Value.Year;
@@ -122,6 +130,9 @@ namespace VeganFit.UI
             }
         }
 
+        /// <summary>
+        ///  Kullanıcının ad-soyad kontrolünü sağlayan metottur.
+        /// </summary>
         private void ControlUserFirstnameAndLastname() 
         {
             if (isFirstname && isLastname)
@@ -166,7 +177,14 @@ namespace VeganFit.UI
         {
             SetButtonState();
         }
-
+        /// <summary>
+        /// Kayıt butonun aktiflik şartını içeren metottur.
+        /// </summary>
+        /// <param name="txtbox1"></param>
+        /// <param name="txtbox2"></param>
+        /// <param name="txtbox3"></param>
+        /// <param name="txtbox4"></param>
+        /// <param name="txtbox5"></param>
         private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5) 
         {
             if (txtbox1.Text.Length > 0 && txtbox2.Text.Length > 0 && txtbox3.Text.Length > 0 && txtbox4.Text.Length > 0 && txtbox5.Text.Length > 0)
@@ -178,12 +196,19 @@ namespace VeganFit.UI
                 btnKapat.Enabled = false;
             }
         }
-
+        /// <summary>
+        /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
+        /// </summary>
         private void SetButtonState() 
         {
             EnableButton(txtAd, txtSoyad, txtEMail, txtSifre, txtSifreyiTekrarGirin);
         }
-
+        /// <summary>
+        /// Kayıt esnasında şartları eşleştirip kontrolünü sağlayan metottur.
+        /// </summary>
+        /// <param name="rgx"></param>
+        /// <param name="txtb"></param>
+        /// <returns></returns>
         public bool RegularEx(string rgx, DesignTextBox txtb)
         {
             bool control = false;
