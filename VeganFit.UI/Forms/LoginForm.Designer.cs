@@ -75,7 +75,7 @@
             lblKullaniciAdi.AutoSize = true;
             lblKullaniciAdi.FlatStyle = FlatStyle.Flat;
             lblKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            lblKullaniciAdi.Location = new Point(385, 285);
+            lblKullaniciAdi.Location = new Point(385, 269);
             lblKullaniciAdi.Name = "lblKullaniciAdi";
             lblKullaniciAdi.Size = new Size(88, 14);
             lblKullaniciAdi.TabIndex = 7;
@@ -85,7 +85,7 @@
             // 
             lblSifre.AutoSize = true;
             lblSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            lblSifre.Location = new Point(405, 338);
+            lblSifre.Location = new Point(405, 328);
             lblSifre.Name = "lblSifre";
             lblSifre.Size = new Size(39, 14);
             lblSifre.TabIndex = 7;
@@ -206,7 +206,7 @@
             btnGiris.FlatStyle = FlatStyle.Popup;
             btnGiris.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnGiris.ForeColor = Color.FromArgb(70, 205, 207);
-            btnGiris.Location = new Point(374, 399);
+            btnGiris.Location = new Point(374, 395);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(110, 40);
             btnGiris.TabIndex = 3;
@@ -224,7 +224,7 @@
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            txtSifre.Location = new Point(300, 355);
+            txtSifre.Location = new Point(300, 345);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
@@ -246,7 +246,7 @@
             txtKullaniciAdi.BorderSize = 1;
             txtKullaniciAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             txtKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            txtKullaniciAdi.Location = new Point(300, 302);
+            txtKullaniciAdi.Location = new Point(300, 286);
             txtKullaniciAdi.Multiline = false;
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Padding = new Padding(7);
