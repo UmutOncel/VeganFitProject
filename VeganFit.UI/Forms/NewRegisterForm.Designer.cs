@@ -39,16 +39,16 @@
             dtpDogumTatihi = new DateTimePicker();
             label1 = new Label();
             pnlNewRegisterForm = new Panel();
+            lblSifreTekrari = new Label();
+            lblSifre = new Label();
+            lblEmail = new Label();
+            lblDogumTarihi = new Label();
+            lblSoyad = new Label();
+            lblAd = new Label();
             label4 = new Label();
             label3 = new Label();
             lblUyari = new Label();
             label2 = new Label();
-            lblAd = new Label();
-            lblSoyad = new Label();
-            lblDogumTarihi = new Label();
-            lblEmail = new Label();
-            lblSifre = new Label();
-            lblSifreTekrari = new Label();
             pnlNewRegisterForm.SuspendLayout();
             SuspendLayout();
             // 
@@ -134,6 +134,7 @@
             txtEMail.TabIndex = 4;
             txtEMail.TabStop = false;
             txtEMail.UnderlinedStyle = false;
+            txtEMail._TextChanged += txtEMail__TextChanged;
             // 
             // txtSifre
             // 
@@ -253,6 +254,72 @@
             pnlNewRegisterForm.MouseMove += pnlNewRegisterForm_MouseMove;
             pnlNewRegisterForm.MouseUp += pnlNewRegisterForm_MouseUp;
             // 
+            // lblSifreTekrari
+            // 
+            lblSifreTekrari.AutoSize = true;
+            lblSifreTekrari.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSifreTekrari.ForeColor = Color.DarkViolet;
+            lblSifreTekrari.Location = new Point(25, 317);
+            lblSifreTekrari.Name = "lblSifreTekrari";
+            lblSifreTekrari.Size = new Size(96, 14);
+            lblSifreTekrari.TabIndex = 10;
+            lblSifreTekrari.Text = "Şifre Tekrarı:";
+            // 
+            // lblSifre
+            // 
+            lblSifre.AutoSize = true;
+            lblSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSifre.ForeColor = Color.DarkViolet;
+            lblSifre.Location = new Point(25, 265);
+            lblSifre.Name = "lblSifre";
+            lblSifre.Size = new Size(44, 14);
+            lblSifre.TabIndex = 10;
+            lblSifre.Text = "Şifre:";
+            // 
+            // lblEmail
+            // 
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblEmail.ForeColor = Color.DarkViolet;
+            lblEmail.Location = new Point(25, 213);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(48, 14);
+            lblEmail.TabIndex = 10;
+            lblEmail.Text = "Email:";
+            // 
+            // lblDogumTarihi
+            // 
+            lblDogumTarihi.AutoSize = true;
+            lblDogumTarihi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblDogumTarihi.ForeColor = Color.DarkViolet;
+            lblDogumTarihi.Location = new Point(25, 166);
+            lblDogumTarihi.Name = "lblDogumTarihi";
+            lblDogumTarihi.Size = new Size(100, 14);
+            lblDogumTarihi.TabIndex = 10;
+            lblDogumTarihi.Text = "Doğum Tarihi:";
+            // 
+            // lblSoyad
+            // 
+            lblSoyad.AutoSize = true;
+            lblSoyad.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblSoyad.ForeColor = Color.DarkViolet;
+            lblSoyad.Location = new Point(25, 114);
+            lblSoyad.Name = "lblSoyad";
+            lblSoyad.Size = new Size(53, 14);
+            lblSoyad.TabIndex = 10;
+            lblSoyad.Text = "Soyad:";
+            // 
+            // lblAd
+            // 
+            lblAd.AutoSize = true;
+            lblAd.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAd.ForeColor = Color.DarkViolet;
+            lblAd.Location = new Point(25, 62);
+            lblAd.Name = "lblAd";
+            lblAd.Size = new Size(29, 14);
+            lblAd.TabIndex = 10;
+            lblAd.Text = "Ad:";
+            // 
             // label4
             // 
             label4.Font = new Font("Verdana", 6.75F, FontStyle.Regular, GraphicsUnit.Point);
@@ -292,72 +359,6 @@
             label2.Size = new Size(195, 15);
             label2.TabIndex = 0;
             label2.Text = "Şifreniz en az 4 karakterli olmalıdır.";
-            // 
-            // lblAd
-            // 
-            lblAd.AutoSize = true;
-            lblAd.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAd.ForeColor = Color.DarkViolet;
-            lblAd.Location = new Point(25, 62);
-            lblAd.Name = "lblAd";
-            lblAd.Size = new Size(29, 14);
-            lblAd.TabIndex = 10;
-            lblAd.Text = "Ad:";
-            // 
-            // lblSoyad
-            // 
-            lblSoyad.AutoSize = true;
-            lblSoyad.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSoyad.ForeColor = Color.DarkViolet;
-            lblSoyad.Location = new Point(25, 114);
-            lblSoyad.Name = "lblSoyad";
-            lblSoyad.Size = new Size(53, 14);
-            lblSoyad.TabIndex = 10;
-            lblSoyad.Text = "Soyad:";
-            // 
-            // lblDogumTarihi
-            // 
-            lblDogumTarihi.AutoSize = true;
-            lblDogumTarihi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblDogumTarihi.ForeColor = Color.DarkViolet;
-            lblDogumTarihi.Location = new Point(25, 166);
-            lblDogumTarihi.Name = "lblDogumTarihi";
-            lblDogumTarihi.Size = new Size(100, 14);
-            lblDogumTarihi.TabIndex = 10;
-            lblDogumTarihi.Text = "Doğum Tarihi:";
-            // 
-            // lblEmail
-            // 
-            lblEmail.AutoSize = true;
-            lblEmail.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblEmail.ForeColor = Color.DarkViolet;
-            lblEmail.Location = new Point(25, 213);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(48, 14);
-            lblEmail.TabIndex = 10;
-            lblEmail.Text = "Email:";
-            // 
-            // lblSifre
-            // 
-            lblSifre.AutoSize = true;
-            lblSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSifre.ForeColor = Color.DarkViolet;
-            lblSifre.Location = new Point(25, 265);
-            lblSifre.Name = "lblSifre";
-            lblSifre.Size = new Size(44, 14);
-            lblSifre.TabIndex = 10;
-            lblSifre.Text = "Şifre:";
-            // 
-            // lblSifreTekrari
-            // 
-            lblSifreTekrari.AutoSize = true;
-            lblSifreTekrari.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblSifreTekrari.ForeColor = Color.DarkViolet;
-            lblSifreTekrari.Location = new Point(25, 317);
-            lblSifreTekrari.Name = "lblSifreTekrari";
-            lblSifreTekrari.Size = new Size(96, 14);
-            lblSifreTekrari.TabIndex = 10;
-            lblSifreTekrari.Text = "Şifre Tekrarı:";
             // 
             // NewRegisterForm
             // 
