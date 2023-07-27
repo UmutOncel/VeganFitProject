@@ -10,7 +10,7 @@ namespace VeganFit.UI
 {
     public partial class NewRegisterForm : Form
     {
-        bool mov, isFirstname, isLastname;
+        bool mov, isFirstname, isLastname, pw, pw1;
         int movX, movY;
         private readonly IUserService _userService;
         private readonly IUserRepo _userRepo;
@@ -59,7 +59,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Yeni kullanıcı yaratan metottur.
         /// </summary>
-        private void CreateNewUser() 
+        private void CreateNewUser()
         {
             string password = PasswordHassing.Sha256Hash(txtSifre.Text);
             CreateVm createVm = new CreateVm()
@@ -85,21 +85,34 @@ namespace VeganFit.UI
         /// <summary>
         /// Kullanıcının şifre kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserPassword() 
+        private void ControlUserPassword()
         {
+
             if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
             {
-                CreateNewUser();
+                if (pw)
+                {
+                    CreateNewUser();
+                }
+                else
+                {
+                    MessageBox.Show("Girmiş olduğunuz şifre belirlenen kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
             else
             {
                 MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+
+
+
         }
         /// <summary>
         ///  Kullanıcının Email kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserEmail() 
+        private void ControlUserEmail()
         {
             var dbKullaniciAdi = _userRepo.Any(x => x.Email == txtEMail.Text);
             if (!dbKullaniciAdi)
@@ -114,7 +127,7 @@ namespace VeganFit.UI
         /// <summary>
         ///  Kullanıcının yaş kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserAge() 
+        private void ControlUserAge()
         {
             int dogumtarihi = dtpDogumTatihi.Value.Year;
             int altSinir = Convert.ToInt32(DateTime.Now.Year) - 64;
@@ -133,7 +146,7 @@ namespace VeganFit.UI
         /// <summary>
         ///  Kullanıcının ad-soyad kontrolünü sağlayan metottur.
         /// </summary>
-        private void ControlUserFirstnameAndLastname() 
+        private void ControlUserFirstnameAndLastname()
         {
             if (isFirstname && isLastname)
             {
@@ -161,14 +174,14 @@ namespace VeganFit.UI
 
         private void txtSifre__TextChanged(object sender, EventArgs e)
         {
-            RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
+            pw = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
 
             SetButtonState();
         }
 
         private void txtSifreyiTekrarGirin__TextChanged(object sender, EventArgs e)
         {
-            RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
+            pw1 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
 
             SetButtonState();
         }
@@ -185,21 +198,21 @@ namespace VeganFit.UI
         /// <param name="txtbox3"></param>
         /// <param name="txtbox4"></param>
         /// <param name="txtbox5"></param>
-        private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5) 
+        private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5)
         {
             if (txtbox1.Text.Length > 0 && txtbox2.Text.Length > 0 && txtbox3.Text.Length > 0 && txtbox4.Text.Length > 0 && txtbox5.Text.Length > 0)
             {
-                btnKapat.Enabled = true;
+                btnKaydiTamamla.Enabled = true;
             }
             else
             {
-                btnKapat.Enabled = false;
+                btnKaydiTamamla.Enabled = false;
             }
         }
         /// <summary>
         /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
         /// </summary>
-        private void SetButtonState() 
+        private void SetButtonState()
         {
             EnableButton(txtAd, txtSoyad, txtEMail, txtSifre, txtSifreyiTekrarGirin);
         }
@@ -216,12 +229,10 @@ namespace VeganFit.UI
             Match match = regex.Match(txtb.Text);
             if (match.Success)
             {
-                btnKaydiTamamla.Enabled = true;
                 control = true;
             }
             else
             {
-                btnKaydiTamamla.Enabled = false;
                 control = false;
             }
             return control;

@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             pnlLoginUI = new Panel();
+            lblKullaniciAdi = new Label();
+            lblSifre = new Label();
             btnSimgeDurumunaKucult = new Buttons.DesignButton();
             lblSimgeDurumunaKucult = new Label();
             lblKapat = new Label();
@@ -39,8 +41,6 @@
             btnGiris = new Buttons.DesignButton();
             txtSifre = new TextBoxs.TextBox.DesignTextBox();
             txtKullaniciAdi = new TextBoxs.TextBox.DesignTextBox();
-            lblSifre = new Label();
-            lblKullaniciAdi = new Label();
             pnlLoginUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxLogo).BeginInit();
             SuspendLayout();
@@ -69,6 +69,27 @@
             pnlLoginUI.MouseDown += pnlLoginUI_MouseDown;
             pnlLoginUI.MouseMove += pnlLoginUI_MouseMove;
             pnlLoginUI.MouseUp += pnlLoginUI_MouseUp;
+            // 
+            // lblKullaniciAdi
+            // 
+            lblKullaniciAdi.AutoSize = true;
+            lblKullaniciAdi.FlatStyle = FlatStyle.Flat;
+            lblKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
+            lblKullaniciAdi.Location = new Point(385, 285);
+            lblKullaniciAdi.Name = "lblKullaniciAdi";
+            lblKullaniciAdi.Size = new Size(88, 14);
+            lblKullaniciAdi.TabIndex = 7;
+            lblKullaniciAdi.Text = "Kullanıcı Adı";
+            // 
+            // lblSifre
+            // 
+            lblSifre.AutoSize = true;
+            lblSifre.ForeColor = Color.FromArgb(70, 205, 207);
+            lblSifre.Location = new Point(405, 338);
+            lblSifre.Name = "lblSifre";
+            lblSifre.Size = new Size(39, 14);
+            lblSifre.TabIndex = 7;
+            lblSifre.Text = "Şifre";
             // 
             // btnSimgeDurumunaKucult
             // 
@@ -213,6 +234,7 @@
             txtSifre.TabIndex = 2;
             txtSifre.TabStop = false;
             txtSifre.UnderlinedStyle = false;
+            txtSifre._TextChanged += txtKullaniciAdi__TextChanged;
             // 
             // txtKullaniciAdi
             // 
@@ -234,27 +256,6 @@
             txtKullaniciAdi.TabStop = false;
             txtKullaniciAdi.UnderlinedStyle = false;
             txtKullaniciAdi._TextChanged += txtKullaniciAdi__TextChanged;
-            // 
-            // lblSifre
-            // 
-            lblSifre.AutoSize = true;
-            lblSifre.ForeColor = Color.FromArgb(70, 205, 207);
-            lblSifre.Location = new Point(405, 338);
-            lblSifre.Name = "lblSifre";
-            lblSifre.Size = new Size(39, 14);
-            lblSifre.TabIndex = 7;
-            lblSifre.Text = "Şifre";
-            // 
-            // lblKullaniciAdi
-            // 
-            lblKullaniciAdi.AutoSize = true;
-            lblKullaniciAdi.FlatStyle = FlatStyle.Flat;
-            lblKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
-            lblKullaniciAdi.Location = new Point(385, 285);
-            lblKullaniciAdi.Name = "lblKullaniciAdi";
-            lblKullaniciAdi.Size = new Size(88, 14);
-            lblKullaniciAdi.TabIndex = 7;
-            lblKullaniciAdi.Text = "Kullanıcı Adı";
             // 
             // LoginForm
             // 
