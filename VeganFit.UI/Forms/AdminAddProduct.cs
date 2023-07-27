@@ -130,9 +130,9 @@ namespace VeganFit.UI
                 }
 
             }
-            catch (Exception u)
+            catch (Exception)
             {
-                MessageBox.Show(u.Message);
+                MessageBox.Show("Lütfen ilk sütundan seçim yapınız..","Uyarı",MessageBoxButtons.OK,MessageBoxIcon.Stop);
             }
         }
       

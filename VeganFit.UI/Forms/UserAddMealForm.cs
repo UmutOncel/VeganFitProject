@@ -28,7 +28,7 @@ namespace VeganFit.UI
 
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
-            ListeyiYenile();        
+            ListeyiYenile();
             OgunListeleriniYenile();
         }
 
@@ -49,7 +49,9 @@ namespace VeganFit.UI
 
             dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
-                    }
+
+            DataGridViewColumnNames();
+        }
 
 
 
@@ -134,14 +136,21 @@ namespace VeganFit.UI
 
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
+                _data.Calori = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
+                _data.Serving = dgvUrunlerListesi.SelectedRows[0].Cells[2].Value.ToString();
+                _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
 
-            _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
-            _data.Calori = Convert.ToInt32(dgvUrunlerListesi.SelectedRows[0].Cells[1].Value);
-            _data.Serving = dgvUrunlerListesi.SelectedRows[0].Cells[2].Value.ToString();
-            _data.Picture = (byte[])dgvUrunlerListesi.SelectedRows[0].Cells[3].Value;
+                var setProductForm = EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
+                setProductForm.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lütfen ilk sütundan seçim yapınız..", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
 
-            var setProductForm = EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
-            setProductForm.ShowDialog();
         }
 
         private void txtAramaKutusu__TextChanged(object sender, EventArgs e)
