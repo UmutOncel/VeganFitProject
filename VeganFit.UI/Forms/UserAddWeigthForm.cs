@@ -77,7 +77,7 @@ namespace VeganFit.UI
         /// </summary>
         private void AddWeight()
         {
-            bool isExist = _weightRepo.Any(x => x.RecordDate == Convert.ToDateTime(lblDateToday.Text));
+            bool isExist = _weightRepo.Any(x => x.RecordDate == Convert.ToDateTime(lblDateToday.Text) && x.UserName == ActiveUser.ActiveUserFirstName);
             if (!isExist)
             {
                 WeightCreateVm vm = new WeightCreateVm()
