@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using System.Reflection;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
@@ -33,7 +34,7 @@ namespace VeganFit.UI
             bool isString = txtUrunAdi.Text.All(Char.IsLetter);
             if (isString)
             {
-                ControlCalori();
+                ControlCaloriForAddProduct();
             }
             else
             {
@@ -44,14 +45,14 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün eklerken kalori için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlCalori() 
+        private void ControlCaloriForAddProduct() 
         {
             string strCalori = txtKalori.Text;
             double calori;
             bool isDouble = double.TryParse(strCalori, out calori);
             if (isDouble && Convert.ToDouble(txtKalori.Text) > 0)
             {
-                ControlServing();
+                ControlServingForAddProduct();
             }
             else
             {
@@ -62,7 +63,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün eklerken porsiyon için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlServing() 
+        private void ControlServingForAddProduct() 
         {
             string strServing = txtPorsiyon.Text;
             double serving;
@@ -73,7 +74,7 @@ namespace VeganFit.UI
             }
             else
             {
-                MessageBox.Show("Parsiyon değeri sıfırdan büyük bir sayı olmalıdır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Porsiyon değeri sıfırdan büyük bir sayı olmalıdır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -112,25 +113,85 @@ namespace VeganFit.UI
         {
             try
             {
-                ProductUpdateVm updateVm = new ProductUpdateVm()
-                {
-                    Id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value),
-                    ProductName = txtUrunAdi.Text,
-                    Calori = Convert.ToDouble(txtKalori.Text),
-                    Serving = txtPorsiyon.Text,
-                    Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
-                };
-                _service.Update(updateVm);
-
-                MessageBox.Show("Ürün başarıyla güncellenmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                ClearAll();
-
-                RefreshList();
+                ControlProductNameForUpdateProduct();
             }
-            catch (Exception)
+            catch (FormatException)
             {
                 MessageBox.Show("Ürün güncellemek için önce listeden bir ürün seçmelisiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        /// <summary>
+        /// Ürün güncellerken porsiyon için gerekli kontrolleri yapan metot.
+        /// </summary>
+        private void ControlServingForUpdateProduct() 
+        {
+            string strServing = txtPorsiyon.Text;
+            double serving;
+            bool isDouble = double.TryParse(strServing, out serving);
+            if (isDouble && Convert.ToDouble(txtKalori.Text) > 0)
+            {
+                UpdateProduct();
+            }
+            else
+            {
+                MessageBox.Show("Porsiyon değeri sıfırdan büyük bir sayı olmalıdır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Ürün güncellerken kalori için gerekli kontrolleri yapan metot.
+        /// </summary>
+        private void ControlCaloriForUpdateProduct() 
+        {
+            string strCalori = txtKalori.Text;
+            double calori;
+            bool isDouble = double.TryParse(strCalori, out calori);
+            if (isDouble && Convert.ToDouble(txtKalori.Text) > 0)
+            {
+                ControlServingForUpdateProduct();
+            }
+            else
+            {
+                MessageBox.Show("Kalori değeri sıfırdan büyük bir sayı olmalıdır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Ürün güncellerken ürün adı için gerekli kontrolleri yapan metot.
+        /// </summary>
+        private void ControlProductNameForUpdateProduct() 
+        {
+            bool isString = txtUrunAdi.Text.All(Char.IsLetter);
+            if (isString)
+            {
+                ControlCaloriForUpdateProduct();
+            }
+            else
+            {
+                MessageBox.Show("Ürün adını girerken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Database'deki ürünü güncelleyen metot.
+        /// </summary>
+        private void UpdateProduct() 
+        {
+            ProductUpdateVm updateVm = new ProductUpdateVm()
+            {
+                Id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value),
+                ProductName = txtUrunAdi.Text,
+                Calori = Convert.ToDouble(txtKalori.Text),
+                Serving = txtPorsiyon.Text,
+                Picture = ImageToByteArray.imageToByteArray(pbxResim.Image)
+            };
+            _service.Update(updateVm);
+
+            MessageBox.Show("Ürün başarıyla güncellenmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClearAll();
+
+            RefreshList();
         }
 
         private void btnUrunSil_Click(object sender, EventArgs e)

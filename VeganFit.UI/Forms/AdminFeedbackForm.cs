@@ -28,12 +28,19 @@ namespace VeganFit.UI
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(dgvGorusOneri.SelectedCells[0].Value);
-            var product = _service.Delete(id);
+            try
+            {
+                int id = Convert.ToInt32(dgvGorusOneri.SelectedCells[0].Value);
+                var product = _service.Delete(id);
 
-            MessageBox.Show("Ürün başarıyla silinmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Geribildirim başarıyla silinmiştir", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            RefreshList();
+                RefreshList();
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                MessageBox.Show("Geribildirimi silmek için önce listeden bir geribildirim seçmelisiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
