@@ -82,12 +82,12 @@ namespace VeganFit.UI
             }
             catch (Exception u)
             {
-                MessageBox.Show("Sabah Listenizde Ürün Bulunmamaktadır","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                MessageBox.Show("Sabah Listenizde Ürün Bulunmamaktadır", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
 
-            
+
         }
-        private void DeleteProductFromMeal(Meal meal,string productName,string msg)
+        private void DeleteProductFromMeal(Meal meal, string productName, string msg)
         {
             string dateTimeToday = DateTimeTodayTostring();
             int id = _dataRepo.GetFilteredFirstOrDefault(select: x => x.Id, where: x => x.ProductName == productName && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == dateTimeToday && x.State == State.Created && x.Meal == meal);
@@ -101,14 +101,14 @@ namespace VeganFit.UI
             string msg = "Ürün öğle öğününden başarıyla silinmiştir.";
             string chooseProduct = dgvOgle.SelectedCells[0].Value.ToString();
             DeleteProductFromMeal(Meal.Lunch, chooseProduct, msg);
-            
+
         }
 
         private void btnUrunuSilAksam_Click(object sender, EventArgs e)
         {
             string msg = "Ürün akşam öğnünden başarıyla silinmiştir.";
             string chooseProduct = dgvAksam.SelectedCells[0].Value.ToString();
-            DeleteProductFromMeal(Meal.Dinner, chooseProduct, msg);           
+            DeleteProductFromMeal(Meal.Dinner, chooseProduct, msg);
         }
 
         /// <summary>
@@ -200,6 +200,10 @@ namespace VeganFit.UI
             return sqlFormattedDate;
         }
 
-
+        private void UserAddMealForm_DoubleClick(object sender, EventArgs e)
+        {
+            RefreshList();
+            RefreshMealLists();
+        }
     }
 }

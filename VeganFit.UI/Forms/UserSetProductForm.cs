@@ -18,6 +18,7 @@ namespace VeganFit.UI
             InitializeComponent();
 
             _dataService = dataService;
+            
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -69,7 +70,6 @@ namespace VeganFit.UI
                     MessageBox.Show("Porsiyon sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            
             this.Close();
         }
 

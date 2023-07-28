@@ -369,6 +369,7 @@
             Name = "UserAddMealForm";
             Text = "UserAddMealForm";
             Load += UserAddMealForm_Load;
+            DoubleClick += UserAddMealForm_DoubleClick;
             ((System.ComponentModel.ISupportInitialize)dgvSabah).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvAksam).EndInit();
