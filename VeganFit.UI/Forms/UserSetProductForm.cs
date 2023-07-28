@@ -31,23 +31,6 @@ namespace VeganFit.UI
         }
 
 
-        private void txtPorsiyon_Enter(object sender, EventArgs e)
-        {
-            //if (txtPorsiyon.Text == "Porsiyon Giriniz")
-            //{
-            //    txtPorsiyon.Text = "";
-            //    txtPorsiyon.ForeColor = Color.Black;
-            //}
-        }
-
-        private void txtPorsiyon_Leave(object sender, EventArgs e)
-        {
-            //if (txtPorsiyon.Text == "")
-            //{
-            //    txtPorsiyon.Text = "Porsiyon Giriniz";
-            //    txtPorsiyon.ForeColor = Color.SlateGray;
-            //}
-        }
         private void btnKapat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -73,11 +56,11 @@ namespace VeganFit.UI
         }
         private void btnOguneEkle_Click(object sender, EventArgs e)
         {
-            
+
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Math.Round(Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtIstenilenPorsiyon.Text),2),
+                Calori = Math.Round(Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtIstenilenPorsiyon.Text), 2),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
                 Datetime = DateTime.Now,
                 UserEmail = ActiveUser.ActiveUserName
@@ -89,14 +72,16 @@ namespace VeganFit.UI
 
             this.Close();
 
-
         }
+        /// <summary>
+        /// Öğünden seçtiği yiyeceğin bilgilerini textbox ve picture box a yükleyen ve comboboxtan ürün seçmeyi yaptıran metottur.
+        /// </summary>
         private void ForBegin()
         {
             Object[] array = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
             cbxOgunSec.Items.AddRange(array);
 
-            if(dataDetail != null )
+            if (dataDetail != null)
             {
                 txtUrunAdi.Text = dataDetail.ProductName;
                 txtKalori.Text = dataDetail.Calori.ToString();
@@ -104,7 +89,6 @@ namespace VeganFit.UI
                 pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
                 txtIstenilenPorsiyon.Text = dataDetail.Serving;
             }
-
 
         }
 
@@ -116,12 +100,5 @@ namespace VeganFit.UI
             }
         }
 
-        private void txtPorsiyon__TextChanged(object sender, EventArgs e)
-        {
-            //var serv = Convert.ToInt32(dataDetail.Serving);
-            //var ser1 = Convert.ToInt32(txtPorsiyon.Text);
-            //var ser2 = Convert.ToInt32(txtKalori.Text);
-            //txtKalori.Text = ((ser2 / serv) * ser1).ToString();
-        }
     }
 }

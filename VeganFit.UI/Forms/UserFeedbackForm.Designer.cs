@@ -62,7 +62,7 @@
             btnKapat.Location = new Point(1065, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 22;
+            btnKapat.TabIndex = 3;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -88,7 +88,7 @@
             txtGorusOneri.PlaceholderColor = Color.DarkGray;
             txtGorusOneri.PlaceholderText = "";
             txtGorusOneri.Size = new Size(1073, 29);
-            txtGorusOneri.TabIndex = 24;
+            txtGorusOneri.TabIndex = 1;
             txtGorusOneri.UnderlinedStyle = false;
             txtGorusOneri._TextChanged += txtGorusOneri__TextChanged;
             txtGorusOneri.Leave += txtGorusOneri_Leave;
@@ -117,7 +117,7 @@
             btnGonder.Location = new Point(490, 409);
             btnGonder.Name = "btnGonder";
             btnGonder.Size = new Size(110, 40);
-            btnGonder.TabIndex = 26;
+            btnGonder.TabIndex = 2;
             btnGonder.Text = "Gönder";
             btnGonder.TextColor = Color.Black;
             btnGonder.UseVisualStyleBackColor = false;

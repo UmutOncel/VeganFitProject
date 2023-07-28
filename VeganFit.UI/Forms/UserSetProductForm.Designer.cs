@@ -74,7 +74,7 @@
             btnKapat.Location = new Point(1340, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 28;
+            btnKapat.TabIndex = 8;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -108,7 +108,7 @@
             btnResimEkle.Location = new Point(885, 479);
             btnResimEkle.Name = "btnResimEkle";
             btnResimEkle.Size = new Size(110, 40);
-            btnResimEkle.TabIndex = 25;
+            btnResimEkle.TabIndex = 6;
             btnResimEkle.Text = "Resim Ekle";
             btnResimEkle.TextColor = Color.Black;
             btnResimEkle.UseVisualStyleBackColor = false;
@@ -128,7 +128,7 @@
             btnOguneEkle.Location = new Point(603, 479);
             btnOguneEkle.Name = "btnOguneEkle";
             btnOguneEkle.Size = new Size(110, 40);
-            btnOguneEkle.TabIndex = 26;
+            btnOguneEkle.TabIndex = 7;
             btnOguneEkle.Text = "Öğüne Ekle";
             btnOguneEkle.TextColor = Color.Black;
             btnOguneEkle.UseVisualStyleBackColor = false;
@@ -152,12 +152,11 @@
             txtPorsiyon.PlaceholderColor = Color.Black;
             txtPorsiyon.PlaceholderText = "";
             txtPorsiyon.Size = new Size(250, 29);
-            txtPorsiyon.TabIndex = 22;
+            txtPorsiyon.TabIndex = 3;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
-            txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-            txtPorsiyon.Enter += txtPorsiyon_Enter;
-            txtPorsiyon.Leave += txtPorsiyon_Leave;
+
+          
             // 
             // txtKalori
             // 
@@ -177,10 +176,9 @@
             txtKalori.PlaceholderColor = Color.Black;
             txtKalori.PlaceholderText = "";
             txtKalori.Size = new Size(250, 29);
-            txtKalori.TabIndex = 23;
+            txtKalori.TabIndex = 2;
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
-
             // 
             // txtUrunAdi
             // 
@@ -200,16 +198,15 @@
             txtUrunAdi.PlaceholderColor = Color.Black;
             txtUrunAdi.PlaceholderText = "";
             txtUrunAdi.Size = new Size(250, 29);
-            txtUrunAdi.TabIndex = 24;
+            txtUrunAdi.TabIndex = 1;
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
-
-
             // 
             // cbxOgunSec
             // 
             cbxOgunSec.FormattingEnabled = true;
             cbxOgunSec.Location = new Point(463, 450);
+            cbxOgunSec.MaxDropDownItems = 5;
             cbxOgunSec.Name = "cbxOgunSec";
             cbxOgunSec.Size = new Size(250, 22);
             cbxOgunSec.TabIndex = 30;
@@ -232,12 +229,11 @@
             txtIstenilenPorsiyon.PlaceholderColor = Color.Black;
             txtIstenilenPorsiyon.PlaceholderText = "";
             txtIstenilenPorsiyon.Size = new Size(250, 29);
-            txtIstenilenPorsiyon.TabIndex = 22;
+            txtIstenilenPorsiyon.TabIndex = 4;
             txtIstenilenPorsiyon.TabStop = false;
             txtIstenilenPorsiyon.UnderlinedStyle = false;
-            txtIstenilenPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-            txtIstenilenPorsiyon.Enter += txtPorsiyon_Enter;
-            txtIstenilenPorsiyon.Leave += txtPorsiyon_Leave;
+           
+           
             // 
             // lblPorsiyonGir
             // 

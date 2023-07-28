@@ -20,6 +20,7 @@ namespace VeganFit.UI
         {
             InitializeComponent();
         }
+        
         private void AdminMainForm_Load(object sender, EventArgs e)
         {
             VeganFitDbContext db = new VeganFitDbContext();
@@ -77,7 +78,9 @@ namespace VeganFit.UI
                 e.Cancel = true;
             }
         }
-
+        /// <summary>
+        /// Main form içinde child formları iç içe açmak için kullanılan metottur.
+        /// </summary>
         private Form activeForm = null;
         private void openChildFormInPanel(Form childForm)
         {

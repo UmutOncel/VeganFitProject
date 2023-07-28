@@ -128,7 +128,7 @@
             btnUrunuSilSabah.Location = new Point(407, 190);
             btnUrunuSilSabah.Name = "btnUrunuSilSabah";
             btnUrunuSilSabah.Size = new Size(80, 30);
-            btnUrunuSilSabah.TabIndex = 6;
+            btnUrunuSilSabah.TabIndex = 1;
             btnUrunuSilSabah.Text = "Ürünü Sil";
             btnUrunuSilSabah.TextColor = Color.Black;
             btnUrunuSilSabah.UseVisualStyleBackColor = false;
@@ -147,7 +147,7 @@
             btnUrunuSilOgle.Location = new Point(407, 429);
             btnUrunuSilOgle.Name = "btnUrunuSilOgle";
             btnUrunuSilOgle.Size = new Size(80, 30);
-            btnUrunuSilOgle.TabIndex = 6;
+            btnUrunuSilOgle.TabIndex = 2;
             btnUrunuSilOgle.Text = "Ürünü Sil";
             btnUrunuSilOgle.TextColor = Color.Black;
             btnUrunuSilOgle.UseVisualStyleBackColor = false;
@@ -166,7 +166,7 @@
             btnUrunuSilAksam.Location = new Point(407, 668);
             btnUrunuSilAksam.Name = "btnUrunuSilAksam";
             btnUrunuSilAksam.Size = new Size(80, 30);
-            btnUrunuSilAksam.TabIndex = 6;
+            btnUrunuSilAksam.TabIndex = 3;
             btnUrunuSilAksam.Text = "Ürünü Sil";
             btnUrunuSilAksam.TextColor = Color.Black;
             btnUrunuSilAksam.UseVisualStyleBackColor = false;
@@ -234,7 +234,7 @@
             btnUrunEkle.Location = new Point(776, 668);
             btnUrunEkle.Name = "btnUrunEkle";
             btnUrunEkle.Size = new Size(120, 30);
-            btnUrunEkle.TabIndex = 9;
+            btnUrunEkle.TabIndex = 6;
             btnUrunEkle.Text = "Yeni Ürün Ekle";
             btnUrunEkle.TextColor = Color.Black;
             btnUrunEkle.UseVisualStyleBackColor = false;
@@ -267,7 +267,7 @@
             btnKapat.Location = new Point(1064, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 11;
+            btnKapat.TabIndex = 7;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -293,7 +293,7 @@
             txtAramaKutusu.PlaceholderColor = Color.Black;
             txtAramaKutusu.PlaceholderText = "";
             txtAramaKutusu.Size = new Size(250, 29);
-            txtAramaKutusu.TabIndex = 16;
+            txtAramaKutusu.TabIndex = 4;
             txtAramaKutusu.TabStop = false;
             txtAramaKutusu.UnderlinedStyle = false;
             txtAramaKutusu._TextChanged += txtAramaKutusu__TextChanged;
@@ -314,7 +314,7 @@
             btnListeyiYenile.Location = new Point(591, 668);
             btnListeyiYenile.Name = "btnListeyiYenile";
             btnListeyiYenile.Size = new Size(34, 34);
-            btnListeyiYenile.TabIndex = 9;
+            btnListeyiYenile.TabIndex = 5;
             btnListeyiYenile.TextAlign = ContentAlignment.BottomLeft;
             btnListeyiYenile.TextColor = Color.Black;
             btnListeyiYenile.UseVisualStyleBackColor = false;

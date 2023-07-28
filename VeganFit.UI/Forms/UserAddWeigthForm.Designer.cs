@@ -68,7 +68,7 @@
             btnKapat.Location = new Point(1065, 0);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 13;
+            btnKapat.TabIndex = 4;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -94,12 +94,11 @@
             txtKilo.PlaceholderColor = Color.Black;
             txtKilo.PlaceholderText = "";
             txtKilo.Size = new Size(250, 29);
-            txtKilo.TabIndex = 15;
+            txtKilo.TabIndex = 2;
             txtKilo.TabStop = false;
             txtKilo.UnderlinedStyle = false;
             txtKilo._TextChanged += txtKilo__TextChanged;
-            txtKilo.Enter += txtKilo_Enter;
-            txtKilo.Leave += txtKilo_Leave;
+      
             // 
             // btnKaydet
             // 
@@ -115,7 +114,7 @@
             btnKaydet.Location = new Point(289, 386);
             btnKaydet.Name = "btnKaydet";
             btnKaydet.Size = new Size(110, 40);
-            btnKaydet.TabIndex = 16;
+            btnKaydet.TabIndex = 3;
             btnKaydet.Text = "Kaydet";
             btnKaydet.TextColor = Color.Black;
             btnKaydet.UseVisualStyleBackColor = false;

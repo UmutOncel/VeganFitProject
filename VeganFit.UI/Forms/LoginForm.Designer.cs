@@ -39,6 +39,8 @@
             btnGiris = new Buttons.DesignButton();
             txtSifre = new TextBoxs.TextBox.DesignTextBox();
             txtKullaniciAdi = new TextBoxs.TextBox.DesignTextBox();
+            lblSifre = new Label();
+            lblKullaniciAdi = new Label();
             pnlLoginUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbxLogo).BeginInit();
             SuspendLayout();
@@ -47,6 +49,8 @@
             // 
             pnlLoginUI.BackgroundImage = (Image)resources.GetObject("pnlLoginUI.BackgroundImage");
             pnlLoginUI.BackgroundImageLayout = ImageLayout.Stretch;
+            pnlLoginUI.Controls.Add(lblKullaniciAdi);
+            pnlLoginUI.Controls.Add(lblSifre);
             pnlLoginUI.Controls.Add(btnSimgeDurumunaKucult);
             pnlLoginUI.Controls.Add(lblSimgeDurumunaKucult);
             pnlLoginUI.Controls.Add(lblKapat);
@@ -79,7 +83,7 @@
             btnSimgeDurumunaKucult.Location = new Point(747, 1);
             btnSimgeDurumunaKucult.Name = "btnSimgeDurumunaKucult";
             btnSimgeDurumunaKucult.Size = new Size(25, 25);
-            btnSimgeDurumunaKucult.TabIndex = 7;
+            btnSimgeDurumunaKucult.TabIndex = 5;
             btnSimgeDurumunaKucult.Text = "_";
             btnSimgeDurumunaKucult.TextAlign = ContentAlignment.TopRight;
             btnSimgeDurumunaKucult.TextColor = Color.White;
@@ -160,7 +164,7 @@
             btnKapat.Location = new Point(774, 1);
             btnKapat.Name = "btnKapat";
             btnKapat.Size = new Size(25, 25);
-            btnKapat.TabIndex = 5;
+            btnKapat.TabIndex = 6;
             btnKapat.Text = "x";
             btnKapat.TextAlign = ContentAlignment.MiddleRight;
             btnKapat.TextColor = Color.White;
@@ -181,7 +185,7 @@
             btnGiris.FlatStyle = FlatStyle.Popup;
             btnGiris.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnGiris.ForeColor = Color.FromArgb(70, 205, 207);
-            btnGiris.Location = new Point(374, 371);
+            btnGiris.Location = new Point(374, 399);
             btnGiris.Name = "btnGiris";
             btnGiris.Size = new Size(110, 40);
             btnGiris.TabIndex = 3;
@@ -198,7 +202,7 @@
             txtSifre.BorderRadius = 14;
             txtSifre.BorderSize = 1;
             txtSifre.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtSifre.Location = new Point(300, 322);
+            txtSifre.Location = new Point(300, 355);
             txtSifre.Multiline = false;
             txtSifre.Name = "txtSifre";
             txtSifre.Padding = new Padding(7);
@@ -209,8 +213,6 @@
             txtSifre.TabIndex = 2;
             txtSifre.TabStop = false;
             txtSifre.UnderlinedStyle = false;
-            txtSifre.Enter += txtSifre_Enter;
-            txtSifre.Leave += txtSifre_Leave;
             // 
             // txtKullaniciAdi
             // 
@@ -220,7 +222,7 @@
             txtKullaniciAdi.BorderRadius = 14;
             txtKullaniciAdi.BorderSize = 1;
             txtKullaniciAdi.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtKullaniciAdi.Location = new Point(300, 282);
+            txtKullaniciAdi.Location = new Point(300, 302);
             txtKullaniciAdi.Multiline = false;
             txtKullaniciAdi.Name = "txtKullaniciAdi";
             txtKullaniciAdi.Padding = new Padding(7);
@@ -232,8 +234,27 @@
             txtKullaniciAdi.TabStop = false;
             txtKullaniciAdi.UnderlinedStyle = false;
             txtKullaniciAdi._TextChanged += txtKullaniciAdi__TextChanged;
-            txtKullaniciAdi.Enter += txtKullaniciAdi_Enter;
-            txtKullaniciAdi.Leave += txtKullaniciAdi_Leave;
+            // 
+            // lblSifre
+            // 
+            lblSifre.AutoSize = true;
+            lblSifre.ForeColor = Color.FromArgb(70, 205, 207);
+            lblSifre.Location = new Point(405, 338);
+            lblSifre.Name = "lblSifre";
+            lblSifre.Size = new Size(39, 14);
+            lblSifre.TabIndex = 7;
+            lblSifre.Text = "Şifre";
+            // 
+            // lblKullaniciAdi
+            // 
+            lblKullaniciAdi.AutoSize = true;
+            lblKullaniciAdi.FlatStyle = FlatStyle.Flat;
+            lblKullaniciAdi.ForeColor = Color.FromArgb(70, 205, 207);
+            lblKullaniciAdi.Location = new Point(385, 285);
+            lblKullaniciAdi.Name = "lblKullaniciAdi";
+            lblKullaniciAdi.Size = new Size(88, 14);
+            lblKullaniciAdi.TabIndex = 7;
+            lblKullaniciAdi.Text = "Kullanıcı Adı";
             // 
             // LoginForm
             // 
@@ -246,7 +267,6 @@
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
-            Load += LoginForm_Load;
             pnlLoginUI.ResumeLayout(false);
             pnlLoginUI.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pbxLogo).EndInit();
@@ -265,5 +285,7 @@
         private Label lblKapat;
         private Label lblSimgeDurumunaKucult;
         private Buttons.DesignButton btnSimgeDurumunaKucult;
+        private Label lblKullaniciAdi;
+        private Label lblSifre;
     }
 }
