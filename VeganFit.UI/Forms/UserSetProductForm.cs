@@ -2,6 +2,7 @@
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.Models.DTOs.DataDtos;
+using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 
@@ -71,6 +72,7 @@ namespace VeganFit.UI
                 }
             }
             this.Close();
+
         }
 
         /// <summary>
