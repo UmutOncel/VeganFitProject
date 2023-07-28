@@ -61,7 +61,7 @@ namespace VeganFit.UI
             }
             else
             {
-                if (Convert.ToInt32(txtKilo.Text) > 0)
+                if (Convert.ToDouble(txtKilo.Text) > 0)
                 {
                     AddWeight();
                 }

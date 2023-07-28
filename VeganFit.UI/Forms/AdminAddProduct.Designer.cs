@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtAramaCubugu = new TextBoxs.TextBox.DesignTextBox();
             txtUrunAdi = new TextBoxs.TextBox.DesignTextBox();
             txtKalori = new TextBoxs.TextBox.DesignTextBox();
@@ -92,7 +92,7 @@
             txtUrunAdi.TabIndex = 1;
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
-            
+            txtUrunAdi._TextChanged += txtUrunAdi__TextChanged;
             // 
             // txtKalori
             // 
@@ -114,7 +114,7 @@
             txtKalori.TabIndex = 2;
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
-    
+            txtKalori._TextChanged += txtUrunAdi__TextChanged;
             // 
             // txtPorsiyon
             // 
@@ -136,7 +136,7 @@
             txtPorsiyon.TabIndex = 3;
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
-         
+            txtPorsiyon._TextChanged += txtUrunAdi__TextChanged;
             // 
             // btnResimEkle
             // 
@@ -164,6 +164,7 @@
             btnUrunEkle.BorderColor = Color.DarkGreen;
             btnUrunEkle.BorderRadius = 15;
             btnUrunEkle.BorderSize = 2;
+            btnUrunEkle.Enabled = false;
             btnUrunEkle.FlatAppearance.BorderSize = 0;
             btnUrunEkle.FlatStyle = FlatStyle.Flat;
             btnUrunEkle.ForeColor = Color.Black;
@@ -305,13 +306,13 @@
             // 
             dgvUrunler.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvUrunler.BackgroundColor = Color.LightSteelBlue;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dgvUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUrunler.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUrunler.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUrunler.Location = new Point(553, 67);
             dgvUrunler.Name = "dgvUrunler";
