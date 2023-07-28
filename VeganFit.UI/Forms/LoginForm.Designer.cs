@@ -261,8 +261,10 @@
             // 
             // LoginForm
             // 
+            AcceptButton = btnGiris;
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = btnKapat;
             ClientSize = new Size(800, 600);
             Controls.Add(pnlLoginUI);
             Font = new Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point);
