@@ -75,7 +75,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Kullanıcının kilosunu şarta bağlı database'e ekleyen, şart sağlanmıyorsa uyarı veren metot.
         /// </summary>
-        private void AddWeight() 
+        private void AddWeight()
         {
             bool isExist = _weightRepo.Any(x => x.RecordDate == Convert.ToDateTime(lblDateToday.Text));
             if (!isExist)

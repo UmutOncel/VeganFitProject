@@ -323,6 +323,9 @@
             dgvUrunler.RowTemplate.Height = 25;
             dgvUrunler.RowTemplate.ReadOnly = true;
             dgvUrunler.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvUrunler.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvUrunler.ShowCellErrors = false;
+            dgvUrunler.ShowRowErrors = false;
             dgvUrunler.Size = new Size(526, 593);
             dgvUrunler.TabIndex = 39;
             dgvUrunler.CellClick += dgvUrunler_CellClick;

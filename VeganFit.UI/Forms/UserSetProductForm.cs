@@ -19,7 +19,7 @@ namespace VeganFit.UI
             InitializeComponent();
 
             _dataService = dataService;
-            
+
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -78,7 +78,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Database'e seçilen ürünü ekleyen metot.
         /// </summary>
-        private void AddProduct() 
+        private void AddProduct()
         {
             DataDetailDto dto = new DataDetailDto()
             {
@@ -99,6 +99,7 @@ namespace VeganFit.UI
         /// </summary>
         private void ForBegin()
         {
+
             Object[] mealArray = new object[3] { Meal.Sabah, Meal.Öğle, Meal.Akşam };
             cbxOgunSec.Items.AddRange(mealArray);
 
@@ -109,6 +110,15 @@ namespace VeganFit.UI
                 txtPorsiyon.Text = dataDetail.Serving;
                 pbxResim.Image = ImageToByteArray.byteArrayToImage(dataDetail.Picture);
                 txtIstenilenPorsiyon.Text = dataDetail.Serving;
+            }
+
+            if (dataDetail.Picture != null)
+            {
+                pbxResim.BorderStyle = BorderStyle.None;
+            }
+            else
+            {
+                pbxResim.BorderStyle = BorderStyle.Fixed3D;
             }
         }
 

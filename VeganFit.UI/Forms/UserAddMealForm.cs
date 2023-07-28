@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System.Data;
+using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
@@ -34,7 +35,7 @@ namespace VeganFit.UI
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
             RefreshList();
-            //RefreshMealLists();
+            RefreshMealLists();
         }
 
         /// <summary>
@@ -92,13 +93,13 @@ namespace VeganFit.UI
         /// <param name="meal"></param>
         /// <param name="productName"></param>
         /// <param name="msg"></param>
-        private void DeleteProductFromMeal(Meal meal,string productName,string msg)
+        private void DeleteProductFromMeal(Meal meal, string productName, string msg)
         {
             string dateTimeToday = DateTimeTodayTostring();
             int id = _dataRepo.GetFilteredFirstOrDefault(select: x => x.Id, where: x => x.ProductName == productName && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == dateTimeToday && x.State == State.Created && x.Meal == meal);
             var product = _dataService.Delete(id);
             MessageBox.Show(msg, "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            
+
             RefreshMealLists();
         }
 
@@ -127,22 +128,27 @@ namespace VeganFit.UI
             catch (Exception)
             {
                 MessageBox.Show("Akşam öğünü listenizde ürün bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }      
+            }
         }
 
         /// <summary>
         /// Listeyi yenilemeye yarayan metottur.
         /// </summary>
         private void RefreshList()
-        {   
+        {
+            //DataGridViewImageColumn dvgic = new DataGridViewImageColumn();
+            //dvgic.Name = "Picture";
+            //dvgic.HeaderText = "Resim";
+            //dvgic.DataPropertyName = "Picture";
+            //dgvUrunlerListesi.Columns.Add(dvgic);
             if (_ProductRepo != null)
             {
                 dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select: x => new
                 {
                     x.ProductName,
                     x.Calori,
-                    x.Serving
-                    //x.Picture
+                    x.Serving,
+                    x.Picture
                 }, where: x => x.State != State.Deleted);
             }
         }
@@ -170,6 +176,7 @@ namespace VeganFit.UI
 
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             try
             {
                 _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
@@ -220,6 +227,18 @@ namespace VeganFit.UI
             DateTime myDateTime = DateTime.Now;
             string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
             return sqlFormattedDate;
+        }
+        void dgvUrunlerListesi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //if (dgvUrunlerListesi.Columns[e.ColumnIndex].Name == "Picture")
+            //{
+            //    dgvUrunlerListesi.Rows[e.RowIndex].Cells[3].Value = e.Value;
+            //}
+
+        }
+        private void dgvUrunlerListesi_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

@@ -76,5 +76,11 @@ namespace VeganFit.UI
             dgvGorusOneri.Columns[1].HeaderText = "Email";
             dgvGorusOneri.Columns[2].HeaderText = "Geri Bildirim Mesajı";
         }
+
+        private void dgvGorusOneri_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
     }
 }

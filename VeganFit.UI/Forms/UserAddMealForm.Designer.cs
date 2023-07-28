@@ -32,6 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             dgvSabah = new DataGridView();
             dgvOgle = new DataGridView();
             dgvAksam = new DataGridView();
@@ -73,6 +74,7 @@
             dgvSabah.RowTemplate.Height = 25;
             dgvSabah.RowTemplate.ReadOnly = true;
             dgvSabah.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvSabah.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvSabah.Size = new Size(475, 154);
             dgvSabah.TabIndex = 1;
             // 
@@ -83,6 +85,14 @@
             dgvOgle.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvOgle.BackgroundColor = Color.DarkSeaGreen;
             dgvOgle.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Window;
+            dataGridViewCellStyle4.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dgvOgle.DefaultCellStyle = dataGridViewCellStyle4;
             dgvOgle.Location = new Point(12, 269);
             dgvOgle.Name = "dgvOgle";
             dgvOgle.ReadOnly = true;
@@ -93,6 +103,7 @@
             dgvOgle.RowTemplate.Height = 25;
             dgvOgle.RowTemplate.ReadOnly = true;
             dgvOgle.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvOgle.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvOgle.Size = new Size(475, 154);
             dgvOgle.TabIndex = 1;
             // 
@@ -102,6 +113,7 @@
             dgvAksam.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvAksam.BackgroundColor = Color.DarkSeaGreen;
             dgvAksam.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvAksam.DefaultCellStyle = dataGridViewCellStyle4;
             dgvAksam.Location = new Point(12, 508);
             dgvAksam.Name = "dgvAksam";
             dgvAksam.ReadOnly = true;
@@ -112,6 +124,7 @@
             dgvAksam.RowTemplate.Height = 25;
             dgvAksam.RowTemplate.ReadOnly = true;
             dgvAksam.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvAksam.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvAksam.Size = new Size(475, 154);
             dgvAksam.TabIndex = 1;
             // 
@@ -201,8 +214,8 @@
             // 
             // dgvUrunlerListesi
             // 
-            dataGridViewCellStyle4.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new Font("Verdana", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dgvUrunlerListesi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             dgvUrunlerListesi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvUrunlerListesi.BackgroundColor = Color.DarkSeaGreen;
             dgvUrunlerListesi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -217,9 +230,12 @@
             dgvUrunlerListesi.RowTemplate.Height = 25;
             dgvUrunlerListesi.RowTemplate.ReadOnly = true;
             dgvUrunlerListesi.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvUrunlerListesi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUrunlerListesi.Size = new Size(488, 593);
             dgvUrunlerListesi.TabIndex = 8;
             dgvUrunlerListesi.CellClick += dgvUrunlerListesi_CellClick;
+            dgvUrunlerListesi.CellFormatting += dgvUrunlerListesi_CellFormatting;
+            dgvUrunlerListesi.DataError += dgvUrunlerListesi_DataError;
             // 
             // btnUrunEkle
             // 

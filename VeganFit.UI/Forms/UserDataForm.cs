@@ -58,7 +58,7 @@ namespace VeganFit.UI
         private void ChartDatas()
         {
             for (int i = 0; i < dgvGunSonuKalori.Rows.Count; i++)
-            {             
+            {
                 chartCalori.Series["Kalori"].Points.AddXY(dgvGunSonuKalori.Rows[i].Cells[0].Value.ToString(), Convert.ToInt32(dgvGunSonuKalori.Rows[i].Cells[1].Value.ToString()));
             }
             for (int i = 0; i < dgvGunlukKiloTakibi.Rows.Count; i++)

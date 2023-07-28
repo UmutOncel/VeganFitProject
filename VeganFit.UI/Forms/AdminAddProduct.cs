@@ -45,7 +45,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün eklerken kalori için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlCaloriForAddProduct() 
+        private void ControlCaloriForAddProduct()
         {
             string strCalori = txtKalori.Text;
             double calori;
@@ -63,7 +63,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün eklerken porsiyon için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlServingForAddProduct() 
+        private void ControlServingForAddProduct()
         {
             string strServing = txtPorsiyon.Text;
             double serving;
@@ -81,7 +81,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Database'e yeni ürün ekleyen metot.
         /// </summary>
-        private void AddProduct() 
+        private void AddProduct()
         {
             ProductCreateVm vm = new ProductCreateVm()
             {
@@ -112,8 +112,9 @@ namespace VeganFit.UI
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
                 ControlProductNameForUpdateProduct();
+                RefreshList();
             }
             catch (FormatException)
             {
@@ -124,7 +125,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün güncellerken porsiyon için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlServingForUpdateProduct() 
+        private void ControlServingForUpdateProduct()
         {
             string strServing = txtPorsiyon.Text;
             double serving;
@@ -142,7 +143,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün güncellerken kalori için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlCaloriForUpdateProduct() 
+        private void ControlCaloriForUpdateProduct()
         {
             string strCalori = txtKalori.Text;
             double calori;
@@ -160,7 +161,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Ürün güncellerken ürün adı için gerekli kontrolleri yapan metot.
         /// </summary>
-        private void ControlProductNameForUpdateProduct() 
+        private void ControlProductNameForUpdateProduct()
         {
             bool isString = txtUrunAdi.Text.All(Char.IsLetter);
             if (isString)
@@ -176,7 +177,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Database'deki ürünü güncelleyen metot.
         /// </summary>
-        private void UpdateProduct() 
+        private void UpdateProduct()
         {
             ProductUpdateVm updateVm = new ProductUpdateVm()
             {
@@ -190,7 +191,6 @@ namespace VeganFit.UI
 
             MessageBox.Show("Ürün başarıyla güncellenmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClearAll();
-
             RefreshList();
         }
 
@@ -259,7 +259,7 @@ namespace VeganFit.UI
             }
             catch (Exception)
             {
-                MessageBox.Show("Lütfen sadece ilk sütundan seçim yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                //MessageBox.Show("Lütfen sadece ilk sütundan seçim yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -312,5 +312,6 @@ namespace VeganFit.UI
                 btnUrunEkle.Enabled = false;
             }
         }
+
     }
 }

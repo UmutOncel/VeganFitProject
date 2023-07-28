@@ -86,7 +86,6 @@
             txtUrunAdi.TabStop = false;
             txtUrunAdi.UnderlinedStyle = false;
             txtUrunAdi._TextChanged += txtUrunAdi__TextChanged;
-          
             // 
             // txtKalori
             // 
@@ -109,7 +108,6 @@
             txtKalori.TabStop = false;
             txtKalori.UnderlinedStyle = false;
             txtKalori._TextChanged += txtKalori__TextChanged;
-           
             // 
             // pbxResim
             // 
@@ -143,7 +141,6 @@
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
             txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-      
             // 
             // btnResimEkle
             // 
@@ -264,6 +261,7 @@
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
+            CancelButton = btnKapat;
             ClientSize = new Size(1366, 768);
             Controls.Add(lblYeniUrunEkle);
             Controls.Add(lblUrunAdi);

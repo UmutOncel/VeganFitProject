@@ -55,8 +55,10 @@
             dgvGorusOneri.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvGorusOneri.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.LightSlateGray;
             dgvGorusOneri.RowTemplate.Height = 25;
+            dgvGorusOneri.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGorusOneri.Size = new Size(734, 541);
             dgvGorusOneri.TabIndex = 0;
+            dgvGorusOneri.DataError += dgvGorusOneri_DataError;
             // 
             // btnSil
             // 

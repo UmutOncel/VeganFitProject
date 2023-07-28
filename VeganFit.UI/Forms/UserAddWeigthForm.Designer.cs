@@ -140,6 +140,7 @@
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
             dgvGunlukKiloTakibi.RowTemplate.ReadOnly = true;
             dgvGunlukKiloTakibi.RowTemplate.Resizable = DataGridViewTriState.False;
+            dgvGunlukKiloTakibi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGunlukKiloTakibi.Size = new Size(500, 500);
             dgvGunlukKiloTakibi.TabIndex = 17;
             // 

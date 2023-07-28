@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Repositories;
+using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 using VeganFit.UI.UserOperation;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -113,7 +114,7 @@ namespace VeganFit.UI
 
                 if (isAdmin)
                 {
-                    AdminMainForm adminMainForm = new AdminMainForm();
+                    var adminMainForm = EFContextForm.EFContextForm.ConfigureServices<AdminMainForm>();
                     adminMainForm.Show();
                     this.Hide();
                 }

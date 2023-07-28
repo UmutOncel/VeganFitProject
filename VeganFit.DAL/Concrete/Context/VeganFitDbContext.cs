@@ -39,5 +39,6 @@ namespace VeganFit.DAL.Concrete.Context
                         .ApplyConfiguration(new FeedbackConfiguration())
                         .ApplyConfiguration(new WeightConfiguration());
         }
+
     }
 }

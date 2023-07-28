@@ -71,7 +71,7 @@ namespace VeganFit.UI
             }
         }
 
-        private void AddProduct() 
+        private void AddProduct()
         {
             DataDetailDto dto = new DataDetailDto()
             {

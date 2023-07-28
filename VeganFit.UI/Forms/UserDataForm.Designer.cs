@@ -64,6 +64,7 @@
             dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvGunlukKiloTakibi.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunlukKiloTakibi.RowTemplate.Height = 25;
+            dgvGunlukKiloTakibi.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGunlukKiloTakibi.Size = new Size(500, 300);
             dgvGunlukKiloTakibi.TabIndex = 0;
             // 
@@ -81,6 +82,7 @@
             dgvGunSonuKalori.RowTemplate.DefaultCellStyle.ForeColor = Color.Black;
             dgvGunSonuKalori.RowTemplate.DefaultCellStyle.SelectionBackColor = Color.OliveDrab;
             dgvGunSonuKalori.RowTemplate.Height = 25;
+            dgvGunSonuKalori.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvGunSonuKalori.Size = new Size(500, 300);
             dgvGunSonuKalori.TabIndex = 0;
             // 
