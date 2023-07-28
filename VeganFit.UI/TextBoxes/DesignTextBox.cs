@@ -14,15 +14,14 @@ namespace TextBoxs.TextBox
     [DefaultEvent("_TextChanged")]
     public partial class DesignTextBox : UserControl
     {
-
         public event EventHandler _TextChanged;
         //TextBox-> TextChanged event
+
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             if (_TextChanged != null)
                 _TextChanged.Invoke(sender, e);
         }
-
 
         private Color borderColor = Color.Brown;
         private Color borderFocusColor = Color.Red;
@@ -35,10 +34,12 @@ namespace TextBoxs.TextBox
         private string placeholderText = "";
         private bool isPlaceholder = false;
         private bool isPasswordChar = false;
+
         public DesignTextBox()
         {
             InitializeComponent();
         }
+
         private void SetPlaceholder()
         {
             if (string.IsNullOrWhiteSpace(textBox1.Text) && placeholderText != "")
@@ -50,6 +51,7 @@ namespace TextBoxs.TextBox
                     textBox1.UseSystemPasswordChar = false;
             }
         }
+
         private void RemovePlaceholder()
         {
             if (isPlaceholder && placeholderText != "")
@@ -61,6 +63,7 @@ namespace TextBoxs.TextBox
                     textBox1.UseSystemPasswordChar = true;
             }
         }
+
         private GraphicsPath GetFigurePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
@@ -100,7 +103,6 @@ namespace TextBoxs.TextBox
             }
         }
 
-
         [Category("DesingTextBox")]
         public Color BorderColor
         {
@@ -111,13 +113,17 @@ namespace TextBoxs.TextBox
                 this.Invalidate();
             }
         }
+
         [Category("DesingTextBox")]
+
         public Color BorderFocusColor
         {
             get { return borderFocusColor; }
             set { borderFocusColor = value; }
         }
+
         [Category("DesingTextBox")]
+
         public int BorderSize
         {
             get { return borderSize; }
@@ -130,7 +136,9 @@ namespace TextBoxs.TextBox
                 }
             }
         }
+
         [Category("DesingTextBox")]
+
         public bool UnderlinedStyle
         {
             get { return underlinedStyle; }
@@ -140,7 +148,9 @@ namespace TextBoxs.TextBox
                 this.Invalidate();
             }
         }
+
         [Category("DesingTextBox")]
+
         public bool PasswordChar
         {
             get { return isPasswordChar; }
@@ -151,13 +161,17 @@ namespace TextBoxs.TextBox
                     textBox1.UseSystemPasswordChar = value;
             }
         }
+
         [Category("Desing TextBox")]
+
         public bool Multiline
         {
             get { return textBox1.Multiline; }
             set { textBox1.Multiline = value; }
         }
+
         [Category("Desing TextBox")]
+
         public override Color BackColor
         {
             get { return base.BackColor; }
@@ -167,7 +181,9 @@ namespace TextBoxs.TextBox
                 textBox1.BackColor = value;
             }
         }
+
         [Category("Desing TextBox")]
+
         public override Color ForeColor
         {
             get { return base.ForeColor; }
@@ -177,7 +193,9 @@ namespace TextBoxs.TextBox
                 textBox1.ForeColor = value;
             }
         }
+
         [Category("Desing TextBox")]
+
         public override Font Font
         {
             get { return base.Font; }
@@ -189,7 +207,9 @@ namespace TextBoxs.TextBox
                     UpdateControlHeight();
             }
         }
+
         [Category("Desing TextBox")]
+
         public string Text
         {
             get
@@ -203,7 +223,9 @@ namespace TextBoxs.TextBox
                 SetPlaceholder();
             }
         }
+
         [Category("Desing TextBox")]
+
         public int BorderRadius
         {
             get { return borderRadius; }
@@ -216,7 +238,9 @@ namespace TextBoxs.TextBox
                 }
             }
         }
+
         [Category("Desing TextBox")]
+
         public Color PlaceholderColor
         {
             get { return placeholderColor; }
@@ -227,7 +251,9 @@ namespace TextBoxs.TextBox
                     textBox1.ForeColor = value;
             }
         }
+
         [Category("Desing TextBox")]
+
         public string PlaceholderText
         {
             get { return placeholderText; }
@@ -245,11 +271,13 @@ namespace TextBoxs.TextBox
             if (this.DesignMode)
                 UpdateControlHeight();
         }
+
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
             UpdateControlHeight();
         }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);

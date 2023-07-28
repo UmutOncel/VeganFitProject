@@ -17,7 +17,6 @@ namespace VeganFit.Buttons
         private int borderRadius = 20;
         private Color borderColor = Color.PaleVioletRed;
 
-
         //proplarını açarız manuel de ayarlamak için
         [Category("Desing Buttons")]
         public int BorderSize
@@ -32,7 +31,9 @@ namespace VeganFit.Buttons
                 Invalidate();
             }
         }
+
         [Category("Desing Buttons")]
+
         public int BorderRadius
         {
             get
@@ -45,7 +46,9 @@ namespace VeganFit.Buttons
                 Invalidate();
             }
         }
+
         [Category("Desing Buttons")]
+
         public Color BorderColor
         {
             get
@@ -58,7 +61,9 @@ namespace VeganFit.Buttons
                 Invalidate();
             }
         }
+
         [Category("Desing Buttons")]
+
         public Color BackgroundColor
         {
             get
@@ -70,7 +75,9 @@ namespace VeganFit.Buttons
                 BackColor = value;
             }
         }
+
         [Category("Desing Buttons")]
+
         public Color TextColor
         {
             get
@@ -82,7 +89,6 @@ namespace VeganFit.Buttons
                 ForeColor = value;
             }
         }
-
 
         public DesignButton()
         {
@@ -161,19 +167,17 @@ namespace VeganFit.Buttons
                 }
             }
         }
+
         protected override void OnHandleCreated(EventArgs e)//butonları büyütürken yanda diğer butonları göstermesin sadece 1 buton göstermesi için yaparız.
         {
             base.OnHandleCreated(e);
             Parent.BackColorChanged += new EventHandler(Container_BackColorChanged);
         }
+
         private void Container_BackColorChanged(object sender, EventArgs e)
         {
             Invalidate();
         }
-
-
-
-
     }
 
 }

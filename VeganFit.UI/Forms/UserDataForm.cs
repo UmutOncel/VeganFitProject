@@ -51,6 +51,9 @@ namespace VeganFit.UI
             lblKapat.Visible = false;
         }
 
+        /// <summary>
+        /// Chart grafiklere veri girilmesini sağlayan metot.
+        /// </summary>
         private void ChartDatas()
         {
             for (int i = 0; i < dgvGunSonuKalori.Rows.Count; i++)

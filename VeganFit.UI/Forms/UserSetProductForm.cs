@@ -75,6 +75,9 @@ namespace VeganFit.UI
             this.Close();
         }
 
+        /// <summary>
+        /// Database'e seçilen ürünü ekleyen metot.
+        /// </summary>
         private void AddProduct() 
         {
             DataDetailDto dto = new DataDetailDto()
@@ -92,7 +95,7 @@ namespace VeganFit.UI
         }
 
         /// <summary>
-        /// Öğünden seçtiği yiyeceğin bilgilerini textbox ve picture box a yükleyen ve comboboxtan ürün seçmeyi yaptıran metottur.
+        /// Öğünden seçtiği ürünün bilgilerini textbox ve picturebox'a yükleyen ve combobox'tan ürün seçmeyi sağlayan metottur.
         /// </summary>
         private void ForBegin()
         {

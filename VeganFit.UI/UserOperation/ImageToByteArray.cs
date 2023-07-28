@@ -8,6 +8,11 @@ namespace VeganFit.UI.UserOperation
 {
     public static class ImageToByteArray
     {
+        /// <summary>
+        /// Image'ı byte dizisine çeviren ve bu byte dizisini döndüren metot.
+        /// </summary>
+        /// <param name="imageIn"></param>
+        /// <returns></returns>
         public static byte[] imageToByteArray(Image imageIn)
         {
             MemoryStream ms = new MemoryStream();
@@ -18,6 +23,11 @@ namespace VeganFit.UI.UserOperation
             return ms.ToArray();
         }
 
+        /// <summary>
+        /// Byte dizisini image'a çeviren ve bu image'ı döndüren metot.
+        /// </summary>
+        /// <param name="byteArrayIn"></param>
+        /// <returns></returns>
         public static Image byteArrayToImage(byte[] byteArrayIn)
         {
             Image returnImage=null;

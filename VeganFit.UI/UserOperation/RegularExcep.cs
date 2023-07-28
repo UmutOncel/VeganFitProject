@@ -10,6 +10,12 @@ namespace VeganFit.UI.UserOperation
 {
     public static class RegularExcep
     {
+        /// <summary>
+        /// DesignTextbox'taki veri ile parametredeki string'in eşleşmesini kontrol eden ve sonucu boolean olarak döndüren metot. 
+        /// </summary>
+        /// <param name="rgx"></param>
+        /// <param name="txtb"></param>
+        /// <returns></returns>
         public static bool RegularEx(string rgx, DesignTextBox txtb)
         {
             bool control = false;
@@ -24,7 +30,6 @@ namespace VeganFit.UI.UserOperation
                 control = false;
             }
             return control;
-
         }
     }
 }

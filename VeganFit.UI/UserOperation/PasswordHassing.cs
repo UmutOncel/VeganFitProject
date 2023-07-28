@@ -9,11 +9,16 @@ namespace VeganFit.UI.UserOperation
 {
     public static class PasswordHassing 
     {
-        public static string Sha256Hash(string sifre)
+        /// <summary>
+        /// Kullanıcının şifresini şifrelemek için kullanılan ve bunu geri döndüren metot. (Kullanıcının şifresini database'e şifreli bir şekilde kaydederken kullanılır.)
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        public static string Sha256Hash(string password)
         {
             using (SHA256 hash = SHA256Managed.Create())
             {
-                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(sifre)).Select(l => l.ToString("X2")));
+                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(password)).Select(l => l.ToString("X2")));
             }
         }
     }

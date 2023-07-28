@@ -153,7 +153,7 @@ namespace VeganFit.UI
         }
 
         /// <summary>
-        /// Textbox ve picturebox'taki verileri temizlyen metottur.
+        /// Textbox ve picturebox'taki verileri silen metottur.
         /// </summary>
         private void ClearAll()
         {

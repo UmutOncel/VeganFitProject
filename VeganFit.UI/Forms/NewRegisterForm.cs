@@ -107,7 +107,7 @@ namespace VeganFit.UI
         }
 
         /// <summary>
-        ///  Kullanıcının Email kontrolünü sağlayan metottur.
+        ///  Kullanıcının email kontrolünü sağlayan metottur.
         /// </summary>
         private void ControlUserEmail()
         {
@@ -142,7 +142,7 @@ namespace VeganFit.UI
         }
 
         /// <summary>
-        ///  Kullanıcının ad-soyad kontrolünü sağlayan metottur.
+        ///  Kullanıcının ad soyad kontrolünü sağlayan metottur.
         /// </summary>
         private void ControlUserFirstnameAndLastname()
         {

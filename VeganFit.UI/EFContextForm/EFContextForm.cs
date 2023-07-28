@@ -11,7 +11,6 @@ namespace VeganFit.UI.EFContextForm
 {
     public static class EFContextForm
     {
-
         private static IServiceProvider _serviceProvider;
 
         private static IHostBuilder CreateHostBuilder<T>() where T : class
@@ -23,7 +22,6 @@ namespace VeganFit.UI.EFContextForm
             });
 
             return result;
-
         }
 
         public static Form ConfigureServices<T>() where T : Form
@@ -32,21 +30,5 @@ namespace VeganFit.UI.EFContextForm
             _serviceProvider = host.Services;
             return _serviceProvider.GetRequiredService<T>();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
