@@ -119,7 +119,7 @@ namespace VeganFit.UI
                 }
                 else
                 {
-                    UserMainForm userMainForm = new UserMainForm();
+                    var userMainForm = EFContextForm.EFContextForm.ConfigureServices<UserMainForm>();
                     userMainForm.Show();
                     this.Hide();
                 }

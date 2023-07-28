@@ -195,9 +195,26 @@ namespace VeganFit.DAL.Base.EntityFramework
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        public int FindId(Expression<Func<TEntity, bool>> filter) 
+        public int FindId(Expression<Func<TEntity, bool>> filter,
+                   Expression<Func<TEntity, bool>> where,
+                   Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?
+                   orderBy = null,
+                   params Expression<Func<TEntity, object>>[] includes) 
         {
-            return _dbSet.FirstOrDefault(filter).Id;
+            IQueryable<TEntity> query = _dbSet;
+
+            if (where != null)
+            {
+                query = query.Where(where);
+            }
+
+            if (includes != null)
+            {
+                query = query.MyIncludes(includes);
+            }
+
+            return  Convert.ToInt32(query.Select(filter).FirstOrDefault());
+
         }
     }
 }

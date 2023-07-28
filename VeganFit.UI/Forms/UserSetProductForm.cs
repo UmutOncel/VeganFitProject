@@ -11,8 +11,6 @@ namespace VeganFit.UI
     {
 
         private readonly IDataService _dataService;
-        private readonly DataDetailDto _detailDto;
-        private readonly IDataRepo _dataRepo;
         DataDetailDto dataDetail = UserAddMealForm._data;
 
         public UserSetProductForm(IDataService dataService)
@@ -62,7 +60,7 @@ namespace VeganFit.UI
             }
             else
             {
-                if (Convert.ToInt32(txtIstenilenPorsiyon.Text) > 0)
+                if (Convert.ToDouble(txtIstenilenPorsiyon.Text) > 0)
                 {
                     AddProduct();
                 }
@@ -71,7 +69,7 @@ namespace VeganFit.UI
                     MessageBox.Show("Porsiyon sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
+            
             this.Close();
         }
 

@@ -20,7 +20,6 @@ namespace VeganFit.UI
     {
         private readonly IWeightService _service;
         private readonly IWeightRepo _weightRepo;
-        private readonly IUserService _userService;
 
         public UserAddWeigthForm(IWeightService weightService, IWeightRepo weightRepo)
         {

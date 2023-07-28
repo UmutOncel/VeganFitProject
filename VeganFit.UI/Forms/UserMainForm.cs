@@ -8,8 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
+using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.UI.EFContextForm;
+using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
@@ -17,10 +19,12 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
+        private readonly IDataRepo _dataRepo;
 
-        public UserMainForm()
+        public UserMainForm(IDataRepo dataRepo)
         {
             InitializeComponent();
+            _dataRepo = dataRepo;
         }
         private void pnlUstMenu_MouseDown(object sender, MouseEventArgs e)
         {
@@ -128,6 +132,28 @@ namespace VeganFit.UI
             pnlSecim3.Visible = false;
             pnlSecim4.Visible = true;
             openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserFeedbackForm>());
+        }
+        private void EnabledVerileriGor()
+        {
+
+            var data = _dataRepo.GetFilteredList(select: x => new { x.Calori }, where: x => x.UserEmail == ActiveUser.ActiveUserName && x.State != State.Deleted);
+            if (data.Count != 0)
+            {
+                btnVerileriGor.Enabled = true;
+
+            }
+            else
+            {
+                btnVerileriGor.Enabled = false;
+
+            }
+
+        }
+
+
+        private void pnlMenu_MouseEnter(object sender, EventArgs e)
+        {
+            EnabledVerileriGor();
         }
     }
 }

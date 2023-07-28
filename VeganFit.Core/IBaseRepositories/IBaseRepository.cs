@@ -91,6 +91,10 @@ namespace VeganFit.Core.IBaseRepositories
         /// </summary>
         /// <param name="filter"></param>
         /// <returns></returns>
-        int FindId(Expression<Func<TEntity, bool>> filter);
+        int FindId(Expression<Func<TEntity, bool>> filter,
+                   Expression<Func<TEntity, bool>> where,
+                   Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?
+                   orderBy = null,
+                   params Expression<Func<TEntity, object>>[] includes);
     }
 }

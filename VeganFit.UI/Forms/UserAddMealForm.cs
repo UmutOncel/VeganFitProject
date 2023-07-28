@@ -1,9 +1,11 @@
-﻿using System.Data;
+﻿using Microsoft.VisualBasic;
+using System.Data;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
+using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
 using VeganFit.UI.LoginUser;
@@ -16,6 +18,8 @@ namespace VeganFit.UI
         public static DataDetailDto _data;
         private readonly IDataRepo _dataRepo;
         private readonly IDataService _dataService;
+
+
 
         public UserAddMealForm(IProductRepo ProductRepo, IDataRepo dataRepo, IDataService dataService)
         {
@@ -38,11 +42,10 @@ namespace VeganFit.UI
         /// </summary>
         public void RefreshMealLists()
         {
-            DateTime myDateTime = DateTime.Now;
-            string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
+            string sqlFormattedDate = DateTimeTodayTostring();
 
             dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
-              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
+              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate); ;
 
             dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
@@ -52,6 +55,7 @@ namespace VeganFit.UI
 
             DataGridViewColumnNames();
         }
+
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -70,26 +74,41 @@ namespace VeganFit.UI
 
         private void btnUrunuSilSabah_Click(object sender, EventArgs e)
         {
-            var chooseProduct = dgvSabah.SelectedCells[0].Value;
-            int id = _dataRepo.FindId(x => x.ProductName == chooseProduct);
+            try
+            {
+                string msg = "Ürün sabah öğününden başarıyla silinmiştir.";
+                string chooseProduct = dgvSabah.SelectedCells[0].Value.ToString();
+                DeleteProductFromMeal(Meal.Breakfast, chooseProduct, msg);
+            }
+            catch (Exception u)
+            {
+                MessageBox.Show("Sabah Listenizde Ürün Bulunmamaktadır","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+            }
+
+            
+        }
+        private void DeleteProductFromMeal(Meal meal,string productName,string msg)
+        {
+            string dateTimeToday = DateTimeTodayTostring();
+            int id = _dataRepo.GetFilteredFirstOrDefault(select: x => x.Id, where: x => x.ProductName == productName && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == dateTimeToday && x.State == State.Created && x.Meal == meal);
             var product = _dataService.Delete(id);
-            MessageBox.Show("Ürün sabah öğününden başarıyla silinmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(msg, "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            RefreshMealLists();
         }
 
         private void btnUrunuSilOgle_Click(object sender, EventArgs e)
         {
-            var chooseProduct = dgvOgle.SelectedCells[0].Value;
-            int id = _dataRepo.FindId(x => x.ProductName == chooseProduct);
-            var product = _dataService.Delete(id);
-            MessageBox.Show("Ürün öğle öğününden başarıyla silinmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string msg = "Ürün öğle öğününden başarıyla silinmiştir.";
+            string chooseProduct = dgvOgle.SelectedCells[0].Value.ToString();
+            DeleteProductFromMeal(Meal.Lunch, chooseProduct, msg);
+            
         }
 
         private void btnUrunuSilAksam_Click(object sender, EventArgs e)
         {
-            var chooseProduct = dgvAksam.SelectedCells[0].Value;
-            int id = _dataRepo.FindId(x => x.ProductName == chooseProduct);
-            var product = _dataService.Delete(id);
-            MessageBox.Show("Ürün akşam öğnünden başarıyla silinmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            string msg = "Ürün akşam öğnünden başarıyla silinmiştir.";
+            string chooseProduct = dgvAksam.SelectedCells[0].Value.ToString();
+            DeleteProductFromMeal(Meal.Dinner, chooseProduct, msg);           
         }
 
         /// <summary>
@@ -173,5 +192,14 @@ namespace VeganFit.UI
             dgvUrunlerListesi.Columns[2].HeaderText = "Porsiyon";
             dgvUrunlerListesi.Columns[3].HeaderText = "Resim";
         }
+
+        private string DateTimeTodayTostring()
+        {
+            DateTime myDateTime = DateTime.Now;
+            string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
+            return sqlFormattedDate;
+        }
+
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.UI.LoginUser;
@@ -25,7 +26,7 @@ namespace VeganFit.UI
             dgvGunlukKiloTakibi.Columns[1].HeaderText = "Kilo";
             dgvGunlukKiloTakibi.Columns[2].HeaderText = "Kayıt Tarihi";
 
-            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName)
+            dgvGunSonuKalori.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName && x.State != State.Deleted)
                 .GroupBy(x => new { x.UserEmail, x.Datetime })
                 .Select(x => new
                 {

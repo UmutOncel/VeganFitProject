@@ -67,6 +67,7 @@
             pnlMenu.Name = "pnlMenu";
             pnlMenu.Size = new Size(275, 768);
             pnlMenu.TabIndex = 1;
+            pnlMenu.MouseEnter += pnlMenu_MouseEnter;
             // 
             // btnCikisYap
             // 
