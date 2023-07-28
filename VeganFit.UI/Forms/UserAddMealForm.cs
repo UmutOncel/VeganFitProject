@@ -34,7 +34,7 @@ namespace VeganFit.UI
         private void UserAddMealForm_Load(object sender, EventArgs e)
         {
             RefreshList();
-            RefreshMealLists();
+            //RefreshMealLists();
         }
 
         /// <summary>
@@ -134,22 +134,21 @@ namespace VeganFit.UI
         /// Listeyi yenilemeye yarayan metottur.
         /// </summary>
         private void RefreshList()
-        {
+        {   
             if (_ProductRepo != null)
             {
                 dgvUrunlerListesi.DataSource = _ProductRepo.GetFilteredList(select: x => new
                 {
                     x.ProductName,
                     x.Calori,
-                    x.Serving,
-                    x.Picture
+                    x.Serving
+                    //x.Picture
                 }, where: x => x.State != State.Deleted);
             }
         }
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            RefreshList();
             var urunEkle = EFContextForm.EFContextForm.ConfigureServices<UserAddNewProductForm>();
             urunEkle.ShowDialog();
         }
