@@ -113,6 +113,7 @@ namespace VeganFit.UI
         private void ListeyiYenile()
         {
             dgvUrunler.DataSource = _productRepo.GetFilteredList(select: x => new { x.Id, x.ProductName, x.Calori, x.Serving, x.Picture }, where: x => x.State != State.Deleted);
+            DatagridViewChangeColumnName();
         }
 
         private void btnUrunGuncelle_Click(object sender, EventArgs e)
@@ -222,6 +223,13 @@ namespace VeganFit.UI
             txtUrunAdi.Text = string.Empty;
             pbxResim.Image = null;
             pbxResim.BorderStyle = BorderStyle.Fixed3D;
+        }
+        private void DatagridViewChangeColumnName()
+        {
+            dgvUrunler.Columns[1].HeaderText = "Ürün İsmi";
+            dgvUrunler.Columns[2].HeaderText = "Kalori";
+            dgvUrunler.Columns[3].HeaderText = "Porsiyon";
+            dgvUrunler.Columns[4].HeaderText = "Resim";
         }
     }
 }

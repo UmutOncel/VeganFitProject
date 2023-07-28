@@ -46,6 +46,8 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
             builder.Property(x=>x.UserEmail)
                    .IsRequired(false)
                    .HasMaxLength(250);
+
+
         }
     }
 }

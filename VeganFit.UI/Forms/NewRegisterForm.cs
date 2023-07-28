@@ -68,11 +68,11 @@ namespace VeganFit.UI
 
         private void txtAd_Leave(object sender, EventArgs e)
         {
-            if (txtAd.Text == "")
-            {
-                txtAd.Text = "Ad";
-                txtAd.ForeColor = Color.DarkViolet;
-            }
+            //if (txtAd.Text == "")
+            //{
+            //    txtAd.Text = "Ad";
+            //    txtAd.ForeColor = Color.DarkViolet;
+            //}
         }
         private void txtSoyad_Enter(object sender, EventArgs e)
         {
@@ -85,11 +85,11 @@ namespace VeganFit.UI
         private void txtSoyad_Leave(object sender, EventArgs e)
         {
 
-            if (txtSoyad.Text == "")
-            {
-                txtSoyad.Text = "Soyad";
-                txtSoyad.ForeColor = Color.DarkViolet;
-            }
+            //if (txtSoyad.Text == "")
+            //{
+            //    txtSoyad.Text = "Soyad";
+            //    txtSoyad.ForeColor = Color.DarkViolet;
+            //}
         }
         private void txtEMail_Enter(object sender, EventArgs e)
         {
@@ -257,5 +257,6 @@ namespace VeganFit.UI
         {
             soyad = RegularEx(@"^[a-zA-Z]*$", txtSoyad);
         }
+
     }
 }

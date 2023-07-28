@@ -58,6 +58,9 @@ namespace VeganFit.UI
         private void ListeyiYenile()
         {
             dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new { x.Id, x.User.Email, x.Message }, where: x => x.State != State.Deleted);
+            dgvGorusOneri.Columns[0].HeaderText = "Id";
+            dgvGorusOneri.Columns[1].HeaderText = "Email";
+            dgvGorusOneri.Columns[2].HeaderText = "Geri Bildirim Mesajı";
         }
     }
 }

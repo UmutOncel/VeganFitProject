@@ -32,21 +32,16 @@ namespace VeganFit.UI
 
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
-            dtpTarih.MinDate=DateTime.Today;
-            dtpTarih.MaxDate=DateTime.Today;
+
+            lblDateToday.Text = DateTime.Today.ToShortDateString();
             ListeyiYenile();
 
-            //txtKilo.Text = "Kilonuzu Giriniz";
-            //txtKilo.ForeColor = Color.SlateGray;
+
 
         }
         private void txtKilo_Enter(object sender, EventArgs e)
         {
-            //if (txtKilo.Text == "Kilonuzu Giriniz")
-            //{
-            //    txtKilo.Text = "";
-            //    txtKilo.ForeColor = Color.Black;
-            //}
+
         }
 
         private void txtKilo_Leave(object sender, EventArgs e)
@@ -81,7 +76,7 @@ namespace VeganFit.UI
             }
             else
             {
-                bool varMi = _weightRepo.Any(x => x.RecordDate == dtpTarih.Value);
+                bool varMi = _weightRepo.Any(x => x.RecordDate == Convert.ToDateTime(lblDateToday.Text));
                 if (!varMi)
                 {
                     WeightCreateVm vm = new WeightCreateVm()
@@ -104,6 +99,9 @@ namespace VeganFit.UI
         private void ListeyiYenile()
         {
             dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.RecordDate, x.UserWeight, x.UserName }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
+            dgvGunlukKiloTakibi.Columns[0].HeaderText = "Kayıt Tarihi";
+            dgvGunlukKiloTakibi.Columns[1].HeaderText = "Kilonuz";
+            dgvGunlukKiloTakibi.Columns[2].HeaderText = "İsim";
         }
 
         private void txtKilo__TextChanged(object sender, EventArgs e)

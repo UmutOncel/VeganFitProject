@@ -30,7 +30,6 @@ namespace VeganFit.UI
         {
 
             ListeyiYenile();
-            //txtAramaKutusu.ForeColor = Color.SlateGray;
             OgunListeleriniYenile();
 
         }
@@ -49,6 +48,7 @@ namespace VeganFit.UI
             dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
 
+            DataGridViewColumnNames();
 
         }
 
@@ -147,6 +147,24 @@ namespace VeganFit.UI
             dgvUrunlerListesi.DataSource = db.Products.Where(x => x.ProductName.Contains(txtAramaKutusu.Text) && x.State != State.Deleted)
                 .Select(x => new { x.ProductName, x.Calori, x.Serving, x.Picture })
                 .ToList();
+
+
+        }
+        private void DataGridViewColumnNames()
+        {
+            dgvSabah.Columns[0].HeaderText = "Ürün İsmi";
+            dgvSabah.Columns[1].HeaderText = "Kalori";
+
+            dgvOgle.Columns[0].HeaderText = "Ürün İsmi";
+            dgvOgle.Columns[1].HeaderText = "Kalori";
+
+            dgvAksam.Columns[0].HeaderText = "Ürün İsmi";
+            dgvAksam.Columns[1].HeaderText = "Kalori";
+
+            dgvUrunlerListesi.Columns[0].HeaderText = "Ürün İsmi";
+            dgvUrunlerListesi.Columns[1].HeaderText = "Kalori";
+            dgvUrunlerListesi.Columns[2].HeaderText = "Porsiyon";
+            dgvUrunlerListesi.Columns[3].HeaderText = "Resim";
         }
     }
 }

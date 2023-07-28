@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             txtKilo = new TextBoxs.TextBox.DesignTextBox();
             btnKaydet = new Buttons.DesignButton();
             dgvGunlukKiloTakibi = new DataGridView();
-            dtpTarih = new DateTimePicker();
             lblTarihSec = new Label();
             lblKiloGir = new Label();
             label3 = new Label();
+            lblDateToday = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvGunlukKiloTakibi).BeginInit();
             SuspendLayout();
             // 
@@ -123,12 +123,12 @@
             // 
             // dgvGunlukKiloTakibi
             // 
-            dataGridViewCellStyle4.BackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = Color.DarkSeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Black;
-            dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.Font = new Font("Verdana", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = Color.DarkSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
+            dgvGunlukKiloTakibi.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvGunlukKiloTakibi.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvGunlukKiloTakibi.BackgroundColor = Color.DarkSeaGreen;
             dgvGunlukKiloTakibi.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -145,24 +145,14 @@
             dgvGunlukKiloTakibi.Size = new Size(500, 500);
             dgvGunlukKiloTakibi.TabIndex = 17;
             // 
-            // dtpTarih
-            // 
-            dtpTarih.Location = new Point(149, 293);
-            dtpTarih.MaxDate = new DateTime(2023, 7, 26, 0, 0, 0, 0);
-            dtpTarih.MinDate = new DateTime(2023, 7, 26, 0, 0, 0, 0);
-            dtpTarih.Name = "dtpTarih";
-            dtpTarih.Size = new Size(250, 22);
-            dtpTarih.TabIndex = 18;
-            dtpTarih.Value = new DateTime(2023, 7, 26, 0, 0, 0, 0);
-            // 
             // lblTarihSec
             // 
             lblTarihSec.AutoSize = true;
             lblTarihSec.Location = new Point(50, 297);
             lblTarihSec.Name = "lblTarihSec";
-            lblTarihSec.Size = new Size(86, 14);
+            lblTarihSec.Size = new Size(50, 14);
             lblTarihSec.TabIndex = 19;
-            lblTarihSec.Text = "Tarih Seçin:";
+            lblTarihSec.Text = "Tarih :";
             // 
             // lblKiloGir
             // 
@@ -183,6 +173,14 @@
             label3.TabIndex = 19;
             label3.Text = "Kilo Takip Çizelgesi";
             // 
+            // lblDateToday
+            // 
+            lblDateToday.AutoSize = true;
+            lblDateToday.Location = new Point(149, 297);
+            lblDateToday.Name = "lblDateToday";
+            lblDateToday.Size = new Size(0, 14);
+            lblDateToday.TabIndex = 19;
+            // 
             // UserAddWeigthForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
@@ -191,8 +189,8 @@
             ClientSize = new Size(1091, 718);
             Controls.Add(lblKiloGir);
             Controls.Add(label3);
+            Controls.Add(lblDateToday);
             Controls.Add(lblTarihSec);
-            Controls.Add(dtpTarih);
             Controls.Add(dgvGunlukKiloTakibi);
             Controls.Add(btnKaydet);
             Controls.Add(txtKilo);
@@ -215,9 +213,9 @@
         private TextBoxs.TextBox.DesignTextBox txtKilo;
         private Buttons.DesignButton btnKaydet;
         private DataGridView dgvGunlukKiloTakibi;
-        private DateTimePicker dtpTarih;
         private Label lblTarihSec;
         private Label lblKiloGir;
         private Label label3;
+        private Label lblDateToday;
     }
 }
