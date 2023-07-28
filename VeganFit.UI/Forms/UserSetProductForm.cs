@@ -97,7 +97,7 @@ namespace VeganFit.UI
         /// </summary>
         private void ForBegin()
         {
-            Object[] mealArray = new object[3] { Meal.Lunch, Meal.Breakfast, Meal.Dinner };
+            Object[] mealArray = new object[3] { Meal.Sabah, Meal.Öğle, Meal.Akşam };
             cbxOgunSec.Items.AddRange(mealArray);
 
             if (dataDetail != null)

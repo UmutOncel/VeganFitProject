@@ -92,7 +92,7 @@ namespace VeganFit.UI
         /// </summary>
         private void ForBegin()
         {
-            Object[] array = new object[3] { Meal.Breakfast, Meal.Lunch, Meal.Dinner };
+            Object[] array = new object[3] { Meal.Sabah, Meal.Öğle, Meal.Akşam };
             cbxOgunSec.Items.AddRange(array);
 
             txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily, 8, FontStyle.Italic);

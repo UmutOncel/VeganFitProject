@@ -38,19 +38,19 @@ namespace VeganFit.UI
         }
 
         /// <summary>
-        /// Öğün Listelerini yenilemeye yarayan metottur.
+        /// Öğün listelerini yenilemeye yarayan metottur.
         /// </summary>
         public void RefreshMealLists()
         {
             string sqlFormattedDate = DateTimeTodayTostring();
 
-            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Breakfast
+            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Sabah
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate); ;
 
-            dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Lunch
+            dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Öğle
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
 
-            dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Dinner
+            dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Akşam
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
 
             DataGridViewColumnNames();
@@ -78,37 +78,56 @@ namespace VeganFit.UI
             {
                 string msg = "Ürün sabah öğününden başarıyla silinmiştir.";
                 string chooseProduct = dgvSabah.SelectedCells[0].Value.ToString();
-                DeleteProductFromMeal(Meal.Breakfast, chooseProduct, msg);
+                DeleteProductFromMeal(Meal.Sabah, chooseProduct, msg);
             }
-            catch (Exception u)
+            catch (Exception)
             {
-                MessageBox.Show("Sabah Listenizde Ürün Bulunmamaktadır","BİLGİ",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+                MessageBox.Show("Sabah öğünü listenizde ürün bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
-            
         }
+
+        /// <summary>
+        /// Öğünden ürünü silen metot.
+        /// </summary>
+        /// <param name="meal"></param>
+        /// <param name="productName"></param>
+        /// <param name="msg"></param>
         private void DeleteProductFromMeal(Meal meal,string productName,string msg)
         {
             string dateTimeToday = DateTimeTodayTostring();
             int id = _dataRepo.GetFilteredFirstOrDefault(select: x => x.Id, where: x => x.ProductName == productName && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == dateTimeToday && x.State == State.Created && x.Meal == meal);
             var product = _dataService.Delete(id);
             MessageBox.Show(msg, "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
             RefreshMealLists();
         }
 
         private void btnUrunuSilOgle_Click(object sender, EventArgs e)
         {
-            string msg = "Ürün öğle öğününden başarıyla silinmiştir.";
-            string chooseProduct = dgvOgle.SelectedCells[0].Value.ToString();
-            DeleteProductFromMeal(Meal.Lunch, chooseProduct, msg);
-            
+            try
+            {
+                string msg = "Ürün öğle öğününden başarıyla silinmiştir.";
+                string chooseProduct = dgvOgle.SelectedCells[0].Value.ToString();
+                DeleteProductFromMeal(Meal.Öğle, chooseProduct, msg);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Öğlen öğünü listenizde ürün bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnUrunuSilAksam_Click(object sender, EventArgs e)
         {
-            string msg = "Ürün akşam öğnünden başarıyla silinmiştir.";
-            string chooseProduct = dgvAksam.SelectedCells[0].Value.ToString();
-            DeleteProductFromMeal(Meal.Dinner, chooseProduct, msg);           
+            try
+            {
+                string msg = "Ürün akşam öğnünden başarıyla silinmiştir.";
+                string chooseProduct = dgvAksam.SelectedCells[0].Value.ToString();
+                DeleteProductFromMeal(Meal.Akşam, chooseProduct, msg);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Akşam öğünü listenizde ürün bulunmamaktadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }      
         }
 
         /// <summary>
@@ -193,13 +212,15 @@ namespace VeganFit.UI
             dgvUrunlerListesi.Columns[3].HeaderText = "Resim";
         }
 
+        /// <summary>
+        /// Tarih tipini string'e çeviren ve bu değeri döndüren metot.
+        /// </summary>
+        /// <returns></returns>
         private string DateTimeTodayTostring()
         {
             DateTime myDateTime = DateTime.Now;
             string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
             return sqlFormattedDate;
         }
-
-
     }
 }
