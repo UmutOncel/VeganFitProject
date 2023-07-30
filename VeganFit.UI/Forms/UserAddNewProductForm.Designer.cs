@@ -42,6 +42,7 @@
             lblPorisyon = new Label();
             label1 = new Label();
             lblYeniUrunEkle = new Label();
+            lblPorsiyonBilgi = new Label();
             ((System.ComponentModel.ISupportInitialize)pbxResim).BeginInit();
             SuspendLayout();
             // 
@@ -141,7 +142,6 @@
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
             txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
-            txtPorsiyon.MouseEnter += txtPorsiyon_MouseEnter;
             // 
             // btnResimEkle
             // 
@@ -257,13 +257,24 @@
             lblYeniUrunEkle.TabIndex = 36;
             lblYeniUrunEkle.Text = "Yeni Ürün Ekle";
             // 
+            // lblPorsiyonBilgi
+            // 
+            lblPorsiyonBilgi.AutoSize = true;
+            lblPorsiyonBilgi.Font = new Font("Verdana", 8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            lblPorsiyonBilgi.Location = new Point(463, 412);
+            lblPorsiyonBilgi.Name = "lblPorsiyonBilgi";
+            lblPorsiyonBilgi.Size = new Size(249, 13);
+            lblPorsiyonBilgi.TabIndex = 37;
+            lblPorsiyonBilgi.Text = "Gram Türünden Giriniz (Örnek = 100)";
+            // 
             // UserAddNewProductForm
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             CancelButton = btnKapat;
-            ClientSize = new Size(1366, 768);
+            ClientSize = new Size(1366, 749);
+            Controls.Add(lblPorsiyonBilgi);
             Controls.Add(lblYeniUrunEkle);
             Controls.Add(lblUrunAdi);
             Controls.Add(lblKalori);
@@ -305,5 +316,6 @@
         private Label lblPorisyon;
         private Label label1;
         private Label lblYeniUrunEkle;
+        private Label lblPorsiyonBilgi;
     }
 }
