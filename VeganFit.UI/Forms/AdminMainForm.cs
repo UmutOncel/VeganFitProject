@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.UI.EFContextForm;
 
@@ -16,16 +17,18 @@ namespace VeganFit.UI
     {
         bool mov;
         int movX, movY;
+        private readonly IUserRepo _userRepo;
 
-        public AdminMainForm()
+        public AdminMainForm(IUserRepo userRepo)
         {
             InitializeComponent();
+            _userRepo = userRepo;
         }
         
         private void AdminMainForm_Load(object sender, EventArgs e)
         {
-            VeganFitDbContext db = new VeganFitDbContext();
-            lblKayitliKullaniciSayisi.Text = db.Users.Select(x => x.Email).Distinct().Count().ToString();
+
+            //lblKayitliKullaniciSayisi.Text = _userRepo.GetFilteredList.(select:x => x.Email).Distinct().Count().ToString();
         }
 
         private void pnlUstMenu_MouseDown(object sender, MouseEventArgs e)

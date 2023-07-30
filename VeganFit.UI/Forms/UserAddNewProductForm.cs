@@ -9,6 +9,7 @@ namespace VeganFit.UI
 {
     public partial class UserAddNewProductForm : Form
     {
+        UserAddMealForm on = (UserAddMealForm)Application.OpenForms["UserAddMealForm"];
         private readonly IDataService _dataService;
         bool product, calori, serving;
 
@@ -54,21 +55,24 @@ namespace VeganFit.UI
 
         private void btnUrunEkle_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(txtKalori.Text) > 0)
-            {
-                if (Convert.ToInt32(txtPorsiyon.Text) > 0)
-                {
-                    AddProduct();
-                }
-                else
-                {
-                    MessageBox.Show("Porsiyon değeri sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
+            if (Convert.ToDouble(txtKalori.Text) < 0)
             {
                 MessageBox.Show("Kalori değeri sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            else
+            {
+                if (Convert.ToDouble(txtPorsiyon.Text) < 0)
+                {
+                    MessageBox.Show("Porsiyon değeri sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    AddProduct();
+                }
+
+            }
+            on.RefreshMealLists();
+            this.Close();
         }
 
         private void AddProduct()
@@ -76,7 +80,7 @@ namespace VeganFit.UI
             DataDetailDto dto = new DataDetailDto()
             {
                 ProductName = txtUrunAdi.Text,
-                Calori = Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtPorsiyon.Text),
+                Calori = Math.Round(Convert.ToDouble(txtKalori.Text) / Convert.ToDouble(txtPorsiyon.Text) * Convert.ToDouble(txtPorsiyon.Text), 2),
                 Meal = (Meal)cbxOgunSec.SelectedItem,
                 Datetime = DateTime.Now,
                 UserEmail = ActiveUser.ActiveUserName
@@ -106,7 +110,7 @@ namespace VeganFit.UI
 
         private void txtKalori__TextChanged(object sender, EventArgs e)
         {
-            calori = RegularExcep.RegularEx(@"^[0-9]*$", txtKalori);
+            calori = RegularExcep.RegularEx(@"^-?(([1-9]\d*)|0)(.0*[1-9](0*[1-9])*)?$", txtKalori);
         }
 
         private void txtPorsiyon__TextChanged(object sender, EventArgs e)
@@ -131,6 +135,17 @@ namespace VeganFit.UI
                     cbxOgunSec.SelectedItem = null;
                 }
             }
+        }
+
+
+        private void txtPorsiyon_MouseEnter(object sender, EventArgs e)
+        {
+            txtPorsiyon.Text = string.Empty;
+        }
+
+        private void txtPorsiyon_MouseLeave(object sender, EventArgs e)
+        {
+
         }
     }
 }

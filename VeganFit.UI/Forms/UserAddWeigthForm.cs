@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VeganFit.Bll.Abstract.IServices;
+﻿using VeganFit.Bll.Abstract.IServices;
 using VeganFit.DAL.Abstract;
-using VeganFit.DAL.Concrete.Context;
-using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Models.VMs.WeightVms;
 using VeganFit.UI.LoginUser;
 
@@ -31,8 +20,12 @@ namespace VeganFit.UI
 
         private void UserAddWeigthForm_Load(object sender, EventArgs e)
         {
+            DisplayOfDailyDateinLabel();
+            RefreshList(dgvGunlukKiloTakibi);
+        }
+        private void DisplayOfDailyDateinLabel()
+        {
             lblDateToday.Text = DateTime.Today.ToShortDateString();
-            RefreshList();
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
@@ -87,7 +80,7 @@ namespace VeganFit.UI
                 };
                 _service.Create(vm);
                 MessageBox.Show("Kilonuz başarıyla kaydedilmiştir.", "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                RefreshList();
+                RefreshList(dgvGunlukKiloTakibi);
             }
             else
             {
@@ -98,13 +91,13 @@ namespace VeganFit.UI
         /// <summary>
         /// Listeyi yenilemeye yarayan metottur.
         /// </summary>
-        private void RefreshList()
+        private void RefreshList(DataGridView dataGrid)
         {
-            dgvGunlukKiloTakibi.DataSource = _weightRepo.GetFilteredList(select: x => new { x.RecordDate, x.UserWeight, x.UserName }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
+            dataGrid.DataSource = _weightRepo.GetFilteredList(select: x => new { x.RecordDate, x.UserWeight, x.UserName }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
 
-            dgvGunlukKiloTakibi.Columns[0].HeaderText = "Kayıt Tarihi";
-            dgvGunlukKiloTakibi.Columns[1].HeaderText = "Kilonuz";
-            dgvGunlukKiloTakibi.Columns[2].HeaderText = "İsim";
+            dataGrid.Columns[0].HeaderText = "Kayıt Tarihi";
+            dataGrid.Columns[1].HeaderText = "Kilonuz";
+            dataGrid.Columns[2].HeaderText = "İsim";
         }
 
         private void txtKilo__TextChanged(object sender, EventArgs e)

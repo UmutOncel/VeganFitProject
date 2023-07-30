@@ -12,7 +12,7 @@ using VeganFit.DAL.Concrete.Context;
 namespace VeganFit.DAL.Migrations
 {
     [DbContext(typeof(VeganFitDbContext))]
-    [Migration("20230726192837_First")]
+    [Migration("20230729113147_First")]
     partial class First
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -675,7 +675,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1087),
+                            CreatedDate = new DateTime(2023, 7, 29, 14, 31, 46, 802, DateTimeKind.Local).AddTicks(6287),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -687,7 +687,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1128),
+                            CreatedDate = new DateTime(2023, 7, 29, 14, 31, 46, 802, DateTimeKind.Local).AddTicks(6333),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",

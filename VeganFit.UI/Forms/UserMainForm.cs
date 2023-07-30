@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VeganFit.Bll.Abstract.IServices;
-using VeganFit.Core.Enums;
+﻿using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
-using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
@@ -79,7 +68,7 @@ namespace VeganFit.UI
             }
         }
 
-        private Form activeForm = null;
+        private Form activeForm = null; // ???????????????
 
         /// <summary>
         /// Main form içinde child formları iç içe açmak için kullanılan metottur.
@@ -100,56 +89,46 @@ namespace VeganFit.UI
 
         private void btnVerileriGor_Click(object sender, EventArgs e)
         {
-            pnlSecim1.Visible = true;
-            pnlSecim2.Visible = false;
-            pnlSecim3.Visible = false;
-            pnlSecim4.Visible = false;
+            ChoosedPanelVisible(true, false, false, false);
             openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserDataForm>());
         }
 
         private void btnKiloTakip_Click(object sender, EventArgs e)
         {
-            pnlSecim1.Visible = false;
-            pnlSecim2.Visible = true;
-            pnlSecim3.Visible = false;
-            pnlSecim4.Visible = false;
+            ChoosedPanelVisible(false, true, false, false);
             openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserAddWeigthForm>());
         }
 
         private void btnOgununeUrunEkle_Click(object sender, EventArgs e)
         {
-            pnlSecim1.Visible = false;
-            pnlSecim2.Visible = false;
-            pnlSecim3.Visible = true;
-            pnlSecim4.Visible = false;
+            ChoosedPanelVisible(false, false, true, false);
             openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserAddMealForm>());
         }
 
         private void btnGeriBildirimGönder_Click(object sender, EventArgs e)
         {
-            pnlSecim1.Visible = false;
-            pnlSecim2.Visible = false;
-            pnlSecim3.Visible = false;
-            pnlSecim4.Visible = true;
+            ChoosedPanelVisible(false, false, false, true);
             openChildFormInPanel(EFContextForm.EFContextForm.ConfigureServices<UserFeedbackForm>());
+        }
+        private void ChoosedPanelVisible(bool pnl1, bool pnl2, bool pnl3, bool pnl4)
+        {
+            pnlSecim1.Visible = pnl1;
+            pnlSecim2.Visible = pnl2;
+            pnlSecim3.Visible = pnl3;
+            pnlSecim4.Visible = pnl4;
         }
         private void EnabledVerileriGor()
         {
-
             var data = _dataRepo.GetFilteredList(select: x => new { x.Calori }, where: x => x.UserEmail == ActiveUser.ActiveUserName && x.State != State.Deleted);
             if (data.Count != 0)
             {
                 btnVerileriGor.Enabled = true;
-
             }
             else
             {
                 btnVerileriGor.Enabled = false;
-
             }
-
         }
-
 
         private void pnlMenu_MouseEnter(object sender, EventArgs e)
         {

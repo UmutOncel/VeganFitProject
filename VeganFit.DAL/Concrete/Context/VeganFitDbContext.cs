@@ -25,6 +25,7 @@ namespace VeganFit.DAL.Concrete.Context
         {
             var sql = @"Server=DESKTOP-JM5LJD8\SQL2022;Database=VeganFitDB;Trusted_Connection = True"; 
             optionsBuilder.UseSqlServer(sql);  //SQL BAĞLANTI YOLU!!!
+            optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
 
         /// <summary>

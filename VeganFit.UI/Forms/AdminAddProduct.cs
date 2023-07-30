@@ -22,6 +22,7 @@ namespace VeganFit.UI
 
             _service = productService;
             _productRepo = productRepo;
+
         }
 
         private void AdminAddProduct_Load(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace VeganFit.UI
             try
             {                
                 ControlProductNameForUpdateProduct();
-                RefreshList();
+                
             }
             catch (FormatException)
             {
@@ -181,7 +182,7 @@ namespace VeganFit.UI
         {
             ProductUpdateVm updateVm = new ProductUpdateVm()
             {
-                Id = Convert.ToInt32(dgvUrunler.SelectedCells[0].Value),
+                Id = _productRepo.GetFilteredFirstOrDefault(select:x=>x.Id,where:x=>x.Id == Convert.ToInt32(dgvUrunler.SelectedCells[0].Value)),
                 ProductName = txtUrunAdi.Text,
                 Calori = Convert.ToDouble(txtKalori.Text),
                 Serving = txtPorsiyon.Text,

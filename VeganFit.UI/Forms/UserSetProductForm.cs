@@ -10,16 +10,14 @@ namespace VeganFit.UI
 {
     public partial class UserSetProductForm : Form
     {
-
+        UserAddMealForm on = (UserAddMealForm)Application.OpenForms["UserAddMealForm"];
         private readonly IDataService _dataService;
         DataDetailDto dataDetail = UserAddMealForm._data;
 
         public UserSetProductForm(IDataService dataService)
         {
             InitializeComponent();
-
             _dataService = dataService;
-
         }
 
         private void UserAddNewProductForm_Load(object sender, EventArgs e)
@@ -71,8 +69,8 @@ namespace VeganFit.UI
                     MessageBox.Show("Porsiyon sıfıra eşit veya sıfırdan küçük olamaz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
+            on.RefreshMealLists();
             this.Close();
-
         }
 
         /// <summary>
@@ -99,7 +97,6 @@ namespace VeganFit.UI
         /// </summary>
         private void ForBegin()
         {
-
             Object[] mealArray = new object[3] { Meal.Sabah, Meal.Öğle, Meal.Akşam };
             cbxOgunSec.Items.AddRange(mealArray);
 

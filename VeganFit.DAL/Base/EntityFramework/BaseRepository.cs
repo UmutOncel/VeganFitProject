@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using VeganFit.Core.BaseEntities;
 using VeganFit.Core.Enums;
 using VeganFit.Core.IBaseRepositories;
+using VeganFit.DAL.Concrete.Context;
 
 namespace VeganFit.DAL.Base.EntityFramework
 {
@@ -127,7 +128,7 @@ namespace VeganFit.DAL.Base.EntityFramework
 
             if (orderBy != null)
             {
-                return orderBy(query).Select(select).FirstOrDefault();
+                return orderBy(query).AsNoTracking().Select(select).FirstOrDefault();
             }
 
             return query.Select(select).FirstOrDefault();
@@ -161,11 +162,11 @@ namespace VeganFit.DAL.Base.EntityFramework
 
             if (orderBy != null)
             {
-                return orderBy(query).Select(select).ToList();
+                return orderBy(query).AsNoTracking().Select(select).ToList();
             }
             else
             {
-                return query.Select(select).ToList();
+                return query.AsNoTracking().Select(select).ToList();
             }
         }
 
@@ -186,8 +187,13 @@ namespace VeganFit.DAL.Base.EntityFramework
         /// <returns></returns>
         public TEntity? Update(TEntity entity)
         {
-            _db.Entry(entity).State = EntityState.Modified;
-            return _db.SaveChanges() > 0 ? entity : null;
+            using (var context = new VeganFitDbContext())
+            {
+                context.Entry(entity).State = EntityState.Modified;
+                return context.SaveChanges() > 0 ? entity : null;
+            }
+            //_db.Entry(entity).State = EntityState.Modified;
+            //return _db.SaveChanges() > 0 ? entity : null;
         }
     }
 }

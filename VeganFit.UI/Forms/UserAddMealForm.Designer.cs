@@ -234,7 +234,6 @@
             dgvUrunlerListesi.Size = new Size(488, 593);
             dgvUrunlerListesi.TabIndex = 8;
             dgvUrunlerListesi.CellClick += dgvUrunlerListesi_CellClick;
-            dgvUrunlerListesi.CellFormatting += dgvUrunlerListesi_CellFormatting;
             dgvUrunlerListesi.DataError += dgvUrunlerListesi_DataError;
             // 
             // btnUrunEkle

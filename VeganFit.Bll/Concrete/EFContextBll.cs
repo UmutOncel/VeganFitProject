@@ -11,6 +11,8 @@ namespace VeganFit.Bll.Concrete
     {
         public static IServiceCollection AddScopedBll(this IServiceCollection services)
         {
+            
+
             services.AddScopeDal()
             .AddScoped<IDataService, DataService>()
             .AddScoped<IFeedbackService, FeedbackService>()

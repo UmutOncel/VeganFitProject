@@ -61,6 +61,7 @@ namespace VeganFit.Bll.Concrete.Services
             ResultService<ProductUpdateDto> result = new ResultService<ProductUpdateDto>();
 
             var updateDto = _mapper.Map<ProductUpdateDto>( updateVm );
+            
             var data = _mapper.Map<Product>( updateDto );
 
             var updateData = _productRepo.Update(data);

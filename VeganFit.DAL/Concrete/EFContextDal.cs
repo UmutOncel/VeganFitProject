@@ -1,13 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.DAL.Concrete.Repositories;
-using VeganFit.Entities;
 
 namespace VeganFit.DAL.Concrete
 {

@@ -1,15 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using VeganFit.Bll.Abstract.IServices;
-using VeganFit.Bll.Concrete.Services;
-using VeganFit.DAL.Concrete.Context;
+﻿using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Models.VMs.FeedbackVms;
 
 namespace VeganFit.UI
@@ -21,8 +10,7 @@ namespace VeganFit.UI
         public UserFeedbackForm(IFeedbackService feedbackService)
         {
             InitializeComponent();
-
-            this._service = feedbackService;
+            _service = feedbackService;
         }
 
         private void UserFeedbackForm_Load(object sender, EventArgs e)

@@ -9,6 +9,7 @@ using VeganFit.DAL.Concrete.Context;
 using VeganFit.DAL.Concrete.Repositories;
 using VeganFit.Entities;
 using VeganFit.Models.DTOs.DataDtos;
+using VeganFit.UI.EFContextForm;
 using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
@@ -43,18 +44,20 @@ namespace VeganFit.UI
         /// </summary>
         public void RefreshMealLists()
         {
+            GetDatagridMealList(dgvSabah, Meal.Sabah);
+            GetDatagridMealList(dgvOgle, Meal.Öğle);
+            GetDatagridMealList(dgvAksam,Meal.Akşam);
+
+            DataGridViewColumnNames(dgvSabah,dgvUrunlerListesi);
+            DataGridViewColumnNames(dgvOgle,dgvUrunlerListesi);
+            DataGridViewColumnNames(dgvAksam,dgvUrunlerListesi);
+        }
+        private void GetDatagridMealList(DataGridView dataGrid,Meal meal)
+        {
             string sqlFormattedDate = DateTimeTodayTostring();
 
-            dgvSabah.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Sabah
-              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate); ;
-
-            dgvOgle.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Öğle
+            dataGrid.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == meal
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
-
-            dgvAksam.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == Meal.Akşam
-              && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
-
-            DataGridViewColumnNames();
         }
 
 
@@ -76,10 +79,8 @@ namespace VeganFit.UI
         private void btnUrunuSilSabah_Click(object sender, EventArgs e)
         {
             try
-            {
-                string msg = "Ürün sabah öğününden başarıyla silinmiştir.";
-                string chooseProduct = dgvSabah.SelectedCells[0].Value.ToString();
-                DeleteProductFromMeal(Meal.Sabah, chooseProduct, msg);
+            {              
+                DeleteProductFromMeal(dgvSabah,Meal.Sabah, "Ürün sabah öğününden başarıyla silinmiştir.");
             }
             catch (Exception)
             {
@@ -93,10 +94,11 @@ namespace VeganFit.UI
         /// <param name="meal"></param>
         /// <param name="productName"></param>
         /// <param name="msg"></param>
-        private void DeleteProductFromMeal(Meal meal, string productName, string msg)
+        private void DeleteProductFromMeal(DataGridView dataGrid,Meal meal, string msg)
         {
             string dateTimeToday = DateTimeTodayTostring();
-            int id = _dataRepo.GetFilteredFirstOrDefault(select: x => x.Id, where: x => x.ProductName == productName && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == dateTimeToday && x.State == State.Created && x.Meal == meal);
+            string chooseProduct = dataGrid.SelectedCells[0].Value.ToString();
+            int id = _dataRepo.GetFilteredFirstOrDefault(select: x => x.Id, where: x => x.ProductName == chooseProduct && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == dateTimeToday && x.State == State.Created && x.Meal == meal);
             var product = _dataService.Delete(id);
             MessageBox.Show(msg, "BİLGİ", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
@@ -107,9 +109,7 @@ namespace VeganFit.UI
         {
             try
             {
-                string msg = "Ürün öğle öğününden başarıyla silinmiştir.";
-                string chooseProduct = dgvOgle.SelectedCells[0].Value.ToString();
-                DeleteProductFromMeal(Meal.Öğle, chooseProduct, msg);
+                DeleteProductFromMeal(dgvOgle,Meal.Öğle, "Ürün öğle öğününden başarıyla silinmiştir.");
             }
             catch (Exception)
             {
@@ -121,9 +121,7 @@ namespace VeganFit.UI
         {
             try
             {
-                string msg = "Ürün akşam öğnünden başarıyla silinmiştir.";
-                string chooseProduct = dgvAksam.SelectedCells[0].Value.ToString();
-                DeleteProductFromMeal(Meal.Akşam, chooseProduct, msg);
+                DeleteProductFromMeal(dgvAksam,Meal.Akşam, "Ürün akşam öğününden başarıyla silinmiştir.");
             }
             catch (Exception)
             {
@@ -176,7 +174,6 @@ namespace VeganFit.UI
 
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
             try
             {
                 _data.ProductName = dgvUrunlerListesi.SelectedRows[0].Cells[0].Value.ToString();
@@ -186,6 +183,7 @@ namespace VeganFit.UI
 
                 var setProductForm = EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
                 setProductForm.ShowDialog();
+                
             }
             catch (Exception)
             {
@@ -201,21 +199,15 @@ namespace VeganFit.UI
                 .ToList();
         }
 
-        private void DataGridViewColumnNames()
+        private void DataGridViewColumnNames(DataGridView dataGrid,DataGridView dataGrid1)
         {
-            dgvSabah.Columns[0].HeaderText = "Ürün İsmi";
-            dgvSabah.Columns[1].HeaderText = "Kalori";
+            dataGrid.Columns[0].HeaderText = "Ürün İsmi";
+            dataGrid.Columns[1].HeaderText = "Kalori";
 
-            dgvOgle.Columns[0].HeaderText = "Ürün İsmi";
-            dgvOgle.Columns[1].HeaderText = "Kalori";
-
-            dgvAksam.Columns[0].HeaderText = "Ürün İsmi";
-            dgvAksam.Columns[1].HeaderText = "Kalori";
-
-            dgvUrunlerListesi.Columns[0].HeaderText = "Ürün İsmi";
-            dgvUrunlerListesi.Columns[1].HeaderText = "Kalori";
-            dgvUrunlerListesi.Columns[2].HeaderText = "Porsiyon";
-            dgvUrunlerListesi.Columns[3].HeaderText = "Resim";
+            dataGrid1.Columns[0].HeaderText = "Ürün İsmi";
+            dataGrid1.Columns[1].HeaderText = "Kalori";
+            dataGrid1.Columns[2].HeaderText = "Porsiyon";
+            dataGrid1.Columns[3].HeaderText = "Resim";
         }
 
         /// <summary>
@@ -228,14 +220,7 @@ namespace VeganFit.UI
             string sqlFormattedDate = myDateTime.ToString("yyyy-MM-dd");
             return sqlFormattedDate;
         }
-        void dgvUrunlerListesi_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            //if (dgvUrunlerListesi.Columns[e.ColumnIndex].Name == "Picture")
-            //{
-            //    dgvUrunlerListesi.Rows[e.RowIndex].Cells[3].Value = e.Value;
-            //}
 
-        }
         private void dgvUrunlerListesi_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;

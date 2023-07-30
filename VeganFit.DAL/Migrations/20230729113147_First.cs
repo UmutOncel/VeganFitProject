@@ -206,8 +206,8 @@ namespace VeganFit.DAL.Migrations
                 columns: new[] { "Id", "BirthDate", "CreatedBy", "CreatedDate", "Email", "Firstname", "Lastname", "Password", "Role", "State", "UpdatedBy", "UpdatedDate" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1087), "admin@gmail.com", "Umut", "Öncel", "EF359CE6F0005B1AE73F70F675AA50E8E18BEA9DED1C30957C2769BB99ADF4E9", "Admin", "Created", null, null },
-                    { 2, new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 26, 22, 28, 37, 269, DateTimeKind.Local).AddTicks(1128), "pelin@gmail.com", "Pelin", "Uru", "1234", "StandartUser", "Created", null, null }
+                    { 1, new DateTime(1991, 11, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 29, 14, 31, 46, 802, DateTimeKind.Local).AddTicks(6287), "admin@gmail.com", "Umut", "Öncel", "EF359CE6F0005B1AE73F70F675AA50E8E18BEA9DED1C30957C2769BB99ADF4E9", "Admin", "Created", null, null },
+                    { 2, new DateTime(1999, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified), null, new DateTime(2023, 7, 29, 14, 31, 46, 802, DateTimeKind.Local).AddTicks(6333), "pelin@gmail.com", "Pelin", "Uru", "1234", "StandartUser", "Created", null, null }
                 });
 
             migrationBuilder.CreateIndex(

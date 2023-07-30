@@ -141,6 +141,7 @@
             txtPorsiyon.TabStop = false;
             txtPorsiyon.UnderlinedStyle = false;
             txtPorsiyon._TextChanged += txtPorsiyon__TextChanged;
+            txtPorsiyon.MouseEnter += txtPorsiyon_MouseEnter;
             // 
             // btnResimEkle
             // 
