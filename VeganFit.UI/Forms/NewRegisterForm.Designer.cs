@@ -226,6 +226,7 @@
             dtpDogumTatihi.Size = new Size(250, 22);
             dtpDogumTatihi.TabIndex = 3;
             dtpDogumTatihi.Value = new DateTime(1978, 1, 1, 0, 0, 0, 0);
+            dtpDogumTatihi.ValueChanged += dtpDogumTatihi_ValueChanged;
             // 
             // label1
             // 

@@ -10,7 +10,7 @@ namespace VeganFit.UI
 {
     public partial class NewRegisterForm : Form
     {
-        bool mov, isFirstname, isLastname, password1, password2;
+        bool mov, isFirstname, isLastname, password1, password2, isEmail, dbUserName, isBirthdate;
         int movX, movY;
         private readonly IUserService _userService;
         private readonly IUserRepo _userRepo;
@@ -54,7 +54,7 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
-            ControlUserFirstnameAndLastname();
+            CreateNewUser();
         }
 
         /// <summary>
@@ -84,137 +84,100 @@ namespace VeganFit.UI
             }
         }
 
-        /// <summary>
-        /// Kullanıcının şifre kontrolünü sağlayan metottur.
-        /// </summary>
-        private void ControlUserPassword()
-        {
-            if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
-            {
-                if (password1)
-                {
-                    CreateNewUser();
-                }
-                else
-                {
-                    MessageBox.Show("Girmiş olduğunuz şifre belirlenen kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        /// <summary>
-        ///  Kullanıcının email kontrolünü sağlayan metottur.
-        /// </summary>
-        private void ControlUserEmail()
-        {
-            var dbUserName = _userRepo.Any(x => x.Email == txtEMail.Text);
-            if (!dbUserName)
-            {
-                ControlUserPassword();
-            }
-            else
-            {
-                MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlıdır. Kayıtlı mail adresi ile tekrar kayıt olamazsınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        /// <summary>
-        ///  Kullanıcının yaş kontrolünü sağlayan metottur.
-        /// </summary>
-        private void ControlUserAge()
-        {
-            int birthdate = dtpDogumTatihi.Value.Year;
-            int minLimit = Convert.ToInt32(DateTime.Now.Year) - 64;
-            int maxLimit = Convert.ToInt32(DateTime.Now.Year) - 45;
-
-            if (minLimit <= birthdate && birthdate <= maxLimit)
-            {
-                ControlUserEmail();
-            }
-            else
-            {
-                MessageBox.Show("Yaşınız uygulamamızın hedef kitlesi dışındadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        /// <summary>
-        ///  Kullanıcının ad soyad kontrolünü sağlayan metottur.
-        /// </summary>
-        private void ControlUserFirstnameAndLastname()
-        {
-            if (isFirstname && isLastname)
-            {
-                ControlUserAge();
-            }
-            else
-            {
-                MessageBox.Show("Lütfen ad soyad kısmına harf dışında karakter girmeyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
         private void txtAd__TextChanged(object sender, EventArgs e)
         {
-            isFirstname = RegularEx(@"^[a-zA-Z]*$", txtAd);
+            string firstname = txtAd.Text;
+            isFirstname = ControlIsLetter(firstname);
+            if (!isFirstname)
+            {
+                MessageBox.Show("Adınızı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             SetButtonState();
         }
 
         private void txtSoyad__TextChanged(object sender, EventArgs e)
         {
-            isLastname = RegularEx(@"^[a-zA-Z]*$", txtSoyad);
+            string lastname = txtSoyad.Text;
+            isLastname = ControlIsLetter(lastname);
+            if (!isLastname)
+            {
+                MessageBox.Show("Soyadınızı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             SetButtonState();
+        }
+
+        /// <summary>
+        /// Parametredeki string ifadenin tamamen harf içerip içermediğini kontrol eden ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns></returns>
+        private bool ControlIsLetter(string str)
+        {
+            return str.All(Char.IsLetter);
+        }
+
+        private void dtpDogumTatihi_ValueChanged(object sender, EventArgs e)
+        {
+            int birthdate = dtpDogumTatihi.Value.Year;
+            int minLimit = Convert.ToInt32(DateTime.Now.Year) - 64;
+            int maxLimit = Convert.ToInt32(DateTime.Now.Year) - 45;
+            isBirthdate = (minLimit >= birthdate && birthdate >= maxLimit);
+
+            if (!isBirthdate)
+            {
+                MessageBox.Show("Yaşınız uygulamamızın hedef kitlesi dışındadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtEMail__TextChanged(object sender, EventArgs e)
+        {
+            string email = txtEMail.Text;
+            isEmail = TestEmailRegex(email);
+            if (!isEmail)
+            {
+                MessageBox.Show("Girmiş olduğunuz mail adresi geçerli değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                dbUserName = _userRepo.Any(x => x.Email == txtEMail.Text);
+                if (dbUserName)
+                {
+                    MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlıdır. Kayıtlı mail adresi ile tekrar kayıt olamazsınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+
+            SetButtonState();
+        }
+
+        /// <summary>
+        /// Parametre olarak girilen mail'i kontrol eden ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="emailAddress"></param>
+        /// <returns></returns>
+        public bool TestEmailRegex(string emailAddress)
+        {
+            string patternStrict = @"^(([^<>()[\]\\.,;:\s@\""]+"
+            + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
+            + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
+            + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
+            + @"[a-zA-Z]{2,}))$";
+
+            Regex reStrict = new Regex(patternStrict);
+            bool isStrictMatch = reStrict.IsMatch(emailAddress);
+            return isStrictMatch;
         }
 
         private void txtSifre__TextChanged(object sender, EventArgs e)
         {
             password1 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
-
-            SetButtonState();
-        }
-
-        private void txtSifreyiTekrarGirin__TextChanged(object sender, EventArgs e)
-        {
-            password2 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
-
-            SetButtonState();
-        }
-
-        private void txtEMail__TextChanged(object sender, EventArgs e)
-        {
-            SetButtonState();
-        }
-
-        /// <summary>
-        /// Kayıt butonun aktiflik şartını içeren metottur.
-        /// </summary>
-        /// <param name="txtbox1"></param>
-        /// <param name="txtbox2"></param>
-        /// <param name="txtbox3"></param>
-        /// <param name="txtbox4"></param>
-        /// <param name="txtbox5"></param>
-        private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5)
-        {
-            if (txtbox1.Text.Length > 0 && txtbox2.Text.Length > 0 && txtbox3.Text.Length > 0 && txtbox4.Text.Length > 0 && txtbox5.Text.Length > 0)
+            if (!password1)
             {
-                btnKaydiTamamla.Enabled = true;
+                MessageBox.Show("Girmiş olduğunuz şifre belirlenen kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-            else
-            {
-                btnKaydiTamamla.Enabled = false;
-            }
-        }
 
-        /// <summary>
-        /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
-        /// </summary>
-        private void SetButtonState()
-        {
-            EnableButton(txtAd, txtSoyad, txtEMail, txtSifre, txtSifreyiTekrarGirin);
+            SetButtonState();
         }
 
         /// <summary>
@@ -237,6 +200,32 @@ namespace VeganFit.UI
                 control = false;
             }
             return control;
+        }
+
+        private void txtSifreyiTekrarGirin__TextChanged(object sender, EventArgs e)
+        {
+            password2 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
+            if (txtSifre.Text != txtSifreyiTekrarGirin.Text)
+            {
+                MessageBox.Show("Tekrar yazmış olduğunuz şifre ilk yazılanla aynı olmalıdır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            SetButtonState();
+        }
+
+        /// <summary>
+        /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
+        /// </summary>
+        private void SetButtonState()
+        {
+            if (isFirstname && isLastname && isBirthdate && isEmail && dbUserName && password1 && password2)
+            {
+                btnKaydiTamamla.Enabled = true;
+            }
+            else
+            {
+                btnKaydiTamamla.Enabled = false;
+            }
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
