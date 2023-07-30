@@ -81,9 +81,9 @@ namespace VeganFit.Core.IBaseRepositories
         /// <param name="includes"></param>
         /// <returns></returns>
         ICollection<TResult>? GetFilteredList<TResult>(Expression<Func<TEntity, TResult>> select,
-                                                       Expression<Func<TEntity, bool>> where,
-                                                       Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?
-                                                       orderBy = null,
-                                                       params Expression<Func<TEntity, object>>[] includes);
+                                                        Expression<Func<TEntity, bool>> where,
+                                                        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>?
+                                                        orderBy = null,
+                                                        params Expression<Func<TEntity, object>>[] includes);
     }
 }

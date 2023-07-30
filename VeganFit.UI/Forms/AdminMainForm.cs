@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
 using VeganFit.DAL.Concrete.Context;
 using VeganFit.UI.EFContextForm;
@@ -27,8 +28,7 @@ namespace VeganFit.UI
         
         private void AdminMainForm_Load(object sender, EventArgs e)
         {
-
-            //lblKayitliKullaniciSayisi.Text = _userRepo.GetFilteredList.(select:x => x.Email).Distinct().Count().ToString();
+            lblKayitliKullaniciSayisi.Text = _userRepo.GetFilteredList(select: x => x.Email, where: x => x.State == State.Created).Count().ToString();
         }
 
         private void pnlUstMenu_MouseDown(object sender, MouseEventArgs e)
