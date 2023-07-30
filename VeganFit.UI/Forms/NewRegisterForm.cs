@@ -142,7 +142,7 @@ namespace VeganFit.UI
             + @"(\.[^<>()[\]\\.,;:\s@\""]+)*)|(\"".+\""))@"
             + @"((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}"
             + @"\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+"
-            + @"[a-zA-Z]{2,}))$";
+            + @"[a-zA-Z]{3,}))$";
 
             Regex reStrict = new Regex(patternStrict);
             bool isStrictMatch = reStrict.IsMatch(emailAddress);
