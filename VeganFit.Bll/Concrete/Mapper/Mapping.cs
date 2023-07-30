@@ -16,6 +16,9 @@ namespace VeganFit.Bll.Concrete.Mapper
 {
     public class Mapping : Profile
     {
+        /// <summary>
+        /// DTO ve VM arasında (çift taraflı) mapping işlemi için ilişki kuran metot.
+        /// </summary>
         public Mapping()
         {
             CreateMap<Product,ProductCreateDto>().ReverseMap();

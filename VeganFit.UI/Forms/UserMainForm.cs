@@ -68,7 +68,7 @@ namespace VeganFit.UI
             }
         }
 
-        private Form activeForm = null; // ???????????????
+        private Form activeForm = null;
 
         /// <summary>
         /// Main form içinde child formları iç içe açmak için kullanılan metottur.
@@ -117,7 +117,11 @@ namespace VeganFit.UI
             pnlSecim3.Visible = pnl3;
             pnlSecim4.Visible = pnl4;
         }
-        private void EnabledVerileriGor()
+
+        /// <summary>
+        /// Data tablosunda kullanıcının tükettiği ürünlerin kalori bilgisi yoksa verileri gör butonunu pasif, varsa aktif yapan metot.
+        /// </summary>
+        private void EnableButton()
         {
             var data = _dataRepo.GetFilteredList(select: x => new { x.Calori }, where: x => x.UserEmail == ActiveUser.ActiveUserName && x.State != State.Deleted);
             if (data.Count != 0)
@@ -132,7 +136,7 @@ namespace VeganFit.UI
 
         private void pnlMenu_MouseEnter(object sender, EventArgs e)
         {
-            EnabledVerileriGor();
+            EnableButton();
         }
     }
 }

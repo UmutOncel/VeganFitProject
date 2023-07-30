@@ -10,14 +10,9 @@ namespace VeganFit.Models.VMs.DataVms
     public class DataDetailVm
     {
         public string ProductName { get; set; }
-
         public double Calori { get; set; }
-
         public Meal Meal { get; set; }
-
         public string UserEmail { get; set; }
-
         public string Serving { get; set; }
-
     }
 }

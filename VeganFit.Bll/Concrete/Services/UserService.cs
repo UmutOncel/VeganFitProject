@@ -19,6 +19,11 @@ namespace VeganFit.Bll.Concrete.Services
             _userRepo = userRepo;
         }
 
+        /// <summary>
+        /// User tablosuna yeni veri ekleyen, eklemeye işleminde hata olursa hata ekleyen olmazsa sonucu döndüren metot.
+        /// </summary>
+        /// <param name="createVm"></param>
+        /// <returns></returns>
         public ResultService<UserCreateDto> Create(CreateVm createVm)
         {
             ResultService<UserCreateDto> result = new ResultService<UserCreateDto>();
@@ -39,9 +44,14 @@ namespace VeganFit.Bll.Concrete.Services
             }
 
             return result;
-            
         }
 
+        /// <summary>
+        /// User tablosu içinde parametre olarak girilen kullanıcı adı ve şifreyi bulan, yoksa hata oluşturan sonucu döndüren metot.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public ResultService<LoginVm> Login(string username, string password)
         {
             ResultService<LoginVm> result = new ResultService<LoginVm> ();
@@ -58,6 +68,5 @@ namespace VeganFit.Bll.Concrete.Services
 
             return result;
         }
-
     }
 }

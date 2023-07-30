@@ -8,7 +8,7 @@ namespace VeganFit.DAL.Concrete
     public static class EFContextDal
     {
         /// <summary>
-        /// UserRepo, ProductRepo, OptionalProductRepo, FeedbackRepo, WeightRepo ve DataRepo için dependency injection yapısını kullanmamızı sağlan metot. (Bu repo'lar bu metot sayesinde parametre olarak çağrıldığı zaman new'lenmeden kullanılabilir.)
+        /// UserRepo, ProductRepo, FeedbackRepo, WeightRepo ve DataRepo için dependency injection yapısını kullanmamızı sağlan metot. (Bu repo'lar bu metot sayesinde parametre olarak çağrıldığı zaman new'lenmeden kullanılabilir.)
         /// </summary>
         /// <param name="services"></param>
         /// <returns></returns>

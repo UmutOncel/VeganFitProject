@@ -21,6 +21,11 @@ namespace VeganFit.Bll.Concrete.Services
             _dataRepo = dataRepo;
         }
 
+        /// <summary>
+        /// Data tablosuna yeni veri ekleyen, eklemeye işleminde hata olursa hata ekleyen olmazsa sonucu döndüren metot. 
+        /// </summary>
+        /// <param name="dataDetail"></param>
+        /// <returns></returns>
         public ResultService<DataDetailDto> Create(DataDetailDto dataDetail)
         {
             ResultService<DataDetailDto> result = new ResultService<DataDetailDto>();
@@ -39,6 +44,10 @@ namespace VeganFit.Bll.Concrete.Services
             return result;
         }
 
+        /// <summary>
+        /// Data tablosundaki verileri şarta bağlı olarak listeleyen, o şartta veri yok ise hata oluşturan ve sonucu döndüren metot.
+        /// </summary>
+        /// <returns></returns>
         public ResultService<List<DataDetailVm>> GetDetails()
         {
             ResultService<List<DataDetailVm>> result = new ResultService<List<DataDetailVm>>();
@@ -62,6 +71,11 @@ namespace VeganFit.Bll.Concrete.Services
             return result;
         }
 
+        /// <summary>
+        /// Data tablosundaki veriyi silen ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Delete(int id)
         {
             Data data = _dataRepo.GetFirstOrDefault(filter: x => x.Id == id);

@@ -18,6 +18,12 @@ namespace VeganFit.Bll.Concrete.Services
             _mapper = mapper;
             _weightRepo = weightRepo;
         }
+
+        /// <summary>
+        /// Weight tablosuna yeni veri ekleyen, eklemeye işleminde hata olursa hata ekleyen olmazsa sonucu döndüren metot.
+        /// </summary>
+        /// <param name="weightCreate"></param>
+        /// <returns></returns>
         public ResultService<WeightCreateDto> Create(WeightCreateVm weightCreate)
         {
             ResultService<WeightCreateDto> result = new ResultService<WeightCreateDto>();

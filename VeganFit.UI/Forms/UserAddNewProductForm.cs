@@ -11,7 +11,6 @@ namespace VeganFit.UI
     {
         UserAddMealForm on = (UserAddMealForm)Application.OpenForms["UserAddMealForm"];
         private readonly IDataService _dataService;
-        //bool product, calori, serving;
         bool isLetter, isDoubleCalori, isDoubleServing;
 
         public UserAddNewProductForm(IDataService dataService)
@@ -42,15 +41,11 @@ namespace VeganFit.UI
 
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
             {
-                OpenFileDialog ofd = new OpenFileDialog();
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    string pictureName = ofd.FileName;
-                    pbxResim.Image = Image.FromFile(pictureName);
-                }
+                string pictureName = ofd.FileName;
+                pbxResim.Image = Image.FromFile(pictureName);
             }
         }
 
@@ -76,6 +71,9 @@ namespace VeganFit.UI
             this.Close();
         }
 
+        /// <summary>
+        /// Ürün ekleyen metot.
+        /// </summary>
         private void AddProduct()
         {
             DataDetailDto dto = new DataDetailDto()
@@ -99,20 +97,18 @@ namespace VeganFit.UI
         {
             Object[] array = new object[3] { Meal.Sabah, Meal.Öğle, Meal.Akşam };
             cbxOgunSec.Items.AddRange(array);
-
-            //txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily, 8, FontStyle.Italic);
-            //txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100)";
         }
 
         private void txtUrunAdi__TextChanged(object sender, EventArgs e)
         {
-            //product = RegularExcep.RegularEx(@"^[a-zA-Z]*$", txtUrunAdi);
             string productName = txtUrunAdi.Text;
             isLetter = productName.All(Char.IsLetter);
             if (!isLetter)
             {
                 MessageBox.Show("Ürün adı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            EnableButton();
         }
 
         /// <summary>
@@ -128,44 +124,49 @@ namespace VeganFit.UI
 
         private void txtKalori__TextChanged(object sender, EventArgs e)
         {
-            //calori = RegularExcep.RegularEx(@"^-?(([1-9]\d*)|0)(.0*[1-9](0*[1-9])*)?$", txtKalori);
             string strCalori = txtKalori.Text;
             double calori = 0;
             isDoubleCalori = IsDouble(strCalori, calori);
-            if (!isDoubleCalori)
+            bool isDot = strCalori.Contains('.');
+            if (!isDoubleCalori || isDot)
             {
                 MessageBox.Show("Kalori değeri sadece tam sayı veya ondalıklı sayı olabilir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            EnableButton();
         }
 
         private void txtPorsiyon__TextChanged(object sender, EventArgs e)
         {
-            //serving = RegularExcep.RegularEx(@"^[0-9]*$", txtPorsiyon);
             string strServing = txtPorsiyon.Text;
             double serving = 0;
             isDoubleServing = IsDouble(strServing, serving);
-            if (!isDoubleCalori)
+            bool isDot = strServing.Contains('.');
+            if (!isDoubleServing || isDot)
             {
                 MessageBox.Show("Porsiyon değeri sadece tam sayı veya ondalıklı sayı olabilir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+            EnableButton();
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxOgunSec.Items.Count > 0)
+            EnableButton();
+        }
+
+        /// <summary>
+        /// Ürün ekle butonun aktifliğini kontrol eden metot.
+        /// </summary>
+        private void EnableButton()
+        {
+            if (cbxOgunSec.Text.Length > 0 && isLetter && isDoubleCalori && isDoubleServing)
             {
-                if (isLetter && isDoubleCalori && isDoubleServing)
-                {
-                    btnUrunEkle.Enabled = true;
-                }
-                else
-                {
-                    //MessageBox.Show("Girdiğiniz değerleri kontrol ediniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    //txtKalori.Text = string.Empty;
-                    //txtPorsiyon.Text = string.Empty;
-                    //txtUrunAdi.Text = string.Empty;
-                    //cbxOgunSec.SelectedItem = null;
-                }
+                btnUrunEkle.Enabled = true;
+            }
+            else
+            {
+                btnUrunEkle.Enabled = false;
             }
         }
     }

@@ -239,28 +239,20 @@ namespace VeganFit.UI
 
         private void dgvUrunler_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
+            txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
+            txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
+            txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
+            byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
+
+            if (image != null)
             {
-                txtUrunAdi.Text = dgvUrunler.SelectedRows[0].Cells["ProductName"].Value.ToString();
-                txtKalori.Text = dgvUrunler.SelectedRows[0].Cells["Calori"].Value.ToString();
-                txtPorsiyon.Text = dgvUrunler.SelectedRows[0].Cells["Serving"].Value.ToString();
-                byte[] image = (byte[])(dgvUrunler.SelectedRows[0].Cells["Picture"].Value);
-
-                if (image != null)
-                {
-                    pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
-                    pbxResim.BorderStyle = BorderStyle.None;
-                }
-                else
-                {
-                    pbxResim.Image = null;
-                    pbxResim.BorderStyle = BorderStyle.Fixed3D;
-                }
-
+                 pbxResim.Image = ImageToByteArray.byteArrayToImage(image);
+                 pbxResim.BorderStyle = BorderStyle.None;
             }
-            catch (Exception)
+            else
             {
-                //MessageBox.Show("Lütfen sadece ilk sütundan seçim yapınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                 pbxResim.Image = null;
+                 pbxResim.BorderStyle = BorderStyle.Fixed3D;
             }
         }
 
@@ -313,6 +305,5 @@ namespace VeganFit.UI
                 btnUrunEkle.Enabled = false;
             }
         }
-
     }
 }

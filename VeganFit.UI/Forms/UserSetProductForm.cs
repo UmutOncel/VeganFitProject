@@ -39,6 +39,7 @@ namespace VeganFit.UI
         {
             lblKapat.Visible = false;
         }
+
         private void btnResimEkle_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();

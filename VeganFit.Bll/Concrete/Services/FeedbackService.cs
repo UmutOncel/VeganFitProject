@@ -18,6 +18,12 @@ namespace VeganFit.Bll.Concrete.Services
             _feedbackRepo = feedbackRepo;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// Feedback tablosuna yeni veri ekleyen, eklemeye işleminde hata olursa hata ekleyen olmazsa sonucu döndüren metot. 
+        /// </summary>
+        /// <param name="createVm"></param>
+        /// <returns></returns>
         public ResultService<FeedbackCreateDto> Create(FeedbackCreateVm createVm)
         {
             ResultService<FeedbackCreateDto> result = new ResultService<FeedbackCreateDto>();
@@ -39,6 +45,11 @@ namespace VeganFit.Bll.Concrete.Services
             return result;
         }
 
+        /// <summary>
+        /// Feedback tablosundaki veriyi silen ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Delete(int id)
         {
             Feedback feedback = _feedbackRepo.GetFirstOrDefault(filter:x=>x.Id == id);
@@ -48,7 +59,6 @@ namespace VeganFit.Bll.Concrete.Services
             }
 
             return false;
-
         }
     }
 }

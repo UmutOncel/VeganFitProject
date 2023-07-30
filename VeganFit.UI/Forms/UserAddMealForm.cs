@@ -21,8 +21,6 @@ namespace VeganFit.UI
         private readonly IDataRepo _dataRepo;
         private readonly IDataService _dataService;
 
-
-
         public UserAddMealForm(IProductRepo ProductRepo, IDataRepo dataRepo, IDataService dataService)
         {
             InitializeComponent();
@@ -46,20 +44,19 @@ namespace VeganFit.UI
         {
             GetDatagridMealList(dgvSabah, Meal.Sabah);
             GetDatagridMealList(dgvOgle, Meal.Öğle);
-            GetDatagridMealList(dgvAksam,Meal.Akşam);
+            GetDatagridMealList(dgvAksam, Meal.Akşam);
 
-            DataGridViewColumnNames(dgvSabah,dgvUrunlerListesi);
-            DataGridViewColumnNames(dgvOgle,dgvUrunlerListesi);
-            DataGridViewColumnNames(dgvAksam,dgvUrunlerListesi);
+            DataGridViewColumnNames(dgvSabah, dgvUrunlerListesi);
+            DataGridViewColumnNames(dgvOgle, dgvUrunlerListesi);
+            DataGridViewColumnNames(dgvAksam, dgvUrunlerListesi);
         }
-        private void GetDatagridMealList(DataGridView dataGrid,Meal meal)
+        private void GetDatagridMealList(DataGridView dataGrid, Meal meal)
         {
             string sqlFormattedDate = DateTimeTodayTostring();
 
             dataGrid.DataSource = _dataRepo.GetFilteredList(select: x => new { x.ProductName, x.Calori }, where: x => x.State != State.Deleted && x.Meal == meal
               && x.UserEmail == ActiveUser.ActiveUserName && x.Datetime.ToString() == sqlFormattedDate);
         }
-
 
         private void btnKapat_Click(object sender, EventArgs e)
         {
@@ -79,8 +76,8 @@ namespace VeganFit.UI
         private void btnUrunuSilSabah_Click(object sender, EventArgs e)
         {
             try
-            {              
-                DeleteProductFromMeal(dgvSabah,Meal.Sabah, "Ürün sabah öğününden başarıyla silinmiştir.");
+            {
+                DeleteProductFromMeal(dgvSabah, Meal.Sabah, "Ürün sabah öğününden başarıyla silinmiştir.");
             }
             catch (Exception)
             {
@@ -94,7 +91,7 @@ namespace VeganFit.UI
         /// <param name="meal"></param>
         /// <param name="productName"></param>
         /// <param name="msg"></param>
-        private void DeleteProductFromMeal(DataGridView dataGrid,Meal meal, string msg)
+        private void DeleteProductFromMeal(DataGridView dataGrid, Meal meal, string msg)
         {
             string dateTimeToday = DateTimeTodayTostring();
             string chooseProduct = dataGrid.SelectedCells[0].Value.ToString();
@@ -109,7 +106,7 @@ namespace VeganFit.UI
         {
             try
             {
-                DeleteProductFromMeal(dgvOgle,Meal.Öğle, "Ürün öğle öğününden başarıyla silinmiştir.");
+                DeleteProductFromMeal(dgvOgle, Meal.Öğle, "Ürün öğle öğününden başarıyla silinmiştir.");
             }
             catch (Exception)
             {
@@ -121,7 +118,7 @@ namespace VeganFit.UI
         {
             try
             {
-                DeleteProductFromMeal(dgvAksam,Meal.Akşam, "Ürün akşam öğününden başarıyla silinmiştir.");
+                DeleteProductFromMeal(dgvAksam, Meal.Akşam, "Ürün akşam öğününden başarıyla silinmiştir.");
             }
             catch (Exception)
             {
@@ -157,21 +154,6 @@ namespace VeganFit.UI
             urunEkle.ShowDialog();
         }
 
-        private void btnListeyiYenile_Click(object sender, EventArgs e)
-        {
-            RefreshMealLists();
-        }
-
-        private void btnListeyiYenile_MouseEnter(object sender, EventArgs e)
-        {
-            lblListeyiYenile.Visible = true;
-        }
-
-        private void btnListeyiYenile_MouseLeave(object sender, EventArgs e)
-        {
-            lblListeyiYenile.Visible = false;
-        }
-
         private void dgvUrunlerListesi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -183,7 +165,7 @@ namespace VeganFit.UI
 
                 var setProductForm = EFContextForm.EFContextForm.ConfigureServices<UserSetProductForm>();
                 setProductForm.ShowDialog();
-                
+
             }
             catch (Exception)
             {
@@ -199,7 +181,7 @@ namespace VeganFit.UI
                 .ToList();
         }
 
-        private void DataGridViewColumnNames(DataGridView dataGrid,DataGridView dataGrid1)
+        private void DataGridViewColumnNames(DataGridView dataGrid, DataGridView dataGrid1)
         {
             dataGrid.Columns[0].HeaderText = "Ürün İsmi";
             dataGrid.Columns[1].HeaderText = "Kalori";

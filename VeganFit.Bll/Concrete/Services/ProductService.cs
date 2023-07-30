@@ -18,6 +18,12 @@ namespace VeganFit.Bll.Concrete.Services
             _productRepo = productRepo;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// Product tablosuna yeni veri ekleyen, eklemeye işleminde hata olursa hata ekleyen olmazsa sonucu döndüren metot.
+        /// </summary>
+        /// <param name="createVm"></param>
+        /// <returns></returns>
         public ResultService<ProductCreateDto> Create(ProductCreateVm createVm)
         {
             ResultService<ProductCreateDto> result = new ResultService<ProductCreateDto>();
@@ -38,6 +44,11 @@ namespace VeganFit.Bll.Concrete.Services
             return result;
         }
 
+        /// <summary>
+        /// Product tablosundaki veriyi silen ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Delete(int id)
         {
             Product product = _productRepo.GetFirstOrDefault(filter:x=>x.Id == id);
@@ -48,14 +59,23 @@ namespace VeganFit.Bll.Concrete.Services
             }
 
             return false;
-
         }
 
+        /// <summary>
+        /// Product tablosunda parametre olarak girilen ürünün olup olmadığı bulan ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="productName"></param>
+        /// <returns></returns>
         public bool IsExistProduct(string productName)
         {
             return _productRepo.Any(x=>x.ProductName.Equals(productName));
         }
 
+        /// <summary>
+        /// Product tablosundaki veriyi güncelleyen, güncelleme işleminde hata olursa hata ekleyen olmazsa sonucu döndüren metot.
+        /// </summary>
+        /// <param name="updateVm"></param>
+        /// <returns></returns>
         public ResultService<ProductUpdateDto> Update(ProductUpdateVm updateVm)
         {
             ResultService<ProductUpdateDto> result = new ResultService<ProductUpdateDto>();

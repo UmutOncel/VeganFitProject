@@ -47,8 +47,6 @@
             lblKapat = new Label();
             btnKapat = new Buttons.DesignButton();
             txtAramaKutusu = new TextBoxs.TextBox.DesignTextBox();
-            btnListeyiYenile = new Buttons.DesignButton();
-            lblListeyiYenile = new Label();
             lblUrunAra = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvSabah).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvOgle).BeginInit();
@@ -313,40 +311,6 @@
             txtAramaKutusu.UnderlinedStyle = false;
             txtAramaKutusu._TextChanged += txtAramaKutusu__TextChanged;
             // 
-            // btnListeyiYenile
-            // 
-            btnListeyiYenile.BackColor = Color.Transparent;
-            btnListeyiYenile.BackgroundColor = Color.Transparent;
-            btnListeyiYenile.BackgroundImageLayout = ImageLayout.None;
-            btnListeyiYenile.BorderColor = Color.DarkBlue;
-            btnListeyiYenile.BorderRadius = 10;
-            btnListeyiYenile.BorderSize = 2;
-            btnListeyiYenile.FlatAppearance.BorderSize = 0;
-            btnListeyiYenile.FlatStyle = FlatStyle.Flat;
-            btnListeyiYenile.ForeColor = Color.Black;
-            btnListeyiYenile.Image = Properties.Resources.Yenile_Butonu;
-            btnListeyiYenile.ImageAlign = ContentAlignment.BottomCenter;
-            btnListeyiYenile.Location = new Point(591, 668);
-            btnListeyiYenile.Name = "btnListeyiYenile";
-            btnListeyiYenile.Size = new Size(34, 34);
-            btnListeyiYenile.TabIndex = 5;
-            btnListeyiYenile.TextAlign = ContentAlignment.BottomLeft;
-            btnListeyiYenile.TextColor = Color.Black;
-            btnListeyiYenile.UseVisualStyleBackColor = false;
-            btnListeyiYenile.Click += btnListeyiYenile_Click;
-            btnListeyiYenile.MouseEnter += btnListeyiYenile_MouseEnter;
-            btnListeyiYenile.MouseLeave += btnListeyiYenile_MouseLeave;
-            // 
-            // lblListeyiYenile
-            // 
-            lblListeyiYenile.AutoSize = true;
-            lblListeyiYenile.Location = new Point(631, 664);
-            lblListeyiYenile.Name = "lblListeyiYenile";
-            lblListeyiYenile.Size = new Size(97, 14);
-            lblListeyiYenile.TabIndex = 17;
-            lblListeyiYenile.Text = "Listeyi Yenile";
-            lblListeyiYenile.Visible = false;
-            // 
             // lblUrunAra
             // 
             lblUrunAra.AutoSize = true;
@@ -363,11 +327,9 @@
             BackColor = Color.DarkSeaGreen;
             ClientSize = new Size(1091, 718);
             Controls.Add(lblUrunAra);
-            Controls.Add(lblListeyiYenile);
             Controls.Add(txtAramaKutusu);
             Controls.Add(lblKapat);
             Controls.Add(btnKapat);
-            Controls.Add(btnListeyiYenile);
             Controls.Add(btnUrunEkle);
             Controls.Add(dgvUrunlerListesi);
             Controls.Add(lblAksam);
@@ -408,8 +370,6 @@
         private Label lblKapat;
         private Buttons.DesignButton btnKapat;
         private TextBoxs.TextBox.DesignTextBox txtAramaKutusu;
-        private Buttons.DesignButton btnListeyiYenile;
-        private Label lblListeyiYenile;
         private Label lblUrunAra;
     }
 }

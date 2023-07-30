@@ -9,17 +9,19 @@ namespace VeganFit.Bll.Concrete
 {
     public static class EFContextBll
     {
+        /// <summary>
+        /// Service'ler (IDataService, DataService vb.) için dependency injection yapısını kullanmamızı sağlan metot. (Bu repo'lar bu metot sayesinde parametre olarak çağrıldığı zaman new'lenmeden kullanılabilir.)
+        /// </summary>
+        /// <param name="services"></param>
+        /// <returns></returns>
         public static IServiceCollection AddScopedBll(this IServiceCollection services)
         {
-            
-
             services.AddScopeDal()
             .AddScoped<IDataService, DataService>()
             .AddScoped<IFeedbackService, FeedbackService>()
             .AddScoped<IProductService, ProductService>()
             .AddScoped<IUserService, UserService>()
             .AddScoped<IWeightService, WeightService>();
-
 
             var mapp = new MapperConfiguration(mpp =>
             {
@@ -28,7 +30,6 @@ namespace VeganFit.Bll.Concrete
 
             IMapper mapper = mapp.CreateMapper();
             services.AddSingleton(mapper).BuildServiceProvider();
-
 
             return services;
         }

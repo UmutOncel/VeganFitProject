@@ -29,10 +29,20 @@ namespace VeganFit.UI
 
             ChartDatas();
         }
+
+        /// <summary>
+        /// Parametre olarak girilen datagrid'e aktif kullanıcının kilo bilgilerini getiren metot.
+        /// </summary>
+        /// <param name="dataGrid"></param>
         private void DailyWeightTracking(DataGridView dataGrid)
         {
             dataGrid.DataSource = _weightRepo.GetFilteredList(select: x => new { x.UserName, x.UserWeight, x.RecordDate }, where: x => x.UserName == ActiveUser.ActiveUserFirstName);
         }
+
+        /// <summary>
+        /// Parametre olarak girilen datagrid'e aktif kullanıcının günlük tükettiği ürünlerin toplam kalorisini getiren metot.
+        /// </summary>
+        /// <param name="dataGrid"></param>
         private void EndOfDayTotalCaloriesList(DataGridView dataGrid)
         {
             dataGrid.DataSource = db.Datas.Where(x => x.UserEmail == ActiveUser.ActiveUserName && x.State != State.Deleted)
@@ -43,6 +53,11 @@ namespace VeganFit.UI
                     ToplamKalori = x.Sum(x => x.Calori)
                 }).ToList();
         }
+
+        /// <summary>
+        /// Datagrid'teki sütun isimlerini değiştiren metot.
+        /// </summary>
+        /// <param name="dataGrid"></param>
         private void DataGridViewColumnNames(DataGridView dataGrid)
         {
             dataGrid.Columns[0].HeaderText = "İsim";
@@ -68,7 +83,7 @@ namespace VeganFit.UI
         /// <summary>
         /// Chart grafiklere veri girilmesini sağlayan metot.
         /// </summary>
-        private void ChartDatas()//BURAYA BİR HATA AYIKLAYICI LAZIM
+        private void ChartDatas()
         {
             for (int i = 0; i < dgvGunSonuKalori.Rows.Count; i++)
             {

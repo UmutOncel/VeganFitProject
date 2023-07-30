@@ -6,7 +6,6 @@ namespace VeganFit.Models.DTOs.ProductDtos
     {
         public string CreatedBy { get; set; }
         public State State => State.Created;
-
-        public DateTime CreateDate = DateTime.Now;
+        public DateTime CreateDate => DateTime.Now;
     }
 }

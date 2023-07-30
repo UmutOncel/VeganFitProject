@@ -23,6 +23,10 @@ namespace VeganFit.UI
             DisplayOfDailyDateinLabel();
             RefreshList(dgvGunlukKiloTakibi);
         }
+
+        /// <summary>
+        /// Günün tarihini label'da gösteren metot.
+        /// </summary>
         private void DisplayOfDailyDateinLabel()
         {
             lblDateToday.Text = DateTime.Today.ToShortDateString();
