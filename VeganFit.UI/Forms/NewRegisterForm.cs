@@ -10,7 +10,7 @@ namespace VeganFit.UI
 {
     public partial class NewRegisterForm : Form
     {
-        bool mov, isFirstname, isLastname, password1, password2, isEmail, dbUserName, isBirthdate;
+        bool mov, isFirstname, isLastname, password1, password2, isEmail;
         int movX, movY;
         private readonly IUserService _userService;
         private readonly IUserRepo _userRepo;
@@ -54,7 +54,7 @@ namespace VeganFit.UI
 
         private void btnKaydiTamamla_Click(object sender, EventArgs e)
         {
-            CreateNewUser();
+            ControlUserFirstnameAndLastname();
         }
 
         /// <summary>
@@ -84,71 +84,51 @@ namespace VeganFit.UI
             }
         }
 
-        private void txtAd__TextChanged(object sender, EventArgs e)
-        {
-            string firstname = txtAd.Text;
-            isFirstname = ControlIsLetter(firstname);
-            if (!isFirstname)
-            {
-                MessageBox.Show("Adınızı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            SetButtonState();
-        }
-
-        private void txtSoyad__TextChanged(object sender, EventArgs e)
-        {
-            string lastname = txtSoyad.Text;
-            isLastname = ControlIsLetter(lastname);
-            if (!isLastname)
-            {
-                MessageBox.Show("Soyadınızı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-
-            SetButtonState();
-        }
-
         /// <summary>
-        /// Parametredeki string ifadenin tamamen harf içerip içermediğini kontrol eden ve sonucu boolean olarak döndüren metot.
+        /// Kullanıcının şifre kontrolünü sağlayan metottur.
         /// </summary>
-        /// <param name="str"></param>
-        /// <returns></returns>
-        private bool ControlIsLetter(string str)
+        private void ControlUserPassword()
         {
-            return str.All(Char.IsLetter);
-        }
-
-        private void dtpDogumTatihi_ValueChanged(object sender, EventArgs e)
-        {
-            int birthdate = dtpDogumTatihi.Value.Year;
-            int minLimit = Convert.ToInt32(DateTime.Now.Year) - 64;
-            int maxLimit = Convert.ToInt32(DateTime.Now.Year) - 45;
-            isBirthdate = (minLimit >= birthdate && birthdate >= maxLimit);
-
-            if (!isBirthdate)
+            if (txtSifre.Text == txtSifreyiTekrarGirin.Text)
             {
-                MessageBox.Show("Yaşınız uygulamamızın hedef kitlesi dışındadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void txtEMail__TextChanged(object sender, EventArgs e)
-        {
-            string email = txtEMail.Text;
-            isEmail = TestEmailRegex(email);
-            if (!isEmail)
-            {
-                MessageBox.Show("Girmiş olduğunuz mail adresi geçerli değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (password1)
+                {
+                    CreateNewUser();
+                }
+                else
+                {
+                    MessageBox.Show("Girmiş olduğunuz şifre belirlenen kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             else
             {
-                dbUserName = _userRepo.Any(x => x.Email == txtEMail.Text);
-                if (dbUserName)
+                MessageBox.Show("Girmiş olduğunuz şifrelerin aynı olması gerekir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        ///  Kullanıcının email kontrolünü sağlayan metottur.
+        /// </summary>
+        private void ControlUserEmail()
+        {
+            isEmail = TestEmailRegex(txtEMail.Text);
+            if (isEmail)
+            {
+                var dbUserName = _userRepo.Any(x => x.Email == txtEMail.Text);
+                if (!dbUserName)
+                {
+
+                    ControlUserPassword();
+                }
+                else
                 {
                     MessageBox.Show("Girmiş olduğunuz mail adresi sisteme kayıtlıdır. Kayıtlı mail adresi ile tekrar kayıt olamazsınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-
-            SetButtonState();
+            else
+            {
+                MessageBox.Show("Girmiş olduğunuz mail adresi kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         /// <summary>
@@ -169,13 +149,62 @@ namespace VeganFit.UI
             return isStrictMatch;
         }
 
+        /// <summary>
+        ///  Kullanıcının yaş kontrolünü sağlayan metottur.
+        /// </summary>
+        private void ControlUserAge()
+        {
+            int birthdate = dtpDogumTatihi.Value.Year;
+            int minLimit = Convert.ToInt32(DateTime.Now.Year) - 64;
+            int maxLimit = Convert.ToInt32(DateTime.Now.Year) - 45;
+
+            if (minLimit <= birthdate && birthdate <= maxLimit)
+            {
+                ControlUserEmail();
+            }
+            else
+            {
+                MessageBox.Show("Yaşınız uygulamamızın hedef kitlesi dışındadır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        ///  Kullanıcının ad soyad kontrolünü sağlayan metottur.
+        /// </summary>
+        private void ControlUserFirstnameAndLastname()
+        {
+            if (isFirstname && isLastname)
+            {
+                ControlUserAge();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen ad soyad kısmına harf dışında karakter girmeyiniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void txtAd__TextChanged(object sender, EventArgs e)
+        {
+            isFirstname = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ]*$", txtAd);
+
+            SetButtonState();
+        }
+
+        private void txtSoyad__TextChanged(object sender, EventArgs e)
+        {
+            isLastname = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ]*$", txtSoyad);
+
+            SetButtonState();
+        }
+
+        private void txtEMail__TextChanged(object sender, EventArgs e)
+        {
+            SetButtonState();
+        }
+
         private void txtSifre__TextChanged(object sender, EventArgs e)
         {
-            password1 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
-            if (!password1)
-            {
-                MessageBox.Show("Girmiş olduğunuz şifre belirlenen kriterlere uygun değildir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            password1 = RegularEx("^(?=.*?[A-ZĞÖÜİŞÇ])(?=.*?[A-ZĞÖÜİŞÇ])(?=.*?[a-züıöğşç])(?=.*?[a-züıöğşç])(?=.*?[a-züıöğşç])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifre);
 
             SetButtonState();
         }
@@ -204,21 +233,22 @@ namespace VeganFit.UI
 
         private void txtSifreyiTekrarGirin__TextChanged(object sender, EventArgs e)
         {
-            password2 = RegularEx("^(?=.*?[A-Z])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
-            if (txtSifre.Text != txtSifreyiTekrarGirin.Text)
-            {
-                MessageBox.Show("Tekrar yazmış olduğunuz şifre ilk yazılanla aynı olmalıdır.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+            password2 = RegularEx("^(?=.*?[A-ZĞÖÜİŞÇ])(?=.*?[A-ZĞÖÜİŞÇ])(?=.*?[a-züıöğşç])(?=.*?[a-züıöğşç])(?=.*?[a-züıöğşç])(?=.*?[0-9])(?=.*?[!:+*])(?=.*?[!:+*]).{4,}$", txtSifreyiTekrarGirin);
 
             SetButtonState();
         }
 
         /// <summary>
-        /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
+        /// Kayıt butonun aktiflik şartını içeren metottur.
         /// </summary>
-        private void SetButtonState()
+        /// <param name="txtbox1"></param>
+        /// <param name="txtbox2"></param>
+        /// <param name="txtbox3"></param>
+        /// <param name="txtbox4"></param>
+        /// <param name="txtbox5"></param>
+        private void EnableButton(DesignTextBox txtbox1, DesignTextBox txtbox2, DesignTextBox txtbox3, DesignTextBox txtbox4, DesignTextBox txtbox5)
         {
-            if (isFirstname && isLastname && isBirthdate && isEmail && dbUserName && password1 && password2)
+            if (txtbox1.Text.Length > 0 && txtbox2.Text.Length > 0 && txtbox3.Text.Length > 0 && txtbox4.Text.Length > 0 && txtbox5.Text.Length > 0)
             {
                 btnKaydiTamamla.Enabled = true;
             }
@@ -226,6 +256,14 @@ namespace VeganFit.UI
             {
                 btnKaydiTamamla.Enabled = false;
             }
+        }
+
+        /// <summary>
+        /// Kayıt butonunun aktiflik durumunu kontrol eden metottur.
+        /// </summary>
+        private void SetButtonState()
+        {
+            EnableButton(txtAd, txtSoyad, txtEMail, txtSifre, txtSifreyiTekrarGirin);
         }
 
         private void btnKapat_Click(object sender, EventArgs e)
