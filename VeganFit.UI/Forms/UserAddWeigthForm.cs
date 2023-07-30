@@ -48,13 +48,14 @@ namespace VeganFit.UI
             string strWeight = txtKilo.Text;
             double weight;
             bool isDouble = double.TryParse(strWeight, out weight);
-            if (!isDouble)
+            bool isDot = strWeight.Contains('.');
+            if (!isDouble || isDot)
             {
                 MessageBox.Show("Kilonuzu sadece tam sayı veya ondalıklı sayı olarak girebilirsiniz", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
-                if (Convert.ToDouble(txtKilo.Text) > 0)
+                if (weight > 0)
                 {
                     AddWeight();
                 }
