@@ -11,7 +11,8 @@ namespace VeganFit.UI
     {
         UserAddMealForm on = (UserAddMealForm)Application.OpenForms["UserAddMealForm"];
         private readonly IDataService _dataService;
-        bool product, calori, serving;
+        //bool product, calori, serving;
+        bool isLetter, isDoubleCalori, isDoubleServing;
 
         public UserAddNewProductForm(IDataService dataService)
         {
@@ -99,53 +100,73 @@ namespace VeganFit.UI
             Object[] array = new object[3] { Meal.Sabah, Meal.Öğle, Meal.Akşam };
             cbxOgunSec.Items.AddRange(array);
 
-            txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily, 8, FontStyle.Italic);
-            txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100)";
+            //txtPorsiyon.Font = new Font(txtPorsiyon.Font.FontFamily, 8, FontStyle.Italic);
+            //txtPorsiyon.Text = "Gram Türünden Giriniz (Örnek = 100)";
         }
 
         private void txtUrunAdi__TextChanged(object sender, EventArgs e)
         {
-            product = RegularExcep.RegularEx(@"^[a-zA-Z]*$", txtUrunAdi);
+            //product = RegularExcep.RegularEx(@"^[a-zA-Z]*$", txtUrunAdi);
+            string productName = txtUrunAdi.Text;
+            isLetter = productName.All(Char.IsLetter);
+            if (!isLetter)
+            {
+                MessageBox.Show("Ürün adı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        /// <summary>
+        /// Parametre olarak girilen string değerin double tipine dönüştürülüp dönüştürülemediğini kontrol eden ve sonucu boolean olarak döndüren metot.
+        /// </summary>
+        /// <param name="str"></param>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        private bool IsDouble(string str, double data)
+        {
+            return double.TryParse(str, out data);
         }
 
         private void txtKalori__TextChanged(object sender, EventArgs e)
         {
-            calori = RegularExcep.RegularEx(@"^-?(([1-9]\d*)|0)(.0*[1-9](0*[1-9])*)?$", txtKalori);
+            //calori = RegularExcep.RegularEx(@"^-?(([1-9]\d*)|0)(.0*[1-9](0*[1-9])*)?$", txtKalori);
+            string strCalori = txtKalori.Text;
+            double calori = 0;
+            isDoubleCalori = IsDouble(strCalori, calori);
+            if (!isDoubleCalori)
+            {
+                MessageBox.Show("Kalori değeri sadece tam sayı veya ondalıklı sayı olabilir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void txtPorsiyon__TextChanged(object sender, EventArgs e)
         {
-            serving = RegularExcep.RegularEx(@"^[0-9]*$", txtPorsiyon);
+            //serving = RegularExcep.RegularEx(@"^[0-9]*$", txtPorsiyon);
+            string strServing = txtPorsiyon.Text;
+            double serving = 0;
+            isDoubleServing = IsDouble(strServing, serving);
+            if (!isDoubleCalori)
+            {
+                MessageBox.Show("Porsiyon değeri sadece tam sayı veya ondalıklı sayı olabilir.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void cbxOgunSec_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbxOgunSec.Items.Count > 0)
             {
-                if (calori && product && serving)
+                if (isLetter && isDoubleCalori && isDoubleServing)
                 {
                     btnUrunEkle.Enabled = true;
                 }
                 else
                 {
-                    MessageBox.Show("Girdiğiniz değerleri kontrol ediniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtKalori.Text = string.Empty;
-                    txtPorsiyon.Text = string.Empty;
-                    txtUrunAdi.Text = string.Empty;
-                    cbxOgunSec.SelectedItem = null;
+                    //MessageBox.Show("Girdiğiniz değerleri kontrol ediniz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //txtKalori.Text = string.Empty;
+                    //txtPorsiyon.Text = string.Empty;
+                    //txtUrunAdi.Text = string.Empty;
+                    //cbxOgunSec.SelectedItem = null;
                 }
             }
-        }
-
-
-        private void txtPorsiyon_MouseEnter(object sender, EventArgs e)
-        {
-            txtPorsiyon.Text = string.Empty;
-        }
-
-        private void txtPorsiyon_MouseLeave(object sender, EventArgs e)
-        {
-
         }
     }
 }

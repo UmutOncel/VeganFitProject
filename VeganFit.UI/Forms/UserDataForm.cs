@@ -76,7 +76,7 @@ namespace VeganFit.UI
             }
             for (int i = 0; i < dgvGunlukKiloTakibi.Rows.Count; i++)
             {
-                chartWeight.Series["Kilo"].Points.AddXY(dgvGunlukKiloTakibi.Rows[i].Cells[2].Value.ToString(), Convert.ToInt32(dgvGunlukKiloTakibi.Rows[i].Cells[1].Value.ToString()));
+                chartWeight.Series["Kilo"].Points.AddXY(dgvGunlukKiloTakibi.Rows[i].Cells[2].Value.ToString(), Convert.ToDouble(dgvGunlukKiloTakibi.Rows[i].Cells[1].Value.ToString()));
             }
         }
     }
