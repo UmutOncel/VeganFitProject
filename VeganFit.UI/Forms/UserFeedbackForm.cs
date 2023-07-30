@@ -1,5 +1,6 @@
 ﻿using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Models.VMs.FeedbackVms;
+using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
@@ -46,7 +47,8 @@ namespace VeganFit.UI
         {
             FeedbackCreateVm vm = new FeedbackCreateVm()
             {
-                Message = txtGorusOneri.Text
+                Message = txtGorusOneri.Text,
+                UserName = ActiveUser.ActiveUserName
             };
             _service.Create(vm);
 

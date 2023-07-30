@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
+using VeganFit.UI.LoginUser;
 
 namespace VeganFit.UI
 {
@@ -70,11 +71,11 @@ namespace VeganFit.UI
         /// <param name="e"></param>
         private void RefreshList()
         {
-            dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new { x.Id, x.User.Email, x.Message }, where: x => x.State != State.Deleted);
 
-            dgvGorusOneri.Columns[0].HeaderText = "Id";
-            dgvGorusOneri.Columns[1].HeaderText = "Email";
-            dgvGorusOneri.Columns[2].HeaderText = "Geri Bildirim Mesajı";
+            dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new {x.UserName, x.Message }, where: x => x.State != State.Deleted );
+
+            dgvGorusOneri.Columns[0].HeaderText = "Email";
+            dgvGorusOneri.Columns[1].HeaderText = "Geri Bildirim Mesajı";
         }
 
         private void dgvGorusOneri_DataError(object sender, DataGridViewDataErrorEventArgs e)

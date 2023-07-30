@@ -29,8 +29,7 @@ namespace VeganFit.UI
         
         private void AdminMainForm_Load(object sender, EventArgs e)
         {
-
-            lblKayitliKullaniciSayisi.Text = _userRepo.GetFilteredList(select:x => x.Email,where:x=>x.State == State.Created).Count().ToString();
+            lblKayitliKullaniciSayisi.Text = _userRepo.GetFilteredList(select:x => x.Email,where:x=>x.Role == Role.StandartUser).Count().ToString();
         }
 
         private void pnlUstMenu_MouseDown(object sender, MouseEventArgs e)

@@ -273,7 +273,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSeaGreen;
             CancelButton = btnKapat;
-            ClientSize = new Size(1366, 749);
+            ClientSize = new Size(1366, 768);
             Controls.Add(lblPorsiyonBilgi);
             Controls.Add(lblYeniUrunEkle);
             Controls.Add(lblUrunAdi);

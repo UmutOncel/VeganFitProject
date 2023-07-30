@@ -162,11 +162,11 @@ namespace VeganFit.DAL.Base.EntityFramework
 
             if (orderBy != null)
             {
-                return orderBy(query).AsNoTracking().Select(select).ToList();
+                return orderBy(query).Select(select).ToList();
             }
             else
             {
-                return query.AsNoTracking().Select(select).ToList();
+                return query.Select(select).ToList();
             }
         }
 
