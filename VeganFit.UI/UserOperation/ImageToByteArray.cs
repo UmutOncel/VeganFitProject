@@ -32,7 +32,7 @@ namespace VeganFit.UI.UserOperation
         {
             Image returnImage=null;
             MemoryStream ms;
-            if (byteArrayIn != null)
+            if (byteArrayIn!=null &&byteArrayIn.Length!=0)
             {
                 ms = new MemoryStream(byteArrayIn);
                 returnImage = Image.FromStream(ms);

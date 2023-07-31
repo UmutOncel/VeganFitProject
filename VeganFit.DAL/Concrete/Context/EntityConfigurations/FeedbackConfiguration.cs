@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VeganFit.Core.Enums;
 using VeganFit.Entities;
 
 namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
@@ -27,6 +28,24 @@ namespace VeganFit.DAL.Concrete.Context.EntityConfigurations
                 .HasForeignKey(x => x.UserId);
 
             builder.Property(x => x.UserId).IsRequired(false);
+
+            builder.HasData(new Feedback
+            {
+                Id = 1,
+                UserName = "Aynur",
+                Message="Uygulama için çok teşekkür ederim. Her şeyi ile tam istediğim gibi sade basit ve anlaşılır bir uygulamadır. Elinize sağlık",
+                CreatedDate = DateTime.Now,
+                State = State.Created
+            });
+
+            builder.HasData(new Feedback
+            {
+                Id = 2,
+                UserName = "Pelin",
+                Message = "Uygulama için teşekkürler. Başarılarınızın devamını dileriz.",
+                CreatedDate = DateTime.Now,
+                State = State.Created
+            });
         }
     }
 }

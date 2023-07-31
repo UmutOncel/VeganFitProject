@@ -23,7 +23,7 @@ namespace VeganFit.DAL.Concrete.Context
         /// <param name="optionsBuilder"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var sql = @"Server=DESKTOP-JM5LJD8\SQL2022;Database=VeganFitDB;Trusted_Connection = True"; 
+            var sql = @"Server=DESKTOP-6EM38CB\SQL2022;Database=VeganFitDB;Trusted_Connection = True"; 
             optionsBuilder.UseSqlServer(sql);
             optionsBuilder.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
