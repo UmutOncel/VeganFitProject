@@ -185,14 +185,14 @@ namespace VeganFit.UI
 
         private void txtAd__TextChanged(object sender, EventArgs e)
         {
-            isFirstname = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ]*$", txtAd);
+            isFirstname = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ ]*$", txtAd);
 
             SetButtonState();
         }
 
         private void txtSoyad__TextChanged(object sender, EventArgs e)
         {
-            isLastname = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ]*$", txtSoyad);
+            isLastname = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ ]*$", txtSoyad);
 
             SetButtonState();
         }
