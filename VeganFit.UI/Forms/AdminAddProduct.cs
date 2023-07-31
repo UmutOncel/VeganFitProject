@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Reflection;
+using System.Text.RegularExpressions;
+using TextBoxs.TextBox;
 using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Core.Enums;
 using VeganFit.DAL.Abstract;
@@ -15,6 +17,7 @@ namespace VeganFit.UI
     {
         private readonly IProductService _service;
         private readonly IProductRepo _productRepo;
+        bool isString;
 
         public AdminAddProduct(IProductService productService, IProductRepo productRepo)
         {
@@ -164,7 +167,6 @@ namespace VeganFit.UI
         /// </summary>
         private void ControlProductNameForUpdateProduct()
         {
-            bool isString = txtUrunAdi.Text.All(Char.IsLetter);
             if (isString)
             {
                 ControlCaloriForUpdateProduct();
@@ -296,6 +298,8 @@ namespace VeganFit.UI
 
         private void txtUrunAdi__TextChanged(object sender, EventArgs e)
         {
+            isString = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ ]*$", txtUrunAdi);
+
             if (txtUrunAdi.Text.Length > 0 && txtKalori.Text.Length > 0 && txtPorsiyon.Text.Length > 0)
             {
                 btnUrunEkle.Enabled = true;
@@ -304,6 +308,28 @@ namespace VeganFit.UI
             {
                 btnUrunEkle.Enabled = false;
             }
+        }
+
+        /// <summary>
+        /// Kayıt esnasında şartları eşleştirip kontrolünü sağlayan metottur.
+        /// </summary>
+        /// <param name="rgx"></param>
+        /// <param name="txtb"></param>
+        /// <returns></returns>
+        public bool RegularEx(string rgx, DesignTextBox txtb)
+        {
+            bool control = false;
+            Regex regex = new Regex(rgx);
+            Match match = regex.Match(txtb.Text);
+            if (match.Success)
+            {
+                control = true;
+            }
+            else
+            {
+                control = false;
+            }
+            return control;
         }
     }
 }

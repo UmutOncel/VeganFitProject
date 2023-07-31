@@ -1,4 +1,6 @@
-﻿using VeganFit.Bll.Abstract.IServices;
+﻿using System.Text.RegularExpressions;
+using TextBoxs.TextBox;
+using VeganFit.Bll.Abstract.IServices;
 using VeganFit.Bll.Concrete.Services;
 using VeganFit.Core.Enums;
 using VeganFit.Models.DTOs.DataDtos;
@@ -101,14 +103,35 @@ namespace VeganFit.UI
 
         private void txtUrunAdi__TextChanged(object sender, EventArgs e)
         {
-            string productName = txtUrunAdi.Text;
-            isLetter = productName.All(Char.IsLetter);
+            isLetter = RegularEx(@"^[a-zA-ZüıöğşçĞÖÜİŞÇ ]*$", txtUrunAdi);
             if (!isLetter)
             {
                 MessageBox.Show("Ürün adı yazarken sadece harf kullanınız.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             EnableButton();
+        }
+
+        /// <summary>
+        /// Kayıt esnasında şartları eşleştirip kontrolünü sağlayan metottur.
+        /// </summary>
+        /// <param name="rgx"></param>
+        /// <param name="txtb"></param>
+        /// <returns></returns>
+        public bool RegularEx(string rgx, DesignTextBox txtb)
+        {
+            bool control = false;
+            Regex regex = new Regex(rgx);
+            Match match = regex.Match(txtb.Text);
+            if (match.Success)
+            {
+                control = true;
+            }
+            else
+            {
+                control = false;
+            }
+            return control;
         }
 
         /// <summary>
