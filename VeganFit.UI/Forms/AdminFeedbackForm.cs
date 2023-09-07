@@ -72,10 +72,11 @@ namespace VeganFit.UI
         private void RefreshList()
         {
 
-            dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new {x.UserName, x.Message }, where: x => x.State != State.Deleted );
+            dgvGorusOneri.DataSource = _feedbackRepo.GetFilteredList(select: x => new {x.Id, x.UserName, x.Message }, where: x => x.State != State.Deleted );
 
-            dgvGorusOneri.Columns[0].HeaderText = "Email";
-            dgvGorusOneri.Columns[1].HeaderText = "Geri Bildirim Mesajı";
+            dgvGorusOneri.Columns[0].HeaderText = "Id";
+            dgvGorusOneri.Columns[1].HeaderText = "Email";
+            dgvGorusOneri.Columns[2].HeaderText = "Geri Bildirim Mesajı";
         }
 
         private void dgvGorusOneri_DataError(object sender, DataGridViewDataErrorEventArgs e)

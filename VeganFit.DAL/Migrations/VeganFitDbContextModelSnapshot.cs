@@ -83,7 +83,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             Calori = 100.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2320),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5097),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kepekli Ekmek",
@@ -94,7 +94,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             Calori = 116.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2331),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5129),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Elma",
@@ -105,7 +105,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 3,
                             Calori = 220.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2337),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5147),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Ceviz",
@@ -116,7 +116,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 4,
                             Calori = 50.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2343),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5163),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Kayısı",
@@ -127,7 +127,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 5,
                             Calori = 174.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2349),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5178),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Badem",
@@ -138,7 +138,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 6,
                             Calori = 80.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2355),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5195),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Çilek",
@@ -149,7 +149,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 7,
                             Calori = 250.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2360),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5210),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Karpuz",
@@ -160,7 +160,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 8,
                             Calori = 350.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2366),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5226),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Bulgur Pilavı",
@@ -171,7 +171,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 9,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2372),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5241),
                             Datetime = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Müsli",
@@ -182,7 +182,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 10,
                             Calori = 330.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2377),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5256),
                             Datetime = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Nar",
@@ -193,7 +193,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 11,
                             Calori = 300.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2383),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5272),
                             Datetime = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Vegan Sade Peynir",
@@ -204,7 +204,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 12,
                             Calori = 230.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2391),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5286),
                             Datetime = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Portakal",
@@ -215,7 +215,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 13,
                             Calori = 190.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2404),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5301),
                             Datetime = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Turşu",
@@ -226,7 +226,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 14,
                             Calori = 120.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2417),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5315),
                             Datetime = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -237,7 +237,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 15,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2439),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5331),
                             Datetime = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Patates Salatası",
@@ -248,7 +248,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 16,
                             Calori = 390.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2444),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5355),
                             Datetime = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Yulaf Ezmesi",
@@ -259,7 +259,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 17,
                             Calori = 340.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2454),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5371),
                             Datetime = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Vegan Sade Peynir",
@@ -270,7 +270,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 18,
                             Calori = 50.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2460),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5387),
                             Datetime = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Yeşil Çay",
@@ -281,7 +281,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 19,
                             Calori = 169.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2465),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5403),
                             Datetime = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Turşu",
@@ -292,7 +292,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 20,
                             Calori = 320.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2471),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5419),
                             Datetime = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Mücver",
@@ -303,7 +303,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 21,
                             Calori = 190.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2503),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5435),
                             Datetime = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Armut",
@@ -314,7 +314,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 22,
                             Calori = 90.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2509),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5451),
                             Datetime = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kuru Üzüm",
@@ -325,7 +325,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 23,
                             Calori = 146.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2515),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5468),
                             Datetime = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Muzlu Vegan Fransız Tostu",
@@ -336,7 +336,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 24,
                             Calori = 50.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2531),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5484),
                             Datetime = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Yeşil Çay",
@@ -347,7 +347,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 25,
                             Calori = 120.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2559),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5499),
                             Datetime = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Çok Tahıllı Ekmek",
@@ -358,7 +358,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 26,
                             Calori = 329.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2565),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5516),
                             Datetime = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Zeytinyağlı Taze Fasulye",
@@ -369,7 +369,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 27,
                             Calori = 240.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2570),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5532),
                             Datetime = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Ratatouille",
@@ -380,7 +380,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 28,
                             Calori = 90.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2576),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5548),
                             Datetime = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Mandalina",
@@ -391,7 +391,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 29,
                             Calori = 180.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2582),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5563),
                             Datetime = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Müsli",
@@ -402,7 +402,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 30,
                             Calori = 190.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2587),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5581),
                             Datetime = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Karışık Sebze",
@@ -413,7 +413,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 31,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2593),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5596),
                             Datetime = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Portakal Suyu",
@@ -424,7 +424,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 32,
                             Calori = 245.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2600),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5637),
                             Datetime = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Zeytinyağlı Taze Fasulye",
@@ -435,7 +435,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 33,
                             Calori = 266.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2606),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5653),
                             Datetime = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Fırında Domatesli Kabak Dilimleri",
@@ -446,7 +446,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 34,
                             Calori = 222.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2614),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5668),
                             Datetime = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Siyah Zeytin",
@@ -457,7 +457,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 35,
                             Calori = 328.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2621),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5684),
                             Datetime = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Badem Sütü",
@@ -468,7 +468,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 36,
                             Calori = 230.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2627),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5699),
                             Datetime = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Karışık Sebze",
@@ -479,7 +479,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 37,
                             Calori = 253.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2633),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5714),
                             Datetime = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Mantar ve Pırasalı Tofu",
@@ -490,7 +490,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 38,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2639),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5731),
                             Datetime = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -501,7 +501,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 39,
                             Calori = 336.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2644),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5746),
                             Datetime = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Yaban Mersinli Kinoa Lapası",
@@ -512,7 +512,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 40,
                             Calori = 242.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2650),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5760),
                             Datetime = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Siyah Zeytin",
@@ -523,7 +523,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 41,
                             Calori = 138.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2656),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5775),
                             Datetime = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Badem Sütü",
@@ -534,7 +534,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 42,
                             Calori = 110.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2661),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5789),
                             Datetime = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Maydonoz",
@@ -545,7 +545,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 43,
                             Calori = 267.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2667),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5803),
                             Datetime = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Ispanaklı Pizza",
@@ -556,7 +556,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 44,
                             Calori = 221.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2673),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5819),
                             Datetime = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -567,7 +567,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 45,
                             Calori = 336.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2678),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5841),
                             Datetime = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Şeftali Püreli Tatlı Kuskus",
@@ -578,7 +578,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 46,
                             Calori = 123.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2684),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5855),
                             Datetime = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Yeşil Biber",
@@ -589,7 +589,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 47,
                             Calori = 140.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2690),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5870),
                             Datetime = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Portakal Suyu",
@@ -600,7 +600,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 48,
                             Calori = 169.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2695),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5884),
                             Datetime = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Patates Salatası",
@@ -611,7 +611,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 49,
                             Calori = 320.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2701),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5898),
                             Datetime = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Burger",
@@ -622,7 +622,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 50,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2707),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5913),
                             Datetime = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -633,7 +633,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 51,
                             Calori = 170.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2713),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5927),
                             Datetime = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Sebzeli Makarna",
@@ -644,7 +644,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 52,
                             Calori = 120.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2718),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5942),
                             Datetime = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kepekli Ekmek",
@@ -655,7 +655,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 53,
                             Calori = 345.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2724),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5957),
                             Datetime = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Vegan Sade Peynir",
@@ -666,7 +666,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 54,
                             Calori = 140.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2730),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5971),
                             Datetime = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Elma",
@@ -677,7 +677,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 55,
                             Calori = 227.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2736),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(5985),
                             Datetime = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Bulgur Pilavı",
@@ -688,7 +688,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 56,
                             Calori = 230.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2742),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6000),
                             Datetime = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Karpuz",
@@ -699,7 +699,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 57,
                             Calori = 330.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2747),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6014),
                             Datetime = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Ispanaklı Börek",
@@ -710,7 +710,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 58,
                             Calori = 120.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2753),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6029),
                             Datetime = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kuru Üzüm",
@@ -721,7 +721,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 59,
                             Calori = 80.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2759),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6043),
                             Datetime = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Yeşil Çay",
@@ -732,7 +732,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 60,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2766),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6059),
                             Datetime = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Elma",
@@ -743,7 +743,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 61,
                             Calori = 330.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2771),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6073),
                             Datetime = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Avokado Soslu Patetes",
@@ -754,7 +754,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 62,
                             Calori = 400.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2777),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6088),
                             Datetime = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Şeftali Püreli Tatlı Kuskus",
@@ -765,7 +765,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 63,
                             Calori = 300.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2783),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6102),
                             Datetime = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Mantarlı Kinoa Risotto",
@@ -776,7 +776,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 64,
                             Calori = 80.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2817),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6197),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kepekli Ekmek",
@@ -787,7 +787,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 65,
                             Calori = 120.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2823),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6213),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Elma",
@@ -798,7 +798,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 66,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2829),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6228),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Ceviz",
@@ -809,7 +809,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 67,
                             Calori = 60.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2834),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6243),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Kayısı",
@@ -820,7 +820,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 68,
                             Calori = 180.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2840),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6258),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Badem",
@@ -831,7 +831,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 69,
                             Calori = 100.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2846),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6274),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Çilek",
@@ -842,7 +842,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 70,
                             Calori = 220.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2851),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6288),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Karpuz",
@@ -853,7 +853,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 71,
                             Calori = 360.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2857),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6303),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Bulgur Pilavı",
@@ -864,7 +864,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 72,
                             Calori = 180.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2871),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6317),
                             Datetime = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Müsli",
@@ -875,7 +875,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 73,
                             Calori = 300.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2877),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6331),
                             Datetime = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Nar",
@@ -886,7 +886,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 74,
                             Calori = 320.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2884),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6346),
                             Datetime = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Vegan Sade Peynir",
@@ -897,7 +897,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 75,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2890),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6362),
                             Datetime = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Portakal",
@@ -908,7 +908,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 76,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2895),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6376),
                             Datetime = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Turşu",
@@ -919,7 +919,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 77,
                             Calori = 130.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2901),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6390),
                             Datetime = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -930,7 +930,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 78,
                             Calori = 160.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2906),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6405),
                             Datetime = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Patates Salatası",
@@ -941,7 +941,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 79,
                             Calori = 400.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2912),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6419),
                             Datetime = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Yulaf Ezmesi",
@@ -952,7 +952,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 80,
                             Calori = 350.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2918),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6433),
                             Datetime = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Vegan Sade Peynir",
@@ -963,7 +963,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 81,
                             Calori = 60.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2924),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6447),
                             Datetime = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Yeşil Çay",
@@ -974,7 +974,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 82,
                             Calori = 180.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2929),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6462),
                             Datetime = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Turşu",
@@ -985,7 +985,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 83,
                             Calori = 360.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2935),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6477),
                             Datetime = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Mücver",
@@ -996,7 +996,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 84,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2940),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6491),
                             Datetime = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Armut",
@@ -1007,7 +1007,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 85,
                             Calori = 100.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2946),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6506),
                             Datetime = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kuru Üzüm",
@@ -1018,7 +1018,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 86,
                             Calori = 180.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2952),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6520),
                             Datetime = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Muzlu Vegan Fransız Tostu",
@@ -1029,7 +1029,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 87,
                             Calori = 80.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2957),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6534),
                             Datetime = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Yeşil Çay",
@@ -1040,7 +1040,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 88,
                             Calori = 125.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2963),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6549),
                             Datetime = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Çok Tahıllı Ekmek",
@@ -1051,7 +1051,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 89,
                             Calori = 350.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2969),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6563),
                             Datetime = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Zeytinyağlı Taze Fasulye",
@@ -1062,7 +1062,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 90,
                             Calori = 250.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2975),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6579),
                             Datetime = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Ratatouille",
@@ -1073,7 +1073,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 91,
                             Calori = 100.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2980),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6593),
                             Datetime = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Mandalina",
@@ -1084,7 +1084,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 92,
                             Calori = 190.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2986),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6608),
                             Datetime = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Müsli",
@@ -1095,7 +1095,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 93,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2992),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6623),
                             Datetime = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Karışık Sebze",
@@ -1106,7 +1106,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 94,
                             Calori = 160.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(2997),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6637),
                             Datetime = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Portakal Suyu",
@@ -1117,7 +1117,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 95,
                             Calori = 250.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3003),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6652),
                             Datetime = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Zeytinyağlı Taze Fasulye",
@@ -1128,7 +1128,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 96,
                             Calori = 250.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3008),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6666),
                             Datetime = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Fırında Domatesli Kabak Dilimleri",
@@ -1139,7 +1139,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 97,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3014),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6681),
                             Datetime = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Siyah Zeytin",
@@ -1150,7 +1150,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 98,
                             Calori = 300.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3019),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6697),
                             Datetime = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Badem Sütü",
@@ -1161,7 +1161,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 99,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3025),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6711),
                             Datetime = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Karışık Sebze",
@@ -1172,7 +1172,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 100,
                             Calori = 240.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3030),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6726),
                             Datetime = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Mantar ve Pırasalı Tofu",
@@ -1183,7 +1183,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 101,
                             Calori = 180.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3036),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6741),
                             Datetime = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -1194,7 +1194,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 102,
                             Calori = 290.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3041),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6755),
                             Datetime = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Yaban Mersinli Kinoa Lapası",
@@ -1205,7 +1205,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 103,
                             Calori = 230.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3047),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6770),
                             Datetime = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Siyah Zeytin",
@@ -1216,7 +1216,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 104,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3053),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6784),
                             Datetime = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Badem Sütü",
@@ -1227,7 +1227,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 105,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3059),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6800),
                             Datetime = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Maydonoz",
@@ -1238,7 +1238,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 106,
                             Calori = 300.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3065),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6815),
                             Datetime = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Ispanaklı Pizza",
@@ -1249,7 +1249,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 107,
                             Calori = 250.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3071),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6829),
                             Datetime = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -1260,7 +1260,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 108,
                             Calori = 300.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3076),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6867),
                             Datetime = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Şeftali Püreli Tatlı Kuskus",
@@ -1271,7 +1271,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 109,
                             Calori = 150.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3082),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6883),
                             Datetime = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Yeşil Biber",
@@ -1282,7 +1282,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 110,
                             Calori = 231.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3088),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6898),
                             Datetime = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Portakal Suyu",
@@ -1293,7 +1293,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 111,
                             Calori = 264.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3094),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6913),
                             Datetime = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Patates Salatası",
@@ -1304,7 +1304,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 112,
                             Calori = 250.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3099),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6928),
                             Datetime = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Burger",
@@ -1315,7 +1315,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 113,
                             Calori = 160.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3105),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6943),
                             Datetime = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Domates Çorbası",
@@ -1326,7 +1326,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 114,
                             Calori = 200.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3111),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6957),
                             Datetime = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Sebzeli Makarna",
@@ -1337,7 +1337,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 115,
                             Calori = 100.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3117),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6972),
                             Datetime = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kepekli Ekmek",
@@ -1348,7 +1348,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 116,
                             Calori = 400.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3123),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(6986),
                             Datetime = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Vegan Sade Peynir",
@@ -1359,7 +1359,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 117,
                             Calori = 146.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3128),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7002),
                             Datetime = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Elma",
@@ -1370,7 +1370,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 118,
                             Calori = 342.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3134),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7016),
                             Datetime = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Bulgur Pilavı",
@@ -1381,7 +1381,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 119,
                             Calori = 344.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3140),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7031),
                             Datetime = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Karpuz",
@@ -1392,7 +1392,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 120,
                             Calori = 342.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3145),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7046),
                             Datetime = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Ispanaklı Börek",
@@ -1403,7 +1403,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 121,
                             Calori = 123.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3151),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7061),
                             Datetime = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Kuru Üzüm",
@@ -1414,7 +1414,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 122,
                             Calori = 80.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3157),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7076),
                             Datetime = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Sabah",
                             ProductName = "Yeşil Çay",
@@ -1425,7 +1425,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 123,
                             Calori = 120.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3162),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7090),
                             Datetime = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Elma",
@@ -1436,7 +1436,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 124,
                             Calori = 221.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3169),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7105),
                             Datetime = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Öğle",
                             ProductName = "Avokado Soslu Patetes",
@@ -1447,7 +1447,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 125,
                             Calori = 344.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3174),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7119),
                             Datetime = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Şeftali Püreli Tatlı Kuskus",
@@ -1458,7 +1458,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 126,
                             Calori = 255.0,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(3180),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 67, DateTimeKind.Local).AddTicks(7135),
                             Datetime = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Meal = "Akşam",
                             ProductName = "Mantarlı Kinoa Risotto",
@@ -1511,7 +1511,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(6356),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 68, DateTimeKind.Local).AddTicks(5669),
                             Message = "Uygulama için çok teşekkür ederim. Her şeyi ile tam istediğim gibi sade basit ve anlaşılır bir uygulamadır. Elinize sağlık",
                             State = "Created",
                             UserName = "Aynur"
@@ -1519,7 +1519,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 986, DateTimeKind.Local).AddTicks(6380),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 68, DateTimeKind.Local).AddTicks(5719),
                             Message = "Uygulama için teşekkürler. Başarılarınızın devamını dileriz.",
                             State = "Created",
                             UserName = "Pelin"
@@ -2079,7 +2079,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 1,
                             BirthDate = new DateTime(1991, 4, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 985, DateTimeKind.Local).AddTicks(5556),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 65, DateTimeKind.Local).AddTicks(2775),
                             Email = "admin@gmail.com",
                             Firstname = "Umut",
                             Lastname = "Öncel",
@@ -2091,7 +2091,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 2,
                             BirthDate = new DateTime(1967, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 985, DateTimeKind.Local).AddTicks(5593),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 65, DateTimeKind.Local).AddTicks(2866),
                             Email = "pelin@gmail.com",
                             Firstname = "Pelin",
                             Lastname = "Uru",
@@ -2103,7 +2103,7 @@ namespace VeganFit.DAL.Migrations
                         {
                             Id = 3,
                             BirthDate = new DateTime(1960, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 985, DateTimeKind.Local).AddTicks(5604),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 65, DateTimeKind.Local).AddTicks(2904),
                             Email = "aynur@gmail.com",
                             Firstname = "Aynur",
                             Lastname = "Aydın",
@@ -2160,7 +2160,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(38),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(7971),
                             RecordDate = new DateTime(2023, 7, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2169,7 +2169,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(50),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8007),
                             RecordDate = new DateTime(2023, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2178,7 +2178,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 3,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(56),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8027),
                             RecordDate = new DateTime(2023, 7, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2187,7 +2187,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 4,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(62),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8044),
                             RecordDate = new DateTime(2023, 7, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2196,7 +2196,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 5,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(67),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8059),
                             RecordDate = new DateTime(2023, 7, 27, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2205,7 +2205,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 6,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(73),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8073),
                             RecordDate = new DateTime(2023, 7, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2214,7 +2214,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 7,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(79),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8088),
                             RecordDate = new DateTime(2023, 7, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2223,7 +2223,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 8,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(85),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8103),
                             RecordDate = new DateTime(2023, 7, 24, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2232,7 +2232,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 9,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(90),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8118),
                             RecordDate = new DateTime(2023, 7, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2241,7 +2241,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 10,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(96),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8132),
                             RecordDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2250,7 +2250,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 11,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(102),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8147),
                             RecordDate = new DateTime(2023, 7, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Pelin",
@@ -2259,7 +2259,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 12,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(129),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8213),
                             RecordDate = new DateTime(2023, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
@@ -2268,7 +2268,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 13,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(135),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8229),
                             RecordDate = new DateTime(2023, 6, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
@@ -2277,7 +2277,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 14,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(141),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8244),
                             RecordDate = new DateTime(2023, 6, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
@@ -2286,7 +2286,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 15,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(147),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8259),
                             RecordDate = new DateTime(2023, 6, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
@@ -2295,7 +2295,7 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 16,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(153),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8273),
                             RecordDate = new DateTime(2023, 6, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
@@ -2304,56 +2304,56 @@ namespace VeganFit.DAL.Migrations
                         new
                         {
                             Id = 17,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(158),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8288),
                             RecordDate = new DateTime(2023, 6, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
-                            UserWeight = 55.0
+                            UserWeight = 57.5
                         },
                         new
                         {
                             Id = 18,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(164),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8303),
                             RecordDate = new DateTime(2023, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
-                            UserWeight = 55.0
+                            UserWeight = 57.5
                         },
                         new
                         {
                             Id = 19,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(169),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8317),
                             RecordDate = new DateTime(2023, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            State = "Created",
+                            UserName = "Aynur",
+                            UserWeight = 56.0
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8332),
+                            RecordDate = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            State = "Created",
+                            UserName = "Aynur",
+                            UserWeight = 56.0
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8348),
+                            RecordDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
                             UserWeight = 55.0
                         },
                         new
                         {
-                            Id = 20,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(175),
-                            RecordDate = new DateTime(2023, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            State = "Created",
-                            UserName = "Aynur",
-                            UserWeight = 54.0
-                        },
-                        new
-                        {
-                            Id = 21,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(180),
-                            RecordDate = new DateTime(2023, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            State = "Created",
-                            UserName = "Aynur",
-                            UserWeight = 54.0
-                        },
-                        new
-                        {
                             Id = 22,
-                            CreatedDate = new DateTime(2023, 7, 31, 17, 5, 1, 987, DateTimeKind.Local).AddTicks(191),
+                            CreatedDate = new DateTime(2023, 7, 31, 19, 59, 18, 69, DateTimeKind.Local).AddTicks(8363),
                             RecordDate = new DateTime(2023, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             State = "Created",
                             UserName = "Aynur",
-                            UserWeight = 52.5
+                            UserWeight = 54.5
                         });
                 });
 
