@@ -8,4 +8,4 @@ VeganFit uygulaması kapsamındaki içerikler:
 - Admin kullanıcıdan gelen geri dönüşler sonucunda listeye ürün eklemesi, güncellemesi ve silmesi yapabilecektir. 
 - Kullanıcı ise mevcut ürünleri öğünlerine ekleyebilecek veya silebilecektir, mevcut olmayan ürünü oluşturup öğününe ekleyebilecek ama uygulama içinde standart var olan listeye ekleyemeyecektir. Ürün oluştururken; ürün adı, resmi, kalorisi, porsiyonu gibi verileri girebilecektir. Kullanıcı tükettiği ürünlerin kalori toplamını kendi gün sonu raporunuda görebilecek. Ayrıca günlük kilo takibini yapabilecektir.
 
-Uygulamamız tasarlanırken Entity Framework Core ve Onion katmanlı mimari yapıları kullanılmıştır. VeganFit; ben, Eren Kartal ve Furkan Kahveci'nin takım çalışması sonucunda ortaya çıkmış bir projedir.
+Uygulamamız tasarlanırken Entity Framework Core ve Onion katmanlı mimari yapıları kullanılmıştır. VeganFit; ben, <a href="https://github.com/KartalEren"> Eren Kartal <a/> ve <a href="https://github.com/KahveciFurkan"> Furkan Kahveci <a/>'nin takım çalışması sonucunda ortaya çıkmış bir projedir.
